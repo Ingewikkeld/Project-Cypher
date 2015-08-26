@@ -1,0 +1,35 @@
+---
+  - name: tmux | Ensure dependencies for tmux have been installed
+    apt: pkg={{item}} state=installed
+    with_items:
+      - libncurses5-dev
+
+  - name: tmux | Download de source
+    command: chdir=/tmp wget --output-document=/tmp/tmux-1.9a.tar.gz http://downloads.sourceforge.net/project/tmux/tmux/tmux-1.9/tmux-1.9a.tar.gz?r=http%3A%2F%2Ftmux.sourceforge.net%2F&ts=1403785604&use_mirror=netcologne creates=/tmp/tmux-1.9a.tar.gz
+
+  - name: tmux | Extract the source
+    command: chdir=/tmp tar xvzf tmux-1.9a.tar.gz creates=/tmp/tmux-1.9a
+
+  - name: tmux | Install tmux source (may take a while!)
+    shell: chdir=/tmp/tmux-1.9a ./configure && make && make install creates=/usr/local/bin/tmux
+    register: command_result
+    failed_when: "'fatal error' in command_result.stderr"
+
+  - name: tmux | Remove sources
+    command: chdir=/tmp removes=/tmp/tmux-1.9a.tar.gz rm -r /tmp/tmux-1.9a.tar.gz 
+
+  - name: tmux | Remove sources
+    command: chdir=/tmp removes=/tmp/tmux-1.9a rm -r /tmp/tmux-1.9a 
+
+  - name: tmux | Ensure configuration file is in place
+    template: src=files/conf/tmux.conf.j2 dest=~{{ansible_ssh_user}}/.tmux.conf
+
+  - name: tmux | Ensure tmux directory exists
+    file: state=directory path=~{{ansible_ssh_user}}/.tmux
+
+  - name: tmux | Ensure session file is in place
+    template: src=files/conf/tmux-session-logging.j2 dest=~{{ansible_ssh_user}}/.tmux/logging
+
+  - name: tmux | Ensure session file is in place
+    template: src=files/conf/tmux-session-cakephp.j2 dest=~{{ansible_ssh_user}}/.tmux/cakephp
+

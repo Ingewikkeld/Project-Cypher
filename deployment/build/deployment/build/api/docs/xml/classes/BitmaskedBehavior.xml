@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="BitmaskedBehavior" namespace="" name="BitmaskedBehavior" abstract="false" final="false" start="25" end="234">
+  <file path="app/Plugin/Tools/Model/Behavior" file="BitmaskedBehavior.php" realpath="/home/vagrant/socsoc/app/Plugin/Tools/Model/Behavior/BitmaskedBehavior.php" size="6417" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="20d63d7c131a732227f8670fe4335796dc91ffc0"/>
+  <docblock>
+    <description compact="BitmaskedBehavior">An implementation of bitwise masks for row-level operations.
+You can submit/register flags in different ways. The easiest way is using a static model function.
+It should contain the bits like so (starting with 1):
+	1 =&gt; w, 2 =&gt; x, 4 =&gt; y, 8 =&gt; z, ... (bits as keys - names as values)
+The order doesn't matter, as long as no bit is used twice.
+
+The theoretical limit for a 64-bit integer would be 64 bits (2^64).
+But if you actually seem to need more than a hand full you
+obviously do something wrong and should better use a joined table etc.</description>
+    <version value="1.1"/>
+    <author value="Mark Scherer"/>
+    <cake value="2.x"/>
+    <license name="MIT"/>
+    <uses value="ModelBehavior"/>
+    <link value="http://www.dereuromark.de/2012/02/26/bitmasked-using-bitmasks-in-cakephp/">2012-02-24 ms</link>
+  </docblock>
+  <extends full="ModelBehavior" namespace="" name="ModelBehavior"/>
+  <member name="_defaults" type="array" visibility="protected" line="30">
+    <docblock>
+      <description compact="settings defaults"/>
+    </docblock>
+  </member>
+  <method name="setup" start="45" end="64" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Behavior configuration"/>
+      <param type="object" variable="$Model">
+        <type full="Model" namespace="" name="Model"/>
+      </param>
+      <param type="array" variable="$config"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="config" byreference="false" type="array"/>
+  </method>
+  <method name="beforeFind" start="66" end="74" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="query" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="afterFind" start="76" end="89" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="results" byreference="false" type="{unknown}"/>
+    <parameter name="primary" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="beforeValidate" start="91" end="97" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+  </method>
+  <method name="beforeSave" start="99" end="105" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+  </method>
+  <method name="decodeBitmask" start="113" end="123" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param type="int" variable="$bitmask"/>
+      <return description="$bitmaskArray" type="array">from DB to APP</return>
+    </docblock>
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="encodeBitmask" start="130" end="142" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param type="array" variable="$bitmaskArray"/>
+      <return description="$bitmask" type="int">from APP to DB</return>
+    </docblock>
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="encodeBitmaskConditions" start="144" end="170" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="conditions" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="encodeBitmaskData" start="172" end="184" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+  </method>
+  <method name="isBit" start="190" end="196" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param description="bits (int, array)" type="mixed"/>
+      <return description="$sqlSnippet" type="array"/>
+    </docblock>
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="bits" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isNotBit" start="202" end="208" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param description="bits (int, array)" type="mixed"/>
+      <return description="$sqlSnippet" type="array"/>
+    </docblock>
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="bits" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="containsBit" start="214" end="220" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param description="bits (int, array)" type="mixed"/>
+      <return description="$sqlSnippet" type="array"/>
+    </docblock>
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="bits" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="containsNotBit" start="226" end="232" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param description="bits (int, array)" type="mixed"/>
+      <return description="$sqlSnippet" type="array"/>
+    </docblock>
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="bits" byreference="false" type="{unknown}"/>
+  </method>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ab510a8ba8b3726396604720ff22cc62d62cda63"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><message>hele hoop opgelost, ik had het eerder moeten committen :$</message></commit></enrichment></enrichments></class>

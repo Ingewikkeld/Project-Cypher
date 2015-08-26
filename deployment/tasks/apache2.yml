@@ -1,0 +1,32 @@
+---
+  # Aptitude
+  - name: apache2 | Update the apt cache 
+    apt: update_cache=yes cache_valid_time=3600
+
+  - name: apache2 | Ensure Apache2 is installed
+    apt: pkg=apache2 state=installed
+
+  - name: apache2 | Create root directory
+    file: path={{ apache.docroot }} state=directory mode=0775 owner=www-data group={{ ansible_ssh_user }}
+
+  - name: apache2 | enable headers module
+    command: a2enmod rewrite headers creates=/etc/apache2/mods-enabled/headers.load
+
+  - name: apache2 | enable rewrite module
+    command: a2enmod rewrite creates=/etc/apache2/mods-enabled/rewrite.load
+
+  - name: apache2 | enable expires module
+    command: a2enmod expires creates=/etc/apache2/mods-enabled/expires.load
+
+  # disable apache default config
+  - name: apache2 | Disable apache's default site config
+    command: a2dissite 000-default
+    sudo: yes
+
+  - name: apache2 | Validate apache configuration
+    command: apachectl configtest
+    register: result
+
+  - name: apache2 | Restart apache when the configuration is valid
+    command: service apache2 restart
+    when: result|success

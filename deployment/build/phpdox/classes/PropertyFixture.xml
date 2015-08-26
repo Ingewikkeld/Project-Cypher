@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="PropertyFixture" namespace="" name="PropertyFixture" abstract="false" final="false" start="6" end="72">
+  <file path="app/Test/Fixture" file="PropertyFixture.php" realpath="/home/vagrant/socsoc/app/Test/Fixture/PropertyFixture.php" size="2120" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="8c50c5457419496109cdbcd0a3a91fbf369b9861"/>
+  <docblock>
+    <description compact="PropertyFixture"/>
+  </docblock>
+  <extends full="CakeTestFixture" namespace="" name="CakeTestFixture"/>
+  <member name="fields" type="array" visibility="public" line="13">
+    <docblock>
+      <description compact="Fields"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="init" start="27" end="70" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="place the creation of records in this function to be able to call date() for some fields" line="29"/>
+    </inline>
+  </method>
+</class>

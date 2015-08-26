@@ -1,0 +1,15 @@
+---
+  - name: php | Ensure PHP is installed
+    apt: pkg={{item}} state=installed
+    notify: restart apache
+    with_items:
+      - php5
+      - php5-mysql
+      - php5-xdebug
+      - php5-intl
+      - php-token-stream
+      - phpmyadmin
+
+  - name: php | Ensure xdebug configuration is in place
+    action: template src=files/conf/xdebug.ini.j2 dest=/etc/php5/apache2/conf.d/xdebug.ini
+

@@ -1,0 +1,14 @@
+---
+  - name: bash_it | Clone the source 
+    git: repo="https://github.com/pauledenburg/bash_it" dest="~{{ ansible_ssh_user }}/.bash_it" accept_hostkey=yes
+    sudo: yes
+    sudo_user: "{{ ansible_ssh_user }}"
+
+  - name: bash_it | Install bash_it
+    #shell: ~/.bash_it/install.sh creates=~/.bash_profile
+    command: ~{{ ansible_ssh_user }}/.bash_it/install.sh creates=~{{ ansible_ssh_user }}/.bash_profile
+    sudo: yes
+    sudo_user: "{{ ansible_ssh_user }}"
+
+  - name: bash_it | Ensure the .marks directory exists
+    file: state=directory dest=~{{ansible_ssh_user}}/.marks

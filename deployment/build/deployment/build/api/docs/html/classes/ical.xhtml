@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pdxf="http://xml.phpdox.net/functions" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head xmlns:git="http://xml.phpdox.net/gitlog#">
+    <title>phpDox - ical</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav xmlns:git="http://xml.phpdox.net/gitlog#" class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../reports/index.xhtml">Reports</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">ical</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>ical</h1>
+        <h4/>
+        <p/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class ical
+            {<br/><ul class="none"><li>// members</li><li>private
+                         <a href="#members">$plain_content</a>;
+                    </li><li>private
+                         <a href="#members">$cal</a>;
+                    </li><li>private
+                         <a href="#members">$last_key</a>;
+                    </li><li>private
+                         <a href="#members">$buffer</a>;
+                    </li><li>private
+                         <a href="#members">$nesting</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="ical" href="../classes/ical/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="ical" href="../classes/ical/read_file.xhtml">read_file</a>()
+                    </li><li>public unknown <a title="ical" href="../classes/ical/parse.xhtml">parse</a>()
+                    </li><li>private unknown <a title="ical" href="../classes/ical/retun_key_value.xhtml">retun_key_value</a>()
+                    </li><li>private unknown <a title="ical" href="../classes/ical/ical_rrule.xhtml">ical_rrule</a>()
+                    </li><li>private unknown <a title="ical" href="../classes/ical/ical_date_to_unix.xhtml">ical_date_to_unix</a>()
+                    </li><li>private array <a title="ical" href="../classes/ical/ical_dt_date.xhtml">ical_dt_date</a>()
+                    </li><li>public array|boolean <a title="ical" href="../classes/ical/get_sort_event_list.xhtml">get_sort_event_list</a>()
+                    </li><li>private integer <a title="ical" href="../classes/ical/ical_dtstart_compare.xhtml">ical_dtstart_compare</a>()
+                    </li><li>public array <a title="ical" href="../classes/ical/get_event_list.xhtml">get_event_list</a>()
+                    </li><li>public array <a title="ical" href="../classes/ical/get_todo_list.xhtml">get_todo_list</a>()
+                    </li><li>public array <a title="ical" href="../classes/ical/get_calender_data.xhtml">get_calender_data</a>()
+                    </li><li>public array <a title="ical" href="../classes/ical/get_all_data.xhtml">get_all_data</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="buffer"><strong>$buffer</strong>
+                —
+                array</li>
+            <li id="cal"><strong>$cal</strong>
+                —
+                array</li>
+            <li id="last_key"><strong>$last_key</strong>
+                —
+                string</li>
+            <li id="nesting"><strong>$nesting</strong>
+                —
+                string</li>
+            <li id="plain_content"><strong>$plain_content</strong>
+                —
+                string</li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="ical_date_to_unix"><a title="ical" href="../classes/ical/ical_date_to_unix.xhtml">ical_date_to_unix()</a>
+                — Return Unix time from ical date time fomrat (YYYYMMDD[T]HHMMSS[Z] or YYYYMMDD[T]HHMMSS)</li>
+            <li id="ical_dt_date"><a title="ical" href="../classes/ical/ical_dt_date.xhtml">ical_dt_date()</a>
+                — Return unix date from iCal date format</li>
+            <li id="ical_dtstart_compare"><a title="ical" href="../classes/ical/ical_dtstart_compare.xhtml">ical_dtstart_compare()</a>
+                — Compare two unix timestamp</li>
+            <li id="ical_rrule"><a title="ical" href="../classes/ical/ical_rrule.xhtml">ical_rrule()</a>
+                — Parse RRULE  return array</li>
+            <li id="retun_key_value"><a title="ical" href="../classes/ical/retun_key_value.xhtml">retun_key_value()</a>
+                — Parse text "XXXX:value text some with : " and return array($key = "XXXX", $value="value");</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="ical" href="../classes/ical/__construct.xhtml">__construct()</a>
+                — Constructr iCal parser object</li>
+            <li id="get_all_data"><a title="ical" href="../classes/ical/get_all_data.xhtml">get_all_data()</a>
+                — Return array with all data</li>
+            <li id="get_calender_data"><a title="ical" href="../classes/ical/get_calender_data.xhtml">get_calender_data()</a>
+                — Return base calendar data</li>
+            <li id="get_event_list"><a title="ical" href="../classes/ical/get_event_list.xhtml">get_event_list()</a>
+                — Return eventlist array (not sort eventlist array)</li>
+            <li id="get_sort_event_list"><a title="ical" href="../classes/ical/get_sort_event_list.xhtml">get_sort_event_list()</a>
+                — Return sorted eventlist as array or false if calenar is empty</li>
+            <li id="get_todo_list"><a title="ical" href="../classes/ical/get_todo_list.xhtml">get_todo_list()</a>
+                — Return todo arry (not sort todo array)</li>
+            <li id="parse"><a title="ical" href="../classes/ical/parse.xhtml">parse()</a>
+                — Prekladac kalendare</li>
+            <li id="read_file"><a title="ical" href="../classes/ical/read_file.xhtml">read_file()</a>
+                — Read iCal file</li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul xmlns:git="http://xml.phpdox.net/gitlog#" class="styled history">
+          <li>
+            <h3>2013-10-06T19:40:29+00:00 (commit #<span title="f16525be325aa16218dfea4fe983ccf2a60b79b9">f16525b</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (pauledenburg@gmail.com) /
+                        Commiter: Paul Edenburg (pauledenburg@gmail.com)
+                    </p>
+              <pre class="wrapped">wijzigingen na het aanmaken van een nieuw phpstrom project</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-07-29T20:18:45+00:00 (commit #<span title="287b8750eddef6446e689ccd35cee74b32cde2ed">287b875</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@lamp2.(none)) /
+                        Commiter: Paul Edenburg (paul@lamp2.(none))
+                    </p>
+              <pre class="wrapped">rechten zijn gewijzigd</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-26T15:55:26+00:00 (commit #<span title="58d361958cff9f7a6a85bed1ef717e1029d99d24">58d3619</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">phpstorm connect?</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-14T14:30:14+00:00 (commit #<span title="ab510a8ba8b3726396604720ff22cc62d62cda63">ab510a8</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">hele hoop opgelost, ik had het eerder moeten committen :$</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <footer xmlns:git="http://xml.phpdox.net/gitlog#">
+      <span>Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+---
+project_name: devbox
+git:
+  name: "<your name>"
+  email: you@example.com
+
+# Apache2
+apache:
+  docroot: "/var/www/vhosts/{{ website_fqdn }}/"
+  user: "www-data"
+
+# Webserver configuration
+timestamp: "{{ ansible_date_time.date }}_{{ ansible_date_time.hour }}{{ ansible_date_time.minute }}"
+releases_path: "{{ apache.docroot }}/releases"
+newrelease_path: "{{ releases_path }}/{{timestamp}}"
+shared_path: "{{ apache.docroot}}/shared"
+

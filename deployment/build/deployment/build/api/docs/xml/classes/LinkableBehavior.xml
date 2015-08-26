@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="LinkableBehavior" namespace="" name="LinkableBehavior" abstract="false" final="false" start="30" end="208">
+  <file path="app/Plugin/Tools/Model/Behavior" file="LinkableBehavior.php" realpath="/home/vagrant/socsoc/app/Plugin/Tools/Model/Behavior/LinkableBehavior.php" size="8990" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="3f7b0ea57fd6e64d818e483e539ccea2427c9500"/>
+  <docblock>
+    <description compact="LinkableBehavior Light-weight approach for data mining on deep relations between models.">Join tables based on model relations to easily enable right to left find operations.
+Original behavior by rafaelbandeira3 on GitHub.
+Includes modifications from Terr, n8man, and Chad Jablonski
+
+Licensed under The MIT License
+Redistributions of files must retain the above copyright notice.
+
+GiulianoB ( https://github.com/giulianob/linkable )</description>
+    <version value="1.0;"/>
+    <version value="1.1:">-Brought in improvements and test cases from Terr. However, THIS VERSION OF LINKABLE IS NOT DROP IN COMPATIBLE WITH Terr's VERSION!
+-If fields aren't specified, will now return all columns of that model
+-No need to specify the foreign key condition if a custom condition is given. Linkable will automatically include the foreign key relationship.
+-Ability to specify the exact condition Linkable should use (e.g. $this-&gt;Post-&gt;find('first', array('link' =&gt; array('User' =&gt; array('conditions' =&gt; array('exactly' =&gt; 'User.last_post_id = Post.id'))))) )
+This is usually required when doing on-the-fly joins since Linkable generally assumes a belongsTo relationship when no specific relationship is found and may produce invalid foreign key conditions.
+-Linkable will no longer break queries that use SQL COUNTs</version>
+    <version value="1.2:"/>
+    <modified value="Mark Scherer">- works with cakephp2.x (89.84 test coverage)</modified>
+  </docblock>
+  <extends full="ModelBehavior" namespace="" name="ModelBehavior"/>
+  <member name="_key" type="string" default="'link'" visibility="protected" line="32"/>
+  <member name="_options" type="array" visibility="protected" line="34"/>
+  <member name="_defaults" type="array" visibility="protected" line="40"/>
+  <method name="beforeFind" start="42" end="206" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="query" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="If containable is being used, then let it set the recursive!" line="47"/>
+      <comment value="the incoming model to be linked in query" line="77"/>
+      <comment value="the already in query model that links to $_Model" line="79"/>
+      <comment value="Decide whether we should mess with the fields or not" line="160"/>
+      <comment value="If this query is a COUNT query then we just leave it alone" line="161"/>
+    </inline>
+  </method>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ab510a8ba8b3726396604720ff22cc62d62cda63"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><message>hele hoop opgelost, ik had het eerder moeten committen :$</message></commit></enrichment></enrichments></class>

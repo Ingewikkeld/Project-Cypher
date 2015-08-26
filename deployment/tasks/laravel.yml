@@ -1,0 +1,12 @@
+---
+  - name: laravel | install laravel-installer with composer
+    command: composer global require "laravel/installer=~1.1" creates=~{{ ansible_ssh_user }}/.composer/vendor/laravel/installer/laravel
+    sudo: yes
+    sudo_user: "{{ ansible_ssh_user }}"
+    tags: 
+      - laravel
+
+  - name: laravel | create symlink for laravel in /usr/local/bin
+    file: src=~{{ ansible_ssh_user }}/.composer/vendor/laravel/installer/laravel dest=/usr/local/bin/laravel state=link force=yes
+    tags: 
+      - laravel

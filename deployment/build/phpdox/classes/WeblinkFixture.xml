@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="WeblinkFixture" namespace="" name="WeblinkFixture" abstract="false" final="false" start="6" end="40">
+  <file path="app/Test/Fixture" file="WeblinkFixture.php" realpath="/home/vagrant/socsoc/app/Test/Fixture/WeblinkFixture.php" size="1134" time="2014-04-09T09:19:21+00:00" unixtime="1397035161" sha1="ec9b299f109619390c6114667fc4e5ec7846df64"/>
+  <docblock>
+    <description compact="WeblinkFixture"/>
+  </docblock>
+  <extends full="CakeTestFixture" namespace="" name="CakeTestFixture"/>
+  <member name="fields" type="array" visibility="public" line="13">
+    <docblock>
+      <description compact="Fields"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="records" type="array" visibility="public" line="30">
+    <docblock>
+      <description compact="Records"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+</class>

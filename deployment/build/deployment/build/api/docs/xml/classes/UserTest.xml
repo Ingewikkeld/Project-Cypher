@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="UserTest" namespace="" name="UserTest" abstract="false" final="false" start="8" end="303">
+  <file path="app/Test/Case/Model" file="UserTest.php" realpath="/home/vagrant/socsoc/app/Test/Case/Model/UserTest.php" size="8963" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="06a8ff7efb5f03e5181fa5d7efc8090e9b8be8af"/>
+  <docblock>
+    <description compact="User Test Case"/>
+  </docblock>
+  <extends full="CakeTestCase" namespace="" name="CakeTestCase"/>
+  <member name="fixtures" type="array" visibility="public" line="15">
+    <docblock>
+      <description compact="Load the fixtures from the app table"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="setUp" start="29" end="36" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="setUp method"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <inline>
+      <comment value="initiate the user model" line="32"/>
+    </inline>
+  </method>
+  <method name="tearDown" start="43" end="47" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="tearDown method"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="testGetUserToken" start="53" end="75" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Test the function for getting an user by its token"/>
+    </docblock>
+    <inline>
+      <comment value="execute the function in the model to retrieve the result" line="55"/>
+      <comment value="compose the result that we're expecting" line="60"/>
+      <comment value="check whether we got what we've expected" line="67"/>
+      <comment value="get the result for a non-existent token" line="71"/>
+    </inline>
+  </method>
+  <method name="testBlockUser" start="85" end="117" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Block the useraccount identified by the given user id"/>
+      <param description="The unique id for the user to be blocked" type="int" variable="$user_id"/>
+      <param description="A message which will be saved in the userrecord. Could be a reason why this user is being blocked. Defaults to 'Blocked by user &lt;username&gt; (&lt;id&gt;) on yyyy-mm-dd hh:mm:ss'" type="string" variable="$note"/>
+      <return description="True when the user was succesfully blocked, false otherwise" type="boolean"/>
+    </docblock>
+    <inline>
+      <comment value="get our testuser" line="86"/>
+      <comment value="execute the function in the model to retrieve the result" line="90"/>
+      <comment value="assert that that the function executed well" line="93"/>
+      <comment value="fetch the blocked user" line="96"/>
+      <comment value="$result = $this-&gt;User-&gt;findById($testuser[0]['User']);" line="97"/>
+      <comment value="check whether the user is blocked and the notes is set" line="102"/>
+      <comment value="now use the User model function to check that the user is blocked" line="106"/>
+      <comment value="execute the function in the model to retrieve the result" line="109"/>
+      <comment value="fetch the blocked user" line="112"/>
+      <comment value="now use the User model function to check that the user is blocked" line="115"/>
+    </inline>
+  </method>
+  <method name="testUnblockUser" start="127" end="165" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Unblock the useraccount identified by the given user id"/>
+      <param description="The unique id for the user to be unblocked" type="int" variable="$user_id"/>
+      <param description="A message which will be saved in the userrecord. Could be a reason why this user is being blocked. Defaults to 'Blocked by user &lt;username&gt; (&lt;id&gt;) on yyyy-mm-dd hh:mm:ss'" type="string" variable="$note"/>
+      <return description="True when the user was succesfully unblocked, false otherwise" type="boolean"/>
+    </docblock>
+    <inline>
+      <comment value="get our testuser" line="128"/>
+      <comment value="execute the function in the model to retrieve the result" line="132"/>
+      <comment value="assert that that the function executed well" line="135"/>
+      <comment value="fetch the blocked user" line="138"/>
+      <comment value="check whether the user is unblocked and the notes is set" line="144"/>
+      <comment value="now use the User model function to check that the user is unblocked" line="149"/>
+      <comment value="execute again, but this time without a note" line="152"/>
+      <comment value="fetch the blocked user" line="155"/>
+      <comment value="check whether the user is unblocked and the notes is set" line="158"/>
+      <comment value="now use the User model function to check that the user is unblocked" line="163"/>
+    </inline>
+  </method>
+  <method name="testIsAdmin" start="173" end="175" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return whether or not an user is admin"/>
+      <return description="True when the user is admin, false otherwise" type="boolean"/>
+    </docblock>
+  </method>
+  <method name="testGetUserFromMailOrUsername" start="183" end="221" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the userrecord from the database by user or emailaddress"/>
+      <param description="The username or the emailaddress of the user to be fetched" type="string" variable="$user"/>
+      <return description="Returns the userrecord on succes, boolean false otherwise" type="mixed"/>
+    </docblock>
+    <inline>
+      <comment value="execute the function in the model to retrieve the result" line="185"/>
+      <comment value="check that we did get a result" line="188"/>
+      <comment value="check whether the user is unblocked and the notes is set" line="191"/>
+      <comment value="execute the function in the model to retrieve the result" line="195"/>
+      <comment value="check that we did get a result" line="198"/>
+      <comment value="check whether the user is unblocked and the notes is set" line="201"/>
+      <comment value="test by searching with null" line="206"/>
+      <comment value="by searching without parameter, we should get false" line="210"/>
+      <comment value="test by searching with parameter != a string" line="214"/>
+    </inline>
+  </method>
+  <method name="testUniqueUsername" start="231" end="248" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Looks up the supplied username in the database to make sure there is not one there yet"/>
+      <param type="object" variable="$username">
+        <type full="unknown" namespace="" name="unknown"/>
+      </param>
+      <return description="False when the same username is found in the database, true otherwise (which means it is unique)" type="boolean"/>
+    </docblock>
+    <inline>
+      <comment value="test by searching with a _none_ unique username" line="234"/>
+      <comment value="because it's not an unique name, we should get false" line="238"/>
+      <comment value="test by searching with a unique username" line="242"/>
+      <comment value="because it's an unique name, we should get true" line="246"/>
+    </inline>
+  </method>
+  <method name="testIncrementLogin" start="257" end="277" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="increment the login count for the loggedin user"/>
+      <param description="The userrecord of the user which should be incremented" type="array" variable="$user"/>
+      <return description="False on error, the userrecord on success" type="mixed"/>
+    </docblock>
+    <inline>
+      <comment value="test by searching without parameter" line="262"/>
+      <comment value="because it's an unique name, we should get true" line="266"/>
+      <comment value="test by searching with the user parameter" line="270"/>
+      <comment value="because it's an unique name, we should get true" line="274"/>
+    </inline>
+  </method>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ab510a8ba8b3726396604720ff22cc62d62cda63"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><message>hele hoop opgelost, ik had het eerder moeten committen :$</message></commit></enrichment></enrichments></class>

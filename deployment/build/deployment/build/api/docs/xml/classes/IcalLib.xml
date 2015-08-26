@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="IcalLib" namespace="" name="IcalLib" abstract="false" final="false" start="19" end="146">
+  <file path="app/Plugin/Tools/Lib" file="IcalLib.php" realpath="/home/vagrant/socsoc/app/Plugin/Tools/Lib/IcalLib.php" size="3379" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="741df77f6d3a6cd219f8f6acafe5310e76fd25b3"/>
+  <docblock>
+    <description compact="A wrapper for the Ical/Ics calendar lib"/>
+    <see value="http://www.dereuromark.de/2011/11/21/serving-views-as-files-in-cake2 for details"/>
+    <author value="Mark Scherer"/>
+    <license name="MIT"/>
+    <cakephp value="2.0">2010-09-14 ms</cakephp>
+  </docblock>
+  <member name="Ical" type="{unknown}" visibility="public" line="21"/>
+  <member name="Time" type="{unknown}" visibility="public" line="22"/>
+  <constructor name="__construct" start="24" end="26" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="build" start="40" end="71" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="some automagic - array urls are transformed in (full) absolute urls - id =&gt; uid with @host - start/end/timestamp to atom - class to upper"/>
+      <return description="$icalContent (single vevent)" type="string">2011-10-10 ms</return>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+    <parameter name="addStartAndEnd" byreference="false" type="{unknown}" default="true"/>
+  </method>
+  <method name="createStart" start="73" end="87" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="data" byreference="false" type="array"/>
+  </method>
+  <method name="createEnd" start="89" end="91" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="parse" start="96" end="105" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="PARSING"/>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getCalendarInfos" start="111" end="113" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <return type="array">2010-09-14 ms</return>
+    </docblock>
+  </method>
+  <method name="getEventsAsList" start="120" end="127" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="key =&gt; value with key as unixTimeStamp and value as summary"/>
+      <return type="array">2010-09-14 ms</return>
+    </docblock>
+  </method>
+  <method name="getEvents" start="133" end="135" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <return description="$events or false on failure" type="array">2010-09-14 ms</return>
+    </docblock>
+  </method>
+  <method name="getTodos" start="141" end="143" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <return description="$todos or false on failure" type="array">2010-09-14 ms</return>
+    </docblock>
+  </method>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ab510a8ba8b3726396604720ff22cc62d62cda63"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><message>hele hoop opgelost, ik had het eerder moeten committen :$</message></commit></enrichment></enrichments></class>

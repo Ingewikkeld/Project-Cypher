@@ -1,0 +1,11 @@
+---
+  - name: ruby | Get the ruby source code
+    command: chdir=/tmp wget https://ftp.ruby-lang.org/pub/ruby/stable-snapshot.tar.gz --no-check-certificate creates=/tmp/stable-snapshot.tar.gz
+
+  - name: ruby | Extract ruby source
+    command: chdir=/tmp tar xvzf stable-snapshot.tar.gz creates=/tmp/ruby-2.1.2-r46525
+
+  - name: ruby | Install ruby source (may take a while!)
+    shell: chdir=/tmp/ruby-2.1.2-r46525 ./configure && make && make install creates=/usr/local/bin/ruby 
+    register: command_result
+    failed_when: "'[error' in command_result.stderr"

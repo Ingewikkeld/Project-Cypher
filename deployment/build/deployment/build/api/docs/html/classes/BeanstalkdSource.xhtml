@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pdxf="http://xml.phpdox.net/functions" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head xmlns:git="http://xml.phpdox.net/gitlog#">
+    <title>phpDox - BeanstalkdSource</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav xmlns:git="http://xml.phpdox.net/gitlog#" class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../reports/index.xhtml">Reports</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">BeanstalkdSource</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>BeanstalkdSource</h1>
+        <h4>Beanstalkd Source Class</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class BeanstalkdSource
+                extends <a title="DataSource" href="../classes/DataSource.xhtml">DataSource</a>
+            {<br/><ul class="none"><li>// members</li><li>public
+                         <a href="#members">$__insertID</a>;
+                    </li><li>public
+                         <a href="#members">$_baseConfig</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/close.xhtml">close</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/connect.xhtml">connect</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/disconnect.xhtml">disconnect</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/isConnected.xhtml">isConnected</a>()
+                    </li><li>public mixed <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/put.xhtml">put</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/choose.xhtml">choose</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/reserve.xhtml">reserve</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/watch.xhtml">watch</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/release.xhtml">release</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/touch.xhtml">touch</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/bury.xhtml">bury</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/kick.xhtml">kick</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/peek.xhtml">peek</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/next.xhtml">next</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/statistics.xhtml">statistics</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/_encode.xhtml">_encode</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/_decode.xhtml">_decode</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/query.xhtml">query</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/create.xhtml">create</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/read.xhtml">read</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/update.xhtml">update</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/delete.xhtml">delete</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/calculate.xhtml">calculate</a>()
+                    </li><li>public array <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/listSources.xhtml">listSources</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/describe.xhtml">describe</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/logQuery.xhtml">logQuery</a>()
+                    </li><li>public void <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/lastError.xhtml">lastError</a>()
+                    </li><li>public integer <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/lastInsertId.xhtml">lastInsertId</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/DataSource.xhtml">DataSource</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled members">
+          <h4>public</h4>
+          <ul class="members">
+            <li id="__insertID"><strong>$__insertID</strong>
+                —
+                mixed<br/><span class="indent">Holds ID of last inserted job</span></li>
+            <li id="_baseConfig"><strong>$_baseConfig</strong>
+                —
+                array<br/><span class="indent">The default configuration of a specific DataSource</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/__construct.xhtml">__construct()</a>
+            </li>
+            <li id="_decode">
+              <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/_decode.xhtml">_decode()</a>
+            </li>
+            <li id="_encode">
+              <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/_encode.xhtml">_encode()</a>
+            </li>
+            <li id="bury">
+              <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/bury.xhtml">bury()</a>
+            </li>
+            <li id="calculate"><a title="BeanstalkdSource" href="../classes/BeanstalkdSource/calculate.xhtml">calculate()</a>
+                — Returns a data source specific expression</li>
+            <li id="choose">
+              <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/choose.xhtml">choose()</a>
+            </li>
+            <li id="close"><a title="BeanstalkdSource" href="../classes/BeanstalkdSource/close.xhtml">close()</a>
+                — Close the current connection to beanstalk</li>
+            <li id="connect">
+              <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/connect.xhtml">connect()</a>
+            </li>
+            <li id="create">
+              <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/create.xhtml">create()</a>
+            </li>
+            <li id="delete"><a title="BeanstalkdSource" href="../classes/BeanstalkdSource/delete.xhtml">delete()</a>
+                — Deletes a job</li>
+            <li id="describe">
+              <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/describe.xhtml">describe()</a>
+            </li>
+            <li id="disconnect">
+              <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/disconnect.xhtml">disconnect()</a>
+            </li>
+            <li id="isConnected">
+              <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/isConnected.xhtml">isConnected()</a>
+            </li>
+            <li id="kick">
+              <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/kick.xhtml">kick()</a>
+            </li>
+            <li id="lastError">
+              <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/lastError.xhtml">lastError()</a>
+            </li>
+            <li id="lastInsertId"><a title="BeanstalkdSource" href="../classes/BeanstalkdSource/lastInsertId.xhtml">lastInsertId()</a>
+                — Returns the ID generated from the previous INSERT operation.</li>
+            <li id="listSources"><a title="BeanstalkdSource" href="../classes/BeanstalkdSource/listSources.xhtml">listSources()</a>
+                — Returns available sources</li>
+            <li id="logQuery"><a title="BeanstalkdSource" href="../classes/BeanstalkdSource/logQuery.xhtml">logQuery()</a>
+                — Logs a new query. Will automatically truncate already logged so at any time there are no more than 200 messages logged.</li>
+            <li id="next">
+              <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/next.xhtml">next()</a>
+            </li>
+            <li id="peek">
+              <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/peek.xhtml">peek()</a>
+            </li>
+            <li id="put"><a title="BeanstalkdSource" href="../classes/BeanstalkdSource/put.xhtml">put()</a>
+                — Put a job in a tube</li>
+            <li id="query"><a title="BeanstalkdSource" href="../classes/BeanstalkdSource/query.xhtml">query()</a>
+                — All calls to methods on the model are routed through this method</li>
+            <li id="read">
+              <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/read.xhtml">read()</a>
+            </li>
+            <li id="release">
+              <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/release.xhtml">release()</a>
+            </li>
+            <li id="reserve">
+              <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/reserve.xhtml">reserve()</a>
+            </li>
+            <li id="statistics">
+              <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/statistics.xhtml">statistics()</a>
+            </li>
+            <li id="touch">
+              <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/touch.xhtml">touch()</a>
+            </li>
+            <li id="update">
+              <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/update.xhtml">update()</a>
+            </li>
+            <li id="watch">
+              <a title="BeanstalkdSource" href="../classes/BeanstalkdSource/watch.xhtml">watch()</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul xmlns:git="http://xml.phpdox.net/gitlog#" class="styled history">
+          <li>
+            <h3>2013-10-06T19:40:29+00:00 (commit #<span title="f16525be325aa16218dfea4fe983ccf2a60b79b9">f16525b</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (pauledenburg@gmail.com) /
+                        Commiter: Paul Edenburg (pauledenburg@gmail.com)
+                    </p>
+              <pre class="wrapped">wijzigingen na het aanmaken van een nieuw phpstrom project</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-07-29T20:18:45+00:00 (commit #<span title="287b8750eddef6446e689ccd35cee74b32cde2ed">287b875</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@lamp2.(none)) /
+                        Commiter: Paul Edenburg (paul@lamp2.(none))
+                    </p>
+              <pre class="wrapped">rechten zijn gewijzigd</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-07-29T18:23:53+00:00 (commit #<span title="28acc0dc022b2ceaa47547071e9cecc0a53fc08b">28acc0d</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">files zijn blijkbaar gewijzigd na een schone checkout (= opzetten nieuw project in phpstorm)</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-26T19:16:26+00:00 (commit #<span title="df71f3c56f8fc3c1665e70feceea5a1489338b74">df71f3c</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">crlf linefeeds?</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-26T15:55:26+00:00 (commit #<span title="58d361958cff9f7a6a85bed1ef717e1029d99d24">58d3619</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">phpstorm connect?</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-14T14:30:14+00:00 (commit #<span title="ab510a8ba8b3726396604720ff22cc62d62cda63">ab510a8</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">hele hoop opgelost, ik had het eerder moeten committen :$</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <footer xmlns:git="http://xml.phpdox.net/gitlog#">
+      <span>Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+# set the comma as the PREFIX key
+unbind C-b
+set -g prefix ,
+bind , send-prefix
+
+# Start window numbering at 1, instead of at 0
+set -g base-index 1
+
+# Allows for faster key repetition
+set -s escape-time 0
+
+# Status bar customization
+set -g status-utf8 on
+set -g status-bg black
+set -g status-fg white
+set -g status-interval 5
+set -g status-left-length 90
+set -g status-right-length 60
+set -g status-left "#[fg=Green]#(whoami)#[fg=white]::#[fg=blue] \
+##(hostname -s)#[fg=white]::##[fg=yellow]#(curl ipecho.net/plain;echo)"
+set -g status-justify left
+set -g status-right '#[fg=Cyan]#S #[fg=white]%a %d %b %R' 
+setw -g window-status-current-format "|#I:#W|"
+set-window-option -g automatic-rename off
+
+# listen to alerts from all windows
+set -g bell-action any
+
+# Rather than constraining window size to the maximum size of any client 
+# connected to the *session*, constrain window size to the maximum size of any 
+# client connected to *that window*. Much more reasonable.
+setw -g aggressive-resize on
+
+# Highlight active window
+set-window-option -g window-status-current-bg red
+
+# Reload the config with PREFIX r
+bind r source-file ~/.tmux.conf
+
+# Sane scrolling
+set -g terminal-overrides 'xterm*:smcup@:rmcup@'
+
+# I'm a Vim user, this makes navigation easier
+setw -g mode-keys vi # I especially like being able to search with /,? when in copy-mode
+unbind-key j
+bind-key j select-pane -D # Similar to 'C-w j' to navigate windows in Vim
+unbind-key k
+bind-key k select-pane -U
+unbind-key h
+bind-key h select-pane -L
+unbind-key l
+bind-key l select-pane -R
+
+# Just click it
+set-option -g mouse-select-pane on
+set-option -g mouse-select-window on
+set-option -g mouse-resize-pane on
+ 
+# Scroll your way into copy mode (scrollback buffer)
+# and select text for copying with the mouse
+setw -g mode-mouse on
+
+# Report that we can handle 256 colors
+#set -g default-terminal "screen-256color"
+set -g default-terminal "xterm"
+
+# I like to give my windows descriptive names
+set-window-option -g automatic-rename off
+
+# I like to give my windows descriptive names
+set-window-option -g automatic-rename off
+
+# initialize sessions
+#bind c source-file ~/.tmux/cakephp
+#bind l source-file ~/.tmux/logging
+
+# sources
+# - http://spin.atomicobject.com/2012/01/28/less-perplexing-terminal-multiplexing-with-tmux/

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="Utility" namespace="" name="Utility" abstract="false" final="false" start="12" end="403">
+  <file path="app/Plugin/Tools/Lib/Utility" file="Utility.php" realpath="/home/vagrant/socsoc/app/Plugin/Tools/Lib/Utility/Utility.php" size="8980" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="47f8037a57d0a844a825031c373fcbb8da6fa792"/>
+  <docblock>
+    <description compact="Main class for all app-wide utility methods"/>
+    <author value="Mark Scherer"/>
+    <license name="MIT">2012-02-27 ms</license>
+  </docblock>
+  <method name="getClientIp" start="20" end="42" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="get the current ip address"/>
+      <param type="object" variable="$safe">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <return description="$ip" type="string">2011-11-02 ms</return>
+    </docblock>
+    <parameter name="safe" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="getReferer" start="50" end="63" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="get the current referer"/>
+      <param description="(defaults to false and leaves the url untouched)" type="object" variable="$full">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <return description="$referer (local or foreign)" type="string">2011-11-02 ms</return>
+    </docblock>
+    <parameter name="full" byreference="false" type="{unknown}" default="false"/>
+  </method>
+  <method name="cleanUrl" start="73" end="101" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="remove unnessary stuff + add http:// for external urls TODO: protocol to lower!"/>
+      <param type="string" variable="$url"/>
+      <return description="Cleaned Url" type="string">2009-12-22 ms</return>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}"/>
+    <parameter name="headerRedirect" byreference="false" type="{unknown}" default="false"/>
+  </method>
+  <method name="getHeaderFromUrl" start="110" end="133" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Parse headers"/>
+      <param type="string" variable="$url"/>
+      <return description="array of headers or FALSE on failure" type="mixed">2009-12-26 ms</return>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="autoPrefixUrl" start="141" end="152" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="add protocol prefix if necessary (and possible)"/>
+      <param type="string" variable="$url">2010-06-02 ms</param>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}"/>
+    <parameter name="prefix" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="urlEncode" start="162" end="164" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="encode strings with base64_encode and also replace chars base64 uses that would mess up the url"/>
+      <param description="Unsafe string" type="string" variable="$string"/>
+      <return description="Encoded string" type="string">2012-10-23 ms</return>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="urlDecode" start="174" end="176" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="decode strings with base64_encode and also replace back chars base64 uses that would mess up the url"/>
+      <param description="Safe string" type="string" variable="$string"/>
+      <return description="Decoded string" type="string">2012-10-23 ms</return>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="logicalAnd" start="186" end="196" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="returns true only if all values are true"/>
+      <param type="array" variable="$array"/>
+      <return description="$result" type="object">maybe move to bootstrap?
+2011-11-02 ms<type full="bool" namespace="" name="bool"/></return>
+    </docblock>
+    <parameter name="array" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="logicalOr" start="206" end="213" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="returns true if at least one value is true"/>
+      <param type="array" variable="$array"/>
+      <return description="$result" type="object">maybe move to bootstrap?
+2011-11-02 ms<type full="bool" namespace="" name="bool"/></return>
+    </docblock>
+    <parameter name="array" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isValidSaveAll" start="223" end="236" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="On non-transaction db connections it will return a deep array of bools instead of bool So we need to call this method inside the modified saveAll() method to return the expected single bool there, too"/>
+      <param type="array"/>
+      <return type="object">2012-10-12 ms<type full="bool" namespace="" name="bool"/></return>
+    </docblock>
+    <parameter name="array" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="typeCast" start="247" end="271" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="convinience function for automatic casting in form methods etc"/>
+      <param type="mixed" variable="$value"/>
+      <param type="string" variable="$type"/>
+      <return description="value for DB query, or NULL if type was not a valid one" type="object">maybe move to bootstrap?
+2008-12-12 ms<type full="safe" namespace="" name="safe"/></return>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="trimDeep" start="278" end="281" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="trim recursivly">2009-07-07 ms</description>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="specialcharsDeep" start="288" end="291" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="h() recursivly">2009-07-07 ms</description>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="paranoidDeep" start="298" end="301" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="removes all except A-Z,a-z,0-9 and allowedChars (allowedChars array) recursivly">2009-07-07 ms</description>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="htmlDeep" start="308" end="311" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="transfers/removes all &lt; &gt; from text (remove TRUE/FALSE)">2009-07-07 ms</description>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="deep" start="318" end="321" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="main deep method">2009-07-07 ms</description>
+    </docblock>
+    <parameter name="function" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="arrayFlatten" start="327" end="340" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Flattens an array, or returns FALSE on fail.">2011-07-02 ms</description>
+    </docblock>
+    <parameter name="array" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="arrayShiftKeys" start="350" end="355" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Similar to array_shift but on the keys of the array"/>
+      <param type="array" variable="$keyValuePairs"/>
+      <return description="$key" type="string">like array_shift() only for keys and not values
+2011-01-22 ms</return>
+    </docblock>
+    <parameter name="array" byreference="true" type="{unknown}"/>
+  </method>
+  <member name="_counterStartTime" type="{unknown}" visibility="protected" line="358"/>
+  <method name="microtime" start="367" end="369" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="returns microtime as float value (to be subtracted right away)"/>
+      <return type="float">2009-07-07 ms</return>
+    </docblock>
+    <parameter name="precision" byreference="false" type="integer" default="8"/>
+  </method>
+  <method name="startClock" start="375" end="377" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <return type="object">2009-07-07 ms<type full="void" namespace="" name="void"/></return>
+    </docblock>
+  </method>
+  <method name="returnElapsedTime" start="383" end="389" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <return type="float">2009-07-07 ms</return>
+    </docblock>
+    <parameter name="precision" byreference="false" type="integer" default="8"/>
+    <parameter name="restartClock" byreference="false" type="{unknown}" default="false"/>
+  </method>
+  <method name="calcElapsedTime" start="398" end="401" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="returns microtime as float value (to be subtracted right away)"/>
+      <return type="float">2009-07-07 ms</return>
+    </docblock>
+    <parameter name="start" byreference="false" type="{unknown}"/>
+    <parameter name="end" byreference="false" type="{unknown}"/>
+    <parameter name="precision" byreference="false" type="integer" default="8"/>
+  </method>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ab510a8ba8b3726396604720ff22cc62d62cda63"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><message>hele hoop opgelost, ik had het eerder moeten committen :$</message></commit></enrichment></enrichments></class>

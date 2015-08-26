@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head xmlns:git="http://xml.phpdox.net/gitlog#">
+    <title>phpDox - Test Method</title>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav xmlns:git="http://xml.phpdox.net/gitlog#" class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../../reports/index.xhtml">Reports</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.xhtml#"/>
+          </li>
+          <li class="separator">
+            <a title="MessagesController" href="../../classes/MessagesController.xhtml">MessagesController</a>
+          </li>
+          <li class="separator">_replaceVariables</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#parameter">Parameter</a>
+          </li>
+          <li>
+            <a href="#return">Return</a>
+          </li>
+          <li>
+            <a href="#throws">Throws</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1><small>MessagesController::</small>_replaceVariables</h1>
+        <h4>Replace variables in a piece of text with their respective values</h4>
+        <p>Allowed variables:
+
+- '%sender.username%'        - the senders' username
+- '%sender.city%                - the senders' city
+- '%sender.last_online%        - the datetime when the sender was last online
+- '%sender.email%            - the senders' email address
+- '%sender.zipcode%            - the senders' zipcode
+- '%sender.housenr%            - the senders' housenr
+- '%recipient.username%        - the recipients' username
+- '%recipient.city%            - the recipients' city
+- '%recipient.last_online%    - the datetime when the recipient was last online
+- '%recipient.email%            - the recipients' email address
+- '%recipient.zipcode%        - the recipients' zipcode
+- '%recipient.housenr%        - the recipients' housenumber
+- '%reactionlink%'            - the full URL to the page where a reaction to this message can be created</p>
+        <ul/>
+        <h2 id="signature">Signature</h2>
+        <div class="styled synopsis">
+          <code>private function _replaceVariables([string
+        $message = null] )
+            </code>
+        </div>
+        <h2 id="parameterlist">Parameters</h2>
+        <dl class="styled">
+          <dt>
+            <code>$message</code>
+          </dt>
+          <dd>The textmessage containing the variables that need to be replaced</dd>
+        </dl>
+        <h2 id="return">Returns</h2>
+        <dl class="styled">
+          <dt>string</dt>
+          <dd>The message with the variables replaced    by their respective values</dd>
+        </dl>
+        <h2 id="throws">Errors/Exceptions</h2>
+        <dl class="styled">
+          <dt>
+            <code>
+              <a title="NotFoundException" href="../../classes/NotFoundException.xhtml">NotFoundException</a>
+            </code>
+          </dt>
+          <dd/>
+        </dl>
+      </section>
+    </div>
+    <footer xmlns:git="http://xml.phpdox.net/gitlog#">
+      <span>Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

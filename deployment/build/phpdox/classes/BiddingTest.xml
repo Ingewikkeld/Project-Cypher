@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="BiddingTest" namespace="" name="BiddingTest" abstract="false" final="false" start="8" end="60">
+  <file path="app/Test/Case/Model" file="BiddingTest.php" realpath="/home/vagrant/socsoc/app/Test/Case/Model/BiddingTest.php" size="863" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="a3ded33afb88f2ffe9d2b0b0d3f3d210acb7b15c"/>
+  <docblock>
+    <description compact="Bidding Test Case"/>
+  </docblock>
+  <extends full="CakeTestCase" namespace="" name="CakeTestCase"/>
+  <member name="fixtures" type="array" visibility="public" line="15">
+    <docblock>
+      <description compact="Fixtures"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="setUp" start="38" end="41" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="setUp method"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="tearDown" start="48" end="52" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="tearDown method"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="testTest" start="57" end="59" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Dummy testcase"/>
+    </docblock>
+  </method>
+</class>

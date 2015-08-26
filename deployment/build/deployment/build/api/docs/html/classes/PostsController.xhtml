@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pdxf="http://xml.phpdox.net/functions" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head xmlns:git="http://xml.phpdox.net/gitlog#">
+    <title>phpDox - PostsController</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav xmlns:git="http://xml.phpdox.net/gitlog#" class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../reports/index.xhtml">Reports</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">PostsController</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>PostsController</h1>
+        <h4>Posts Controller</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class PostsController
+                extends <a title="AppController" href="../classes/AppController.xhtml">AppController</a>
+            {<br/><ul class="none"><li>// members</li><li>public <span title="$components">$components</span>
+                         <a href="#members">$components</a>;
+                    </li><li>public
+                         <a href="#members">$uses</a>;
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="AppController">AppController</span></li><li>public
+                             <a href="#members">$components</a>;
+                        </li><li>public
+                             <a href="#members">$uses</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public boolean <a title="PostsController" href="../classes/PostsController/admin_block.xhtml">admin_block</a>()
+                    </li><li>public boolean <a title="PostsController" href="../classes/PostsController/admin_deblock.xhtml">admin_deblock</a>()
+                    </li><li>public void <a title="PostsController" href="../classes/PostsController/index.xhtml">index</a>()
+                    </li><li>public void <a title="PostsController" href="../classes/PostsController/index_by_rubric.xhtml">index_by_rubric</a>()
+                    </li><li>public void <a title="PostsController" href="../classes/PostsController/of.xhtml">of</a>()
+                    </li><li>public void <a title="PostsController" href="../classes/PostsController/beforeFilter.xhtml">beforeFilter</a>()
+                    </li><li>public array <a title="PostsController" href="../classes/PostsController/getRubricTree.xhtml">getRubricTree</a>()
+                    </li><li>public void <a title="PostsController" href="../classes/PostsController/view.xhtml">view</a>()
+                    </li><li>public bool <a title="PostsController" href="../classes/PostsController/add.xhtml">add</a>()
+                    </li><li>private boolean <a title="PostsController" href="../classes/PostsController/_getImagesToSave.xhtml">_getImagesToSave</a>()
+                    </li><li>private boolean <a title="PostsController" href="../classes/PostsController/_getImagesToDelete.xhtml">_getImagesToDelete</a>()
+                    </li><li>private boolean <a title="PostsController" href="../classes/PostsController/_handleDeletedImages.xhtml">_handleDeletedImages</a>()
+                    </li><li>private bool <a title="PostsController" href="../classes/PostsController/_handleNewImages.xhtml">_handleNewImages</a>()
+                    </li><li>public boolean <a title="PostsController" href="../classes/PostsController/removeImagesIfNecessary.xhtml">removeImagesIfNecessary</a>()
+                    </li><li>public bool <a title="PostsController" href="../classes/PostsController/selectRubric.xhtml">selectRubric</a>()
+                    </li><li>public void <a title="PostsController" href="../classes/PostsController/edit.xhtml">edit</a>()
+                    </li><li>public void <a title="PostsController" href="../classes/PostsController/delete.xhtml">delete</a>()
+                    </li><li>public void <a title="PostsController" href="../classes/PostsController/search.xhtml">search</a>()
+                    </li><li>public bool <a title="PostsController" href="../classes/PostsController/handleZipcode.xhtml">handleZipcode</a>()
+                    </li><li>public boolean <a title="PostsController" href="../classes/PostsController/isAuthorized.xhtml">isAuthorized</a>()
+                    </li><li>public bool <a title="PostsController" href="../classes/PostsController/extendPublicationTime.xhtml">extendPublicationTime</a>()
+                    </li><li>public void <a title="PostsController" href="../classes/PostsController/depublish.xhtml">depublish</a>()
+                    </li><li>public void <a title="PostsController" href="../classes/PostsController/publish.xhtml">publish</a>()
+                    </li><li>public void <a title="PostsController" href="../classes/PostsController/getClosest.xhtml">getClosest</a>()
+                    </li><li>public void <a title="PostsController" href="../classes/PostsController/getClosestPosts.xhtml">getClosestPosts</a>()
+                    </li><li>public void <a title="PostsController" href="../classes/PostsController/sitemap.xhtml">sitemap</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="AppController">AppController</span></li><li>public void <a title="AppController" href="../classes/AppController/getSearchFormInfo.xhtml">getSearchFormInfo</a>()
+                        </li><li>public void <a title="AppController" href="../classes/AppController/beforeRender.xhtml">beforeRender</a>()
+                        </li><li>public bool <a title="AppController" href="../classes/AppController/isBrowserOutOfDate.xhtml">isBrowserOutOfDate</a>()
+                        </li><li>public void <a title="AppController" href="../classes/AppController/beforeFilter.xhtml">beforeFilter</a>()
+                        </li><li>public boolean <a title="AppController" href="../classes/AppController/isAuthorized.xhtml">isAuthorized</a>()
+                        </li><li>public void <a title="AppController" href="../classes/AppController/updateAuthUserInfo.xhtml">updateAuthUserInfo</a>()
+                        </li><li>public static string <a title="AppController" href="../classes/AppController/ago.xhtml">ago</a>()
+                        </li><li>public float <a title="AppController" href="../classes/AppController/daysBetween.xhtml">daysBetween</a>()
+                        </li><li>public void <a title="AppController" href="../classes/AppController/getBrowser.xhtml">getBrowser</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/AppController.xhtml">AppController</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled members">
+          <h4>public</h4>
+          <ul class="members">
+            <li id="components"><strong>$components</strong>
+                —
+                <a href="#">$components</a><br/><span class="indent">used components in this controller</span></li>
+            <li id="components">
+              <strong>$components</strong>
+            </li>
+            <li id="uses">
+              <strong>$uses</strong>
+            </li>
+            <li id="uses">
+              <strong>$uses</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="_getImagesToDelete"><a title="PostsController" href="../classes/PostsController/_getImagesToDelete.xhtml">_getImagesToDelete()</a>
+                — This functions compares current images which exist for a post at this moment in the system with the images which were posted after editing.</li>
+            <li id="_getImagesToSave"><a title="PostsController" href="../classes/PostsController/_getImagesToSave.xhtml">_getImagesToSave()</a>
+                — This functions compares posted images with existing images in the system (for the given post)</li>
+            <li id="_handleDeletedImages"><a title="PostsController" href="../classes/PostsController/_handleDeletedImages.xhtml">_handleDeletedImages()</a>
+                — This function gathers all information to find out whether or not images were deleted during the editing of a post.</li>
+            <li id="_handleNewImages">
+              <a title="PostsController" href="../classes/PostsController/_handleNewImages.xhtml">_handleNewImages()</a>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="add"><a title="PostsController" href="../classes/PostsController/add.xhtml">add()</a>
+                — add method</li>
+            <li id="admin_block"><a title="PostsController" href="../classes/PostsController/admin_block.xhtml">admin_block()</a>
+                — Block the post</li>
+            <li id="admin_deblock"><a title="PostsController" href="../classes/PostsController/admin_deblock.xhtml">admin_deblock()</a>
+                — Block the post</li>
+            <li id="beforeFilter">
+              <a title="PostsController" href="../classes/PostsController/beforeFilter.xhtml">beforeFilter()</a>
+            </li>
+            <li id="delete"><a title="PostsController" href="../classes/PostsController/delete.xhtml">delete()</a>
+                — delete method</li>
+            <li id="depublish"><a title="PostsController" href="../classes/PostsController/depublish.xhtml">depublish()</a>
+                — Depublish a post makes the post unreadable by ordinary users</li>
+            <li id="edit"><a title="PostsController" href="../classes/PostsController/edit.xhtml">edit()</a>
+                — edit method</li>
+            <li id="extendPublicationTime">
+              <a title="PostsController" href="../classes/PostsController/extendPublicationTime.xhtml">extendPublicationTime()</a>
+            </li>
+            <li id="getClosest">
+              <a title="PostsController" href="../classes/PostsController/getClosest.xhtml">getClosest()</a>
+            </li>
+            <li id="getClosestPosts">
+              <a title="PostsController" href="../classes/PostsController/getClosestPosts.xhtml">getClosestPosts()</a>
+            </li>
+            <li id="getRubricTree">
+              <a title="PostsController" href="../classes/PostsController/getRubricTree.xhtml">getRubricTree()</a>
+            </li>
+            <li id="handleZipcode"><a title="PostsController" href="../classes/PostsController/handleZipcode.xhtml">handleZipcode()</a>
+                — This function gets the coordinates in which between the search results must be</li>
+            <li id="index"><a title="PostsController" href="../classes/PostsController/index.xhtml">index()</a>
+                — index method</li>
+            <li id="index_by_rubric"><a title="PostsController" href="../classes/PostsController/index_by_rubric.xhtml">index_by_rubric()</a>
+                — List all posts per rubric</li>
+            <li id="isAuthorized"><a title="PostsController" href="../classes/PostsController/isAuthorized.xhtml">isAuthorized()</a>
+                — Check whether a logged-in user is authorized for a specific action</li>
+            <li id="of"><a title="PostsController" href="../classes/PostsController/of.xhtml">of()</a>
+                — List all posts of a specific user</li>
+            <li id="publish"><a title="PostsController" href="../classes/PostsController/publish.xhtml">publish()</a>
+                — Depublish a post makes the post readable by ordinary users</li>
+            <li id="removeImagesIfNecessary"><a title="PostsController" href="../classes/PostsController/removeImagesIfNecessary.xhtml">removeImagesIfNecessary()</a>
+                — Before editing a post, the post record is stored in the session.</li>
+            <li id="search"><a title="PostsController" href="../classes/PostsController/search.xhtml">search()</a>
+                — Search for posts</li>
+            <li id="selectRubric">
+              <a title="PostsController" href="../classes/PostsController/selectRubric.xhtml">selectRubric()</a>
+            </li>
+            <li id="sitemap">
+              <a title="PostsController" href="../classes/PostsController/sitemap.xhtml">sitemap()</a>
+            </li>
+            <li id="view"><a title="PostsController" href="../classes/PostsController/view.xhtml">view()</a>
+                — view method</li>
+          </ul>
+          <h3>Inherited from <a title="AppController" href="../classes/AppController.xhtml">AppController</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="ago">
+              <a title="AppController" href="../classes/AppController/ago.xhtml">ago()</a>
+            </li>
+            <li id="beforeFilter"><a title="AppController" href="../classes/AppController/beforeFilter.xhtml">beforeFilter()</a>
+                — This function is called before every action is run</li>
+            <li id="beforeRender"><a title="AppController" href="../classes/AppController/beforeRender.xhtml">beforeRender()</a>
+                — This function is called before every view is displayed</li>
+            <li id="daysBetween">
+              <a title="AppController" href="../classes/AppController/daysBetween.xhtml">daysBetween()</a>
+            </li>
+            <li id="getBrowser"><a title="AppController" href="../classes/AppController/getBrowser.xhtml">getBrowser()</a>
+                — Browser check</li>
+            <li id="getSearchFormInfo">
+              <a title="AppController" href="../classes/AppController/getSearchFormInfo.xhtml">getSearchFormInfo()</a>
+            </li>
+            <li id="isAuthorized"><a title="AppController" href="../classes/AppController/isAuthorized.xhtml">isAuthorized()</a>
+                — Set global authorization for the application</li>
+            <li id="isBrowserOutOfDate">
+              <a title="AppController" href="../classes/AppController/isBrowserOutOfDate.xhtml">isBrowserOutOfDate()</a>
+            </li>
+            <li id="updateAuthUserInfo"><a title="AppController" href="../classes/AppController/updateAuthUserInfo.xhtml">updateAuthUserInfo()</a>
+                — Update the information hold in the Auth component. Useful when the users' information changes (when editing user information, for example).</li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul xmlns:git="http://xml.phpdox.net/gitlog#" class="styled history">
+          <li>
+            <h3>2014-03-09T20:03:35+00:00 (commit #<span title="8955a7e4f93b5671b4ff85092247391027a078b4">8955a7e</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">begin van sitemap aangemaakt: /sitemap</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-12-09T13:57:29+00:00 (commit #<span title="12571f5a885f477804b67fd269010c3350fd6a85">12571f5</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (pauledenburg@gmail.com) /
+                        Commiter: Paul Edenburg (pauledenburg@gmail.com)
+                    </p>
+              <pre class="wrapped">Bij het zoeken wordt nu ook het Image model meegenomen zodat geuploade images getoond kunnen worden bij het zoekresultaat.
+fixes #112</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-11-29T23:28:08+00:00 (commit #<span title="7569e03938e5bbb9defaa7fc675785f534b0b5b5">7569e03</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">missende models toegevoegd aan posts/view om het bieden zichtbaar te maken</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-11-29T23:19:31+00:00 (commit #<span title="89a42b326cc94ca0c3df4b5c32cb84f034d0ae79">89a42b3</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">bij het tonen van een post dient ook het Image bijgevoegd te worden in de containable</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-11-29T23:18:42+00:00 (commit #<span title="25c8af2402eb05e4e6d116fcbaf743f767520821">25c8af2</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">bij het zoeken naar posts dienen ook de bijbehorende owners in het zoekresultaat te zitten</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-11-29T21:36:36+00:00 (commit #<span title="37cac0404475faf7a5abf63bcab829bb37dd75e6">37cac04</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">optimalisatie door het gebruiken van containable</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-11-29T15:11:54+00:00 (commit #<span title="9aba0d327742c7ca2bc48cb829b8a5480ff61f94">9aba0d3</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">Kleuren goed gezet voor de nieuwe rubrieken
+
+fixes #83</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-11-01T13:00:37+00:00 (commit #<span title="b80111378b2c55639caed4c979d915cd988fc966">b801113</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (pauledenburg@gmail.com) /
+                        Commiter: Paul Edenburg (pauledenburg@gmail.com)
+                    </p>
+              <pre class="wrapped">bij een post met een category wordt nu in de view de category (of subrubriek) getoond met de pijl van de hoofdrubriek
+
+refs #50</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-10-06T19:40:29+00:00 (commit #<span title="f16525be325aa16218dfea4fe983ccf2a60b79b9">f16525b</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (pauledenburg@gmail.com) /
+                        Commiter: Paul Edenburg (pauledenburg@gmail.com)
+                    </p>
+              <pre class="wrapped">wijzigingen na het aanmaken van een nieuw phpstrom project</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-08-08T06:57:01+00:00 (commit #<span title="c655de5c6ec34517511e6f908a2f638ad91a9d78">c655de5</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">permissions goed gezet mbv fabric</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-07-30T04:13:13+00:00 (commit #<span title="e07ed27f5fc69e25d5e4976f2d4581adee6c7b04">e07ed27</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">execute bits verwijderd</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-07-29T20:18:45+00:00 (commit #<span title="287b8750eddef6446e689ccd35cee74b32cde2ed">287b875</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@lamp2.(none)) /
+                        Commiter: Paul Edenburg (paul@lamp2.(none))
+                    </p>
+              <pre class="wrapped">rechten zijn gewijzigd</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-07-17T19:17:31+00:00 (commit #<span title="b52a37bfa52e857372265815674ea71f41f45785">b52a37b</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">Het ophalen van posts voor nieuwsbrief werkte niet meer. Dit is nu opgelost.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-07-09T15:55:44+00:00 (commit #<span title="f84ae6d414cae59ed016a6527531a7132f5f63c3">f84ae6d</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">problemen met zoeken opgelost waarbij een foutief scherm getoond werd als een postcode werd opgegeven maar geen afstand</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-07-07T16:36:12+00:00 (commit #<span title="ea144a4b578ec29c26a9e9ad8d0338d128e492fd">ea144a4</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">return weggehaald bij posts.search omdat deze de search in de war schopte</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-26T15:55:26+00:00 (commit #<span title="58d361958cff9f7a6a85bed1ef717e1029d99d24">58d3619</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">phpstorm connect?</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <footer xmlns:git="http://xml.phpdox.net/gitlog#">
+      <span>Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="Pheanstalk_CommandTest" namespace="" name="Pheanstalk_CommandTest" abstract="false" final="false" start="10" end="301">
+  <file path="app/Plugin/Queue/Lib/pheanstalk/tests/Pheanstalk" file="CommandTest.php" realpath="/home/vagrant/socsoc/app/Plugin/Queue/Lib/pheanstalk/tests/Pheanstalk/CommandTest.php" size="9430" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="32354a7f4195f4fcb87566b0ac74d9f2ba1188bf"/>
+  <docblock>
+    <description compact="Tests for Pheanstalk_Command implementations."/>
+    <author value="Paul Annesley"/>
+    <package value="Pheanstalk"/>
+    <licence value="http://www.opensource.org/licenses/mit-license.php"/>
+  </docblock>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testBury" start="12" end="21" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDelete" start="23" end="32" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testIgnore" start="34" end="44" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testKick" start="46" end="56" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testListTubesWatched" start="58" end="68" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testListTubeUsed" start="70" end="80" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testPut" start="82" end="93" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRelease" start="95" end="105" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testReserve" start="107" end="117" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testUse" start="119" end="129" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testWatch" start="131" end="141" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testReserveWithTimeout" start="143" end="152" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTouch" start="154" end="163" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testListTubes" start="165" end="175" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testPeek" start="177" end="187" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testPeekReady" start="189" end="193" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testPeekDelayed" start="195" end="199" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testPeekBuried" start="201" end="205" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testStatsJob" start="207" end="219" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testStatsTube" start="221" end="233" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testStats" start="235" end="247" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testPauseTube" start="249" end="257" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="_assertCommandLine" start="265" end="274" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact=""/>
+      <param type="object">
+        <type full="Pheanstalk_Command" namespace="" name="Pheanstalk_Command"/>
+      </param>
+      <param type="string" variable="$expected"/>
+    </docblock>
+    <parameter name="command" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+    <parameter name="expectData" byreference="false" type="{unknown}" default="false"/>
+  </method>
+  <method name="_assertResponse" start="280" end="284" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact=""/>
+      <param type="object" variable="$response">
+        <type full="Pheanstalk_Response" namespace="" name="Pheanstalk_Response"/>
+      </param>
+      <param type="string" variable="$expectName"/>
+    </docblock>
+    <parameter name="response" byreference="false" type="{unknown}"/>
+    <parameter name="expectName" byreference="false" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="array"/>
+  </method>
+  <method name="_mockJob" start="289" end="300" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact=""/>
+      <param type="int" variable="$id"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="e77a82de1468025cd32f6eb867ad40d71cc50ab8"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-07-10T14:33:53+00:00" unixtime="1373466833"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-07-10T14:33:53+00:00" unixtime="1373466833"/><message>beanstalkd en pheanstalk toegevoegd (again)</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="512eddb40e59de7b26dc75edad1ed769d234b3e3"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-07-09T18:06:49+00:00" unixtime="1373393209"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-07-09T18:06:49+00:00" unixtime="1373393209"/><message>pheanstalk en beanstalkd toegevoegd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit></enrichment></enrichments></class>

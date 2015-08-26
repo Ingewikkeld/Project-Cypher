@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pdxf="http://xml.phpdox.net/functions" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head xmlns:git="http://xml.phpdox.net/gitlog#">
+    <title>phpDox - TinyAuthorize</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav xmlns:git="http://xml.phpdox.net/gitlog#" class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../reports/index.xhtml">Reports</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">TinyAuthorize</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>TinyAuthorize</h1>
+        <h4>Probably the most simple and fastest Acl out there.</h4>
+        <p>Only one config file `acl.ini` necessary<br/>Doesn't even need a Role Model / roles table<br/>Uses most persistent _cake_core_ cache by default</p>
+        <ul>
+          <li>Author: Mark Scherer</li>
+          <li>License: MIT</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class TinyAuthorize
+                extends <a title="BaseAuthorize" href="../classes/BaseAuthorize.xhtml">BaseAuthorize</a>
+            {<br/><ul class="none"><li>// members</li><li>protected
+                         <a href="#members">$_matchArray</a>;
+                    </li><li>protected
+                         <a href="#members">$_defaults</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="TinyAuthorize" href="../classes/TinyAuthorize/__construct.xhtml">__construct</a>()
+                    </li><li>public boolean <a title="TinyAuthorize" href="../classes/TinyAuthorize/authorize.xhtml">authorize</a>()
+                    </li><li>public bool <a title="TinyAuthorize" href="../classes/TinyAuthorize/validate.xhtml">validate</a>()
+                    </li><li>public  <a title="TinyAuthorize" href="../classes/TinyAuthorize/getModel.xhtml">getModel</a>()
+                    </li><li>protected array <a title="TinyAuthorize" href="../classes/TinyAuthorize/_getRoles.xhtml">_getRoles</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/BaseAuthorize.xhtml">BaseAuthorize</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="_defaults">
+              <strong>$_defaults</strong>
+            </li>
+            <li id="_matchArray">
+              <strong>$_matchArray</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="_getRoles"><a title="TinyAuthorize" href="../classes/TinyAuthorize/_getRoles.xhtml">_getRoles()</a>
+                — parse ini file and returns the allowed roles per action - uses cache for maximum performance improved speed by several actions before caching: - resolves role slugs to their primary key / identifier - resolves wildcards to their verbose translation</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="TinyAuthorize" href="../classes/TinyAuthorize/__construct.xhtml">__construct()</a>
+            </li>
+            <li id="authorize"><a title="TinyAuthorize" href="../classes/TinyAuthorize/authorize.xhtml">authorize()</a>
+                — Authorize a user using the AclComponent.</li>
+            <li id="getModel">
+              <a title="TinyAuthorize" href="../classes/TinyAuthorize/getModel.xhtml">getModel()</a>
+            </li>
+            <li id="validate"><a title="TinyAuthorize" href="../classes/TinyAuthorize/validate.xhtml">validate()</a>
+                — validate the url to the role(s) allows single or multi role based authorization</li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul xmlns:git="http://xml.phpdox.net/gitlog#" class="styled history">
+          <li>
+            <h3>2013-10-06T19:40:29+00:00 (commit #<span title="f16525be325aa16218dfea4fe983ccf2a60b79b9">f16525b</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (pauledenburg@gmail.com) /
+                        Commiter: Paul Edenburg (pauledenburg@gmail.com)
+                    </p>
+              <pre class="wrapped">wijzigingen na het aanmaken van een nieuw phpstrom project</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-07-29T20:18:45+00:00 (commit #<span title="287b8750eddef6446e689ccd35cee74b32cde2ed">287b875</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@lamp2.(none)) /
+                        Commiter: Paul Edenburg (paul@lamp2.(none))
+                    </p>
+              <pre class="wrapped">rechten zijn gewijzigd</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-26T15:55:26+00:00 (commit #<span title="58d361958cff9f7a6a85bed1ef717e1029d99d24">58d3619</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">phpstorm connect?</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-14T14:30:14+00:00 (commit #<span title="ab510a8ba8b3726396604720ff22cc62d62cda63">ab510a8</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">hele hoop opgelost, ik had het eerder moeten committen :$</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <footer xmlns:git="http://xml.phpdox.net/gitlog#">
+      <span>Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

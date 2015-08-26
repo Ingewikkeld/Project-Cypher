@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="ReactionsController" namespace="" name="ReactionsController" abstract="false" final="false" start="10" end="115">
+  <file path="app/Controller" file="ReactionsController.php" realpath="/home/vagrant/socsoc/app/Controller/ReactionsController.php" size="3100" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="0879ca5ce1930f85426ddb4be36a3eb83e6075fc"/>
+  <docblock>
+    <description compact="Reactions Controller"/>
+    <property value="Reaction $Reaction"/>
+  </docblock>
+  <extends full="AppController" namespace="" name="AppController"/>
+  <member name="uses" type="array" visibility="public" line="12"/>
+  <method name="admin_index" start="19" end="22" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="index method"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="admin_view" start="31" end="37" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="view method"/>
+      <throws type="object">
+        <type full="NotFoundException" namespace="" name="NotFoundException"/>
+      </throws>
+      <param type="string" variable="$id"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="add" start="44" end="58" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="add method"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="admin_edit" start="67" end="86" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="edit method"/>
+      <throws type="object">
+        <type full="NotFoundException" namespace="" name="NotFoundException"/>
+      </throws>
+      <param type="string" variable="$id"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="admin_delete" start="96" end="110" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="delete method"/>
+      <throws type="object">
+        <type full="MethodNotAllowedException" namespace="" name="MethodNotAllowedException"/>
+      </throws>
+      <throws type="object">
+        <type full="NotFoundException" namespace="" name="NotFoundException"/>
+      </throws>
+      <param type="string" variable="$id"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <parent full="AppController" namepsace="" name="AppController">
+    <extends full="Controller" namespace="" name="Controller"/>
+    <member name="components" type="array" visibility="public" line="36"/>
+    <member name="uses" type="array" visibility="public" line="56">
+      <docblock>
+        <description compact=""/>
+      </docblock>
+    </member>
+    <method name="getSearchFormInfo" start="58" end="85" abstract="false" final="false" static="false" visibility="public">
+      <inline>
+        <comment value="get the information to build the searchform" line="59"/>
+      </inline>
+    </method>
+    <method name="beforeRender" start="91" end="124" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="This function is called before every view is displayed"/>
+      </docblock>
+      <inline>
+        <comment value="cookies need to be accepted" line="100"/>
+        <comment value="get the information needed to setup the search form on every page" line="107"/>
+        <comment value="let the views know whether the user is logged in or not" line="110"/>
+        <comment value="check the supported browser versions if we did not do so" line="113"/>
+        <comment value="get the number of online users" line="116"/>
+        <comment value="get all the rubrics so we can create hidden selectelements which can be used" line="121"/>
+        <comment value="for searching and adding" line="122"/>
+      </inline>
+    </method>
+    <method name="isBrowserOutOfDate" start="169" end="177" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact=""/>
+        <param type="array" variable="$browser"/>
+        <return type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+      </docblock>
+      <parameter name="browser" byreference="false" type="array"/>
+      <inline>
+        <comment value="we didn't recognize the browser" line="174"/>
+      </inline>
+    </method>
+    <method name="beforeFilter" start="183" end="193" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="This function is called before every action is run"/>
+      </docblock>
+      <inline>
+        <comment value="update the last online value for the currently logged in user (if any)" line="186"/>
+        <comment value="set the max upload limit" line="189"/>
+      </inline>
+    </method>
+    <method name="isAuthorized" start="235" end="259" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Set global authorization for the application">Per-action authorization is set in the overwritten function 'isAuthorized($user)'
+in the controller of a requested action.
+This global function sets authorization on all actions of all controllers for users
+with the role 'beheerder'</description>
+        <param description="Array holding $user['id']" type="array" variable="$user"/>
+        <return description="True when the user has the role 'beheerder', otherwise false" type="boolean"/>
+      </docblock>
+      <parameter name="user" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="admin users are allowed to do everything" line="236"/>
+        <comment value="admin functions are for admins only" line="241"/>
+        <comment value="setup the allowed actions for loggedin users" line="247"/>
+        <comment value="actions allowed for loggedin users only" line="252"/>
+        <comment value="default deny access" line="257"/>
+      </inline>
+    </method>
+    <method name="updateAuthUserInfo" start="266" end="288" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Update the information hold in the Auth component. Useful when the users' information changes (when editing user information, for example)."/>
+      </docblock>
+      <inline>
+        <comment value="Read in the current user information out of the database" line="267"/>
+        <comment value="remove the password field" line="272"/>
+        <comment value="merge the auth component data with our freshly fetched info" line="277"/>
+        <comment value="write the user information to the Auth component" line="283"/>
+      </inline>
+    </method>
+    <method name="ago" start="296" end="365" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact=""/>
+        <param description="The time we want to break down into human readable time" type="object" variable="$time">
+          <type full="unknown" namespace="" name="unknown"/>
+        </param>
+        <param type="object" variable="$rcs">
+          <type full="int|number" namespace="" name="int|number"/>
+        </param>
+        <return type="string"/>
+      </docblock>
+      <parameter name="time" byreference="false" type="{unknown}"/>
+      <parameter name="rcs" byreference="false" type="integer" default="0"/>
+      <inline>
+        <comment value="periods of time we have (singular)" line="300"/>
+        <comment value="periods of time we have (plural)" line="312"/>
+        <comment value="the length of each period of time in seconds" line="324"/>
+        <comment value="loop through the supplied time" line="337"/>
+        <comment value="ugly hack to prevent $countLength from getting -1" line="344"/>
+        <comment value="write down the singular form of past time" line="349"/>
+        <comment value="when working with plurals, change the name of the period to its plural form" line="352"/>
+      </inline>
+    </method>
+    <method name="daysBetween" start="372" end="376" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact=""/>
+        <param variable="$fromTime"/>
+        <return type="float"/>
+      </docblock>
+      <parameter name="fromTime" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getBrowser" start="381" end="485" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Browser check"/>
+      </docblock>
+      <inline>
+        <comment value="First get the platform?" line="390"/>
+        <comment value="Next get the name of the useragent yes seperately and for good reason" line="401"/>
+        <comment value="finally get the correct version number" line="446"/>
+        <comment value="see how many we have" line="454"/>
+        <comment value="we will have two since we are not using 'other' argument yet" line="457"/>
+        <comment value="see if version is before or after the name" line="458"/>
+        <comment value="check if we have a number" line="470"/>
+      </inline>
+    </method>
+  </parent>
+</class>

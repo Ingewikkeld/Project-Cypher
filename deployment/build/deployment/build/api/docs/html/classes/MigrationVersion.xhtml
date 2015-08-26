@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pdxf="http://xml.phpdox.net/functions" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head xmlns:git="http://xml.phpdox.net/gitlog#">
+    <title>phpDox - MigrationVersion</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav xmlns:git="http://xml.phpdox.net/gitlog#" class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../reports/index.xhtml">Reports</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">MigrationVersion</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>MigrationVersion</h1>
+        <h4>Migration version management.</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class MigrationVersion
+            {<br/><ul class="none"><li>// members</li><li>public
+                         <a href="#members">$connection</a>;
+                    </li><li>public <span title="null|string">null|string</span>
+                         <a href="#members">$migrationConnection</a>;
+                    </li><li>public <span title="Model">Model</span>
+                         <a href="#members">$Version</a>;
+                    </li><li>private
+                         <a href="#members">$__mapping</a>;
+                    </li><li>public
+                         <a href="#members">$precheck</a>;
+                    </li><li>public
+                         <a href="#members">$dry</a>;
+                    </li><li>public
+                         <a href="#members">$log</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="MigrationVersion" href="../classes/MigrationVersion/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="MigrationVersion" href="../classes/MigrationVersion/initVersion.xhtml">initVersion</a>()
+                    </li><li>public integer <a title="MigrationVersion" href="../classes/MigrationVersion/getVersion.xhtml">getVersion</a>()
+                    </li><li>public boolean <a title="MigrationVersion" href="../classes/MigrationVersion/setVersion.xhtml">setVersion</a>()
+                    </li><li>public mixed <a title="MigrationVersion" href="../classes/MigrationVersion/getMapping.xhtml">getMapping</a>()
+                    </li><li>public boolean|CakeMigration <a title="MigrationVersion" href="../classes/MigrationVersion/getMigration.xhtml">getMigration</a>()
+                    </li><li>public boolean <a title="MigrationVersion" href="../classes/MigrationVersion/run.xhtml">run</a>()
+                    </li><li>private void <a title="MigrationVersion" href="../classes/MigrationVersion/__initMigrations.xhtml">__initMigrations</a>()
+                    </li><li>private mixed <a title="MigrationVersion" href="../classes/MigrationVersion/__loadFile.xhtml">__loadFile</a>()
+                    </li><li>protected array <a title="MigrationVersion" href="../classes/MigrationVersion/_enumerateMigrations.xhtml">_enumerateMigrations</a>()
+                    </li><li>protected array <a title="MigrationVersion" href="../classes/MigrationVersion/_enumerateNewMigrations.xhtml">_enumerateNewMigrations</a>()
+                    </li><li>protected array <a title="MigrationVersion" href="../classes/MigrationVersion/_enumerateOldMigrations.xhtml">_enumerateOldMigrations</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="__mapping"><strong>$__mapping</strong>
+                —
+                array<br/><span class="indent">Mapping cache</span></li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="Version"><strong>$Version</strong>
+                —
+                <a href="#">Model</a><br/><span class="indent">Instance of SchemaMigrations model</span></li>
+            <li id="connection"><strong>$connection</strong>
+                —
+                string<br/><span class="indent">Connection used for the migration_schema table of the migration versions</span></li>
+            <li id="dry"><strong>$dry</strong>
+                —
+                boolean<br/><span class="indent">Should the run be dry or not.</span></li>
+            <li id="log"><strong>$log</strong>
+                —
+                array<br/><span class="indent">Log of SQL queries generated</span></li>
+            <li id="migrationConnection"><strong>$migrationConnection</strong>
+                —
+                <a href="#">null|string</a><br/><span class="indent">Connection used for the migration</span></li>
+            <li id="precheck"><strong>$precheck</strong>
+                —
+                string<br/><span class="indent">Precheck mode</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="__initMigrations"><a title="MigrationVersion" href="../classes/MigrationVersion/__initMigrations.xhtml">__initMigrations()</a>
+                — Initialize the migrations schema and keep it up-to-date</li>
+            <li id="__loadFile"><a title="MigrationVersion" href="../classes/MigrationVersion/__loadFile.xhtml">__loadFile()</a>
+                — Load a file based on name and type</li>
+          </ul>
+          <h4>protected</h4>
+          <ul>
+            <li id="_enumerateMigrations"><a title="MigrationVersion" href="../classes/MigrationVersion/_enumerateMigrations.xhtml">_enumerateMigrations()</a>
+                — Returns a map of all available migrations for a type (app or plugin)</li>
+            <li id="_enumerateNewMigrations"><a title="MigrationVersion" href="../classes/MigrationVersion/_enumerateNewMigrations.xhtml">_enumerateNewMigrations()</a>
+                — Returns a map of all available migrations for a type (app or plugin) using inflection</li>
+            <li id="_enumerateOldMigrations"><a title="MigrationVersion" href="../classes/MigrationVersion/_enumerateOldMigrations.xhtml">_enumerateOldMigrations()</a>
+                — Returns a map of all available migrations for a type (app or plugin) using regular expressions</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="MigrationVersion" href="../classes/MigrationVersion/__construct.xhtml">__construct()</a>
+                — Constructor</li>
+            <li id="getMapping"><a title="MigrationVersion" href="../classes/MigrationVersion/getMapping.xhtml">getMapping()</a>
+                — Get mapping for the given type</li>
+            <li id="getMigration"><a title="MigrationVersion" href="../classes/MigrationVersion/getMigration.xhtml">getMigration()</a>
+                — Load and make a instance of the migration</li>
+            <li id="getVersion"><a title="MigrationVersion" href="../classes/MigrationVersion/getVersion.xhtml">getVersion()</a>
+                — Get last version for given type</li>
+            <li id="initVersion"><a title="MigrationVersion" href="../classes/MigrationVersion/initVersion.xhtml">initVersion()</a>
+                — get a new SchemaMigration instance</li>
+            <li id="run"><a title="MigrationVersion" href="../classes/MigrationVersion/run.xhtml">run()</a>
+                — Run the migrations</li>
+            <li id="setVersion"><a title="MigrationVersion" href="../classes/MigrationVersion/setVersion.xhtml">setVersion()</a>
+                — Set current version for given type</li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul xmlns:git="http://xml.phpdox.net/gitlog#" class="styled history">
+          <li>
+            <h3>2013-11-19T14:52:19+00:00 (commit #<span title="ee4572070e63c2c8754f7a4dbdd57761480b4d6b">ee45720</span>)</h3>
+            <div>
+              <p>
+                        Author: vagrant (vagrant@precise32.(none)) /
+                        Commiter: vagrant (vagrant@precise32.(none))
+                    </p>
+              <pre class="wrapped">migrations plugin geinstalleerd en eerste initiele schema(.php) gemaakt</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <footer xmlns:git="http://xml.phpdox.net/gitlog#">
+      <span>Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

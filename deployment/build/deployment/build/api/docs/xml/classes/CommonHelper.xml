@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="CommonHelper" namespace="" name="CommonHelper" abstract="false" final="false" start="7" end="827">
+  <file path="app/Plugin/Tools/View/Helper" file="CommonHelper.php" realpath="/home/vagrant/socsoc/app/Plugin/Tools/View/Helper/CommonHelper.php" size="22978" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="a35b780fa9f1e0b236e7a1d6b8909c6f9dd58e63"/>
+  <docblock>
+    <description compact="All site-wide necessary stuff for the view layer"/>
+  </docblock>
+  <extends full="AppHelper" namespace="" name="AppHelper"/>
+  <member name="helpers" type="array" visibility="public" line="9"/>
+  <member name="packages" type="array" visibility="public" line="11"/>
+  <method name="metaRobots" start="23" end="39" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="convinience function for clean ROBOTS allowance"/>
+      <param type="object" variable="private/public">2008-12-08 ms<type full="STRING" namespace="" name="STRING"/></param>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="metaName" start="48" end="58" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="convinience function for clean meta name tags"/>
+      <param description="author, date, generator, revisit-after, language" type="object" variable="$name:">
+        <type full="STRING" namespace="" name="STRING"/>
+      </param>
+      <param description="if array, it will be seperated by commas" type="object" variable="$content:">
+        <type full="MIXED" namespace="" name="MIXED"/>
+      </param>
+      <return description="$htmlMarkup" type="string">2009-07-07 ms</return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="content" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="metaDescription" start="66" end="73" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param type="string" variable="$content"/>
+      <param description="(iso2: de, en-us, ...)" type="string" variable="$language"/>
+      <param type="array" variable="$additionalOptions"/>
+      <return description="$htmlMarkup" type="string"/>
+    </docblock>
+    <parameter name="content" byreference="false" type="{unknown}"/>
+    <parameter name="language" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="options" byreference="false" type="array"/>
+  </method>
+  <method name="metaKeywords" start="81" end="97" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param type="object" variable="$keywords">
+        <type full="string|array" namespace="" name="string|array"/>
+      </param>
+      <param description="(iso2: de, en-us, ...)" type="string" variable="$language"/>
+      <param type="object" variable="$escape">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <return description="$htmlMarkup" type="string"/>
+    </docblock>
+    <parameter name="keywords" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="language" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="escape" byreference="false" type="{unknown}" default="true"/>
+  </method>
+  <method name="metaCanonical" start="105" end="109" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="convinience function for &quot;canonical&quot; SEO links"/>
+      <return description="$htmlMarkup" type="string">2010-03-03 ms</return>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="full" byreference="false" type="{unknown}" default="false"/>
+    <inline>
+      <comment value="return $this-&gt;Html-&gt;meta('canonical', $canonical, array('rel'=&gt;'canonical', 'type'=&gt;null, 'title'=&gt;null));" line="107"/>
+    </inline>
+  </method>
+  <method name="metaAlternate" start="122" end="141" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="convinience function for &quot;alternate&quot; SEO links"/>
+      <param type="mixed" variable="$url"/>
+      <param description="(lang(iso2) or array of langs)" type="mixed" variable="$lang">lang: language (in ISO 6391-1 format) + optionally the region (in ISO 3166-1 Alpha 2 format)
+- de
+- de-ch
+etc</param>
+      <return description="$htmlMarkup" type="string">2011-12-12 ms</return>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}"/>
+    <parameter name="lang" byreference="false" type="{unknown}"/>
+    <parameter name="full" byreference="false" type="{unknown}" default="false"/>
+    <inline>
+      <comment value="return $this-&gt;Html-&gt;meta('canonical', $canonical, array('rel'=&gt;'canonical', 'type'=&gt;null, 'title'=&gt;null));" line="124"/>
+    </inline>
+  </method>
+  <method name="metaRss" start="150" end="161" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="convinience function for META Tags"/>
+      <param type="object" variable="type">
+        <type full="STRING" namespace="" name="STRING"/>
+      </param>
+      <param type="object" variable="content">
+        <type full="STRING" namespace="" name="STRING"/>
+      </param>
+      <return description="$htmlMarkup" type="string">2008-12-08 ms</return>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="title" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="metaEquiv" start="171" end="194" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="convinience function for META Tags"/>
+      <param type="object" variable="type">
+        <type full="STRING" namespace="" name="STRING"/>
+      </param>
+      <param type="object" variable="content">
+        <type full="STRING" namespace="" name="STRING"/>
+      </param>
+      <return description="$htmlMarkup" type="string">2008-12-08 ms</return>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="value" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="escape" byreference="false" type="{unknown}" default="true"/>
+  </method>
+  <method name="css" start="204" end="215" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="(example): array(x, Tools|y, Tools.Jquery|jquery/sub/z) =&gt; x is in webroot/ =&gt; y is in plugins/tools/webroot/ =&gt; z is in plugins/tools/packages/jquery/files/jquery/sub/"/>
+      <return description="$htmlMarkup" type="string">2011-03-23 ms</return>
+    </docblock>
+    <parameter name="files" byreference="false" type="array"/>
+    <parameter name="rel" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="options" byreference="false" type="array"/>
+  </method>
+  <method name="script" start="225" end="235" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="(example): array(x, Tools|y, Tools.Jquery|jquery/sub/z) =&gt; x is in webroot/ =&gt; y is in plugins/tools/webroot/ =&gt; z is in plugins/tools/packages/jquery/files/jquery/sub/"/>
+      <return description="$htmlMarkup" type="string">2011-03-23 ms</return>
+    </docblock>
+    <parameter name="files" byreference="false" type="array"/>
+    <parameter name="options" byreference="false" type="array"/>
+  </method>
+  <method name="cssDyn" start="246" end="249" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="special css tag generator with the option to add '?...' to the link (for caching prevention) IN USAGE needs manual adjustment, but still better than the core one!"/>
+      <example value="needs Asset.cssversion =&gt; xyz (going up with counter)"/>
+      <return description="$htmlMarkup" type="string">2008-12-08 ms</return>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="rel" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="htmlAttributes" byreference="false" type="array"/>
+    <parameter name="return" byreference="false" type="{unknown}" default="true"/>
+  </method>
+  <method name="cssAuto" start="258" end="264" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="NOT IN USAGE but better than the core one!"/>
+      <example value="needs Asset.timestamp =&gt; force"/>
+      <return description="$htmlMarkup" type="string">2008-12-08 ms</return>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="rel" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="htmlAttributes" byreference="false" type="array"/>
+    <parameter name="return" byreference="false" type="{unknown}" default="true"/>
+  </method>
+  <method name="displayErrors" start="274" end="301" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="still necessary?"/>
+      <param type="array" variable="$fields"/>
+      <return description="$html" type="string"/>
+    </docblock>
+    <parameter name="fields" byreference="false" type="array"/>
+    <inline>
+      <comment value="catch ALL" line="277"/>
+    </inline>
+  </method>
+  <method name="_renderError" start="303" end="308" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="error" byreference="false" type="{unknown}"/>
+    <parameter name="escape" byreference="false" type="{unknown}" default="true"/>
+  </method>
+  <method name="alternate" start="324" end="334" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Alternates between two or more strings.">echo CommonHelper::alternate('one', 'two'); // "one"
+echo CommonHelper::alternate('one', 'two'); // "two"
+echo CommonHelper::alternate('one', 'two'); // "one"
+
+Note that using multiple iterations of different strings may produce
+unexpected results.
+TODO: move to booststrap!!!</description>
+      <param description="strings to alternate between" type="string"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="sessionCheck" start="342" end="350" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="check if session works due to allowed cookies">2009-06-29 ms</description>
+    </docblock>
+  </method>
+  <method name="sessionCheckAlert" start="356" end="361" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="display warning if cookies are disallowed (and session won't work) 2009-06-29 ms"/>
+    </docblock>
+  </method>
+  <method name="asp" start="371" end="378" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="//TODO: move boostrap auto-pluralizing a word using the Inflection class"/>
+      <param description="= the string to be pl." type="string" variable="$s"/>
+      <param description="= the count" type="int" variable="$c"/>
+      <return description="&quot;member&quot; or &quot;members&quot; OR &quot;Mitglied&quot;/&quot;Mitglieder&quot; if autoTranslate TRUE" type="object">2009-07-23 ms<type full="$string" namespace="" name="$string"/></return>
+    </docblock>
+    <parameter name="s" byreference="false" type="{unknown}"/>
+    <parameter name="c" byreference="false" type="{unknown}"/>
+    <parameter name="autoTranslate" byreference="false" type="{unknown}" default="false"/>
+  </method>
+  <method name="sp" start="390" end="401" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="//TODO: move boostrap manual pluralizing a word using the Inflection class"/>
+      <param type="string" variable="$singular"/>
+      <param type="string" variable="$plural"/>
+      <param type="int" variable="$count"/>
+      <return description="$result" type="string">2009-07-23 ms</return>
+    </docblock>
+    <parameter name="s" byreference="false" type="{unknown}"/>
+    <parameter name="p" byreference="false" type="{unknown}"/>
+    <parameter name="c" byreference="false" type="{unknown}"/>
+    <parameter name="autoTranslate" byreference="false" type="{unknown}" default="false"/>
+  </method>
+  <method name="flash" start="410" end="442" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Show FlashMessages"/>
+      <param description="unsorted true/false [default:FALSE = sorted by priority]" type="boolean">TODO: export div wrapping method (for static messaging on a page)
+TODO: sorting
+2010-11-22 ms</param>
+    </docblock>
+    <parameter name="unsorted" byreference="false" type="{unknown}" default="false"/>
+    <parameter name="backwardsComp" byreference="false" type="{unknown}" default="true"/>
+    <inline>
+      <comment value="Get the messages from the session" line="411"/>
+      <comment value="Add a div for each message using the type as the class" line="422"/>
+    </inline>
+  </method>
+  <method name="flashMessage" start="448" end="456" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="output a single flashMessage 2010-11-22 ms"/>
+    </docblock>
+    <parameter name="msg" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="string" default="'info'"/>
+    <parameter name="escape" byreference="false" type="{unknown}" default="true"/>
+  </method>
+  <method name="_message" start="458" end="463" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="msg" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="transientFlashMessage" start="473" end="475" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="add a message on the fly"/>
+      <param type="string" variable="$msg"/>
+      <param type="string" variable="$class"/>
+      <return description="$success" type="object">2011-05-25 ms<type full="bool" namespace="" name="bool"/></return>
+    </docblock>
+    <parameter name="msg" byreference="false" type="{unknown}"/>
+    <parameter name="class" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="esc" start="489" end="520" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="TODO: move into TextExt? escape text with some more automagic"/>
+      <param type="string" variable="$text"/>
+      <param type="array" variable="$options"/>
+      <return description="$processedText" type="string">- nl2br: true/false (defaults to true)
+- escape: false prevents h() and space transformation (defaults to true)
+- tabsToSpaces: int (defaults to 4)
+2010-11-20 ms</return>
+    </docblock>
+    <parameter name="text" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array"/>
+    <inline>
+      <comment value="$text = str_replace(' ', '&amp;nbsp;', h($text));" line="491"/>
+      <comment value="try to fix indends made out of spaces" line="493"/>
+    </inline>
+  </method>
+  <method name="framebuster" start="528" end="532" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="prevents site being opened/included by others/websites inside frames 2009-01-08 ms"/>
+    </docblock>
+  </method>
+  <method name="browserAlert" start="542" end="577" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="currenctly only alerts on IE6/IE7 options - engine (js, jquery) - escape needs the id element to be a present (div) container in the layout 2009-12-26 ms"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array"/>
+  </method>
+  <method name="honeypot" start="585" end="595" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="in noscript tags: - link which should not be followed by bots! - &quot;pseudo&quot;image which triggers log 2009-12-28 ms"/>
+    </docblock>
+    <parameter name="noFollowUrl" byreference="false" type="{unknown}"/>
+    <parameter name="noscriptUrl" byreference="false" type="array"/>
+  </method>
+  <method name="visitStats" start="606" end="637" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="print js-visit-stats-link to layout uses Piwik open source statistics framework 2009-04-15 ms"/>
+    </docblock>
+    <parameter name="viewPath" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="visitStatsImg" start="643" end="651" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="non js browsers 2009-09-07 ms"/>
+    </docblock>
+    <parameter name="trackingUrl" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="isRole" start="663" end="675" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="SINGLE ROLES function currently: isRole('admin'), isRole('user')"/>
+      <deprecated value="- use Auth class instead">2009-07-06 ms</deprecated>
+    </docblock>
+    <parameter name="role" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="roleNames" start="684" end="723" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks if a role is in the current users session"/>
+      <param description="right(s) as array - or a single one as string possible" type="object">Note: all of them need to be in the user roles to return true by default<type full="necessary" namespace="" name="necessary"/></param>
+      <deprecated value="- use Auth class instead"/>
+    </docblock>
+    <parameter name="sessionRoles" byreference="false" type="{unknown}" default="null"/>
+    <inline>
+      <comment value="if ($Role-&gt;useDbConfig == 'test_suite') {" line="695"/>
+      <comment xmlns="http://xml.phpdox.net/src#" value="return array();" line="696"/>
+      <comment xmlns="http://xml.phpdox.net/src#" value="}" line="697"/>
+      <comment value="$roleKeys = Set::combine($roles, '/Role/id','/Role/name'); // on find(all)" line="703"/>
+    </inline>
+  </method>
+  <method name="displayRoles" start="730" end="736" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Display Roles separated by Commas"/>
+      <deprecated value="- use Auth class instead">2009-07-17 ms</deprecated>
+    </docblock>
+    <parameter name="sessionRoles" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="placeHolder" byreference="false" type="string" default="'---'"/>
+  </method>
+  <method name="roleNamesTranslated" start="742" end="754" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="takes int / array(int) and finds the role name to it"/>
+      <return description="roles" type="array"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="showDebug" start="759" end="793" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <deprecated value=""/>
+    </docblock>
+  </method>
+  <method name="link" start="813" end="825" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Creates an HTML link.">If $url starts with "http://" this is treated as an external link. Else,
+it is treated as a path to controller/action and parsed with the
+HtmlHelper::url() method.
+
+If the $url is empty, $title is used instead.</description>
+      <param description="The content to be wrapped by &lt;a&gt; tags." type="string" variable="$title"/>
+      <param description="Cake-relative URL or array of URL parameters, or external URL (starts with http://)" type="mixed" variable="$url"/>
+      <param description="Array of HTML attributes." type="array" variable="$htmlAttributes"/>
+      <param description="JavaScript confirmation message." type="string" variable="$confirmMessage"/>
+      <param description="Whether or not $title should be HTML escaped." type="boolean" variable="$escapeTitle"/>
+      <return description="An &lt;a /&gt; element." type="string"/>
+      <deprecated value="?">// core-hack! $rel = null | !!!!!!!!! Somehow causes trouble with routing functionality of this helper function... careful!</deprecated>
+    </docblock>
+    <parameter name="title" byreference="false" type="{unknown}"/>
+    <parameter name="url" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="htmlAttributes" byreference="false" type="array"/>
+    <parameter name="confirmMessage" byreference="false" type="{unknown}" default="false"/>
+    <parameter name="escapeTitle" byreference="false" type="{unknown}" default="true"/>
+    <parameter name="rel" byreference="false" type="{unknown}" default="null"/>
+    <inline>
+      <comment value="core-hack $rel (relative to current position/routing) *" line="815"/>
+      <comment value="core-hack END *" line="822"/>
+    </inline>
+  </method>
+  <parent full="AppHelper" namepsace="" name="AppHelper">
+    <extends full="Helper" namespace="" name="Helper"/>
+  </parent>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ab510a8ba8b3726396604720ff22cc62d62cda63"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><message>hele hoop opgelost, ik had het eerder moeten committen :$</message></commit></enrichment></enrichments></class>

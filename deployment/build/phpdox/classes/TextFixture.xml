@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="TextFixture" namespace="" name="TextFixture" abstract="false" final="false" start="6" end="36">
+  <file path="app/Test/Fixture" file="TextFixture.php" realpath="/home/vagrant/socsoc/app/Test/Fixture/TextFixture.php" size="1188" time="2014-04-09T09:19:09+00:00" unixtime="1397035149" sha1="4af467b86526bb347bc4ceee9a921d78b4d96290"/>
+  <docblock>
+    <description compact="TextFixture"/>
+  </docblock>
+  <extends full="CakeTestFixture" namespace="" name="CakeTestFixture"/>
+  <member name="fields" type="array" visibility="public" line="13">
+    <docblock>
+      <description compact="Fields"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="records" type="array" visibility="public" line="28">
+    <docblock>
+      <description compact="Records"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+</class>

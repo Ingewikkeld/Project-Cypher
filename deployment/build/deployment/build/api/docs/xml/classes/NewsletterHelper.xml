@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="NewsletterHelper" namespace="" name="NewsletterHelper" abstract="false" final="false" start="40" end="222">
+  <file path="app/View/Helper" file="NewsletterHelper.php" realpath="/home/vagrant/socsoc/app/View/Helper/NewsletterHelper.php" size="7661" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="d3e46189963dce0a39f6bdb452cfae36f2c97f44"/>
+  <docblock>
+    <description compact="Class NewsletterHelper"/>
+  </docblock>
+  <extends full="Helper" namespace="" name="Helper"/>
+  <method name="writePostsToTable" start="49" end="68" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param variable="$newsletter"/>
+      <param variable="$posts"/>
+      <param variable="$html"/>
+      <param description="The piwik campaign name (which is used in the url: ?pk_campaign=&lt;campaign_name&gt;)" variable="$campaign" type="string"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="newsletter" byreference="false" type="{unknown}"/>
+    <parameter name="posts" byreference="false" type="{unknown}"/>
+    <parameter name="html" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="EDIT: onderstaande is niet meer relevant" line="55"/>
+      <comment value="// dirty hack: assign a different name to 'Belasting &amp; Juridische hulp'" line="56"/>
+      <comment value="if( $post['Rubric']['shortname'] == 'belastingjuridischehulp'){" line="57"/>
+      <comment value="$post['Rubric']['name'] = 'belasting &amp;amp; juridisch';" line="58"/>
+      <comment value="}" line="59"/>
+      <comment value="get the post in table-form" line="61"/>
+    </inline>
+  </method>
+  <method name="writePostToCell" start="76" end="157" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param variable="$newsletter"/>
+      <param variable="$post"/>
+      <param variable="$html"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="newsletter" byreference="false" type="{unknown}"/>
+    <parameter name="post" byreference="false" type="{unknown}"/>
+    <parameter name="html" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="the colors for the rubrics" line="77"/>
+      <comment value="fill the variable for use in the HTML later on" line="87"/>
+      <comment value="set the default image when there is an uploaded one" line="93"/>
+      <comment value="there is an uploaded image available" line="96"/>
+      <comment value="the fullpath to the image" line="99"/>
+      <comment value="set the correct dimensions which belong to the dimension for this image (will alter $this-&gt;imgOptions)" line="102"/>
+      <comment value="assemble the HTML weblink for the image" line="105"/>
+      <comment value="set the default image, when there was no custom uploaded image" line="110"/>
+      <comment value="make everything into weblinks" line="117"/>
+      <comment value="$campaignVariable = '?pk_campaign='.$newsletter['Newsletter']['subject'];" line="118"/>
+    </inline>
+  </method>
+  <method name="setImageOptions" start="168" end="189" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the right dimension for the orientation of the images in the newsletter.">The width and height get set whether the image is of landscape or portrait oriented. These values will then
+be added to $this-&gt;imgOptions in both CSS style as inline 'height' and 'width' attributes for the &lt;img&gt; tag</description>
+      <param description="The array of image-information as returned by the function getImageSize()" type="array" variable="$imageInfo"/>
+      <return description="true on success, false otherwise" type="boolean"/>
+    </docblock>
+    <parameter name="imageInfo" byreference="false" type="array"/>
+    <inline>
+      <comment value="image is mandatory" line="170"/>
+    </inline>
+  </method>
+  <method name="getImageSize" start="197" end="221" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the dimensions and orientation of an image"/>
+      <param description="Full path to the image" type="string" variable="$image"/>
+      <return description="Associated array containing: orientation, width and height. Returns false on error and logs to errorlog" type="array"/>
+    </docblock>
+    <parameter name="image" byreference="false" type="string" default="''"/>
+    <inline>
+      <comment value="image is mandatory" line="198"/>
+      <comment value="see if the image exists" line="201"/>
+      <comment value="get the information of the given image" line="207"/>
+      <comment value="figure out whether the image is portrait or landscape oriented" line="210"/>
+      <comment value="format our own array with information we need and return it" line="214"/>
+    </inline>
+  </method>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="e723fc40ba20519ea1747f0d23fbab360f4acdf5"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-12-02T12:54:44+00:00" unixtime="1385988884"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-12-02T12:54:44+00:00" unixtime="1385988884"/><message>kleuren van de borders van de oproepen aangepast
+
+fixes #102</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="36b36016d1d6d14e585ec81bd45e7311a18acde5"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-11-04T14:53:55+00:00" unixtime="1383576835"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-11-04T14:53:55+00:00" unixtime="1383576835"/><message>Kleuren gezet voor de nieuwe rubrieken waardoor de posts in deze rubrieken in de nieuwsbrief een eigen kleur krijgen.
+
+fixes #71</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="c655de5c6ec34517511e6f908a2f638ad91a9d78"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-08-08T06:57:01+00:00" unixtime="1375945021"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-08-08T06:57:01+00:00" unixtime="1375945021"/><message>permissions goed gezet mbv fabric</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="e07ed27f5fc69e25d5e4976f2d4581adee6c7b04"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-07-30T04:13:13+00:00" unixtime="1375157593"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-07-30T04:13:13+00:00" unixtime="1375157593"/><message>execute bits verwijderd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="28acc0dc022b2ceaa47547071e9cecc0a53fc08b"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-07-29T18:23:53+00:00" unixtime="1375122233"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-07-29T18:23:53+00:00" unixtime="1375122233"/><message>files zijn blijkbaar gewijzigd na een schone checkout (= opzetten nieuw project in phpstorm)</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="28119fb8bd04c4d3171ad13a65faa20d9e7c8242"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-07-22T16:27:54+00:00" unixtime="1374510474"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-07-22T16:27:54+00:00" unixtime="1374510474"/><message>- overview van inactieve gebruikeraccounts gemaakt
+- overview kan als .csv gedownload worden
+- alle gebruikers kunnen in 1 keer geactiveerd worden.
+
+fixes issue #9</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="a8d40b8b216e39153b600b9926732357ad24abaa"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-07-05T21:47:34+00:00" unixtime="1373060854"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-07-05T21:47:34+00:00" unixtime="1373060854"/><message>Er kan nu een status aan een useraccount toegevoegd worden. Deze status kan nu zijn: standaard of facebook. fixes issue #7 and fixes issue #8</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="df71f3c56f8fc3c1665e70feceea5a1489338b74"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T19:16:26+00:00" unixtime="1372274186"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T19:16:26+00:00" unixtime="1372274186"/><message>crlf linefeeds?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="cf9563ad54e0e11bcbef81076ad68746930570ce"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-23T15:50:00+00:00" unixtime="1372002600"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-23T15:50:00+00:00" unixtime="1372002600"/><message>php mess detector: bevindingen verwerkt</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ab510a8ba8b3726396604720ff22cc62d62cda63"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><message>hele hoop opgelost, ik had het eerder moeten committen :$</message></commit></enrichment></enrichments></class>

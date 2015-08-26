@@ -1,0 +1,25 @@
+---
+  - name: rsnapshot | Ensure RSnapshot is installed
+    apt: pkg=rsnapshot state=installed cache_valid_time=3600
+    when: vm==0
+
+  - name: rsnapshot | Set RSnapshot configuration
+    action: template src=files/conf/rsnapshot.conf.j2 dest=/etc/rsnapshot.conf
+    when: vm==0
+
+  - name: rsnapshot | Ensure database-backup-script is in place
+    action: template src=files/backup-dbs.sh.j2 dest=/etc/backup-dbs.sh
+    when: vm==0
+
+  - name: rsnapshot | Ensure database-backup-script has correct mode and owner
+    file: path=/etc/backup-dbs.sh owner=root group=root mode=0750
+    when: vm==0
+
+  - name: rsnapshot | Ensure mysql-backup directory exists
+    file: path=/var/backups/rsnapshot/mysql state=directory mode=0770 owner=root group=root
+    when: vm==0
+
+  - name: rsnapshot | Test RSnapshot configuration
+    command: /usr/bin/rsnapshot configtest
+    when: vm==0
+

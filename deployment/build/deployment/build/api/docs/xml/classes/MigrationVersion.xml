@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="MigrationVersion" namespace="" name="MigrationVersion" abstract="false" final="false" start="31" end="491">
+  <file path="app/Plugin/migrations/Lib" file="MigrationVersion.php" realpath="/home/vagrant/socsoc/app/Plugin/migrations/Lib/MigrationVersion.php" size="13683" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="df647bdcc610bd36dbd317b505cd2ffec1bf15e4"/>
+  <docblock>
+    <description compact="Migration version management."/>
+    <package value="migrations"/>
+    <subpackage value="migrations.libs"/>
+  </docblock>
+  <member name="connection" type="string" default="'default'" visibility="public" line="38">
+    <docblock>
+      <description compact="Connection used for the migration_schema table of the migration versions"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="migrationConnection" type="{unknown}" default="null" visibility="public" line="47">
+    <docblock>
+      <description compact="Connection used for the migration">This can be used to override the connection of migration file</description>
+      <var type="object">
+        <type full="null|string" namespace="" name="null|string"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="Version" type="{unknown}" visibility="public" line="54">
+    <docblock>
+      <description compact="Instance of SchemaMigrations model"/>
+      <var type="object">
+        <type full="Model" namespace="" name="Model"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="__mapping" type="array" visibility="private" line="61">
+    <docblock>
+      <description compact="Mapping cache"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="precheck" type="string" default="'Migrations.PrecheckException'" visibility="public" line="68">
+    <docblock>
+      <description compact="Precheck mode"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="dry" type="{unknown}" default="false" visibility="public" line="78">
+    <docblock>
+      <description compact="Should the run be dry or not.">If try, the SQL will be outputted to screen rather than
+applied to the database</description>
+      <var type="boolean"/>
+    </docblock>
+  </member>
+  <member name="log" type="array" visibility="public" line="87">
+    <docblock>
+      <description compact="Log of SQL queries generated">This is used for dry run</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="94" end="117" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor"/>
+      <param description="optional load object properties" type="array" variable="$options"/>
+    </docblock>
+    <parameter name="options" byreference="false" type="array"/>
+  </constructor>
+  <method name="initVersion" start="125" end="131" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get a new SchemaMigration instance"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getVersion" start="139" end="151" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get last version for given type"/>
+      <param description="Can be 'app' or a plugin name" type="string" variable="$type"/>
+      <return description="Last version migrated" type="integer"/>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setVersion" start="162" end="194" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set current version for given type"/>
+      <param description="Current version" type="integer" variable="$version"/>
+      <param description="Can be 'app' or a plugin name" type="string" variable="$type"/>
+      <param description="If true, will add the record to the database" type="boolean" variable="$migrated">If false, will remove the record from the database</param>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="version" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="migrated" byreference="false" type="{unknown}" default="true"/>
+    <inline>
+      <comment value="For BC, 002 was not applied yet." line="172"/>
+      <comment value="Clear mapping cache" line="190"/>
+    </inline>
+  </method>
+  <method name="getMapping" start="203" end="266" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get mapping for the given type"/>
+      <param description="Can be 'app' or a plugin name" type="string" variable="$type"/>
+      <param type="object" variable="$cache">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <return description="False in case of no file found or empty mapping, array with mapping" type="mixed"/>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="cache" byreference="false" type="{unknown}" default="true"/>
+    <inline>
+      <comment value="For BC, 002 was not applied yet." line="226"/>
+    </inline>
+  </method>
+  <method name="getMigration" start="278" end="295" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Load and make a instance of the migration"/>
+      <param description="File name where migration resides" type="string" variable="$name"/>
+      <param description="Migration class name" type="string" variable="$class"/>
+      <param description="Can be 'app' or a plugin name" type="string" variable="$type"/>
+      <param description="Extra options to send to CakeMigration class" type="array" variable="$options"/>
+      <return description="False in case of no file found, instance of the migration" type="object">
+        <type full="boolean|CakeMigration" namespace="" name="boolean|CakeMigration"/>
+      </return>
+      <throws type="object">
+        <type full="MigrationVersionException" namespace="" name="MigrationVersionException"/>
+      </throws>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array"/>
+  </method>
+  <method name="run" start="308" end="365" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Run the migrations">Options:
+- `direction` - Direction to run
+- `version` - Until what version want migrate to</description>
+      <param description="An array with options." type="array" variable="$options"/>
+      <return type="boolean"/>
+      <throws type="object">
+        <type full="Exception" namespace="" name="Exception"/>
+      </throws>
+    </docblock>
+    <parameter name="options" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="__initMigrations" start="372" end="392" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Initialize the migrations schema and keep it up-to-date"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="__loadFile" start="402" end="417" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Load a file based on name and type"/>
+      <param description="File name to be loaded" type="string" variable="$name"/>
+      <param description="Can be 'app' or a plugin name" type="string" variable="$type"/>
+      <return description="Throw an exception in case of no file found, array with mapping" type="mixed"/>
+      <throws type="object">
+        <type full="MigrationVersionException" namespace="" name="MigrationVersionException"/>
+      </throws>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_enumerateMigrations" start="425" end="432" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Returns a map of all available migrations for a type (app or plugin)"/>
+      <param description="Can be 'app' or a plugin name" type="string" variable="$type"/>
+      <return description="containing a list of migration versions ordered by filename" type="array"/>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_enumerateNewMigrations" start="440" end="459" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Returns a map of all available migrations for a type (app or plugin) using inflection"/>
+      <param description="Can be 'app' or a plugin name" type="string" variable="$type"/>
+      <return description="containing a list of migration versions ordered by filename" type="array"/>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_enumerateOldMigrations" start="467" end="489" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Returns a map of all available migrations for a type (app or plugin) using regular expressions"/>
+      <param description="Can be 'app' or a plugin name" type="string" variable="$type"/>
+      <return description="containing a list of migration versions ordered by filename" type="array"/>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+  </method>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ee4572070e63c2c8754f7a4dbdd57761480b4d6b"><author email="vagrant@precise32.(none)" name="vagrant" time="2013-11-19T14:52:19+00:00" unixtime="1384872739"/><commiter email="vagrant@precise32.(none)" name="vagrant" time="2013-11-19T14:52:19+00:00" unixtime="1384872739"/><message>migrations plugin geinstalleerd en eerste initiele schema(.php) gemaakt</message></commit></enrichment></enrichments></class>

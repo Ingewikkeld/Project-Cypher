@@ -1,0 +1,16 @@
+#!/bin/sh
+
+dbuser="{{ mysql.user }}"
+dbpass="{{ mysql.pass }}"
+backupdir="{{ logwatch.snapshot_root }}/mysql"
+
+# create a dump for all databases
+# EXCEPT
+for db in `ls /var/lib/mysql | egrep -v ".pid|.flag|ib_log|ibdata|performance_schema"`
+do
+	mysqldump -u $dbuser -p${dbpass} --events --add-drop-table $db | gzip -9 > ${backupdir}/$db.sql.gz
+
+	if [ "$?" -eq "1" ]; then
+		echo "error bij het dumpen van database $db"
+	fi
+done

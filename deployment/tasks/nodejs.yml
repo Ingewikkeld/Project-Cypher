@@ -1,0 +1,6 @@
+---
+  -name: nodejs | Ensure nodejs is installed
+   apt: pkg={{ item }} state=latest
+   with_items:
+     - nodejs
+     - npm

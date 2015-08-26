@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pdxf="http://xml.phpdox.net/functions" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head xmlns:git="http://xml.phpdox.net/gitlog#">
+    <title>phpDox - FormExtHelper</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav xmlns:git="http://xml.phpdox.net/gitlog#" class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../reports/index.xhtml">Reports</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">FormExtHelper</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>FormExtHelper</h1>
+        <h4>Enhance Forms with JS widget stuff TODO: namespace change: make it HtmlHelper</h4>
+        <p>FormExtHelper<br/>2011-03-07 ms</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class FormExtHelper
+                extends <a title="FormHelper" href="../classes/FormHelper.xhtml">FormHelper</a>
+            {<br/><ul class="none"><li>// members</li><li>public
+                         <a href="#members">$helpers</a>;
+                    </li><li>public
+                         <a href="#members">$settings</a>;
+                    </li><li>public
+                         <a href="#members">$scriptsAdded</a>;
+                    </li><li>public
+                         <a href="#members">$maxLengthOptions</a>;
+                    </li><li>public
+                         <a href="#members">$charCountOptions</a>;
+                    </li><li>protected
+                         <a href="#members">$buttons</a>;
+                    </li><li>protected
+                         <a href="#members">$buttonAlign</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="FormExtHelper" href="../classes/FormExtHelper/__construct.xhtml">__construct</a>()
+                    </li><li>public string <a title="FormExtHelper" href="../classes/FormExtHelper/deleteLink.xhtml">deleteLink</a>()
+                    </li><li>public string <a title="FormExtHelper" href="../classes/FormExtHelper/textarea.xhtml">textarea</a>()
+                    </li><li>protected void <a title="FormExtHelper" href="../classes/FormExtHelper/_introspectModel.xhtml">_introspectModel</a>()
+                    </li><li>public void <a title="FormExtHelper" href="../classes/FormExtHelper/postLink.xhtml">postLink</a>()
+                    </li><li>public string <a title="FormExtHelper" href="../classes/FormExtHelper/inputExt.xhtml">inputExt</a>()
+                    </li><li>public void <a title="FormExtHelper" href="../classes/FormExtHelper/input.xhtml">input</a>()
+                    </li><li>public void <a title="FormExtHelper" href="../classes/FormExtHelper/dateScripts.xhtml">dateScripts</a>()
+                    </li><li>public void <a title="FormExtHelper" href="../classes/FormExtHelper/dateTimeExt.xhtml">dateTimeExt</a>()
+                    </li><li>public void <a title="FormExtHelper" href="../classes/FormExtHelper/date.xhtml">date</a>()
+                    </li><li>public void <a title="FormExtHelper" href="../classes/FormExtHelper/dateExt.xhtml">dateExt</a>()
+                    </li><li>public void <a title="FormExtHelper" href="../classes/FormExtHelper/dateTime.xhtml">dateTime</a>()
+                    </li><li>public void <a title="FormExtHelper" href="../classes/FormExtHelper/time.xhtml">time</a>()
+                    </li><li>public void <a title="FormExtHelper" href="../classes/FormExtHelper/timeExt.xhtml">timeExt</a>()
+                    </li><li>public void <a title="FormExtHelper" href="../classes/FormExtHelper/maxLengthScripts.xhtml">maxLengthScripts</a>()
+                    </li><li>public string <a title="FormExtHelper" href="../classes/FormExtHelper/maxLength.xhtml">maxLength</a>()
+                    </li><li>protected void <a title="FormExtHelper" href="../classes/FormExtHelper/_maxLength.xhtml">_maxLength</a>()
+                    </li><li>public void <a title="FormExtHelper" href="../classes/FormExtHelper/scripts.xhtml">scripts</a>()
+                    </li><li>public void <a title="FormExtHelper" href="../classes/FormExtHelper/charCount.xhtml">charCount</a>()
+                    </li><li>public void <a title="FormExtHelper" href="../classes/FormExtHelper/documentReady.xhtml">documentReady</a>()
+                    </li><li>public void <a title="FormExtHelper" href="../classes/FormExtHelper/autoCompleteScripts.xhtml">autoCompleteScripts</a>()
+                    </li><li>public void <a title="FormExtHelper" href="../classes/FormExtHelper/autoComplete.xhtml">autoComplete</a>()
+                    </li><li>protected void <a title="FormExtHelper" href="../classes/FormExtHelper/_autoComplete.xhtml">_autoComplete</a>()
+                    </li><li>public void <a title="FormExtHelper" href="../classes/FormExtHelper/checkboxScripts.xhtml">checkboxScripts</a>()
+                    </li><li>public void <a title="FormExtHelper" href="../classes/FormExtHelper/checkboxScript.xhtml">checkboxScript</a>()
+                    </li><li>public void <a title="FormExtHelper" href="../classes/FormExtHelper/checkboxButtons.xhtml">checkboxButtons</a>()
+                    </li><li>public void <a title="FormExtHelper" href="../classes/FormExtHelper/_checkbox.xhtml">_checkbox</a>()
+                    </li><li>public string <a title="FormExtHelper" href="../classes/FormExtHelper/buttons.xhtml">buttons</a>()
+                    </li><li>public void <a title="FormExtHelper" href="../classes/FormExtHelper/addButton.xhtml">addButton</a>()
+                    </li><li>public void <a title="FormExtHelper" href="../classes/FormExtHelper/displayButtons.xhtml">displayButtons</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/FormHelper.xhtml">FormHelper</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="buttonAlign">
+              <strong>$buttonAlign</strong>
+            </li>
+            <li id="buttons">
+              <strong>$buttons</strong>
+              <br/>
+              <span class="indent">nice buttons</span>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="charCountOptions">
+              <strong>$charCountOptions</strong>
+            </li>
+            <li id="helpers">
+              <strong>$helpers</strong>
+            </li>
+            <li id="maxLengthOptions">
+              <strong>$maxLengthOptions</strong>
+              <br/>
+              <span class="indent">maxLength</span>
+            </li>
+            <li id="scriptsAdded">
+              <strong>$scriptsAdded</strong>
+            </li>
+            <li id="settings">
+              <strong>$settings</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="_autoComplete">
+              <a title="FormExtHelper" href="../classes/FormExtHelper/_autoComplete.xhtml">_autoComplete()</a>
+            </li>
+            <li id="_introspectModel"><a title="FormExtHelper" href="../classes/FormExtHelper/_introspectModel.xhtml">_introspectModel()</a>
+                — fix for required adding (only manually) 2011-11-01 ms</li>
+            <li id="_maxLength">
+              <a title="FormExtHelper" href="../classes/FormExtHelper/_maxLength.xhtml">_maxLength()</a>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="FormExtHelper" href="../classes/FormExtHelper/__construct.xhtml">__construct()</a>
+            </li>
+            <li id="_checkbox"><a title="FormExtHelper" href="../classes/FormExtHelper/_checkbox.xhtml">_checkbox()</a>
+                — displays a single checkbox - called for each</li>
+            <li id="addButton">
+              <a title="FormExtHelper" href="../classes/FormExtHelper/addButton.xhtml">addButton()</a>
+            </li>
+            <li id="autoComplete"><a title="FormExtHelper" href="../classes/FormExtHelper/autoComplete.xhtml">autoComplete()</a>
+                — //TODO</li>
+            <li id="autoCompleteScripts">
+              <a title="FormExtHelper" href="../classes/FormExtHelper/autoCompleteScripts.xhtml">autoCompleteScripts()</a>
+            </li>
+            <li id="buttons"><a title="FormExtHelper" href="../classes/FormExtHelper/buttons.xhtml">buttons()</a>
+                — echo $this-&gt;FormExt-&gt;buttons($buttons); with $buttons = array(  array(   'title' =&gt; 'Login',   'options' =&gt; array('type' =&gt; 'submit')  ),  array(...) );</li>
+            <li id="charCount">
+              <a title="FormExtHelper" href="../classes/FormExtHelper/charCount.xhtml">charCount()</a>
+            </li>
+            <li id="checkboxButtons">
+              <a title="FormExtHelper" href="../classes/FormExtHelper/checkboxButtons.xhtml">checkboxButtons()</a>
+            </li>
+            <li id="checkboxScript"><a title="FormExtHelper" href="../classes/FormExtHelper/checkboxScript.xhtml">checkboxScript()</a>
+                — returns script + elements "all", "none" etc 2010-02-15 ms</li>
+            <li id="checkboxScripts"><a title="FormExtHelper" href="../classes/FormExtHelper/checkboxScripts.xhtml">checkboxScripts()</a>
+                — checkboxes</li>
+            <li id="date">
+              <a title="FormExtHelper" href="../classes/FormExtHelper/date.xhtml">date()</a>
+            </li>
+            <li id="dateExt"><a title="FormExtHelper" href="../classes/FormExtHelper/dateExt.xhtml">dateExt()</a>
+                — date input (day, month, year) + js</li>
+            <li id="dateScripts"><a title="FormExtHelper" href="../classes/FormExtHelper/dateScripts.xhtml">dateScripts()</a>
+                — quicklinks: clear, today, ...</li>
+            <li id="dateTime">
+              <a title="FormExtHelper" href="../classes/FormExtHelper/dateTime.xhtml">dateTime()</a>
+            </li>
+            <li id="dateTimeExt">
+              <a title="FormExtHelper" href="../classes/FormExtHelper/dateTimeExt.xhtml">dateTimeExt()</a>
+            </li>
+            <li id="deleteLink"><a title="FormExtHelper" href="../classes/FormExtHelper/deleteLink.xhtml">deleteLink()</a>
+                — Creates an HTML link, but accesses the url using DELETE method.</li>
+            <li id="displayButtons"><a title="FormExtHelper" href="../classes/FormExtHelper/displayButtons.xhtml">displayButtons()</a>
+                — 2010-03-15 ms</li>
+            <li id="documentReady">
+              <a title="FormExtHelper" href="../classes/FormExtHelper/documentReady.xhtml">documentReady()</a>
+            </li>
+            <li id="input"><a title="FormExtHelper" href="../classes/FormExtHelper/input.xhtml">input()</a>
+                — override with some custom functionality - html5 list/datalist (fallback = invisible) 2011-07-16 ms</li>
+            <li id="inputExt"><a title="FormExtHelper" href="../classes/FormExtHelper/inputExt.xhtml">inputExt()</a>
+                — Generates a form input element complete with label and wrapper div HTML 5 ready!</li>
+            <li id="maxLength"><a title="FormExtHelper" href="../classes/FormExtHelper/maxLength.xhtml">maxLength()</a>
+                — maxLength js for textarea input final output</li>
+            <li id="maxLengthScripts">
+              <a title="FormExtHelper" href="../classes/FormExtHelper/maxLengthScripts.xhtml">maxLengthScripts()</a>
+            </li>
+            <li id="postLink">
+              <a title="FormExtHelper" href="../classes/FormExtHelper/postLink.xhtml">postLink()</a>
+            </li>
+            <li id="scripts">
+              <a title="FormExtHelper" href="../classes/FormExtHelper/scripts.xhtml">scripts()</a>
+            </li>
+            <li id="textarea"><a title="FormExtHelper" href="../classes/FormExtHelper/textarea.xhtml">textarea()</a>
+                — Creates a textarea widget.</li>
+            <li id="time">
+              <a title="FormExtHelper" href="../classes/FormExtHelper/time.xhtml">time()</a>
+            </li>
+            <li id="timeExt">
+              <a title="FormExtHelper" href="../classes/FormExtHelper/timeExt.xhtml">timeExt()</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul xmlns:git="http://xml.phpdox.net/gitlog#" class="styled history">
+          <li>
+            <h3>2013-10-06T19:40:29+00:00 (commit #<span title="f16525be325aa16218dfea4fe983ccf2a60b79b9">f16525b</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (pauledenburg@gmail.com) /
+                        Commiter: Paul Edenburg (pauledenburg@gmail.com)
+                    </p>
+              <pre class="wrapped">wijzigingen na het aanmaken van een nieuw phpstrom project</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-07-29T20:18:45+00:00 (commit #<span title="287b8750eddef6446e689ccd35cee74b32cde2ed">287b875</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@lamp2.(none)) /
+                        Commiter: Paul Edenburg (paul@lamp2.(none))
+                    </p>
+              <pre class="wrapped">rechten zijn gewijzigd</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-26T15:55:26+00:00 (commit #<span title="58d361958cff9f7a6a85bed1ef717e1029d99d24">58d3619</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">phpstorm connect?</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-14T14:30:14+00:00 (commit #<span title="ab510a8ba8b3726396604720ff22cc62d62cda63">ab510a8</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">hele hoop opgelost, ik had het eerder moeten committen :$</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <footer xmlns:git="http://xml.phpdox.net/gitlog#">
+      <span>Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

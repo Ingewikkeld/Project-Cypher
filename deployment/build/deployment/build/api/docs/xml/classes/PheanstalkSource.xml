@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="PheanstalkSource" namespace="" name="PheanstalkSource" abstract="false" final="false" start="32" end="279">
+  <file path="app/Plugin/Queue/Model/Datasource" file="PheanstalkSource.php" realpath="/home/vagrant/socsoc/app/Plugin/Queue/Model/Datasource/PheanstalkSource.php" size="6388" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="42279e6089a531381bf1e96f600ea08f9996f782"/>
+  <docblock>
+    <description compact="Beanstalkd Source Class"/>
+    <package value="queue"/>
+    <subpackage value="queue.models.datasources"/>
+  </docblock>
+  <extends full="DataSource" namespace="" name="DataSource"/>
+  <member name="__insertID" type="{unknown}" visibility="public" line="42">
+    <docblock>
+      <description compact="Holds ID of last inserted job">Works analog to <invalid xmlns="http://xml.phpdox.net/src#" annotation="see" value="Model::__insertID"/>.
+</description>
+      <var type="mixed"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="_queriesLog" type="array" visibility="public" line="48">
+    <docblock>
+      <description compact="Keep a log of the queries that have been made"/>
+      <var type="object">
+        <type full="$_queriesLog" namespace="" name="$_queriesLog"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="_queriesTime" type="integer" default="0" visibility="public" line="54">
+    <docblock>
+      <description compact="Keep track of the duration of the queries"/>
+      <var type="object">
+        <type full="$_queriesTime" namespace="" name="$_queriesTime"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="_queriesCnt" type="integer" default="0" visibility="public" line="61">
+    <docblock>
+      <description compact="The total number of queries that have been made"/>
+      <var type="object">
+        <type full="$_queriesCnt" namespace="" name="$_queriesCnt"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="error" type="{unknown}" visibility="public" line="67">
+    <docblock>
+      <description compact="Error that occured"/>
+      <var type="object">
+        <type full="unknown" namespace="" name="unknown"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="_baseConfig" type="array" visibility="public" line="75">
+    <docblock>
+      <description compact="The default configuration of a specific DataSource"/>
+      <var type="array"/>
+      <access value="public"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="84" end="89" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="config" byreference="false" type="array"/>
+  </constructor>
+  <method name="_encode" start="100" end="108" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Encode the supplied data in either json or serialized PHP The default encoding is JSON">Change the encoding type in $this-&gt;config['format']</description>
+      <param description="The data to be encoded" type="mixed" variable="$data"/>
+      <return description="The encoded data of the chosen form" type="string"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="string" default="&quot;&quot;"/>
+  </method>
+  <method name="_decode" start="119" end="127" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Decode the supplied encoded data in either json or serialized PHP The default decoding is decoding JSON">Change the encoding type in $this-&gt;config['format']</description>
+      <param description="The data to be encoded" type="mixed" variable="$data"/>
+      <return description="The encoded data of the chosen form" type="string"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="query" start="139" end="166" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="All calls to methods on the model are routed through this method"/>
+      <param type="mixed" variable="$method"/>
+      <param type="mixed" variable="$params"/>
+      <param type="mixed" variable="$Model"/>
+      <access value="public"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+    <parameter name="Model" byreference="true" type="{unknown}"/>
+  </method>
+  <method name="logQuery" start="176" end="191" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Logs a new query. Will automatically truncate already logged so at any time there are no more than 200 messages logged."/>
+      <param type="string" variable="$method"/>
+      <param type="array" variable="$params"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="put" start="202" end="230" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Put a job in a tube"/>
+      <param description="CakePHP model which is calling this function" type="object" variable="$Model"/>
+      <param description="The payload of the job" type="array" variable="$data"/>
+      <param type="array" variable="$options"/>
+      <return description="Integer id of the job in the queue, or boolean false on error" type="mixed"/>
+    </docblock>
+    <parameter name="Model" byreference="true" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array"/>
+    <inline>
+      <comment value="if ( ! $this-&gt;choose($Model, $tube)) {" line="216"/>
+      <comment value="return false;" line="217"/>
+      <comment value="}" line="218"/>
+      <comment value="$id = $this-&gt;connection-&gt;put($priority, $delay, $ttr, $this-&gt;_encode($body));" line="219"/>
+      <comment value="Put the job in the queue through the relevant tube" line="221"/>
+    </inline>
+  </method>
+  <method name="create" start="241" end="243" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="We don't use the create function. New jobs are put in the queue with the put() function"/>
+      <param type="object" variable="$Model">
+        <type full="unknown" namespace="" name="unknown"/>
+      </param>
+      <param type="string" variable="$fields"/>
+      <param type="string" variable="$values"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="Model" byreference="true" type="{unknown}"/>
+    <parameter name="fields" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="values" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="read" start="252" end="254" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Read the information of a job in the tube"/>
+      <param type="object" variable="$Model"/>
+      <param type="array" variable="$queryData"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="Model" byreference="true" type="{unknown}"/>
+    <parameter name="queryData" byreference="false" type="array"/>
+  </method>
+  <method name="update" start="256" end="258" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="Model" byreference="true" type="{unknown}"/>
+    <parameter name="fields" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="values" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="delete" start="266" end="273" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Deletes a job"/>
+      <param type="object" variable="$Model">
+        <type full="Model" namespace="" name="Model"/>
+      </param>
+      <param type="mixed" variable="$id"/>
+    </docblock>
+    <parameter name="Model" byreference="true" type="{unknown}"/>
+    <parameter name="id" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="peek" start="275" end="277" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="Model" byreference="true" type="{unknown}"/>
+    <parameter name="id" byreference="false" type="{unknown}" default="null"/>
+  </method>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="28acc0dc022b2ceaa47547071e9cecc0a53fc08b"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-07-29T18:23:53+00:00" unixtime="1375122233"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-07-29T18:23:53+00:00" unixtime="1375122233"/><message>files zijn blijkbaar gewijzigd na een schone checkout (= opzetten nieuw project in phpstorm)</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="df71f3c56f8fc3c1665e70feceea5a1489338b74"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T19:16:26+00:00" unixtime="1372274186"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T19:16:26+00:00" unixtime="1372274186"/><message>crlf linefeeds?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ab510a8ba8b3726396604720ff22cc62d62cda63"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><message>hele hoop opgelost, ik had het eerder moeten committen :$</message></commit></enrichment></enrichments></class>

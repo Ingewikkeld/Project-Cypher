@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pdxf="http://xml.phpdox.net/functions" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head xmlns:git="http://xml.phpdox.net/gitlog#">
+    <title>phpDox - QrCodeHelper</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav xmlns:git="http://xml.phpdox.net/gitlog#" class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../reports/index.xhtml">Reports</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">QrCodeHelper</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>QrCodeHelper</h1>
+        <h4>QR Code Helper based on google chart api</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class QrCodeHelper
+                extends <a title="AppHelper" href="../classes/AppHelper.xhtml">AppHelper</a>
+            {<br/><ul class="none"><li>// constants</li><li>const MIN_SIZE = 58;</li><li>const MAX_SIZE = 540;</li><li>const DEFAULT_SIZE = 74;</li><li>const DEFAULT_LEVEL = 'L';</li><li>const SIZE_L = 58;</li><li>const SIZE_M = 66;</li><li>const SIZE_Q = 66;</li><li>const SIZE_H = 74;</li></ul><ul class="none"><li>// members</li><li>public
+                         <a href="#members">$helpers</a>;
+                    </li><li>protected
+                         <a href="#members">$engine</a>;
+                    </li><li>protected
+                         <a href="#members">$url</a>;
+                    </li><li>protected
+                         <a href="#members">$options</a>;
+                    </li><li>protected
+                         <a href="#members">$ecLevels</a>;
+                    </li><li>protected
+                         <a href="#members">$formattingTypes</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="QrCodeHelper" href="../classes/QrCodeHelper/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="QrCodeHelper" href="../classes/QrCodeHelper/image.xhtml">image</a>()
+                    </li><li>public string <a title="QrCodeHelper" href="../classes/QrCodeHelper/uri.xhtml">uri</a>()
+                    </li><li>public void <a title="QrCodeHelper" href="../classes/QrCodeHelper/url.xhtml">url</a>()
+                    </li><li>protected void <a title="QrCodeHelper" href="../classes/QrCodeHelper/_uri.xhtml">_uri</a>()
+                    </li><li>public string <a title="QrCodeHelper" href="../classes/QrCodeHelper/formatText.xhtml">formatText</a>()
+                    </li><li>public string <a title="QrCodeHelper" href="../classes/QrCodeHelper/formatCard.xhtml">formatCard</a>()
+                    </li><li>public void <a title="QrCodeHelper" href="../classes/QrCodeHelper/formatEvent.xhtml">formatEvent</a>()
+                    </li><li>public void <a title="QrCodeHelper" href="../classes/QrCodeHelper/format.xhtml">format</a>()
+                    </li><li>public boolean <a title="QrCodeHelper" href="../classes/QrCodeHelper/setSize.xhtml">setSize</a>()
+                    </li><li>public boolean <a title="QrCodeHelper" href="../classes/QrCodeHelper/setLevel.xhtml">setLevel</a>()
+                    </li><li>public void <a title="QrCodeHelper" href="../classes/QrCodeHelper/setEncoding.xhtml">setEncoding</a>()
+                    </li><li>public void <a title="QrCodeHelper" href="../classes/QrCodeHelper/reset.xhtml">reset</a>()
+                    </li><li>public void <a title="QrCodeHelper" href="../classes/QrCodeHelper/debug.xhtml">debug</a>()
+                    </li><li>public int <a title="QrCodeHelper" href="../classes/QrCodeHelper/_findSuitableSize.xhtml">_findSuitableSize</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/AppHelper.xhtml">AppHelper</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="constants">Constants</h2>
+        <table xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="MIN_SIZE">MIN_SIZE</td>
+              <td>58</td>
+            </tr>
+            <tr>
+              <td id="MAX_SIZE">MAX_SIZE</td>
+              <td>540</td>
+            </tr>
+            <tr>
+              <td id="DEFAULT_SIZE">DEFAULT_SIZE</td>
+              <td>74</td>
+            </tr>
+            <tr>
+              <td id="DEFAULT_LEVEL">DEFAULT_LEVEL</td>
+              <td>'L'</td>
+            </tr>
+            <tr>
+              <td id="SIZE_L">SIZE_L</td>
+              <td>58</td>
+            </tr>
+            <tr>
+              <td id="SIZE_M">SIZE_M</td>
+              <td>66</td>
+            </tr>
+            <tr>
+              <td id="SIZE_Q">SIZE_Q</td>
+              <td>66</td>
+            </tr>
+            <tr>
+              <td id="SIZE_H">SIZE_H</td>
+              <td>74</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="ecLevels">
+              <strong>$ecLevels</strong>
+            </li>
+            <li id="engine">
+              <strong>$engine</strong>
+            </li>
+            <li id="formattingTypes">
+              <strong>$formattingTypes</strong>
+            </li>
+            <li id="options">
+              <strong>$options</strong>
+              <br/>
+              <span class="indent">necessary - chl: string $text - choe: string $outputEncoding - chs: size (...x...)</span>
+            </li>
+            <li id="url">
+              <strong>$url</strong>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="helpers">
+              <strong>$helpers</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="_uri">
+              <a title="QrCodeHelper" href="../classes/QrCodeHelper/_uri.xhtml">_uri()</a>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="QrCodeHelper" href="../classes/QrCodeHelper/__construct.xhtml">__construct()</a>
+            </li>
+            <li id="_findSuitableSize"><a title="QrCodeHelper" href="../classes/QrCodeHelper/_findSuitableSize.xhtml">_findSuitableSize()</a>
+                — 25 =&gt; 21x21 (L) ...</li>
+            <li id="debug"><a title="QrCodeHelper" href="../classes/QrCodeHelper/debug.xhtml">debug()</a>
+                — show current options - for debugging only 2010-02-06 ms</li>
+            <li id="format">
+              <a title="QrCodeHelper" href="../classes/QrCodeHelper/format.xhtml">format()</a>
+            </li>
+            <li id="formatCard"><a title="QrCodeHelper" href="../classes/QrCodeHelper/formatCard.xhtml">formatCard()</a>
+                — generate mecard string 1: name, nickname, note, birthday, sound 1..n (as array or string): address, tel, url, email for details on cards see: http://www.nttdocomo.co.jp/english/service/imode/make/content/barcode/function/application/addressbook/index.html example: MECARD: N:Docomo,Taro; SOUND:docomotaro; TEL:03XXXXXXXX; EMAIL:d@e.de;</li>
+            <li id="formatEvent"><a title="QrCodeHelper" href="../classes/QrCodeHelper/formatEvent.xhtml">formatEvent()</a>
+                — //TODO calendar event e.g.: BEGIN:VEVENT SUMMARY:dfdfd DTSTART:20100226T092900Z DTEND:20100226T102900Z END:VEVENT</li>
+            <li id="formatText"><a title="QrCodeHelper" href="../classes/QrCodeHelper/formatText.xhtml">formatText()</a>
+                — format a text in a specific format - url, sms, tel, email, market, geo</li>
+            <li id="image"><a title="QrCodeHelper" href="../classes/QrCodeHelper/image.xhtml">image()</a>
+                — main barcode display function</li>
+            <li id="reset">
+              <a title="QrCodeHelper" href="../classes/QrCodeHelper/reset.xhtml">reset()</a>
+            </li>
+            <li id="setEncoding">
+              <a title="QrCodeHelper" href="../classes/QrCodeHelper/setEncoding.xhtml">setEncoding()</a>
+            </li>
+            <li id="setLevel"><a title="QrCodeHelper" href="../classes/QrCodeHelper/setLevel.xhtml">setLevel()</a>
+                — change level and margin - optional result format: chld=&lt;EC level&gt;|&lt;margin&gt;</li>
+            <li id="setSize"><a title="QrCodeHelper" href="../classes/QrCodeHelper/setSize.xhtml">setSize()</a>
+                — change size result format: chs=&lt;size&gt;x&lt;size&gt;</li>
+            <li id="uri"><a title="QrCodeHelper" href="../classes/QrCodeHelper/uri.xhtml">uri()</a>
+                — Just the url - without image tag Note: cannot be url() due to AppHelper conflicts</li>
+            <li id="url">
+              <a title="QrCodeHelper" href="../classes/QrCodeHelper/url.xhtml">url()</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul xmlns:git="http://xml.phpdox.net/gitlog#" class="styled history">
+          <li>
+            <h3>2013-10-06T19:40:29+00:00 (commit #<span title="f16525be325aa16218dfea4fe983ccf2a60b79b9">f16525b</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (pauledenburg@gmail.com) /
+                        Commiter: Paul Edenburg (pauledenburg@gmail.com)
+                    </p>
+              <pre class="wrapped">wijzigingen na het aanmaken van een nieuw phpstrom project</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-07-29T20:18:45+00:00 (commit #<span title="287b8750eddef6446e689ccd35cee74b32cde2ed">287b875</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@lamp2.(none)) /
+                        Commiter: Paul Edenburg (paul@lamp2.(none))
+                    </p>
+              <pre class="wrapped">rechten zijn gewijzigd</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-26T15:55:26+00:00 (commit #<span title="58d361958cff9f7a6a85bed1ef717e1029d99d24">58d3619</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">phpstorm connect?</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-14T14:30:14+00:00 (commit #<span title="ab510a8ba8b3726396604720ff22cc62d62cda63">ab510a8</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">hele hoop opgelost, ik had het eerder moeten committen :$</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <footer xmlns:git="http://xml.phpdox.net/gitlog#">
+      <span>Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

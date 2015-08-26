@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pdxf="http://xml.phpdox.net/functions" lang="en">
+  <head xmlns:git="http://xml.phpdox.net/gitlog#">
+    <title>phpDox - Pheanstalk_Response</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav xmlns:git="http://xml.phpdox.net/gitlog#" class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../reports/index.xhtml">Reports</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../interfaces.xhtml">Interfaces</a>
+          </li>
+          <li class="separator">Pheanstalk_Response</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#violations">Violations</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>Pheanstalk_Response</h1>
+        <h4>A response from the beanstalkd server</h4>
+        <p/>
+        <ul>
+          <li>Author: Paul Annesley</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">interface Pheanstalk_Response
+            {<br/><ul class="none"><li>// constants</li><li>const RESPONSE_OUT_OF_MEMORY = 'OUT_OF_MEMORY';</li><li>const RESPONSE_INTERNAL_ERROR = 'INTERNAL_ERROR';</li><li>const RESPONSE_DRAINING = 'DRAINING';</li><li>const RESPONSE_BAD_FORMAT = 'BAD_FORMAT';</li><li>const RESPONSE_UNKNOWN_COMMAND = 'UNKNOWN_COMMAND';</li><li>const RESPONSE_INSERTED = 'INSERTED';</li><li>const RESPONSE_BURIED = 'BURIED';</li><li>const RESPONSE_EXPECTED_CRLF = 'EXPECTED_CRLF';</li><li>const RESPONSE_JOB_TOO_BIG = 'JOB_TOO_BIG';</li><li>const RESPONSE_USING = 'USING';</li><li>const RESPONSE_DEADLINE_SOON = 'DEADLINE_SOON';</li><li>const RESPONSE_RESERVED = 'RESERVED';</li><li>const RESPONSE_DELETED = 'DELETED';</li><li>const RESPONSE_NOT_FOUND = 'NOT_FOUND';</li><li>const RESPONSE_RELEASED = 'RELEASED';</li><li>const RESPONSE_WATCHING = 'WATCHING';</li><li>const RESPONSE_NOT_IGNORED = 'NOT_IGNORED';</li><li>const RESPONSE_FOUND = 'FOUND';</li><li>const RESPONSE_KICKED = 'KICKED';</li><li>const RESPONSE_OK = 'OK';</li><li>const RESPONSE_TIMED_OUT = 'TIMED_OUT';</li><li>const RESPONSE_TOUCHED = 'TOUCHED';</li><li>const RESPONSE_PAUSED = 'PAUSED';</li></ul><ul class="none"><li>// methods</li><li>public string <a title="Pheanstalk_Response" href="../interfaces/Pheanstalk_Response/getResponseName.xhtml">getResponseName</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="constants">Constants</h2>
+        <table xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="RESPONSE_OUT_OF_MEMORY">RESPONSE_OUT_OF_MEMORY</td>
+              <td>'OUT_OF_MEMORY'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_INTERNAL_ERROR">RESPONSE_INTERNAL_ERROR</td>
+              <td>'INTERNAL_ERROR'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_DRAINING">RESPONSE_DRAINING</td>
+              <td>'DRAINING'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_BAD_FORMAT">RESPONSE_BAD_FORMAT</td>
+              <td>'BAD_FORMAT'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_UNKNOWN_COMMAND">RESPONSE_UNKNOWN_COMMAND</td>
+              <td>'UNKNOWN_COMMAND'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_INSERTED">RESPONSE_INSERTED</td>
+              <td>'INSERTED'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_BURIED">RESPONSE_BURIED</td>
+              <td>'BURIED'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_EXPECTED_CRLF">RESPONSE_EXPECTED_CRLF</td>
+              <td>'EXPECTED_CRLF'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_JOB_TOO_BIG">RESPONSE_JOB_TOO_BIG</td>
+              <td>'JOB_TOO_BIG'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_USING">RESPONSE_USING</td>
+              <td>'USING'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_DEADLINE_SOON">RESPONSE_DEADLINE_SOON</td>
+              <td>'DEADLINE_SOON'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_RESERVED">RESPONSE_RESERVED</td>
+              <td>'RESERVED'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_DELETED">RESPONSE_DELETED</td>
+              <td>'DELETED'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_NOT_FOUND">RESPONSE_NOT_FOUND</td>
+              <td>'NOT_FOUND'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_RELEASED">RESPONSE_RELEASED</td>
+              <td>'RELEASED'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_WATCHING">RESPONSE_WATCHING</td>
+              <td>'WATCHING'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_NOT_IGNORED">RESPONSE_NOT_IGNORED</td>
+              <td>'NOT_IGNORED'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_FOUND">RESPONSE_FOUND</td>
+              <td>'FOUND'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_KICKED">RESPONSE_KICKED</td>
+              <td>'KICKED'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_OK">RESPONSE_OK</td>
+              <td>'OK'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_TIMED_OUT">RESPONSE_TIMED_OUT</td>
+              <td>'TIMED_OUT'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_TOUCHED">RESPONSE_TOUCHED</td>
+              <td>'TOUCHED'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_PAUSED">RESPONSE_PAUSED</td>
+              <td>'PAUSED'</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="methods">Methods</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="getResponseName"><a title="Pheanstalk_Response" href="../interfaces/Pheanstalk_Response/getResponseName.xhtml">getResponseName()</a>
+                — The name of the response</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer xmlns:git="http://xml.phpdox.net/gitlog#">
+      <span>Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

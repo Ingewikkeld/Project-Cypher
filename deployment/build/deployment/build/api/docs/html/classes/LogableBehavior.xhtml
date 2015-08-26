@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pdxf="http://xml.phpdox.net/functions" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head xmlns:git="http://xml.phpdox.net/gitlog#">
+    <title>phpDox - LogableBehavior</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav xmlns:git="http://xml.phpdox.net/gitlog#" class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../reports/index.xhtml">Reports</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">LogableBehavior</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#tasks">Tasks</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>LogableBehavior</h1>
+        <h4>Logs saves and deletes of any model</h4>
+        <p>Requires the following to work as intended :<br/><br/>- "Log" model ( empty but for a order variable [created DESC]<br/>- "logs" table with these fields required :<br/>- id [int] :<br/>- title [string] : automagically filled with the display field of the model that was modified.<br/>- created [date/datetime] : filled by cake in normal way<br/><br/>- actsAs = array("Tools.Logable"); on models that should be logged<br/><br/>Optional extra table fields for the "logs" table :<br/><br/>- "description" [string] : Fill with a descriptive text of what, who and to which model/row :<br/>"Contact "John Smith"(34) added by User "Administrator"(1).<br/><br/>or if u want more detail, add any combination of the following :<br/><br/>- "" [string] : automagically filled with the class name of the model that generated the activity.<br/>- "foreign_id" [int] : automagically filled with the primary key of the model that was modified.<br/>- "action" [string] : automagically filled with what action is made (add/edit/delete)<br/>- "user_id" [int] : populated with the supplied user info. (May be renamed. See bellow.)<br/>- "change" [string] : depending on setting either :<br/>[name (alek) =&gt; (Alek), age (28) =&gt; (29)] or [name, age]<br/><br/>- "version_id" [int] : cooperates with RevisionBehavior to link the the shadow table (thus linking to old data)<br/><br/>Remember that Logable behavior needs to be added after RevisionBehavior. In fact, just put it last to be safe.<br/><br/>Optionally register what user was responisble for the activity :<br/><br/>- Supply configuration only if defaults are wrong. Example given with defaults :<br/><br/>public $actsAs = array('Logable' =&gt; array('userModel' =&gt; 'User', 'userKey' =&gt; 'user_id'));<br/><br/>- In AppController (or single controller if only needed once) add these lines to beforeFilter :<br/><br/>if (count($this-&gt;uses) &amp;&amp; $this-&gt;{$this-&gt;modelClass}-&gt;Behaviors-&gt;attached('Logable')) {<br/>$this-&gt;{$this-&gt;modelClass}-&gt;setUserData($this-&gt;activeUser);<br/>}<br/><br/>Where "$activeUser" should be an array in the standard format for the User model used :<br/><br/>$activeUser = array( $UserModel-&gt;alias =&gt; array( $UserModel-&gt;primaryKey =&gt; 123, $UserModel-&gt;displayField =&gt; 'Alexander'));<br/>// any other key is just ignored by this behaviour.</p>
+        <ul>
+          <li>Author: Alexander Morland (alexander#maritimecolours.no)</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class LogableBehavior
+                extends <a title="ModelBehavior" href="../classes/ModelBehavior.xhtml">ModelBehavior</a>
+            {<br/><ul class="none"><li>// members</li><li>public
+                         <a href="#members">$user</a>;
+                    </li><li>public
+                         <a href="#members">$UserModel</a>;
+                    </li><li>protected
+                         <a href="#members">$_defaults</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="LogableBehavior" href="../classes/LogableBehavior/setup.xhtml">setup</a>()
+                    </li><li>public void <a title="LogableBehavior" href="../classes/LogableBehavior/settings.xhtml">settings</a>()
+                    </li><li>public void <a title="LogableBehavior" href="../classes/LogableBehavior/enableLog.xhtml">enableLog</a>()
+                    </li><li>public array <a title="LogableBehavior" href="../classes/LogableBehavior/findLog.xhtml">findLog</a>()
+                    </li><li>public array <a title="LogableBehavior" href="../classes/LogableBehavior/findUserActions.xhtml">findUserActions</a>()
+                    </li><li>public void <a title="LogableBehavior" href="../classes/LogableBehavior/setUserData.xhtml">setUserData</a>()
+                    </li><li>public void <a title="LogableBehavior" href="../classes/LogableBehavior/customLog.xhtml">customLog</a>()
+                    </li><li>public void <a title="LogableBehavior" href="../classes/LogableBehavior/clearUserData.xhtml">clearUserData</a>()
+                    </li><li>public void <a title="LogableBehavior" href="../classes/LogableBehavior/setUserIp.xhtml">setUserIp</a>()
+                    </li><li>public void <a title="LogableBehavior" href="../classes/LogableBehavior/beforeDelete.xhtml">beforeDelete</a>()
+                    </li><li>public void <a title="LogableBehavior" href="../classes/LogableBehavior/afterDelete.xhtml">afterDelete</a>()
+                    </li><li>public void <a title="LogableBehavior" href="../classes/LogableBehavior/beforeValidate.xhtml">beforeValidate</a>()
+                    </li><li>public void <a title="LogableBehavior" href="../classes/LogableBehavior/beforeSave.xhtml">beforeSave</a>()
+                    </li><li>protected void <a title="LogableBehavior" href="../classes/LogableBehavior/_prepareLog.xhtml">_prepareLog</a>()
+                    </li><li>public void <a title="LogableBehavior" href="../classes/LogableBehavior/afterSave.xhtml">afterSave</a>()
+                    </li><li>public void <a title="LogableBehavior" href="../classes/LogableBehavior/_saveLog.xhtml">_saveLog</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/ModelBehavior.xhtml">ModelBehavior</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="tasks">Tasks</h2>
+        <h2 xmlns:git="http://xml.phpdox.net/gitlog#" id="tasks">Tasks</h2>
+        <table xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <thead>
+            <tr>
+              <th style="width:3em;">Line</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tr>
+            <td class="nummeric">309</td>
+            <td>clean up $logData</td>
+          </tr>
+        </table>
+        <h2 id="members">Members</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="_defaults">
+              <strong>$_defaults</strong>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="UserModel">
+              <strong>$UserModel</strong>
+            </li>
+            <li id="user">
+              <strong>$user</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="_prepareLog">
+              <a title="LogableBehavior" href="../classes/LogableBehavior/_prepareLog.xhtml">_prepareLog()</a>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="_saveLog"><a title="LogableBehavior" href="../classes/LogableBehavior/_saveLog.xhtml">_saveLog()</a>
+                — Does the actual saving of the Log model. Also adds the special field if possible.</li>
+            <li id="afterDelete">
+              <a title="LogableBehavior" href="../classes/LogableBehavior/afterDelete.xhtml">afterDelete()</a>
+            </li>
+            <li id="afterSave">
+              <a title="LogableBehavior" href="../classes/LogableBehavior/afterSave.xhtml">afterSave()</a>
+            </li>
+            <li id="beforeDelete">
+              <a title="LogableBehavior" href="../classes/LogableBehavior/beforeDelete.xhtml">beforeDelete()</a>
+            </li>
+            <li id="beforeSave">
+              <a title="LogableBehavior" href="../classes/LogableBehavior/beforeSave.xhtml">beforeSave()</a>
+            </li>
+            <li id="beforeValidate">
+              <a title="LogableBehavior" href="../classes/LogableBehavior/beforeValidate.xhtml">beforeValidate()</a>
+            </li>
+            <li id="clearUserData">
+              <a title="LogableBehavior" href="../classes/LogableBehavior/clearUserData.xhtml">clearUserData()</a>
+            </li>
+            <li id="customLog"><a title="LogableBehavior" href="../classes/LogableBehavior/customLog.xhtml">customLog()</a>
+                — Used for logging custom actions that arent crud, like login or download.</li>
+            <li id="enableLog">
+              <a title="LogableBehavior" href="../classes/LogableBehavior/enableLog.xhtml">enableLog()</a>
+            </li>
+            <li id="findLog"><a title="LogableBehavior" href="../classes/LogableBehavior/findLog.xhtml">findLog()</a>
+                — Useful for getting logs for a model, takes params to narrow find.</li>
+            <li id="findUserActions"><a title="LogableBehavior" href="../classes/LogableBehavior/findUserActions.xhtml">findUserActions()</a>
+                — Get list of actions for one user.</li>
+            <li id="setUserData"><a title="LogableBehavior" href="../classes/LogableBehavior/setUserData.xhtml">setUserData()</a>
+                — Use this to supply a model with the data of the logged in User.</li>
+            <li id="setUserIp">
+              <a title="LogableBehavior" href="../classes/LogableBehavior/setUserIp.xhtml">setUserIp()</a>
+            </li>
+            <li id="settings">
+              <a title="LogableBehavior" href="../classes/LogableBehavior/settings.xhtml">settings()</a>
+            </li>
+            <li id="setup"><a title="LogableBehavior" href="../classes/LogableBehavior/setup.xhtml">setup()</a>
+                — Config options are : - userModel 		: 'User'. Class name of the user model you want to use (User by default), if you want to save User in log - userKey 		: 'user_id'. The field for saving the user to (user_id by default).</li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul xmlns:git="http://xml.phpdox.net/gitlog#" class="styled history">
+          <li>
+            <h3>2013-10-06T19:40:29+00:00 (commit #<span title="f16525be325aa16218dfea4fe983ccf2a60b79b9">f16525b</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (pauledenburg@gmail.com) /
+                        Commiter: Paul Edenburg (pauledenburg@gmail.com)
+                    </p>
+              <pre class="wrapped">wijzigingen na het aanmaken van een nieuw phpstrom project</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-07-29T20:18:45+00:00 (commit #<span title="287b8750eddef6446e689ccd35cee74b32cde2ed">287b875</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@lamp2.(none)) /
+                        Commiter: Paul Edenburg (paul@lamp2.(none))
+                    </p>
+              <pre class="wrapped">rechten zijn gewijzigd</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-26T15:55:26+00:00 (commit #<span title="58d361958cff9f7a6a85bed1ef717e1029d99d24">58d3619</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">phpstorm connect?</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-14T14:30:14+00:00 (commit #<span title="ab510a8ba8b3726396604720ff22cc62d62cda63">ab510a8</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">hele hoop opgelost, ik had het eerder moeten committen :$</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <footer xmlns:git="http://xml.phpdox.net/gitlog#">
+      <span>Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="SluggedBehaviorTest" namespace="" name="SluggedBehaviorTest" abstract="false" final="false" start="34" end="18243">
+  <file path="app/Plugin/Tools/Test/Case/Model/Behavior" file="SluggedBehaviorTest.php" realpath="/home/vagrant/socsoc/app/Plugin/Tools/Test/Case/Model/Behavior/SluggedBehaviorTest.php" size="743818" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="f181b69791c73c0ec6b6e0ca7d4445c800802e39"/>
+  <docblock>
+    <description compact="SluggedBehaviorTest class"/>
+  </docblock>
+  <extends full="CakeTestCase" namespace="" name="CakeTestCase"/>
+  <member name="fixtures" type="array" visibility="public" line="42">
+    <docblock>
+      <description compact="fixtures property"/>
+      <var type="array"/>
+      <access value="public"/>
+    </docblock>
+  </member>
+  <member name="skipSetupTests" type="{unknown}" default="true" visibility="public" line="50">
+    <docblock>
+      <description compact="skipSetupTests property"/>
+      <var description="true" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+      <access value="public"/>
+    </docblock>
+  </member>
+  <method name="getTests" start="62" end="83" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="getTests method">This test case is very intensive - the logic contained here can be manipulated to limit the range of
+of characters used in the test case by default there is no limit imposed and the memory limit is increased
+to allow the test to complete</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <inline>
+      <comment value="(int)($memoryLimit / 12);" line="65"/>
+    </inline>
+  </method>
+  <method name="_isTest" start="96" end="111" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="isTest method">Prevent intensive W3 test, and the build tests (used to generate the testSection tests) unless
+explicitly specified</description>
+      <todo value="visibility"/>
+      <param type="mixed" variable="$method"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="protected"/>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setUp" start="119" end="122" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="start method"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <inline>
+      <comment value="parent::setUp();" line="120"/>
+    </inline>
+  </method>
+  <method name="testSlugGenerationBasedOnTrigger" start="130" end="144" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Test slug generation/update based on trigger"/>
+      <access value="public"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="testSlugGenerationI18nReplacementPieces" start="152" end="160" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Test slug generation with i18n replacement pieces"/>
+      <access value="public"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="testSlugDynamicOverwrite" start="168" end="185" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Test dynamic slug overwrite"/>
+      <access value="public"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="testSlugGenerationWithScope" start="193" end="218" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Test slug generation/update based on scope"/>
+      <access value="public"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="testRemoveStopWords" start="223" end="260" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="test remove stop words"/>
+    </docblock>
+  </method>
+  <method name="testBuildRegex" start="270" end="309" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testBuildRegex method">This 'test' is used to compare with the existing, and to optimize the regex pattern</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="testBuildTest" start="319" end="321" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testBuildTest method">This method generates a temporary file containing a test class with the slug tests in it</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="_buildTest" start="333" end="347" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="buildTest method"/>
+      <param type="int" variable="$hex1Limit"/>
+      <param type="int" variable="$hex2Limit"/>
+      <param type="int" variable="$hex1Start"/>
+      <param type="int" variable="$hex2Start"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="protected"/>
+    </docblock>
+    <parameter name="hex1Limit" byreference="false" type="integer" default="16"/>
+    <parameter name="hex2Limit" byreference="false" type="integer" default="16"/>
+    <parameter name="hex1Start" byreference="false" type="integer" default="16"/>
+    <parameter name="hex2Start" byreference="false" type="integer" default="0"/>
+    <inline>
+      <comment value="$file-&gt;write($out);" line="345"/>
+    </inline>
+  </method>
+  <method name="_buildTestFunction" start="356" end="388" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="buildTestFunction method"/>
+      <param type="mixed" variable="$section"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="protected"/>
+    </docblock>
+    <parameter name="section" byreference="false" type="{unknown}"/>
+    <parameter name="limit" byreference="false" type="integer" default="16"/>
+    <parameter name="start" byreference="false" type="integer" default="0"/>
+  </method>
+  <method name="testW3Validity" start="401" end="411" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testW3Validity method">For each of the slugged behavior modes, generate (a) test file(s) and submit them to the W3 validator
+service. WARNING: this test is extremely slow (not to mention intensive on the validator service) therefore
+it is advisable to run it only for one mode and a limited range unless testing a code modification
+there are 2 overrides in the code to limit the duration of the test if it /is/ run.</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <inline>
+      <comment value="overriden" line="405"/>
+    </inline>
+  </method>
+  <method name="_testMode" start="428" end="443" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="testMode method">The limit and start points (limit parameters are first to allow calling as _testMode(x, 1, 1)) are passed
+as parameters to allow selective/reduced/focused testing. Testing the whole range and all modes is very time
+consuming.</description>
+      <param type="mixed" variable="$mode"/>
+      <param type="int" variable="$hex1Limit"/>
+      <param type="int" variable="$hex2Limit"/>
+      <param type="int" variable="$hex1Start"/>
+      <param type="int" variable="$hex2Start"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="protected"/>
+    </docblock>
+    <parameter name="mode" byreference="false" type="{unknown}"/>
+    <parameter name="hex1Limit" byreference="false" type="integer" default="16"/>
+    <parameter name="hex2Limit" byreference="false" type="integer" default="16"/>
+    <parameter name="hex1Start" byreference="false" type="integer" default="0"/>
+    <parameter name="hex2Start" byreference="false" type="integer" default="0"/>
+  </method>
+  <method name="_testFile" start="456" end="482" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="testModeRange method">Send the test file to the W3 Validator service, if the result is invalid trigger parseW3Response</description>
+      <param type="mixed" variable="$mode"/>
+      <param type="mixed" variable="$hex1"/>
+      <param type="mixed" variable="$hex2"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="protected"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_parseW3Response" start="497" end="531" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="parseW3Response method">If W3 gave back an error response, parse out the character code point and build a list of illegal characters.
+Use this list to echo out a partial regex match to be used in the slug behavior to capture and slug these
+illegal characters in future</description>
+      <param type="mixed" variable="$response"/>
+      <param type="mixed" variable="$test"/>
+      <param type="mixed" variable="$inputFile"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="protected"/>
+    </docblock>
+    <parameter name="response" byreference="false" type="{unknown}"/>
+    <parameter name="test" byreference="false" type="{unknown}"/>
+    <parameter name="inputFile" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_createTestFile" start="543" end="567" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="createTestFile method">Create a single test file, for the specified range/section</description>
+      <param type="mixed" variable="$section"/>
+      <param type="string" variable="$mode"/>
+      <return description="file path" type="string"/>
+      <access value="protected"/>
+    </docblock>
+    <parameter name="section" byreference="false" type="{unknown}"/>
+    <parameter name="mode" byreference="false" type="string" default="'display'"/>
+  </method>
+  <method name="__writeHeader" start="579" end="585" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="writeHeader method">Generate the file header</description>
+      <param type="mixed" variable="$file"/>
+      <param type="mixed" variable="$title"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="file" byreference="false" type="{unknown}"/>
+    <parameter name="title" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="__renderChar" start="597" end="617" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="renderChar method">Slug the character and generate the output to be put in the test file</description>
+      <param type="mixed" variable="$hexCode"/>
+      <param type="string" variable="$mode"/>
+      <return type="string"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="hexCode" byreference="false" type="{unknown}"/>
+    <parameter name="mode" byreference="false" type="string" default="'id'"/>
+  </method>
+  <method name="testSection0" start="627" end="1888" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testSection0 method">Testing characters 0000 - 0fff</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="testSection1" start="1898" end="3179" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testSection1 method">Testing characters 1000 - 1fff</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="testSection2" start="3189" end="4470" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testSection2 method">Testing characters 2000 - 2fff</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="testSection3" start="4480" end="5761" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testSection3 method">Testing characters 3000 - 3fff</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="testSection4" start="5771" end="7052" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testSection4 method">Testing characters 4000 - 4fff</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="testSection5" start="7062" end="8343" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testSection5 method">Testing characters 5000 - 5fff</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="testSection6" start="8353" end="9634" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testSection6 method">Testing characters 6000 - 6fff</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="testSection7" start="9644" end="10925" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testSection7 method">Testing characters 7000 - 7fff</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="testSection8" start="10935" end="12216" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testSection8 method">Testing characters 8000 - 8fff</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="testSection9" start="12226" end="13507" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testSection9 method">Testing characters 9000 - 9fff</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="testSectiona" start="13517" end="14798" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testSectiona method">Testing characters a000 - afff</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="testSectionb" start="14808" end="16089" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testSectionb method">Testing characters b000 - bfff</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="testSectionc" start="16099" end="17380" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testSectionc method">Testing characters c000 - cfff</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="testSectiond" start="17391" end="18032" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testSectiond method">Testing characters d000 - dfff</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="testUrlMode" start="18040" end="18142" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="test Url method"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="testTruncateMultibyte" start="18162" end="18186" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testTruncateMultibyte method">Ensure that the first test doesn't cut a multibyte character The test string is:
+	17 chars
+	51 bytes UTF-8 encoded
+	34 bytes SJIS encoded
+Ensure that it'll still work with encodings which aren't UTF-8 - note this file is UTF-8</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="testDuplicateWithLengthRestriction" start="18196" end="18241" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testDuplicateWithLengthRestriction method">If there's a length restriction - ensure it's respected by the unique slug routine</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ab510a8ba8b3726396604720ff22cc62d62cda63"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><message>hele hoop opgelost, ik had het eerder moeten committen :$</message></commit></enrichment></enrichments></class>
