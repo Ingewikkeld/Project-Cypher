@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Database\DatabaseManager;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +14,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
     }
 
     /**
@@ -23,6 +23,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(
+            'PDO',
+            function ($app) {
+                /** @var DatabaseManager $databaseManager */
+                $databaseManager = $app[DatabaseManager::class];
+
+                return $databaseManager->connection($databaseManager->getDefaultConnection())->getPdo();
+            }
+        );
     }
 }

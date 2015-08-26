@@ -15,3 +15,5 @@ Route::get('/', function () {
     //return view('welcome');
     return view('template/front/pages/homepage');
 });
+
+Route::get('/test', 'PersonController@test');
