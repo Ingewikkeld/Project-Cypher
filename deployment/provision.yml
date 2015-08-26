@@ -34,8 +34,11 @@
   # PHP
   - include: tasks/php.yml
 
-  # PHP
+  # Composer
   - include: tasks/composer.yml
+
+  # Composer
+  - include: tasks/laravel.yml
 
   # enhance bash with bash_it
 #  - include: tasks/bash_it.yml
@@ -71,8 +74,6 @@
   ######################################
   # D E P L O Y
   ######################################
-  - name: provision | install laravel installer with composer
-    command: composer global require "laravel/installer=~1.1"
 
   # deploy the code
   #- include: deploy.yml
