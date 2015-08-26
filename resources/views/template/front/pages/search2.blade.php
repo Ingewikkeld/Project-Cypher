@@ -1,15 +1,15 @@
 @extends('template.front.1column-home')
 
-@section('body_class') home @endsection
+@section('body_class') search @endsection
 
 @section('content')
-{{--    @include('template.front.pages.homepage.welcome')--}}
+    {{--    @include('template.front.pages.homepage.welcome')--}}
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <h1>Home</h1>
+                <h1>Search</h1>
 
-                <p>This is the general dashboard</p>
+                <add-person></add-person>
             </div>
         </div>
     </div>

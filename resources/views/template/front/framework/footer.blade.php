@@ -2,7 +2,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                FOOTER
+                <br />
+                &copy;<?php echo date("Y"); ?> Enigma BV.
             </div>
         </div>
     </div>
