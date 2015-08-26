@@ -1,4 +1,7 @@
-/bootstrap/compiled.php
+bootstrap/compiled.php
+bootstrap/environment.php
+/node_modules
+/vendor
 .env.*.php
 .env.php
 .env
@@ -6,3 +9,14 @@
 *.swo
 .vagrant/*
 .idea/*
+.DS_Store
+dist
+app/config/local
+cms.sublime-project
+cms.sublime-workspace
+*.map
+config/local
+atlassian-ide-plugin.xml
+public/file-uploads
+_ide_helper.php
+public/front/images/cache
