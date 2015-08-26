@@ -75,6 +75,10 @@
   # D E P L O Y
   ######################################
 
+  # install dependencies for our wecamp app
+  - name: provision | Install all dependencies for our wecamp app with composer
+    command: chdir={{ apache.docroot }} composer install creates={{ apache.docroot }}/vendor
+
   # deploy the code
   #- include: deploy.yml
 

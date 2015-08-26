@@ -1,9 +1,9 @@
 <VirtualHost *:80>
 	ServerAdmin you@example.com
 	ServerName {{ website_fqdn }}
-	DocumentRoot {{ apache.docroot }}
+	DocumentRoot {{ apache.docroot }}/public
 
-	 <Directory {{ apache.docroot }}>
+	 <Directory {{ apache.docroot }}/public>
 		Options FollowSymLinks
 		AllowOverride All
 		Order allow,deny
