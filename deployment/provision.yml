@@ -71,6 +71,9 @@
   ######################################
   # D E P L O Y
   ######################################
+  - name: provision | install laravel installer with composer
+    command: composer global require "laravel/installer=~1.1"
+
   # deploy the code
   #- include: deploy.yml
 
