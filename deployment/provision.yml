@@ -34,6 +34,9 @@
   # PHP
   - include: tasks/php.yml
 
+  # PHP
+  - include: tasks/composer.yml
+
   # enhance bash with bash_it
 #  - include: tasks/bash_it.yml
 

@@ -1,0 +1,19 @@
+---
+  # Composer
+  - name: composer | Ensure composer is installed
+    shell: creates=/usr/local/bin/composer curl -sS https://getcomposer.org/installer | sudo php -- --filename=composer --install-dir=/usr/local/bin
+
+  - name: composer | Ensure composer can be called without the .phar part
+    command: chdir=/usr/local/bin creates=/usr/local/bin/composer cp composer.phar composer
+
+  - name: composer | Ensure ansible SSH user has its .composer directory
+    file: path=~{{ansible_ssh_user}}/.composer state=directory owner={{ansible_ssh_user}} group={{ansible_ssh_user}} mode=0700
+
+  - name: composer | Ensure root has its .composer directory
+    file: path=/root/.composer state=directory owner=root group=root mode=0700
+
+  - name: composer | Ensure the authentication file for composer is installed for the ansible SSH user
+    template: src=files/conf/composer-auth.json dest=~{{ ansible_ssh_user }}/.composer/auth.json owner={{ ansible_ssh_user }} group={{ ansible_ssh_user }} mode=0600
+
+  - name: composer | Ensure the authentication file for composer is installed for root
+    template: src=files/conf/composer-auth.json dest=/root/.composer/auth.json owner={{ ansible_ssh_user }} group={{ ansible_ssh_user }} mode=0600
