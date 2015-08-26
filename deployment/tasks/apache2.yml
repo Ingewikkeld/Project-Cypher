@@ -6,8 +6,9 @@
   - name: apache2 | Ensure Apache2 is installed
     apt: pkg=apache2 state=installed
 
-  - name: apache2 | Create root directory
-    file: path={{ apache.docroot }} state=directory mode=0775 owner=www-data group={{ ansible_ssh_user }}
+# don't need to create it as it is already there becaouse of the NFS mount
+#  - name: apache2 | Create root directory
+#    file: path={{ apache.docroot }} state=directory mode=0775 owner=www-data group={{ ansible_ssh_user }}
 
   - name: apache2 | enable headers module
     command: a2enmod rewrite headers creates=/etc/apache2/mods-enabled/headers.load
