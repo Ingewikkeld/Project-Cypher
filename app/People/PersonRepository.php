@@ -129,4 +129,27 @@ EOQ;
             }
         }
     }
+
+    /**
+     * @return array a collection of peoples
+     */
+    public function findAll()
+    {
+        $sql = <<< EOQ
+SELECT *
+FROM people p
+EOQ;
+
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute();
+
+        $peoples = [];
+
+        while (($row = $stmt->fetch(PDO::FETCH_ASSOC)) !== false) {
+            $person = new Person(PersonId::fromString($row['id']), $row['name']);
+            array_push($peoples, $person);
+        }
+
+        return $peoples;
+    }
 }
