@@ -2,7 +2,7 @@
 .env.*.php
 .env.php
 .env
-.vagrant
 *.swp
 *.swo
-.vagrant
+.vagrant/*
+.idea/*
