@@ -60,7 +60,7 @@
 
   # Ensure the correct mysql user exists and has access to this database
   - name: provision | Ensure database user exists
-    mysql_user: name={{ mysql_user }} host=localhost password={{ mysql_pass }} login_password={{ mysql_root_pass }} login_user={{ mysql_root_user }}
+    mysql_user: name={{ mysql_user }} host=localhost password={{ mysql_pass }} login_password={{ mysql_root_pass }} login_user={{ mysql_root_user }} priv={{ mysql_dbname }}.*:ALL
   
   # Apache VirtualHost
   - name: provision | Ensure apache virtualhost
