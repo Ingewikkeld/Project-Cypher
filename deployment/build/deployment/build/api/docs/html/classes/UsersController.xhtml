@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pdxf="http://xml.phpdox.net/functions" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head xmlns:git="http://xml.phpdox.net/gitlog#">
+    <title>phpDox - UsersController</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav xmlns:git="http://xml.phpdox.net/gitlog#" class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../reports/index.xhtml">Reports</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">UsersController</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>UsersController</h1>
+        <h4>Users Controller</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class UsersController
+                extends <a title="AppController" href="../classes/AppController.xhtml">AppController</a>
+            {<br/><ul class="none"><li>// members</li><li>public
+                         <a href="#members">$components</a>;
+                    </li><li>public
+                         <a href="#members">$helpers</a>;
+                    </li><li>public
+                         <a href="#members">$uses</a>;
+                    </li><li>public
+                         <a href="#members">$error</a>;
+                    </li><li>public
+                         <a href="#members">$errors</a>;
+                    </li><li>public
+                         <a href="#members">$records</a>;
+                    </li><li>public
+                         <a href="#members">$girlNames</a>;
+                    </li><li>public
+                         <a href="#members">$lineno</a>;
+                    </li><li>public
+                         <a href="#members">$csv_header_translation</a>;
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="AppController">AppController</span></li><li>public
+                             <a href="#members">$components</a>;
+                        </li><li>public
+                             <a href="#members">$uses</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public void <a title="UsersController" href="../classes/UsersController/beforeFilter.xhtml">beforeFilter</a>()
+                    </li><li>private boolean <a title="UsersController" href="../classes/UsersController/_userExists.xhtml">_userExists</a>()
+                    </li><li>public bool <a title="UsersController" href="../classes/UsersController/login.xhtml">login</a>()
+                    </li><li>public nothing <a title="UsersController" href="../classes/UsersController/logout.xhtml">logout</a>()
+                    </li><li>public void <a title="UsersController" href="../classes/UsersController/reset.xhtml">reset</a>()
+                    </li><li>public void <a title="UsersController" href="../classes/UsersController/index.xhtml">index</a>()
+                    </li><li>public [type] <a title="UsersController" href="../classes/UsersController/getInactiveUsers.xhtml">getInactiveUsers</a>()
+                    </li><li>public void <a title="UsersController" href="../classes/UsersController/inactive.xhtml">inactive</a>()
+                    </li><li>public void <a title="UsersController" href="../classes/UsersController/import.xhtml">import</a>()
+                    </li><li>public void <a title="UsersController" href="../classes/UsersController/process.xhtml">process</a>()
+                    </li><li>public void <a title="UsersController" href="../classes/UsersController/readGirlNames.xhtml">readGirlNames</a>()
+                    </li><li>public void <a title="UsersController" href="../classes/UsersController/getRecordsFromCsv.xhtml">getRecordsFromCsv</a>()
+                    </li><li>private array <a title="UsersController" href="../classes/UsersController/_translateHeaders.xhtml">_translateHeaders</a>()
+                    </li><li>public void <a title="UsersController" href="../classes/UsersController/validateUserRecords.xhtml">validateUserRecords</a>()
+                    </li><li>private void <a title="UsersController" href="../classes/UsersController/_getValidationErrors.xhtml">_getValidationErrors</a>()
+                    </li><li>private void <a title="UsersController" href="../classes/UsersController/_workCsvFile.xhtml">_workCsvFile</a>()
+                    </li><li>private void <a title="UsersController" href="../classes/UsersController/_sanitizeUserRecord.xhtml">_sanitizeUserRecord</a>()
+                    </li><li>private void <a title="UsersController" href="../classes/UsersController/_generateFbUsername.xhtml">_generateFbUsername</a>()
+                    </li><li>private void <a title="UsersController" href="../classes/UsersController/_generatePassword.xhtml">_generatePassword</a>()
+                    </li><li>public bool <a title="UsersController" href="../classes/UsersController/view.xhtml">view</a>()
+                    </li><li>public void <a title="UsersController" href="../classes/UsersController/add.xhtml">add</a>()
+                    </li><li>public nothing <a title="UsersController" href="../classes/UsersController/requestAccountActivation.xhtml">requestAccountActivation</a>()
+                    </li><li>public void <a title="UsersController" href="../classes/UsersController/activation_sent.xhtml">activation_sent</a>()
+                    </li><li>public boolean <a title="UsersController" href="../classes/UsersController/activateUser.xhtml">activateUser</a>()
+                    </li><li>public boolean <a title="UsersController" href="../classes/UsersController/autoActivateUser.xhtml">autoActivateUser</a>()
+                    </li><li>public bool|void <a title="UsersController" href="../classes/UsersController/activate_account.xhtml">activate_account</a>()
+                    </li><li>public void <a title="UsersController" href="../classes/UsersController/print_errors.xhtml">print_errors</a>()
+                    </li><li>public void <a title="UsersController" href="../classes/UsersController/activate_users.xhtml">activate_users</a>()
+                    </li><li>public void <a title="UsersController" href="../classes/UsersController/activate_single_user.xhtml">activate_single_user</a>()
+                    </li><li>public bool <a title="UsersController" href="../classes/UsersController/edit.xhtml">edit</a>()
+                    </li><li>public void <a title="UsersController" href="../classes/UsersController/delete.xhtml">delete</a>()
+                    </li><li>public void <a title="UsersController" href="../classes/UsersController/ajaxdelete.xhtml">ajaxdelete</a>()
+                    </li><li>public void <a title="UsersController" href="../classes/UsersController/reset_password.xhtml">reset_password</a>()
+                    </li><li>public boolean <a title="UsersController" href="../classes/UsersController/changeAjaxPassword.xhtml">changeAjaxPassword</a>()
+                    </li><li>public bool <a title="UsersController" href="../classes/UsersController/changePassword.xhtml">changePassword</a>()
+                    </li><li>public boolean <a title="UsersController" href="../classes/UsersController/isAuthorized.xhtml">isAuthorized</a>()
+                    </li><li>public boolean <a title="UsersController" href="../classes/UsersController/admin_blockUser.xhtml">admin_blockUser</a>()
+                    </li><li>public boolean <a title="UsersController" href="../classes/UsersController/admin_unblockUser.xhtml">admin_unblockUser</a>()
+                    </li><li>public bool <a title="UsersController" href="../classes/UsersController/search.xhtml">search</a>()
+                    </li><li>public boolean <a title="UsersController" href="../classes/UsersController/delete_account.xhtml">delete_account</a>()
+                    </li><li>public void <a title="UsersController" href="../classes/UsersController/account_deleted.xhtml">account_deleted</a>()
+                    </li><li>public void <a title="UsersController" href="../classes/UsersController/mysocsoc.xhtml">mysocsoc</a>()
+                    </li><li>public void <a title="UsersController" href="../classes/UsersController/whoIsOnline.xhtml">whoIsOnline</a>()
+                    </li><li>public string <a title="UsersController" href="../classes/UsersController/autocomplete.xhtml">autocomplete</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="AppController">AppController</span></li><li>public void <a title="AppController" href="../classes/AppController/getSearchFormInfo.xhtml">getSearchFormInfo</a>()
+                        </li><li>public void <a title="AppController" href="../classes/AppController/beforeRender.xhtml">beforeRender</a>()
+                        </li><li>public bool <a title="AppController" href="../classes/AppController/isBrowserOutOfDate.xhtml">isBrowserOutOfDate</a>()
+                        </li><li>public void <a title="AppController" href="../classes/AppController/beforeFilter.xhtml">beforeFilter</a>()
+                        </li><li>public boolean <a title="AppController" href="../classes/AppController/isAuthorized.xhtml">isAuthorized</a>()
+                        </li><li>public void <a title="AppController" href="../classes/AppController/updateAuthUserInfo.xhtml">updateAuthUserInfo</a>()
+                        </li><li>public static string <a title="AppController" href="../classes/AppController/ago.xhtml">ago</a>()
+                        </li><li>public float <a title="AppController" href="../classes/AppController/daysBetween.xhtml">daysBetween</a>()
+                        </li><li>public void <a title="AppController" href="../classes/AppController/getBrowser.xhtml">getBrowser</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/AppController.xhtml">AppController</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled members">
+          <h4>public</h4>
+          <ul class="members">
+            <li id="components"><strong>$components</strong>
+                —
+                array</li>
+            <li id="components">
+              <strong>$components</strong>
+            </li>
+            <li id="csv_header_translation"><strong>$csv_header_translation</strong>
+                —
+                array</li>
+            <li id="error"><strong>$error</strong>
+                —
+                string</li>
+            <li id="errors">
+              <strong>$errors</strong>
+            </li>
+            <li id="girlNames"><strong>$girlNames</strong>
+                —
+                array<br/><span class="indent">Female names are used to identify the gender of imported users</span></li>
+            <li id="helpers"><strong>$helpers</strong>
+                —
+                array</li>
+            <li id="lineno"><strong>$lineno</strong>
+                —
+                <br/><span class="indent">Holds the current linenumber for the importing process</span></li>
+            <li id="records">
+              <strong>$records</strong>
+            </li>
+            <li id="uses"><strong>$uses</strong>
+                —
+                array</li>
+            <li id="uses">
+              <strong>$uses</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="_generateFbUsername">
+              <a title="UsersController" href="../classes/UsersController/_generateFbUsername.xhtml">_generateFbUsername()</a>
+            </li>
+            <li id="_generatePassword">
+              <a title="UsersController" href="../classes/UsersController/_generatePassword.xhtml">_generatePassword()</a>
+            </li>
+            <li id="_getValidationErrors">
+              <a title="UsersController" href="../classes/UsersController/_getValidationErrors.xhtml">_getValidationErrors()</a>
+            </li>
+            <li id="_sanitizeUserRecord">
+              <a title="UsersController" href="../classes/UsersController/_sanitizeUserRecord.xhtml">_sanitizeUserRecord()</a>
+            </li>
+            <li id="_translateHeaders"><a title="UsersController" href="../classes/UsersController/_translateHeaders.xhtml">_translateHeaders()</a>
+                — Translate incoming headers (of a csv file) to the corresponding model property-names. This way, the customer can use friendly names and is not concerned about the abstract names which are used in the database.</li>
+            <li id="_userExists"><a title="UsersController" href="../classes/UsersController/_userExists.xhtml">_userExists()</a>
+                — Check whether a user exists</li>
+            <li id="_workCsvFile">
+              <a title="UsersController" href="../classes/UsersController/_workCsvFile.xhtml">_workCsvFile()</a>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="account_deleted">
+              <a title="UsersController" href="../classes/UsersController/account_deleted.xhtml">account_deleted()</a>
+            </li>
+            <li id="activateUser"><a title="UsersController" href="../classes/UsersController/activateUser.xhtml">activateUser()</a>
+                — An admin can activate an inactive user by using this function</li>
+            <li id="activate_account"><a title="UsersController" href="../classes/UsersController/activate_account.xhtml">activate_account()</a>
+                — This action is executed when the user clicked the activation link in his email</li>
+            <li id="activate_single_user">
+              <a title="UsersController" href="../classes/UsersController/activate_single_user.xhtml">activate_single_user()</a>
+            </li>
+            <li id="activate_users">
+              <a title="UsersController" href="../classes/UsersController/activate_users.xhtml">activate_users()</a>
+            </li>
+            <li id="activation_sent"><a title="UsersController" href="../classes/UsersController/activation_sent.xhtml">activation_sent()</a>
+                — After the user has been saved, he is redirected to this function</li>
+            <li id="add"><a title="UsersController" href="../classes/UsersController/add.xhtml">add()</a>
+                — Add a new user / Register yourself as a new user</li>
+            <li id="admin_blockUser"><a title="UsersController" href="../classes/UsersController/admin_blockUser.xhtml">admin_blockUser()</a>
+                — Block the useraccount identified by the given user id</li>
+            <li id="admin_unblockUser"><a title="UsersController" href="../classes/UsersController/admin_unblockUser.xhtml">admin_unblockUser()</a>
+                — Unblock the useraccount identified by the given user id</li>
+            <li id="ajaxdelete"><a title="UsersController" href="../classes/UsersController/ajaxdelete.xhtml">ajaxdelete()</a>
+                — ajaxdelete method</li>
+            <li id="autoActivateUser"><a title="UsersController" href="../classes/UsersController/autoActivateUser.xhtml">autoActivateUser()</a>
+                — This is a copy of the function 'activateUser', only this copy _does_ only return true or false and doesn't redirect the user.</li>
+            <li id="autocomplete"><a title="UsersController" href="../classes/UsersController/autocomplete.xhtml">autocomplete()</a>
+                — Ajax function for retrieving usernames</li>
+            <li id="beforeFilter">
+              <a title="UsersController" href="../classes/UsersController/beforeFilter.xhtml">beforeFilter()</a>
+            </li>
+            <li id="changeAjaxPassword"><a title="UsersController" href="../classes/UsersController/changeAjaxPassword.xhtml">changeAjaxPassword()</a>
+                — This function enables the user to change its password</li>
+            <li id="changePassword"><a title="UsersController" href="../classes/UsersController/changePassword.xhtml">changePassword()</a>
+                — Change the password of a user</li>
+            <li id="delete"><a title="UsersController" href="../classes/UsersController/delete.xhtml">delete()</a>
+                — delete method</li>
+            <li id="delete_account"><a title="UsersController" href="../classes/UsersController/delete_account.xhtml">delete_account()</a>
+                — For users, this action will clear out most of the information and sets the account inactive. Information that will be cleared:</li>
+            <li id="edit"><a title="UsersController" href="../classes/UsersController/edit.xhtml">edit()</a>
+                — edit method</li>
+            <li id="getInactiveUsers"><a title="UsersController" href="../classes/UsersController/getInactiveUsers.xhtml">getInactiveUsers()</a>
+                — Get all inactive useraccounts of the supplied accounttype (facebook, default)</li>
+            <li id="getRecordsFromCsv">
+              <a title="UsersController" href="../classes/UsersController/getRecordsFromCsv.xhtml">getRecordsFromCsv()</a>
+            </li>
+            <li id="import">
+              <a title="UsersController" href="../classes/UsersController/import.xhtml">import()</a>
+            </li>
+            <li id="inactive"><a title="UsersController" href="../classes/UsersController/inactive.xhtml">inactive()</a>
+                — index method</li>
+            <li id="index"><a title="UsersController" href="../classes/UsersController/index.xhtml">index()</a>
+                — index method</li>
+            <li id="isAuthorized"><a title="UsersController" href="../classes/UsersController/isAuthorized.xhtml">isAuthorized()</a>
+                — Set authorization for actions concerning the user with the role 'beheerder'</li>
+            <li id="login"><a title="UsersController" href="../classes/UsersController/login.xhtml">login()</a>
+                — Log the user in</li>
+            <li id="logout"><a title="UsersController" href="../classes/UsersController/logout.xhtml">logout()</a>
+                — Destroy the session data and log the user out The user will be redirected</li>
+            <li id="mysocsoc">
+              <a title="UsersController" href="../classes/UsersController/mysocsoc.xhtml">mysocsoc()</a>
+            </li>
+            <li id="print_errors">
+              <a title="UsersController" href="../classes/UsersController/print_errors.xhtml">print_errors()</a>
+            </li>
+            <li id="process">
+              <a title="UsersController" href="../classes/UsersController/process.xhtml">process()</a>
+            </li>
+            <li id="readGirlNames">
+              <a title="UsersController" href="../classes/UsersController/readGirlNames.xhtml">readGirlNames()</a>
+            </li>
+            <li id="requestAccountActivation"><a title="UsersController" href="../classes/UsersController/requestAccountActivation.xhtml">requestAccountActivation()</a>
+                — This function is an access point to the model function with the same name</li>
+            <li id="reset"><a title="UsersController" href="../classes/UsersController/reset.xhtml">reset()</a>
+                — Reset the password by the supplied token</li>
+            <li id="reset_password"><a title="UsersController" href="../classes/UsersController/reset_password.xhtml">reset_password()</a>
+                — This function is used for users who want to reset their password It's this function that is public to the users</li>
+            <li id="search"><a title="UsersController" href="../classes/UsersController/search.xhtml">search()</a>
+                — Search for other users</li>
+            <li id="validateUserRecords">
+              <a title="UsersController" href="../classes/UsersController/validateUserRecords.xhtml">validateUserRecords()</a>
+            </li>
+            <li id="view"><a title="UsersController" href="../classes/UsersController/view.xhtml">view()</a>
+                — view method</li>
+            <li id="whoIsOnline">
+              <a title="UsersController" href="../classes/UsersController/whoIsOnline.xhtml">whoIsOnline()</a>
+            </li>
+          </ul>
+          <h3>Inherited from <a title="AppController" href="../classes/AppController.xhtml">AppController</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="ago">
+              <a title="AppController" href="../classes/AppController/ago.xhtml">ago()</a>
+            </li>
+            <li id="beforeFilter"><a title="AppController" href="../classes/AppController/beforeFilter.xhtml">beforeFilter()</a>
+                — This function is called before every action is run</li>
+            <li id="beforeRender"><a title="AppController" href="../classes/AppController/beforeRender.xhtml">beforeRender()</a>
+                — This function is called before every view is displayed</li>
+            <li id="daysBetween">
+              <a title="AppController" href="../classes/AppController/daysBetween.xhtml">daysBetween()</a>
+            </li>
+            <li id="getBrowser"><a title="AppController" href="../classes/AppController/getBrowser.xhtml">getBrowser()</a>
+                — Browser check</li>
+            <li id="getSearchFormInfo">
+              <a title="AppController" href="../classes/AppController/getSearchFormInfo.xhtml">getSearchFormInfo()</a>
+            </li>
+            <li id="isAuthorized"><a title="AppController" href="../classes/AppController/isAuthorized.xhtml">isAuthorized()</a>
+                — Set global authorization for the application</li>
+            <li id="isBrowserOutOfDate">
+              <a title="AppController" href="../classes/AppController/isBrowserOutOfDate.xhtml">isBrowserOutOfDate()</a>
+            </li>
+            <li id="updateAuthUserInfo"><a title="AppController" href="../classes/AppController/updateAuthUserInfo.xhtml">updateAuthUserInfo()</a>
+                — Update the information hold in the Auth component. Useful when the users' information changes (when editing user information, for example).</li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul xmlns:git="http://xml.phpdox.net/gitlog#" class="styled history">
+          <li>
+            <h3>2014-01-10T21:37:01+00:00 (commit #<span title="6e1488c6f20e7e37bb3593e099757328d7ec7dc5">6e1488c</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">bij het wijzigen van FB user waarbij de username niet werd gewijzigd, kwam de melding dat de username al bestond. Dat is nu opgelost door de username niet mee te nemen bij het opslaan als deze niet gewijzigd is.
+nu met de juiste auteur</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-11-29T21:29:46+00:00 (commit #<span title="82828c1b4bf0ce37ebeb9de36ddc95dc2dde19be">82828c1</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">- users/view: flinke performance winst door containable te gebruiken
+- posts van een gebruiker worden nu weer getoond
+
+fixes #86</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-10-25T23:23:13+00:00 (commit #<span title="be09579b1ac059f23a9a21971dbf0c8b8b6cdc38">be09579</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (pauledenburg@gmail.com) /
+                        Commiter: Paul Edenburg (pauledenburg@gmail.com)
+                    </p>
+              <pre class="wrapped">verwijderen van users gebeurt nu met ajax</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-10-25T22:47:04+00:00 (commit #<span title="99db7b4f0ce770c8765e59cfc850dc5558d3c8fc">99db7b4</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (pauledenburg@gmail.com) /
+                        Commiter: Paul Edenburg (pauledenburg@gmail.com)
+                    </p>
+              <pre class="wrapped">hele hoop grafische wijzigingen doorgevoerd. Daarnaast veel ajax toegevoegd en het beheermenu een stuk compacter gemaakt</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-10-11T15:20:03+00:00 (commit #<span title="510fb563773ec2293428fdefd1ee3439e4e87556">510fb56</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (pauledenburg@gmail.com) /
+                        Commiter: Paul Edenburg (pauledenburg@gmail.com)
+                    </p>
+              <pre class="wrapped">beheerders kunnen nu de tekst aanpassen welke in een Facebook-account-activatiemail geplaatst wordt.
+fixes #36</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-10-06T19:40:29+00:00 (commit #<span title="f16525be325aa16218dfea4fe983ccf2a60b79b9">f16525b</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (pauledenburg@gmail.com) /
+                        Commiter: Paul Edenburg (pauledenburg@gmail.com)
+                    </p>
+              <pre class="wrapped">wijzigingen na het aanmaken van een nieuw phpstrom project</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-08-07T13:13:46+00:00 (commit #<span title="7030eeaa85d3bb45050bd624ba101882b2b4b9b2">7030eea</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">Admins mogen usernames wijzigen
+- controleren of username gewijzigd was ging niet goed
+- check ingevoegd of AuthComponent::user geupdatet moet worden</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-08-07T12:48:55+00:00 (commit #<span title="bc66de6cc392e345cca3f4bc322c06681adc208e">bc66de6</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">Admins mogen nu ook gebruikersnamen wijzigen wanneer deze daadwerkelijk gewijzigd is</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-08-07T12:48:18+00:00 (commit #<span title="b70f7b269f8ff09dd0bc4a5bde0ad84a0ae8e66b">b70f7b2</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">Admins mogen nu ook gebruikersnamen wijzigen wanneer deze daadwerkelijk gewijzigd is</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-08-07T12:09:23+00:00 (commit #<span title="d2c6c1d2c550a592d1da94031eb477f4284d48cb">d2c6c1d</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">Admins mogen nu ook gebruikersnamen wijzigen</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-08-07T12:05:01+00:00 (commit #<span title="e5ee1b695c8da10fae6b4edbed0fe1567c6c2616">e5ee1b6</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">Een foutje in de regex bij het wijzigen van de username zorgde ervoor dat als 'fb'+nummers ergens in de naam voorkwamen, de naam gewijzigd mocht worden.
+Dit is nu gewijzigd zodat de naam met fb moet beginnen en numeriek moet eindigen.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-08-05T18:39:32+00:00 (commit #<span title="7d17e4b5a127b9f99b6dc458b7fa2b80106ef70e">7d17e4b</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">teksten aangepast van de facebook activatie e-mail nav bevinding FB008</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-08-05T18:18:19+00:00 (commit #<span title="8423fe5e3b1d02fbd2237317d86153884fadffe7">8423fe5</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">Inactive users pagina toont nu alleen inactieve accounts welke ook een achternaam ingevuld hebben. Op deze manier moeten accounts verborgen worden van gebruikers die hem zelf verwijderd hebben</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-08-05T18:07:44+00:00 (commit #<span title="f7f3ddc35a55624456f1861a28bde1421a3d321c">f7f3ddc</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">na het verwijderen van een gebruiker word je teruggestuurd naar waar je vandaan kwam, ipv users index</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-08-04T19:22:19+00:00 (commit #<span title="10859de83447c398517fb34a6de26a965e522a3e">10859de</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">- directe toegang tot /users/getImportedRecords onmogelijk gemaakt omdat je eerst een csv file geupload moet hebben
+- bij het versturen van een activatie email werd een account ook inactief gemaakt. dat is nu niet meer het geval</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-08-04T16:35:38+00:00 (commit #<span title="3b27625c8768c4d0f1be5d3b629d478fc10f6d33">3b27625</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">directe toegang tot /users/import onmogelijk gemaakt omdat je eerst een csv file geupload moet hebben</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <footer xmlns:git="http://xml.phpdox.net/gitlog#">
+      <span>Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="LogableBehavior" namespace="" name="LogableBehavior" abstract="false" final="false" start="69" end="559">
+  <file path="app/Plugin/Tools/Model/Behavior" file="LogableBehavior.php" realpath="/home/vagrant/socsoc/app/Plugin/Tools/Model/Behavior/LogableBehavior.php" size="21809" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="932e1a1d5fbba04377e3a6711b0c71fdda14a3be"/>
+  <docblock>
+    <description compact="Logs saves and deletes of any model">Requires the following to work as intended :
+
+- "Log" model ( empty but for a order variable [created DESC]
+- "logs" table with these fields required :
+- id			[int]			:
+- title 		[string] 		: automagically filled with the display field of the model that was modified.
+	 - created	[date/datetime] : filled by cake in normal way
+
+- actsAs = array("Tools.Logable"); on models that should be logged
+
+Optional extra table fields for the "logs" table :
+
+- "description" 	[string] : Fill with a descriptive text of what, who and to which model/row :
+								"Contact "John Smith"(34) added by User "Administrator"(1).
+
+or if u want more detail, add any combination of the following :
+
+- "" 	[string] : automagically filled with the class name of the model that generated the activity.
+- "foreign_id" 	[int]	 : automagically filled with the primary key of the model that was modified.
+- "action" 	[string] : automagically filled with what action is made (add/edit/delete)
+- "user_id" 	[int] : populated with the supplied user info. (May be renamed. See bellow.)
+- "change" 	[string] : depending on setting either :
+							[name (alek) =&gt; (Alek), age (28) =&gt; (29)] or [name, age]
+
+- "version_id"	[int]	 : cooperates with RevisionBehavior to link the the shadow table (thus linking to old data)
+
+Remember that Logable behavior needs to be added after RevisionBehavior. In fact, just put it last to be safe.
+
+Optionally register what user was responisble for the activity :
+
+- Supply configuration only if defaults are wrong. Example given with defaults :
+
+		public $actsAs = array('Logable' =&gt; array('userModel' =&gt; 'User', 'userKey' =&gt; 'user_id'));
+
+- In AppController (or single controller if only needed once) add these lines to beforeFilter :
+
+	if (count($this-&gt;uses) &amp;&amp; $this-&gt;{$this-&gt;modelClass}-&gt;Behaviors-&gt;attached('Logable')) {
+		$this-&gt;{$this-&gt;modelClass}-&gt;setUserData($this-&gt;activeUser);
+	}
+
+Where "$activeUser" should be an array in the standard format for the User model used :
+
+$activeUser = array( $UserModel-&gt;alias =&gt; array( $UserModel-&gt;primaryKey =&gt; 123, $UserModel-&gt;displayField =&gt; 'Alexander'));
+// any other key is just ignored by this behaviour.</description>
+    <author value="Alexander Morland (alexander#maritimecolours.no)"/>
+    <co value="-author Eskil Mjelva Saatvedt"/>
+    <co value="-author Ronny Vindenes"/>
+    <co value="-author Carl Erik Fyllingen"/>
+    <contributor value="Miha"/>
+    <category value="Behavior"/>
+    <version value="2.2"/>
+    <modified value="3.june 2009 by Miha"/>
+    <modified value="2011-11-17 ms (mark scherer) cake2.0 ready">2011-11-17 ms</modified>
+  </docblock>
+  <extends full="ModelBehavior" namespace="" name="ModelBehavior"/>
+  <member name="user" type="{unknown}" default="null" visibility="public" line="71"/>
+  <member name="UserModel" type="{unknown}" default="null" visibility="public" line="73"/>
+  <member name="_defaults" type="array" visibility="protected" line="75"/>
+  <method name="setup" start="101" end="114" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Config options are : - userModel &#9;&#9;: 'User'. Class name of the user model you want to use (User by default), if you want to save User in log - userKey &#9;&#9;: 'user_id'. The field for saving the user to (user_id by default).">- change 		: 'list' &gt; [name, age]. Set to 'full' for [name (alek) =&gt; (Alek), age (28) =&gt; (29)]
+- descriptionIds 	: TRUE. Set to false to not include model id and user id in the title field
+- skip: array(). String array of actions to not log
+- ignore: array(). Fields to ignore</description>
+      <param type="object" variable="$Model">
+        <type full="Object" namespace="" name="Object"/>
+      </param>
+      <param type="array" variable="$config"/>
+    </docblock>
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="config" byreference="false" type="array"/>
+  </method>
+  <method name="settings" start="116" end="118" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+  </method>
+  <method name="enableLog" start="120" end="125" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="enable" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="findLog" start="148" end="184" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Useful for getting logs for a model, takes params to narrow find.">This method can actually also be used to find logs for all models or
+even another model. Using no params will return all activities for
+the models it is called from.
+
+Possible params :
+'model' 		: mixed (null) String with className, null to get current or false to get everything
+'action' 	: string (null) String with action (add/edit/delete), null gets all
+'order' 		: string ('created DESC') String with custom order
+'conditions : array (array()) Add custom conditions
+'foreign_id'	: int	 (null) Add a int
+
+(remember to use your own user key if you're not using 'user_id')
+'user_id' 	: int 	 (null) Defaults to all users, supply id if you want for only one User</description>
+      <param type="object" variable="$Model">
+        <type full="Object" namespace="" name="Object"/>
+      </param>
+      <param type="array" variable="$params"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="params" byreference="false" type="array"/>
+  </method>
+  <method name="findUserActions" start="199" end="270" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get list of actions for one user.">Params for getting (one line) activity descriptions
+and/or for just one model</description>
+      <example value="$this-&gt;Model-&gt;findUserActions(301, array('model' =&gt; 'BookTest'));"/>
+      <example value="$this-&gt;Model-&gt;findUserActions(301, array('events' =&gt; true));"/>
+      <example value="$this-&gt;Model-&gt;findUserActions(301, array('fields' =&gt; array('id','model'),'model' =&gt; 'BookTest');"/>
+      <param type="object" variable="$Model">
+        <type full="Object" namespace="" name="Object"/>
+      </param>
+      <param type="int" variable="$user_id"/>
+      <param type="array" variable="$params"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="user_id" byreference="false" type="{unknown}"/>
+    <parameter name="params" byreference="false" type="array"/>
+    <inline>
+      <comment value="if logged in user is asking for her own log, use the data we allready have" line="203"/>
+      <comment value="have all the detail models and change as list :" line="237"/>
+    </inline>
+  </method>
+  <method name="setUserData" start="286" end="296" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Use this to supply a model with the data of the logged in User.">Intended to be called in AppController::beforeFilter like this :
+
+	if ($this-&gt;{$this-&gt;modelClass}-&gt;Behaviors-&gt;attached('Logable')) {
+		$this-&gt;{$this-&gt;modelClass}-&gt;setUserData($activeUser);/
+	}
+
+The $userData array is expected to look like the result of a
+User::find(array('id'=&gt;123));</description>
+      <param type="object" variable="$Model">
+        <type full="Object" namespace="" name="Object"/>
+      </param>
+      <param type="array" variable="$userData"/>
+    </docblock>
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="userData" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="customLog" start="307" end="324" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Used for logging custom actions that arent crud, like login or download."/>
+      <example value="$this-&gt;Boat-&gt;customLog('ship', 66, array('title' =&gt; 'Titanic heads out'));"/>
+      <param type="object" variable="$Model">
+        <type full="Object" namespace="" name="Object"/>
+      </param>
+      <param description="name of action that is taking place (dont use the crud ones)" type="string" variable="$action"/>
+      <param description="id of the logged item (ie foreign_id in logs table)" type="int" variable="$id"/>
+      <param description="optional other values for your logs table" type="array" variable="$values"/>
+    </docblock>
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="action" byreference="false" type="{unknown}"/>
+    <parameter name="id" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="values" byreference="false" type="array"/>
+    <inline>
+      <todo value="clean up $logData" line="309"/>
+    </inline>
+  </method>
+  <method name="clearUserData" start="326" end="328" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+  </method>
+  <method name="setUserIp" start="330" end="336" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="userIP" byreference="false" type="{unknown}" default="null"/>
+    <inline>
+      <comment value="App::uses();" line="332"/>
+    </inline>
+  </method>
+  <method name="beforeDelete" start="338" end="349" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="cascade" byreference="false" type="{unknown}" default="true"/>
+  </method>
+  <method name="afterDelete" start="351" end="371" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+  </method>
+  <method name="beforeValidate" start="373" end="379" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+  </method>
+  <method name="beforeSave" start="381" end="387" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+  </method>
+  <method name="_prepareLog" start="389" end="396" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+  </method>
+  <method name="afterSave" start="398" end="479" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="created" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_saveLog" start="493" end="557" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Does the actual saving of the Log model. Also adds the special field if possible.">If model field in table, add the Model-&gt;alias
+If action field is NOT in table, remove it from dataset
+If the userKey field in table, add it to dataset
+If userData is supplied to model, add it to the title</description>
+      <param type="object" variable="$Model">
+        <type full="Object" namespace="" name="Object"/>
+      </param>
+      <param type="array" variable="$logData"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="logData" byreference="false" type="{unknown}"/>
+    <parameter name="title" byreference="false" type="{unknown}" default="null"/>
+    <inline>
+      <comment value="by miha nahtigal" line="507"/>
+    </inline>
+  </method>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ab510a8ba8b3726396604720ff22cc62d62cda63"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><message>hele hoop opgelost, ik had het eerder moeten committen :$</message></commit></enrichment></enrichments></class>

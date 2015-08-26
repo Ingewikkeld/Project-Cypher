@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="PostsController" namespace="" name="PostsController" abstract="false" final="false" start="8" end="1253">
+  <file path="app/Controller" file="PostsController.php" realpath="/home/vagrant/socsoc/app/Controller/PostsController.php" size="45000" time="2014-04-09T08:42:06+00:00" unixtime="1397032926" sha1="c08ff97266689d45121b78dafe02340f9b12fad7"/>
+  <docblock>
+    <description compact="Posts Controller"/>
+    <property value="Post $Post"/>
+  </docblock>
+  <extends full="AppController" namespace="" name="AppController"/>
+  <member name="components" type="array" visibility="public" line="13">
+    <docblock>
+      <description compact="used components in this controller"/>
+      <var type="object">
+        <type full="$components" namespace="" name="$components"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="uses" type="array" visibility="public" line="18"/>
+  <method name="admin_block" start="28" end="65" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Block the post"/>
+      <param description="The unique id or friendly_title for the post to be blocked" type="string" variable="$post"/>
+      <param description="A message which will be saved in the postrecord. Could be a reason why this post is being blocked. Defaults to 'Blocked by user &lt;username&gt; (&lt;id&gt;) on yyyy-mm-dd hh:mm:ss'" type="string" variable="$note"/>
+      <throws type="object">
+        <type full="NotFoundException" namespace="" name="NotFoundException"/>
+      </throws>
+      <return description="True when the post was succesfully blocked, false otherwise" type="boolean"/>
+    </docblock>
+    <parameter name="post" byreference="false" type="string" default="''"/>
+    <parameter name="note" byreference="false" type="{unknown}" default="null"/>
+    <inline>
+      <comment value="give the view the userinformation" line="31"/>
+      <comment value="set the default flashmessage" line="40"/>
+      <comment value="call the model function for blocking this user" line="43"/>
+      <comment value="redirect the user to the users' view page" line="63"/>
+    </inline>
+  </method>
+  <method name="admin_deblock" start="75" end="112" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Block the post"/>
+      <param description="The unique id or friendly_title for the post to be blocked" type="string" variable="$post"/>
+      <param description="A message which will be saved in the postrecord. Could be a reason why this post is being blocked. Defaults to 'Blocked by user &lt;username&gt; (&lt;id&gt;) on yyyy-mm-dd hh:mm:ss'" type="string" variable="$note"/>
+      <throws type="object">
+        <type full="NotFoundException" namespace="" name="NotFoundException"/>
+      </throws>
+      <return description="True when the post was succesfully blocked, false otherwise" type="boolean"/>
+    </docblock>
+    <parameter name="post" byreference="false" type="string" default="''"/>
+    <parameter name="note" byreference="false" type="{unknown}" default="null"/>
+    <inline>
+      <comment value="give the view the userinformation" line="78"/>
+      <comment value="set the default message" line="87"/>
+      <comment value="call the model function for blocking this user" line="90"/>
+      <comment value="redirect the user to the users' view page" line="110"/>
+    </inline>
+  </method>
+  <method name="index" start="120" end="127" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="index method"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <inline>
+      <comment value="get all the posts that are active" line="122"/>
+      <comment value="Set the title for the page" line="125"/>
+    </inline>
+  </method>
+  <method name="index_by_rubric" start="135" end="181" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="List all posts per rubric"/>
+      <param description="The friendly_title of the rubric the posts needs be in" type="string" variable="$rubric"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="rubric" byreference="false" type="string" default="''"/>
+    <inline>
+      <comment value="get the rubric" line="136"/>
+      <comment value="get all the children of this rubric" line="142"/>
+      <comment value="we only want all the id's" line="145"/>
+      <comment value="add the root as well" line="148"/>
+      <comment value="debug($rubricAndChildren);" line="150"/>
+      <comment value="non-admin have some restrictions" line="160"/>
+      <comment value="Set the title for the page" line="179"/>
+    </inline>
+  </method>
+  <method name="of" start="191" end="227" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="List all posts of a specific user"/>
+      <param type="object" variable="$user_id">
+        <type full="null" namespace="" name="null"/>
+      </param>
+      <throws type="object">
+        <type full="NotFoundException" namespace="" name="NotFoundException"/>
+      </throws>
+      <internal>param string $rubric The name of the rubric the posts needs be in</internal>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="user_id" byreference="false" type="{unknown}" default="null"/>
+    <inline>
+      <comment value="user needs to exist" line="192"/>
+      <comment value="set up the conditions to search for the right posts" line="197"/>
+      <comment value="admins can see all posts" line="207"/>
+      <comment value="Set the title for the page" line="225"/>
+    </inline>
+  </method>
+  <method name="beforeFilter" start="229" end="249" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="allow to see the posts overview and search" line="232"/>
+      <comment value="set a different message when an anonymous user wants to see a post" line="235"/>
+    </inline>
+  </method>
+  <method name="getRubricTree" start="255" end="278" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param variable="$rubric_id"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="rubric_id" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="get the 'path'; an array with all the parents and the supplied rubric as leaf" line="258"/>
+      <comment value="first element is the root element" line="259"/>
+      <comment value="set the root rubric" line="262"/>
+      <comment value="set the subrubric, if there is one" line="267"/>
+      <comment value="set the category, if there is one" line="272"/>
+    </inline>
+  </method>
+  <method name="view" start="287" end="348" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="view method"/>
+      <throws type="object">
+        <type full="NotFoundException" namespace="" name="NotFoundException"/>
+      </throws>
+      <param type="string" variable="$id"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}" default="null"/>
+    <inline>
+      <comment value="get the post" line="288"/>
+      <comment value="set the redirect" line="297"/>
+      <comment value="state a message when the owner doesn't exist (anymore)" line="300"/>
+      <comment value="raise an error if the user is blocked or not active and it's not the owner who's watching" line="303"/>
+      <comment value="admins get a warning" line="305"/>
+      <comment value="set an errormessage if the post is blocked" line="309"/>
+      <comment value="set a different message for the admin user" line="314"/>
+      <comment value="show a message when the post is concept" line="320"/>
+      <comment value="raise an error if the publication date is expired and the user is not an admin" line="323"/>
+      <comment value="search the post" line="331"/>
+      <comment value="order and limit the biddings we want to show" line="335"/>
+      <comment value="we only want 5" line="339"/>
+      <comment value="Set the title for the page" line="346"/>
+    </inline>
+  </method>
+  <method name="add" start="356" end="434" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="add method"/>
+      <throws type="object">
+        <type full="NotFoundException" namespace="" name="NotFoundException"/>
+      </throws>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <inline>
+      <comment value="Set the title for the page" line="358"/>
+      <comment value="get and set the options for 'type'" line="361"/>
+      <comment value="$conditions&#9;= array('order' =&gt; 'name', 'conditions' =&gt; array('type' =&gt; 'oproep'));" line="366"/>
+      <comment value="set the execution time limit to 2 minutes, to allow large uploads on slow connections" line="370"/>
+      <comment value="just show the add form, nothing is posted yet" line="374"/>
+      <comment value="the form is posted" line="378"/>
+      <comment value="set the owner" line="380"/>
+      <comment value="set the owner to the currently logged in user" line="383"/>
+      <comment value="set the start- and end-date to the default values" line="386"/>
+      <comment value="get the selected (sub)rubric or category" line="390"/>
+      <comment value="restore the execution time limit" line="398"/>
+      <comment value="saving went ok" line="403"/>
+      <comment value="get the post, including all the related models" line="405"/>
+      <comment value="upload the images, if there are any" line="411"/>
+      <comment value="send a copy by mail" line="417"/>
+      <comment value="now, send the email to the owner of the post" line="422"/>
+      <comment value="restore the execution time limit" line="427"/>
+    </inline>
+  </method>
+  <method name="_getImagesToSave" start="446" end="452" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="This functions compares posted images with existing images in the system (for the given post)">When a posted image does not exist in the current images array, it means that this
+image was uploaded (and thus new in the system) during the editing of the post.</description>
+      <param description="The id of the image which is uploaded during the editing of the post" type="int" variable="$posted_image_id"/>
+      <return description="True when the image is new, false otherwise" type="boolean"/>
+    </docblock>
+    <parameter name="posted_image_id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_getImagesToDelete" start="464" end="470" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="This functions compares current images which exist for a post at this moment in the system with the images which were posted after editing.">When a current image does not exist in the posted images array, it means that this
+image was deleted during the editing of the post.</description>
+      <param description="The id of the image which is tied to the post before editing" type="int" variable="$current_image_id"/>
+      <return description="True when the image needs to be deleted, false otherwise" type="boolean"/>
+    </docblock>
+    <parameter name="current_image_id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_handleDeletedImages" start="483" end="503" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="This function gathers all information to find out whether or not images were deleted during the editing of a post.">When this did happen, the relevant images will be deleted from the database
+as well as the filesystem</description>
+      <param description="The array of image id's which were posted after editing the post" type="array" variable="$posted_images"/>
+      <param description="The unique id of the post which was edited" type="int" variable="$post_id"/>
+      <return description="True when everything went ok, false otherwise" type="boolean"/>
+    </docblock>
+    <parameter name="posted_images" byreference="false" type="array"/>
+    <parameter name="post_id" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="put the posted_images in a class property, so every (private) method can access these" line="484"/>
+      <comment value="get the current images for the post which exist in the system" line="487"/>
+      <comment value="current images which do not exist in the posted images, were deleted during the edit" line="492"/>
+      <comment value="delete the images from the system" line="495"/>
+      <comment value="everything went fine" line="500"/>
+    </inline>
+  </method>
+  <method name="_handleNewImages" start="510" end="537" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact=""/>
+      <param type="array" variable="$posted_images"/>
+      <param variable="$post_id"/>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="posted_images" byreference="false" type="array"/>
+    <parameter name="post_id" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="get the current images for the post which exist in the system" line="511"/>
+      <comment value="put the current_images in a class property, so every (private) method can access these" line="516"/>
+      <comment value="current images which do not exist in the posted images, were deleted during the edit" line="519"/>
+      <comment value="return when we don't have images to save" line="525"/>
+      <comment value="save the images from the system" line="528"/>
+      <comment value="everything went fine" line="535"/>
+    </inline>
+  </method>
+  <method name="removeImagesIfNecessary" start="554" end="598" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Before editing a post, the post record is stored in the session.">This way, we know which images are linked to the post.
+
+Now that the post is edited and submitted, we need to make sure the
+posted images were in the original post.
+When it's not, somebody is trying to temper with it.
+When it's not _anymore_ it means the user has deleted the image while
+editing the post.</description>
+      <param type="array" variable="$data"/>
+      <param type="array" variable="$oldPost"/>
+      <throws type="object">
+        <type full="NotFoundException" namespace="" name="NotFoundException"/>
+      </throws>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="array"/>
+    <parameter name="oldPost" byreference="false" type="array"/>
+    <inline>
+      <comment value="get the original post record" line="557"/>
+      <comment value="the session variable was never set" line="559"/>
+      <comment value="check if the posted images were in the original post" line="566"/>
+      <comment value="image is still here" line="570"/>
+      <comment value="user deleted the file" line="574"/>
+      <comment value="debug message" line="580"/>
+      <comment value="the related images have changed, so update the supplied by-reference-parameter of the post" line="588"/>
+      <comment value="everything went fine" line="595"/>
+    </inline>
+  </method>
+  <method name="selectRubric" start="604" end="619" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param type="object" variable="$data">
+        <type full="null" namespace="" name="null"/>
+      </param>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}" default="null"/>
+    <inline>
+      <comment value="if the category is set, use that as rubric" line="607"/>
+      <comment value="if the subrubric is set, use that as rubric" line="610"/>
+      <comment value="if the rubric is set, use that as rubric" line="613"/>
+      <comment value="something went wrong, we should not come here" line="616"/>
+    </inline>
+  </method>
+  <method name="edit" start="628" end="732" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="edit method"/>
+      <throws type="object">
+        <type full="NotFoundException" namespace="" name="NotFoundException"/>
+      </throws>
+      <param type="string" variable="$id"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}" default="null"/>
+    <inline>
+      <comment value="Set the title for the page" line="629"/>
+      <comment value="get and set the options for 'type'" line="636"/>
+      <comment value="get the post" line="639"/>
+      <comment value="only admins are allowed to change a blocked post" line="648"/>
+      <comment value="add a warning for the admin" line="655"/>
+      <comment value="set the id" line="659"/>
+      <comment value="set the execution time limit to 2 minutes, to allow large uploads on slow connections" line="662"/>
+      <comment value="check whether we need to remove images" line="668"/>
+      <comment value="get the selected (sub)rubric or category" line="675"/>
+      <comment value="use the function save() as the saveAll() function removes existing relations" line="678"/>
+      <comment value="with images" line="679"/>
+      <comment value="upload the new images and recreate existing relations with images" line="684"/>
+      <comment value="get the post with the latest values" line="692"/>
+      <comment value="restore the execution time limit" line="698"/>
+      <comment value="$rubricsOptions = $this-&gt;Rubric-&gt;find('list', array('conditions' =&gt; array('type' =&gt; 'oproep'), 'order' =&gt; 'Rubric.sortorder ASC'));" line="724"/>
+      <comment value="foreach($rubricsOptions as $key =&gt; $value){" line="725"/>
+      <comment value="$rubrics[$key] = $value;" line="726"/>
+      <comment value="}" line="727"/>
+      <comment value="$conditions&#9;= array('order' =&gt; 'name', 'conditions' =&gt; array('type' =&gt; 'oproep'));" line="729"/>
+    </inline>
+  </method>
+  <method name="delete" start="742" end="798" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="delete method"/>
+      <throws type="object">
+        <type full="MethodNotAllowedException" namespace="" name="MethodNotAllowedException"/>
+      </throws>
+      <throws type="object">
+        <type full="NotFoundException" namespace="" name="NotFoundException"/>
+      </throws>
+      <param type="string" variable="$id"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}" default="null"/>
+    <inline>
+      <comment value="Set the title for the page" line="743"/>
+      <comment value="set the default redirect action" line="746"/>
+      <comment value="get the post" line="749"/>
+      <comment value="get the full post record and save it in the session, in case somehting went wrong" line="757"/>
+      <comment value="delete the post and associated images and propvalues" line="761"/>
+      <comment value="set a message for the user" line="764"/>
+      <comment value="when the user is an admin, go back to the index" line="767"/>
+      <comment value="now, delete the reactions to this post" line="775"/>
+      <comment value="and delete the images to this post if there are any" line="780"/>
+      <comment value="set a message for the user" line="788"/>
+      <comment value="when the user is an admin, go back to the indes" line="791"/>
+      <comment value="redirect the user" line="796"/>
+    </inline>
+  </method>
+  <method name="search" start="803" end="967" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Search for posts"/>
+    </docblock>
+    <inline>
+      <comment value="get and set the options for 'type'" line="804"/>
+      <comment value="Delete what was previously stored in the session," line="808"/>
+      <comment value="this is a new query" line="809"/>
+      <comment value="when the search contains multiple words, split it (space seperated) into an array" line="816"/>
+      <comment value="if we got a zipcode and a distance, get the coordinates" line="820"/>
+      <comment value="zipcode isn't correct" line="824"/>
+      <comment value="return $this-&gt;redirect($this-&gt;referer());" line="829"/>
+      <comment value="create a blacklist for words we're not searching for (like: the, a, an, etc.)" line="834"/>
+      <comment value="search in title and mesage" line="837"/>
+      <comment value="skip words we don't want to user to search for" line="841"/>
+      <comment value="return an empty result when the $or array is empty" line="848"/>
+      <comment value="if you don't do this, the query will search for all posts with an end_publication before today" line="849"/>
+      <comment value="when you're not an admin, you can only search for published posts" line="861"/>
+      <comment value="when we search for a specific rubric" line="866"/>
+      <comment value="be more specific and set the (sub)rubric and category variables for the view" line="870"/>
+      <comment value="figure out what rubric we want: rubric, subrubric or category" line="878"/>
+      <comment value="when we're not searching for a category or subrubric, it means that we're searching on either" line="882"/>
+      <comment value="a rubric or subrubric" line="883"/>
+      <comment value="which _could_ have many subrubrics and/or categories." line="884"/>
+      <comment value="so get all children of the (sub)rubric we're searching on" line="885"/>
+      <comment value="get the children of the rubric" line="887"/>
+      <comment value="add the parent rubric id" line="890"/>
+      <comment value="extract the rubric id's" line="893"/>
+      <comment value="$rubric = $this-&gt;Rubric-&gt;findById($data['rubric']);" line="897"/>
+      <comment value="when we search for a specific type of post" line="905"/>
+      <comment value="Now, we are sure to have some search criteria" line="917"/>
+      <comment value="fill up conditions_array" line="918"/>
+      <comment value="add the Owner and Post criteria for non admin users" line="921"/>
+      <comment value="and add the coordinates, if any" line="928"/>
+      <comment value="check whether we need to search on type as well" line="933"/>
+      <comment value="define what models need to be in our searchresult" line="938"/>
+      <comment value="Now we provide the search conditions and call the paginator" line="945"/>
+      <comment value="get all the posts that are active" line="954"/>
+      <comment value="set the search variable which will be used for piwik in the view" line="960"/>
+      <comment value="Set the title for the page" line="964"/>
+    </inline>
+  </method>
+  <method name="handleZipcode" start="978" end="1014" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="This function gets the coordinates in which between the search results must be">It will fill the supplied parameter with the information: Array ('Owner.AND.coordinates' =&gt; &lt;array coordinates&gt;)</description>
+      <param description="POST data of the search form, by reference!" type="array" variable="$data"/>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="data" byreference="true" type="{unknown}"/>
+    <inline>
+      <comment value="no zipcode supplied, or not searching on specific distance" line="980"/>
+      <comment value="make the zipcode of the correct form" line="985"/>
+      <comment value="get the coordinates for the given zipcode in the searchform" line="994"/>
+      <comment value="when the zipcode doesn't exist, we got falses returned" line="997"/>
+      <comment value="Bereken met de functie getBoundingBox de waardes waarbinnen de latitude en de longitude moeten vallen" line="1002"/>
+      <comment value="set the find condition for this distance-range" line="1005"/>
+    </inline>
+  </method>
+  <method name="isAuthorized" start="1025" end="1115" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check whether a logged-in user is authorized for a specific action"/>
+      <see value="AppController::isAuthorized()"/>
+      <param type="array" variable="$user"/>
+      <throws type="object">
+        <type full="NotFoundException" namespace="" name="NotFoundException"/>
+      </throws>
+      <internal>param \User $array array holding $user['id']</internal>
+      <return description="True when the user is authorized for the requested action, otherwise false" type="boolean"/>
+    </docblock>
+    <parameter name="user" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="admins can do everything" line="1028"/>
+      <comment value="allowed actions for loggedin users" line="1031"/>
+      <comment value="actions allowed for loggedin users only" line="1038"/>
+      <comment value="get the post" line="1044"/>
+      <comment value="$post = $this-&gt;Post-&gt;findByIdOrFriendlyTitle($this-&gt;request-&gt;params['pass'][0], $this-&gt;request-&gt;params['pass'][0]);" line="1046"/>
+      <comment value="the owner of a post can edit, delete, (de)publish it and extend the expiration date" line="1057"/>
+      <comment value="users are not allowed to view posts:" line="1063"/>
+      <comment value="- which are blocked or inactive (= status: concept)" line="1064"/>
+      <comment value="- from which the owner is blocked or inactive" line="1065"/>
+      <comment value="post is blocked" line="1068"/>
+      <comment value="an owner can always see its own posts (except the ones which are blocked)" line="1074"/>
+      <comment value="post is expired" line="1079"/>
+      <comment value="post not published" line="1085"/>
+      <comment value="owner does not exist" line="1091"/>
+      <comment value="owner is blocked" line="1097"/>
+      <comment value="owner is not active" line="1103"/>
+      <comment value="all the restrictions passed, user is allowed to access" line="1109"/>
+    </inline>
+  </method>
+  <method name="extendPublicationTime" start="1123" end="1169" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param variable="$post_id"/>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+      <throws type="object">
+        <type full="NotFoundException" namespace="" name="NotFoundException"/>
+      </throws>
+    </docblock>
+    <parameter name="post_id" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Set the title for the page" line="1124"/>
+      <comment value="make sure the post exists" line="1127"/>
+      <comment value="when the form is submitted" line="1133"/>
+      <comment value="only accept values we offered" line="1137"/>
+      <comment value="save the new value" line="1143"/>
+      <comment value="set a success message" line="1149"/>
+      <comment value="get the record for the post" line="1155"/>
+      <comment value="the options for extend-periods the user can choose from" line="1159"/>
+    </inline>
+  </method>
+  <method name="depublish" start="1177" end="1198" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Depublish a post makes the post unreadable by ordinary users"/>
+      <param type="string" variable="$post"/>
+      <throws type="object">
+        <type full="NotFoundException" namespace="" name="NotFoundException"/>
+      </throws>
+    </docblock>
+    <parameter name="post" byreference="false" type="{unknown}" default="null"/>
+    <inline>
+      <comment value="get the post" line="1178"/>
+      <comment value="set the status to 'concept'" line="1186"/>
+    </inline>
+  </method>
+  <method name="publish" start="1206" end="1227" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Depublish a post makes the post readable by ordinary users"/>
+      <param type="string" variable="$post"/>
+      <throws type="object">
+        <type full="NotFoundException" namespace="" name="NotFoundException"/>
+      </throws>
+    </docblock>
+    <parameter name="post" byreference="false" type="{unknown}" default="null"/>
+    <inline>
+      <comment value="get the post" line="1207"/>
+      <comment value="set the status to 'concept'" line="1215"/>
+    </inline>
+  </method>
+  <method name="getClosest" start="1233" end="1235" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param type="int" variable="$user_id"/>
+      <param type="int" variable="$totalRecords"/>
+    </docblock>
+    <parameter name="user_id" byreference="false" type="integer" default="0"/>
+    <parameter name="totalRecords" byreference="false" type="integer" default="10"/>
+  </method>
+  <method name="getClosestPosts" start="1237" end="1242" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="user_id" byreference="false" type="integer" default="0"/>
+    <parameter name="totalRecords" byreference="false" type="integer" default="10"/>
+  </method>
+  <method name="sitemap" start="1245" end="1252" abstract="false" final="false" static="false" visibility="public"/>
+  <parent full="AppController" namepsace="" name="AppController">
+    <extends full="Controller" namespace="" name="Controller"/>
+    <member name="components" type="array" visibility="public" line="36"/>
+    <member name="uses" type="array" visibility="public" line="56">
+      <docblock>
+        <description compact=""/>
+      </docblock>
+    </member>
+    <method name="getSearchFormInfo" start="58" end="85" abstract="false" final="false" static="false" visibility="public">
+      <inline>
+        <comment value="get the information to build the searchform" line="59"/>
+      </inline>
+    </method>
+    <method name="beforeRender" start="91" end="124" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="This function is called before every view is displayed"/>
+      </docblock>
+      <inline>
+        <comment value="cookies need to be accepted" line="100"/>
+        <comment value="get the information needed to setup the search form on every page" line="107"/>
+        <comment value="let the views know whether the user is logged in or not" line="110"/>
+        <comment value="check the supported browser versions if we did not do so" line="113"/>
+        <comment value="get the number of online users" line="116"/>
+        <comment value="get all the rubrics so we can create hidden selectelements which can be used" line="121"/>
+        <comment value="for searching and adding" line="122"/>
+      </inline>
+    </method>
+    <method name="isBrowserOutOfDate" start="169" end="177" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact=""/>
+        <param type="array" variable="$browser"/>
+        <return type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+      </docblock>
+      <parameter name="browser" byreference="false" type="array"/>
+      <inline>
+        <comment value="we didn't recognize the browser" line="174"/>
+      </inline>
+    </method>
+    <method name="beforeFilter" start="183" end="193" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="This function is called before every action is run"/>
+      </docblock>
+      <inline>
+        <comment value="update the last online value for the currently logged in user (if any)" line="186"/>
+        <comment value="set the max upload limit" line="189"/>
+      </inline>
+    </method>
+    <method name="isAuthorized" start="235" end="259" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Set global authorization for the application">Per-action authorization is set in the overwritten function 'isAuthorized($user)'
+in the controller of a requested action.
+This global function sets authorization on all actions of all controllers for users
+with the role 'beheerder'</description>
+        <param description="Array holding $user['id']" type="array" variable="$user"/>
+        <return description="True when the user has the role 'beheerder', otherwise false" type="boolean"/>
+      </docblock>
+      <parameter name="user" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="admin users are allowed to do everything" line="236"/>
+        <comment value="admin functions are for admins only" line="241"/>
+        <comment value="setup the allowed actions for loggedin users" line="247"/>
+        <comment value="actions allowed for loggedin users only" line="252"/>
+        <comment value="default deny access" line="257"/>
+      </inline>
+    </method>
+    <method name="updateAuthUserInfo" start="266" end="288" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Update the information hold in the Auth component. Useful when the users' information changes (when editing user information, for example)."/>
+      </docblock>
+      <inline>
+        <comment value="Read in the current user information out of the database" line="267"/>
+        <comment value="remove the password field" line="272"/>
+        <comment value="merge the auth component data with our freshly fetched info" line="277"/>
+        <comment value="write the user information to the Auth component" line="283"/>
+      </inline>
+    </method>
+    <method name="ago" start="296" end="365" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact=""/>
+        <param description="The time we want to break down into human readable time" type="object" variable="$time">
+          <type full="unknown" namespace="" name="unknown"/>
+        </param>
+        <param type="object" variable="$rcs">
+          <type full="int|number" namespace="" name="int|number"/>
+        </param>
+        <return type="string"/>
+      </docblock>
+      <parameter name="time" byreference="false" type="{unknown}"/>
+      <parameter name="rcs" byreference="false" type="integer" default="0"/>
+      <inline>
+        <comment value="periods of time we have (singular)" line="300"/>
+        <comment value="periods of time we have (plural)" line="312"/>
+        <comment value="the length of each period of time in seconds" line="324"/>
+        <comment value="loop through the supplied time" line="337"/>
+        <comment value="ugly hack to prevent $countLength from getting -1" line="344"/>
+        <comment value="write down the singular form of past time" line="349"/>
+        <comment value="when working with plurals, change the name of the period to its plural form" line="352"/>
+      </inline>
+    </method>
+    <method name="daysBetween" start="372" end="376" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact=""/>
+        <param variable="$fromTime"/>
+        <return type="float"/>
+      </docblock>
+      <parameter name="fromTime" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getBrowser" start="381" end="485" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Browser check"/>
+      </docblock>
+      <inline>
+        <comment value="First get the platform?" line="390"/>
+        <comment value="Next get the name of the useragent yes seperately and for good reason" line="401"/>
+        <comment value="finally get the correct version number" line="446"/>
+        <comment value="see how many we have" line="454"/>
+        <comment value="we will have two since we are not using 'other' argument yet" line="457"/>
+        <comment value="see if version is before or after the name" line="458"/>
+        <comment value="check if we have a number" line="470"/>
+      </inline>
+    </method>
+  </parent>
+</class>

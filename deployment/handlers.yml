@@ -1,0 +1,46 @@
+---
+- name: restart nginx
+  service: name=nginx state=restarted
+  sudo_user: root
+
+- name: restart apache
+  service: name=apache2 state=restarted
+  sudo_user: root
+
+- name: restart beanstalkd
+  service: name=beanstalkd state=reloaded
+  sudo_user: root
+
+- name: restart mysql
+  service: name=mysql state=restarted
+  sudo_user: root
+
+- name: reload nginx
+  service: name=nginx state=reloaded
+  sudo_user: root
+
+####################################
+# SUPERVISOR
+####################################
+# apply all config changes and restart all monitored applications
+# see: http://www.onurguzel.com/supervisord-restarting-and-reloading/
+- name: restart supervisor
+  # service: name=supervisor state=restarted
+  command: service supervisor stop && sudo service supervisor start
+  sudo_user: root
+
+- name: restart supervisor ontw-mailworker
+  command: supervisorctl update && sudo -u root -H supervisorctl restart ontw-mailworker
+  sudo_user: root
+
+- name: restart supervisor test-mailworker
+  command: supervisorctl update && sudo -u root -H supervisorctl restart test-mailworker
+  sudo_user: root
+
+- name: restart supervisor prod-{otap}}-mailworker
+  command: supervisorctl update && sudo -u root -H supervisorctl restart prod-{otap}}-mailworker
+  sudo_user: root
+
+- name: restart supervisor beanstalkd
+  command: supervisorctl update && sudo -u root -H supervisorctl restart beanstalkd
+  sudo_user: root

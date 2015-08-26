@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pdxf="http://xml.phpdox.net/functions" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head xmlns:git="http://xml.phpdox.net/gitlog#">
+    <title>phpDox - DirectAuthenticate</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav xmlns:git="http://xml.phpdox.net/gitlog#" class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../reports/index.xhtml">Reports</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">DirectAuthenticate</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>DirectAuthenticate</h1>
+        <h4>An authentication adapter for AuthComponent to directly log in a user by username, id or any other distinct identification.</h4>
+        <p>Inside a controller(/component):<br/><br/>$this-&gt;request-&gt;data = array('User' =&gt; array('id' =&gt; $userId));<br/>$this-&gt;Auth-&gt;authenticate = array('Tools.Direct' =&gt; array('contain' =&gt; array('Role.id'), 'fields'=&gt;array('username' =&gt; 'id')));<br/>$result = $this-&gt;Auth-&gt;login();<br/><br/>This has several advantages over using Auth-&gt;login($data) directly:<br/>- You keep it dry, especially when using contain ($data would have to have the exact same data).<br/>- No overhead - retrieving the data prior to the login is not necessary. It's short and easy.<br/>- You keep it centralized, only one single mechanism to login (using your Authentication adapters<br/>and its common _findUser() method). It also respects the scope and contain settings specified<br/>  in your AppController just as any other adapter.</p>
+        <ul>
+          <li>Author: Mark Scherer</li>
+          <li>License: MIT</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class DirectAuthenticate
+                extends <a title="BaseAuthenticate" href="../classes/BaseAuthenticate.xhtml">BaseAuthenticate</a>
+            {<br/><ul class="none"><li>// methods</li><li>public mixed. <a title="DirectAuthenticate" href="../classes/DirectAuthenticate/authenticate.xhtml">authenticate</a>()
+                    </li><li>protected boolean <a title="DirectAuthenticate" href="../classes/DirectAuthenticate/_checkFields.xhtml">_checkFields</a>()
+                    </li><li>protected Mixed <a title="DirectAuthenticate" href="../classes/DirectAuthenticate/_findUser.xhtml">_findUser</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/BaseAuthenticate.xhtml">BaseAuthenticate</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="_checkFields"><a title="DirectAuthenticate" href="../classes/DirectAuthenticate/_checkFields.xhtml">_checkFields()</a>
+                — Checks the fields to ensure they are supplied.</li>
+            <li id="_findUser"><a title="DirectAuthenticate" href="../classes/DirectAuthenticate/_findUser.xhtml">_findUser()</a>
+                — Find a user record using the standard options.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="authenticate"><a title="DirectAuthenticate" href="../classes/DirectAuthenticate/authenticate.xhtml">authenticate()</a>
+                — Authenticates the identity contained in a request.  Will use the `settings.userModel`, and `settings.fields` to find POST data that is used to find a matching record in the `settings.userModel`.  Will return false if there is no post data, username is missing, of if the scope conditions have not been met.</li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul xmlns:git="http://xml.phpdox.net/gitlog#" class="styled history">
+          <li>
+            <h3>2013-10-06T19:40:29+00:00 (commit #<span title="f16525be325aa16218dfea4fe983ccf2a60b79b9">f16525b</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (pauledenburg@gmail.com) /
+                        Commiter: Paul Edenburg (pauledenburg@gmail.com)
+                    </p>
+              <pre class="wrapped">wijzigingen na het aanmaken van een nieuw phpstrom project</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-07-29T20:18:45+00:00 (commit #<span title="287b8750eddef6446e689ccd35cee74b32cde2ed">287b875</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@lamp2.(none)) /
+                        Commiter: Paul Edenburg (paul@lamp2.(none))
+                    </p>
+              <pre class="wrapped">rechten zijn gewijzigd</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-26T15:55:26+00:00 (commit #<span title="58d361958cff9f7a6a85bed1ef717e1029d99d24">58d3619</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">phpstorm connect?</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-14T14:30:14+00:00 (commit #<span title="ab510a8ba8b3726396604720ff22cc62d62cda63">ab510a8</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">hele hoop opgelost, ik had het eerder moeten committen :$</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <footer xmlns:git="http://xml.phpdox.net/gitlog#">
+      <span>Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

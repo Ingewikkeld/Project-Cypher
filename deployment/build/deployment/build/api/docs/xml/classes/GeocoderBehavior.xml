@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="GeocoderBehavior" namespace="" name="GeocoderBehavior" abstract="false" final="false" start="15" end="388">
+  <file path="app/Plugin/Tools/Model/Behavior" file="GeocoderBehavior.php" realpath="/home/vagrant/socsoc/app/Plugin/Tools/Model/Behavior/GeocoderBehavior.php" size="13005" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="48bd1de2c04f135cec92f6f93cf35d14ed72c325"/>
+  <docblock>
+    <description compact="A geocoding behavior for CakePHP to easily geocode addresses.">Uses the GeocodeLib for actual geocoding.
+Also provides some useful geocoding tools like validation and distance conditions</description>
+    <author value="Mark Scherer"/>
+    <cakephp value="2.x"/>
+    <licence value="MIT">2011-01-13 ms</licence>
+  </docblock>
+  <extends full="ModelBehavior" namespace="" name="ModelBehavior"/>
+  <method name="setup" start="41" end="56" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Initiate behavior for the model using specified settings. Available settings:">- label: (array | string, optional) set to the field name that contains the
+			string from where to generate the slug, or a set of field names to
+			concatenate for generating the slug. DEFAULTS TO: title
+
+- real: (boolean, optional) if set to true then field names defined in
+			label must exist in the database table. DEFAULTS TO: true
+
+- expect: (array)postal_code, locality, sublocality, ...
+
+- accuracy: see above
+
+- override: lat/lng override on changes?
+
+- update: what fields to update (key=&gt;value array pairs)
+
+- before: validate/save (defaults to save)
+			set to false if you only want to use the validation rules etc</description>
+      <param description="Model using the behaviour" type="object" variable="$Model"/>
+      <param description="Settings to override for model." type="array" variable="$settings"/>
+    </docblock>
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="settings" byreference="false" type="array"/>
+  </method>
+  <method name="beforeValidate" start="59" end="67" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+  </method>
+  <method name="beforeSave" start="69" end="77" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+  </method>
+  <method name="geocode" start="86" end="207" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Run before a model is saved, used to set up slug for model."/>
+      <param description="Model about to be saved." type="object" variable="$Model"/>
+      <return description="true if save should proceed, false otherwise" type="boolean"/>
+    </docblock>
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="return" byreference="false" type="{unknown}" default="true"/>
+    <inline>
+      <comment value="Make address fields an array" line="87"/>
+      <comment value="Make sure all address fields are available" line="95"/>
+      <comment value="See if we should request a geocode //TODO: reverse and return here" line="114"/>
+      <comment value="HACK to prevent 0 inserts if not wanted! just use whitelist now to narrow fields down - 2009-03-18 ms" line="118"/>
+      <comment value="$Model-&gt;whitelist[] = $this-&gt;settings[$Model-&gt;alias]['lat'];" line="119"/>
+      <comment value="$Model-&gt;whitelist[] = $this-&gt;settings[$Model-&gt;alias]['lng'];" line="120"/>
+      <comment value="pr($geocode);" line="139"/>
+      <comment value="pr($this-&gt;Geocode-&gt;getResult());" line="140"/>
+      <comment value="Now set the geocode as part of the model data to be saved, making sure that" line="141"/>
+      <comment value="we are on the white list of fields to be saved" line="142"/>
+      <comment value="pr ($Model-&gt;whitelist); die();" line="143"/>
+      <comment value="pr($geocode); die();" line="145"/>
+      <comment value="if both are 0, thats not valid, otherwise continue" line="147"/>
+      <comment value="HACK to prevent 0 inserts of incorrect runs - 2009-04-07 ms" line="148"/>
+    </inline>
+  </method>
+  <method name="setDistanceAsVirtualField" start="217" end="219" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Add the distance to this point as a virtual field"/>
+      <param type="object" variable="$Model">
+        <type full="Model" namespace="" name="Model"/>
+      </param>
+      <param type="float" variable="$lat"/>
+      <param type="float" variable="$lng"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="lat" byreference="false" type="{unknown}"/>
+    <parameter name="lng" byreference="false" type="{unknown}"/>
+    <parameter name="modelName" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="distance" start="226" end="244" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="return a sql snippet for distance calculation on db level using two lat/lng points"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="lat" byreference="false" type="{unknown}"/>
+    <parameter name="lng" byreference="false" type="{unknown}"/>
+    <parameter name="fieldLat" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="fieldLng" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="modelName" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="distanceConditions" start="251" end="270" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="snippet for custom pagination"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="distance" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="fieldName" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="fieldLat" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="fieldLng" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="modelName" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="distanceField" start="277" end="283" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="snippet for custom pagination"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="lat" byreference="false" type="{unknown}"/>
+    <parameter name="lng" byreference="false" type="{unknown}"/>
+    <parameter name="fieldName" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="modelName" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="distanceByField" start="291" end="303" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="snippet for custom pagination still useful?"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="lat" byreference="false" type="{unknown}"/>
+    <parameter name="lng" byreference="false" type="{unknown}"/>
+    <parameter name="byFieldName" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="fieldName" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="modelName" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="paginateDistanceCount" start="310" end="319" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="snippet for custom pagination"/>
+      <return description="$count" type="int"/>
+    </docblock>
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="conditions" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="recursive" byreference="false" type="integer" default="1"/>
+    <parameter name="extra" byreference="false" type="array"/>
+  </method>
+  <method name="validateLatitude" start="329" end="334" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns if a latitude is valid or not.">validation rule for models</description>
+      <param type="object">
+        <type full="Model" namespace="" name="Model"/>
+      </param>
+      <param type="float" variable="$latitude"/>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="latitude" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateLongitude" start="344" end="349" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns if a longitude is valid or not.">validation rule for models</description>
+      <param type="object">
+        <type full="Model" namespace="" name="Model"/>
+      </param>
+      <param type="float" variable="$longitude"/>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="Model" byreference="false" type="object">
+      <type full="\\Model" namespace="\" name="Model"/>
+    </parameter>
+    <parameter name="longitude" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_geocode" start="356" end="379" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="uses the GeocodeLib to query"/>
+      <param description="(simple array of address pieces)" type="array" variable="$addressFields"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="addressFields" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array"/>
+  </method>
+  <method name="_calculationValue" start="381" end="386" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="unit" byreference="false" type="{unknown}"/>
+  </method>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ab510a8ba8b3726396604720ff22cc62d62cda63"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><message>hele hoop opgelost, ik had het eerder moeten committen :$</message></commit></enrichment></enrichments></class>

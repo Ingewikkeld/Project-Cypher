@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="MessagesControllerTest" namespace="" name="MessagesControllerTest" abstract="false" final="false" start="8" end="110">
+  <file path="app/Test/Case/Controller" file="MessagesControllerTest.php" realpath="/home/vagrant/socsoc/app/Test/Case/Controller/MessagesControllerTest.php" size="1300" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="5c9a936f16cd764fac291057d90ca8e1eaf4bafc"/>
+  <docblock>
+    <description compact="MessagesController Test Case"/>
+  </docblock>
+  <extends full="ControllerTestCase" namespace="" name="ControllerTestCase"/>
+  <member name="fixtures" type="array" visibility="public" line="15">
+    <docblock>
+      <description compact="Fixtures"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="testIndex" start="35" end="36" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testIndex method"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="testView" start="43" end="44" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testView method"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="testAdd" start="51" end="52" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testAdd method"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="testEdit" start="59" end="60" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testEdit method"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="testDelete" start="67" end="68" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testDelete method"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="testAdminIndex" start="75" end="76" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testAdminIndex method"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="testAdminView" start="83" end="84" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testAdminView method"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="testAdminAdd" start="91" end="92" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testAdminAdd method"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="testAdminEdit" start="99" end="100" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testAdminEdit method"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="testAdminDelete" start="107" end="108" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="testAdminDelete method"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+</class>

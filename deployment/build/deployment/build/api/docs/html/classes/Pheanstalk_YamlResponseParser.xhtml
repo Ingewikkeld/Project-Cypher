@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pdxf="http://xml.phpdox.net/functions" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head xmlns:git="http://xml.phpdox.net/gitlog#">
+    <title>phpDox - Pheanstalk_YamlResponseParser</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav xmlns:git="http://xml.phpdox.net/gitlog#" class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../reports/index.xhtml">Reports</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">Pheanstalk_YamlResponseParser</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#tasks">Tasks</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>Pheanstalk_YamlResponseParser</h1>
+        <h4>A response parser for commands that return a subset of YAML.</h4>
+        <p>Expected response is 'OK', 'NOT_FOUND' response is also handled.<br/>Parser expects either a YAML list or dictionary, depending on mode.</p>
+        <ul>
+          <li>Author: Paul Annesley</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Pheanstalk_YamlResponseParser
+                implements
+                <a title="Pheanstalk_ResponseParser" href="../interfaces/Pheanstalk_ResponseParser.xhtml">Pheanstalk_ResponseParser</a>
+            {<br/><ul class="none"><li>// constants</li><li>const MODE_LIST = 'list';</li><li>const MODE_DICT = 'dict';</li></ul><ul class="none"><li>// members</li><li>private
+                         <a href="#members">$_mode</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Pheanstalk_YamlResponseParser" href="../classes/Pheanstalk_YamlResponseParser/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="Pheanstalk_YamlResponseParser" href="../classes/Pheanstalk_YamlResponseParser/parseResponse.xhtml">parseResponse</a>()
+                    </li><li>private string <a title="Pheanstalk_YamlResponseParser" href="../classes/Pheanstalk_YamlResponseParser/_mapYamlList.xhtml">_mapYamlList</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/Pheanstalk_ResponseParser.xhtml">Pheanstalk_ResponseParser</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="tasks">Tasks</h2>
+        <h2 xmlns:git="http://xml.phpdox.net/gitlog#" id="tasks">Tasks</h2>
+        <table xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <thead>
+            <tr>
+              <th style="width:3em;">Line</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tr>
+            <td class="nummeric">55</td>
+            <td>do this better.</td>
+          </tr>
+        </table>
+        <h2 id="constants">Constants</h2>
+        <table xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="MODE_LIST">MODE_LIST</td>
+              <td>'list'</td>
+            </tr>
+            <tr>
+              <td id="MODE_DICT">MODE_DICT</td>
+              <td>'dict'</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="_mode">
+              <strong>$_mode</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="_mapYamlList"><a title="Pheanstalk_YamlResponseParser" href="../classes/Pheanstalk_YamlResponseParser/_mapYamlList.xhtml">_mapYamlList()</a>
+                — Callback for array_map to process YAML lines.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="Pheanstalk_YamlResponseParser" href="../classes/Pheanstalk_YamlResponseParser/__construct.xhtml">__construct()</a>
+            </li>
+            <li id="parseResponse">
+              <a title="Pheanstalk_YamlResponseParser" href="../classes/Pheanstalk_YamlResponseParser/parseResponse.xhtml">parseResponse()</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul xmlns:git="http://xml.phpdox.net/gitlog#" class="styled history">
+          <li>
+            <h3>2013-10-06T19:40:29+00:00 (commit #<span title="f16525be325aa16218dfea4fe983ccf2a60b79b9">f16525b</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (pauledenburg@gmail.com) /
+                        Commiter: Paul Edenburg (pauledenburg@gmail.com)
+                    </p>
+              <pre class="wrapped">wijzigingen na het aanmaken van een nieuw phpstrom project</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-07-29T20:18:45+00:00 (commit #<span title="287b8750eddef6446e689ccd35cee74b32cde2ed">287b875</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@lamp2.(none)) /
+                        Commiter: Paul Edenburg (paul@lamp2.(none))
+                    </p>
+              <pre class="wrapped">rechten zijn gewijzigd</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-07-10T14:33:53+00:00 (commit #<span title="e77a82de1468025cd32f6eb867ad40d71cc50ab8">e77a82d</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">beanstalkd en pheanstalk toegevoegd (again)</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-07-09T18:06:49+00:00 (commit #<span title="512eddb40e59de7b26dc75edad1ed769d234b3e3">512eddb</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">pheanstalk en beanstalkd toegevoegd</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-26T15:55:26+00:00 (commit #<span title="58d361958cff9f7a6a85bed1ef717e1029d99d24">58d3619</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">phpstorm connect?</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <footer xmlns:git="http://xml.phpdox.net/gitlog#">
+      <span>Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="BootstrapHelper" namespace="" name="BootstrapHelper" abstract="false" final="false" start="21" end="173">
+  <file path="app/Plugin/Tools/View/Helper" file="BootstrapHelper.php" realpath="/home/vagrant/socsoc/app/Plugin/Tools/View/Helper/BootstrapHelper.php" size="4549" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="84737b7dc1b7845b16fcd46d0976a3afffb4bc4d"/>
+  <docblock>
+    <description compact="Generic html snippets to display some specific widgets like accordion">Note:
+This is meant to work with TwitterBootstrap (Layout and Script), but
+should also work with other custom solutions (if they use the same selectors).
+
+Dependencies:
+The respective JS plugins for the widgets.</description>
+    <license name="MIT"/>
+    <author value="Mark Scherer"/>
+    <cakephp value="2.0"/>
+    <php value="5"/>
+    <version value="1.0">2012-03-29 ms</version>
+  </docblock>
+  <extends full="AppHelper" namespace="" name="AppHelper"/>
+  <member name="helpers" type="array" visibility="public" line="23"/>
+  <member name="_count" type="integer" default="1" visibility="protected" line="25"/>
+  <member name="_items" type="array" visibility="protected" line="27"/>
+  <method name="xx" start="30" end="32" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="typeahead" start="44" end="60" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="complete typeahead form input element"/>
+      <param type="object">
+        <type full="fieldName" namespace="" name="fieldName"/>
+      </param>
+      <param type="object">- data (array of strings)
+- items (defaults to 8)<type full="options:" namespace="" name="options:"/></param>
+      <return description="$html" type="string">2012-03-29 ms</return>
+    </docblock>
+    <parameter name="fieldName" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array"/>
+    <parameter name="inputOptions" byreference="false" type="array"/>
+    <inline>
+      <comment value="$inputOptions['data-source'] = $this-&gt;_formatSource($options['data']);" line="46"/>
+      <comment value="str_replace('.', '_', $fieldName);" line="50"/>
+    </inline>
+  </method>
+  <method name="_formatSource" start="62" end="66" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="elements" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="$res = array();" line="63"/>
+      <comment value="return '[\''.implode('\',\'', $elements).'\']';" line="64"/>
+    </inline>
+  </method>
+  <method name="carousel" start="77" end="85" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="complete carousel container"/>
+      <param description="(heading, content, active)" type="array" variable="$items"/>
+      <param type="object">
+        <type full="id" namespace="" name="id"/>
+      </param>
+      <param type="array" variable="$options"/>
+      <return description="$html" type="string">2012-03-29 ms</return>
+    </docblock>
+    <parameter name="items" byreference="false" type="{unknown}"/>
+    <parameter name="id" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="globalOptions" byreference="false" type="array"/>
+  </method>
+  <method name="carouselControl" start="87" end="91" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="carouselItems" start="101" end="117" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="items of a carousel container"/>
+      <param description="(heading, content, active)" type="array" variable="$items">- active (visible, true/false)</param>
+      <return description="$html" type="string">2012-03-29 ms</return>
+    </docblock>
+    <parameter name="items" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array"/>
+  </method>
+  <method name="accordion" start="128" end="137" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="complete accordion container"/>
+      <param description="(heading, content, options)" type="array" variable="$records"/>
+      <param type="object">
+        <type full="id" namespace="" name="id"/>
+      </param>
+      <param type="array" variable="$options"/>
+      <return description="$html" type="string">2012-03-29 ms</return>
+    </docblock>
+    <parameter name="records" byreference="false" type="{unknown}"/>
+    <parameter name="id" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="globalOptions" byreference="false" type="array"/>
+  </method>
+  <method name="accordionGroup" start="149" end="171" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="a single group of an accordion container"/>
+      <param type="string" variable="$heading"/>
+      <param type="string" variable="$content"/>
+      <param type="array" variable="$options">- active (collapsed, true/false)</param>
+      <return description="$html" type="string">2012-03-29 ms</return>
+    </docblock>
+    <parameter name="heading" byreference="false" type="{unknown}"/>
+    <parameter name="content" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array"/>
+  </method>
+  <parent full="AppHelper" namepsace="" name="AppHelper">
+    <extends full="Helper" namespace="" name="Helper"/>
+  </parent>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ab510a8ba8b3726396604720ff22cc62d62cda63"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><message>hele hoop opgelost, ik had het eerder moeten committen :$</message></commit></enrichment></enrichments></class>

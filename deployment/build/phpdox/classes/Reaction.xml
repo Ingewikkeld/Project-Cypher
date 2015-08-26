@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="Reaction" namespace="" name="Reaction" abstract="false" final="false" start="10" end="213">
+  <file path="app/Model" file="Reaction.php" realpath="/home/vagrant/socsoc/app/Model/Reaction.php" size="6421" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="cde8305ab0157f0c0286a7cf88864745fa09b190"/>
+  <docblock>
+    <description compact="Reaction Model"/>
+    <property value="User $Sender"/>
+    <property value="Post $Post"/>
+    <property value="Advertisement $Advertisement"/>
+  </docblock>
+  <extends full="AppModel" namespace="" name="AppModel"/>
+  <member name="displayField" type="string" default="'subject'" visibility="public" line="17">
+    <docblock>
+      <description compact="Display field"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="validate" type="array" visibility="public" line="24">
+    <docblock>
+      <description compact="Validation rules"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="belongsTo" type="array" visibility="public" line="162">
+    <docblock>
+      <description compact="belongsTo associations"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="deleteAllFrom" start="200" end="212" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="This function removes all reactions the user has sent"/>
+      <param type="string" variable="$sender_id"/>
+      <return description="True when all reactions were deleted succesfully, false otherwise" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="sender_id" byreference="false" type="{unknown}" default="null"/>
+    <inline>
+      <comment value="id is mandatory" line="201"/>
+      <comment value="the sender" line="204"/>
+      <comment value="Set to true to delete records that depend on this record" line="207"/>
+      <comment value="remove all the records" line="210"/>
+    </inline>
+  </method>
+  <parent full="AppModel" namepsace="" name="AppModel">
+    <extends full="Model" namespace="" name="Model"/>
+    <member name="actsAs" type="array" visibility="public" line="39"/>
+    <method name="uniqueField" start="54" end="58" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Looks up the supplied field in the database to make sure there is not one there yet">Use this function in the validation array, as the validation will automatically send
+the right parameter.
+For example the username for users:</description>
+        <param description="The array as supplied by the validation check: array(&lt;fieldname&gt;, &lt;value&gt;)" type="array" variable="$check"/>
+        <return description="False when the same value is found in the database, true otherwise (which means it is unique)" type="boolean"/>
+      </docblock>
+      <parameter name="check" byreference="false" type="{unknown}" default="null"/>
+      <inline>
+        <comment value="echo $field;" line="56"/>
+      </inline>
+    </method>
+    <method name="beforeSave" start="70" end="99" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="This function is called right before a record is saved into the database">Use it to change values so they're fit to go in the db</description>
+        <param type="array" variable="$options"/>
+        <return type="object">
+          <type full="bool|void" namespace="" name="bool|void"/>
+        </return>
+        <return type="object">
+          <type full="bool|void" namespace="" name="bool|void"/>
+        </return>
+      </docblock>
+      <parameter name="options" byreference="false" type="array"/>
+      <inline>
+        <comment value="format the title into an urlfriendly title so it can be used in friendly url's" line="72"/>
+        <comment value="first, strip all the tags the user might have used" line="75"/>
+        <comment value="format the subject into an urlfriendly subject so it can be used in friendly url's" line="85"/>
+        <comment value="make the subject url friendly" line="88"/>
+        <comment value="and make it unique" line="91"/>
+      </inline>
+    </method>
+    <method name="beforeValidate" start="105" end="166" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact=""/>
+        <param type="array" variable="$options"/>
+        <return type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+      </docblock>
+      <parameter name="options" byreference="false" type="array"/>
+      <inline>
+        <comment value="Put the date in the correct format" line="115"/>
+        <comment value="allow empty values" line="121"/>
+        <comment value="remove placeholders (when no data is entered in the form" line="126"/>
+        <comment value="check here for existence of 00 in the date, because the date" line="134"/>
+        <comment value="will already be formatted when you arrive in the model validation" line="135"/>
+        <comment value="if it's an invalid date, return false" line="138"/>
+        <comment value="$this-&gt;validationErrors[$field] = __('Enter a valid date');" line="141"/>
+        <comment value="set the correct format for mysql" line="147"/>
+        <comment value="format the date" line="150"/>
+        <comment value="if it's an invalid date, return false" line="154"/>
+        <comment value="$this-&gt;validationErrors[$field] = sprintf(__('You need to enter a valid datetime input: %s'), __($dateformat));" line="157"/>
+        <comment value="everything went fine" line="163"/>
+      </inline>
+    </method>
+    <method name="formatDateTimeField" start="174" end="181" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact=""/>
+        <param type="string" variable="$field"/>
+        <return type="object">
+          <type full="bool|string" namespace="" name="bool|string"/>
+        </return>
+      </docblock>
+      <parameter name="field" byreference="false" type="string" default="&quot;&quot;"/>
+    </method>
+    <method name="unaccent" start="189" end="191" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Replace characters with accents (and alike) for their 'normal' equivalents"/>
+        <param type="string" variable="$string"/>
+        <return type="mixed"/>
+      </docblock>
+      <parameter name="string" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getSequence" start="197" end="228" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact=""/>
+        <param type="string" variable="$filename"/>
+        <return type="object">
+          <type full="array|bool" namespace="" name="array|bool"/>
+        </return>
+      </docblock>
+      <parameter name="filename" byreference="false" type="string" default="''"/>
+      <inline>
+        <comment value="get the extension, if there is one" line="204"/>
+        <comment value="get the last character of the string so we can inspect that" line="210"/>
+        <comment value="when last character is number, add it to the sequence" line="213"/>
+        <comment value="last number was not a sequence, so we found it!" line="222"/>
+      </inline>
+    </method>
+    <method name="getCoordinatesFromPostcode" start="251" end="311" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Fetch the coordinates for the supplied zipcode">Valid zipcodes are of the form:
+- 0000
+- 0000AA
+- 0000 AA
+
+When a zipcode of the form 0000 is supplied, it will be
+appended with the first letters we find in the db (most
+likely 'AA')
+
+If the coordinates could not be found in the local database,
+Google is used as backup plan. If we still can't find the coordinates,
+boolean false is returned</description>
+        <param description="The zipcode we need to get the coordinates for" type="string" variable="$zipcode"/>
+        <return description="Returns array('lat', 'lon', 'city') on success, boolean false otherwise" type="mixed"/>
+      </docblock>
+      <parameter name="zipcode" byreference="false" type="string" default="''"/>
+      <inline>
+        <comment value="validate the zipcode" line="252"/>
+        <comment value="no zipcode given?" line="257"/>
+        <comment value="when no lettercombination is supplied, we need to search on the numbers only" line="262"/>
+        <comment value="zipcode searching: assemble and execute the query" line="268"/>
+        <comment value="the zipcode could not be found" line="279"/>
+        <comment value="return false" line="284"/>
+      </inline>
+    </method>
+    <method name="makeValidZipcode" start="330" end="375" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="This function will return an array where the numbers and letters are seperated so that you can do with it whatever you like.">When an error occurs, boolean false is returned
+
+Valid zipcodes can be of the following form:
+- 0000
+- 0000AA
+- 0000 AA</description>
+        <param description="The zipcode to be checked" variable="$zipcode" type="string"/>
+        <return description="Array('numbers', 'letters') on success, Boolean false on error" type="mixed"/>
+      </docblock>
+      <parameter name="zipcode" byreference="false" type="string" default="''"/>
+      <inline>
+        <comment value="don't allow empty values" line="331"/>
+        <comment value="wrong format has been given" line="335"/>
+        <comment value="remove all whitespace" line="339"/>
+        <comment value="check the length" line="343"/>
+        <comment value="zipcode is too short. We can't work with this" line="345"/>
+        <comment value="zipcode is too long. We'll just cut out the firs 6 characters and try again" line="350"/>
+        <comment value="if between 4 and 6 characters" line="354"/>
+        <comment value="just work with the first 4" line="356"/>
+        <comment value="let's format it like: array('numbers', 'letters');" line="360"/>
+        <comment value="check which was supplied" line="366"/>
+        <comment value="zipcode was of a string, but in an incorrect format (no combination of 4 letters (and 2 numbers))" line="373"/>
+      </inline>
+    </method>
+    <method name="getFlatBox" start="389" end="404" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="This function makes a box with a radius of '$distance_in_km' and returns a lon and lat.">When searching for records that need to be in this box, use the returned lat and
+lon as boundaries: the records need to have lons and lats that lie between the returned
+lons and lats from this function</description>
+        <param description="The lat" type="float" variable="$lat_degrees"/>
+        <param description="The longitude" type="float" variable="$lon_degrees"/>
+        <param description="The radius in kilometers" type="float" variable="$distance_in_km"/>
+        <return description="An array containing the lon and lat maximums" type="array"/>
+      </docblock>
+      <parameter name="lat_degrees" byreference="false" type="{unknown}"/>
+      <parameter name="lon_degrees" byreference="false" type="{unknown}"/>
+      <parameter name="distance_in_km" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="distance" start="416" end="436" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Calculates the great-circle distance between two points, with the Haversine formula."/>
+        <param description="Latitude of start point in [deg decimal]" type="float" variable="$lat1"/>
+        <param description="Longitude of start point in [deg decimal]" type="float" variable="$lon1"/>
+        <param description="Latitude of target point in [deg decimal]" type="float" variable="$lat2"/>
+        <param description="Longitude of target point in [deg decimal]" type="float" variable="$lon2"/>
+        <param description="Radius of the Earth in meters (or change to other units the get the return value in the same unit)" type="object" variable="$radius">
+          <type full="float|int" namespace="" name="float|int"/>
+        </param>
+        <return description="Distance between points in [m] (same unit as earthRadius)" type="float"/>
+      </docblock>
+      <parameter name="lat1" byreference="false" type="{unknown}"/>
+      <parameter name="lon1" byreference="false" type="{unknown}"/>
+      <parameter name="lat2" byreference="false" type="{unknown}"/>
+      <parameter name="lon2" byreference="false" type="{unknown}"/>
+      <parameter name="radius" byreference="false" type="integer" default="6367000"/>
+      <inline>
+        <comment value="Radius of the Earth in meters (or change to other units the get the return value in the same unit)" line="418"/>
+        <comment value="convert degrees to radians" line="421"/>
+        <comment value="Haversine Formula (see here )" line="427"/>
+        <comment value="return the distance in meters" line="434"/>
+      </inline>
+    </method>
+    <method name="getCoordinateRadius" start="449" end="461" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="This function gets the coordinates in which between the search results must be"/>
+        <param variable="$lat"/>
+        <param variable="$lon"/>
+        <param type="object" variable="$radius">
+          <type full="null" namespace="" name="null"/>
+        </param>
+        <internal>param \unknown $data POST data of the search form, by reference!</internal>
+        <return description="Array ('Owner.AND.coordinates' =&gt; &lt;array coordinates&gt;) on succes, boolean false otherwise" type="mixed"/>
+      </docblock>
+      <parameter name="lat" byreference="false" type="{unknown}"/>
+      <parameter name="lon" byreference="false" type="{unknown}"/>
+      <parameter name="radius" byreference="false" type="{unknown}" default="null"/>
+      <inline>
+        <comment value="Bereken met de functie getBoundingBox de waardes waarbinnen de latitude en de longitude moeten vallen" line="451"/>
+        <comment value="set the find condition for this distance-range" line="455"/>
+      </inline>
+    </method>
+    <method name="set_timelimit" start="472" end="480" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Set the number of seconds a script is allowed to run. If this is reached, the script returns a fatal error. The default limit is 30 seconds or, if it exists, the max_execution_time value defined in the php.ini."/>
+        <param description="The timelimit in seconds" type="object" variable="$new_limit">
+          <type full="int|number" namespace="" name="int|number"/>
+        </param>
+        <return description="true" type="boolean"/>
+      </docblock>
+      <parameter name="new_limit" byreference="false" type="integer" default="30"/>
+      <inline>
+        <comment value="store the current limit" line="473"/>
+        <comment value="set the current timelimit to the requested timelimit" line="476"/>
+      </inline>
+    </method>
+    <method name="restore_timelimit" start="491" end="501" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Restore the number of seconds a script is allowed to run. If this is reached, the script returns a fatal error. The default limit is 30 seconds or, if it exists, the max_execution_time value defined in the php.ini."/>
+        <param type="object" variable="$limit">
+          <type full="null" namespace="" name="null"/>
+        </param>
+        <internal>param number $new_limit The timelimit in seconds</internal>
+        <return description="true" type="boolean"/>
+      </docblock>
+      <parameter name="limit" byreference="false" type="{unknown}" default="null"/>
+      <inline>
+        <comment value="when no limit is supplied, get the stored one or the default: 30 seconds" line="492"/>
+        <comment value="set the limit" line="497"/>
+      </inline>
+    </method>
+    <method name="getByIdOrFriendlyTitle" start="510" end="519" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get the postrecord from the database by postid or friendly_title"/>
+        <param description="The unique post id or the friendly_title of the post to be fetched" type="string" variable="$idOrFriendlyTitle"/>
+        <return description="Returns the postrecord on succes, boolean false otherwise" type="mixed"/>
+      </docblock>
+      <parameter name="idOrFriendlyTitle" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="when parameter is not numeric, search by friendly_title" line="512"/>
+      </inline>
+    </method>
+    <method name="getByTitleOrFriendlyTitle" start="530" end="544" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Try to guess what the supplied title was made of: - original title - friendly title - original title, but html encoded"/>
+        <param description="The title of the record to be searched for" type="string" variable="$title"/>
+      </docblock>
+      <parameter name="title" byreference="false" type="string" default="''"/>
+      <inline>
+        <comment value="if already friendly, return that" line="531"/>
+        <comment value="so there are no spaces, but maybe there are spaces disguised as html characters?" line="536"/>
+        <comment value="maybe spaces: try to make the url friendly" line="541"/>
+        <comment value="maybe no spaces, maybe the title is just one word with capitals" line="542"/>
+      </inline>
+    </method>
+    <method name="makeTitleUrlFriendly" start="557" end="569" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Make a title url friendly by replacing special characters">Alter the original title of a modelrecord to make it safe for adding
+it in the addressbar (friendly url's)</description>
+        <param description="The title of a modelrecord" variable="$title" type="string"/>
+        <internal>param array $options An array with options: unique: whether to make the title unique, id: the id of the current modelrecord which will result in the exclusion of the current friendly_title in the searches</internal>
+        <return description="The url friendly title" type="string"/>
+      </docblock>
+      <parameter name="title" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="replace spaces for underscores" line="558"/>
+        <comment value="make the name lowercase" line="561"/>
+        <comment value="replace all characters which don't match the allowed characters with nothing" line="564"/>
+        <comment value="make the title unique" line="567"/>
+      </inline>
+    </method>
+    <method name="makeSubjectUrlFriendly" start="575" end="579" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Wrapper for makeTitleUrlFriendly($title)"/>
+      </docblock>
+      <parameter name="title" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="make the title unique" line="577"/>
+      </inline>
+    </method>
+    <method name="makeStringUnique" start="620" end="641" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Search the system for the friendlyTitle. If it already exists, add a random number at the end of the title and check again.">This goes on until a unique friendlyTitle has been found.</description>
+        <param type="string" variable="$string"/>
+        <param type="string" variable="$property"/>
+        <internal>param string $friendlyTitle The friendly_title for a modelrecord</internal>
+        <return description="Boolean false on error, string friendly_title which is unique on success" type="mixed"/>
+      </docblock>
+      <parameter name="string" byreference="false" type="string" default="''"/>
+      <parameter name="property" byreference="false" type="string" default="''"/>
+      <inline>
+        <comment value="don't work with empty values" line="621"/>
+        <comment value="we only need to know whether the modelrecord exists, so a low recursive is required" line="624"/>
+        <comment value="first, see if there already is a sequence" line="627"/>
+        <comment value="search the name, to see if we need to make it unique" line="630"/>
+        <comment value="file exists, so update the sequence and try again" line="634"/>
+        <comment value="title doesn't exist, so it is unique" line="639"/>
+      </inline>
+    </method>
+  </parent>
+</class>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="Pheanstalk_Command_StatsJobCommand" namespace="" name="Pheanstalk_Command_StatsJobCommand" abstract="false" final="false" start="11" end="41">
+  <file path="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Command" file="StatsJobCommand.php" realpath="/home/vagrant/socsoc/app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Command/StatsJobCommand.php" size="942" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="e271509d58c133a6eb2092f3c006fdfac3d17154"/>
+  <docblock>
+    <description compact="The 'stats-job' command.">Gives statistical information about the specified job if it exists.</description>
+    <author value="Paul Annesley"/>
+    <package value="Pheanstalk"/>
+    <licence value="http://www.opensource.org/licenses/mit-license.php"/>
+  </docblock>
+  <extends full="Pheanstalk_Command_AbstractCommand" namespace="" name="Pheanstalk_Command_AbstractCommand"/>
+  <member name="_jobId" type="{unknown}" visibility="private" line="14"/>
+  <constructor name="__construct" start="19" end="22" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param description="or int $job" type="object">
+        <type full="Pheanstalk_Job" namespace="" name="Pheanstalk_Job"/>
+      </param>
+    </docblock>
+    <parameter name="job" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="getCommandLine" start="27" end="30" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getResponseParser" start="35" end="40" abstract="false" final="false" static="false" visibility="public"/>
+  <parent full="Pheanstalk_Command_AbstractCommand" namepsace="" name="Pheanstalk_Command_AbstractCommand">
+    <method name="hasData" start="16" end="19" abstract="false" final="false" static="false" visibility="public"/>
+    <method name="getData" start="24" end="27" abstract="false" final="false" static="false" visibility="public"/>
+    <method name="getDataLength" start="32" end="35" abstract="false" final="false" static="false" visibility="public"/>
+    <method name="getResponseParser" start="40" end="46" abstract="false" final="false" static="false" visibility="public">
+      <inline>
+        <comment value="concrete implementation must either:" line="42"/>
+        <comment value="a) implement Pheanstalk_ResponseParser" line="43"/>
+        <comment value="b) override this getResponseParser method" line="44"/>
+      </inline>
+    </method>
+    <method name="__toString" start="52" end="55" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="The string representation of the object."/>
+        <return type="string"/>
+      </docblock>
+    </method>
+    <method name="_createResponse" start="65" end="68" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Creates a Pheanstalk_Response for the given data"/>
+        <param type="array"/>
+        <return description="Pheanstalk_Response" type="object"/>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+      <parameter name="data" byreference="false" type="array"/>
+    </method>
+  </parent>
+  <interface full="Pheanstalk_Command" namepsace="" name="Pheanstalk_Command">
+    <constant name="COMMAND_PUT" value="'put'"/>
+    <constant name="COMMAND_USE" value="'use'"/>
+    <constant name="COMMAND_RESERVE" value="'reserve'"/>
+    <constant name="COMMAND_DELETE" value="'delete'"/>
+    <constant name="COMMAND_RELEASE" value="'release'"/>
+    <constant name="COMMAND_BURY" value="'bury'"/>
+    <constant name="COMMAND_WATCH" value="'watch'"/>
+    <constant name="COMMAND_IGNORE" value="'ignore'"/>
+    <constant name="COMMAND_PEEK" value="'peek'"/>
+    <constant name="COMMAND_KICK" value="'kick'"/>
+    <constant name="COMMAND_STATS_JOB" value="'stats-job'"/>
+    <constant name="COMMAND_STATS" value="'stats'"/>
+    <constant name="COMMAND_LIST_TUBES" value="'list-tubes'"/>
+    <constant name="COMMAND_LIST_TUBE_USED" value="'list-tube-used'"/>
+    <constant name="COMMAND_LIST_TUBES_WATCHED" value="'list-tubes-watched'"/>
+    <method name="getCommandLine" start="32" end="32" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="The command line, without trailing CRLF"/>
+        <return type="string"/>
+      </docblock>
+    </method>
+    <method name="hasData" start="38" end="38" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Whether the command is followed by data"/>
+        <return type="boolean"/>
+      </docblock>
+    </method>
+    <method name="getData" start="45" end="45" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="The binary data to follow the command"/>
+        <return type="string"/>
+        <throws description="If command has no data" type="object">
+          <type full="Pheanstalk_Exception_CommandException" namespace="" name="Pheanstalk_Exception_CommandException"/>
+        </throws>
+      </docblock>
+    </method>
+    <method name="getDataLength" start="52" end="52" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="The length of the binary data in bytes"/>
+        <return type="int"/>
+        <throws description="If command has no data" type="object">
+          <type full="Pheanstalk_Exception_CommandException" namespace="" name="Pheanstalk_Exception_CommandException"/>
+        </throws>
+      </docblock>
+    </method>
+    <method name="getResponseParser" start="58" end="58" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="The response parser for the command."/>
+        <return type="object">
+          <type full="Pheanstalk_ResponseParser" namespace="" name="Pheanstalk_ResponseParser"/>
+        </return>
+      </docblock>
+    </method>
+  </interface>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="e77a82de1468025cd32f6eb867ad40d71cc50ab8"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-07-10T14:33:53+00:00" unixtime="1373466833"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-07-10T14:33:53+00:00" unixtime="1373466833"/><message>beanstalkd en pheanstalk toegevoegd (again)</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="512eddb40e59de7b26dc75edad1ed769d234b3e3"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-07-09T18:06:49+00:00" unixtime="1373393209"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-07-09T18:06:49+00:00" unixtime="1373393209"/><message>pheanstalk en beanstalkd toegevoegd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit></enrichment></enrichments></class>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="GearmanWorkerTask" namespace="" name="GearmanWorkerTask" abstract="false" final="false" start="18" end="180">
+  <file path="app/Plugin/Gearman/Console/Command/Task" file="GearmanWorkerTask.php" realpath="/home/vagrant/socsoc/app/Plugin/Gearman/Console/Command/Task/GearmanWorkerTask.php" size="5139" time="2014-04-09T09:08:14+00:00" unixtime="1397034494" sha1="9756179e7ba5cdf5a29d75f42aa24fc9a8607605"/>
+  <docblock>
+    <description compact="Utility functions to setup a worker server for Gearman"/>
+  </docblock>
+  <extends full="AppShell" namespace="" name="AppShell"/>
+  <member name="_worker" type="{unknown}" visibility="protected" line="25">
+    <docblock>
+      <description compact="Internal reference to the GearmanWorker"/>
+      <var type="object">
+        <type full="GearmanWorker" namespace="" name="GearmanWorker"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="_eventManager" type="{unknown}" visibility="protected" line="32">
+    <docblock>
+      <description compact="Internal reference to the CakeEventManager"/>
+      <var type="object">
+        <type full="CakeEventManager" namespace="" name="CakeEventManager"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="_callbacks" type="{unknown}" visibility="protected" line="39">
+    <docblock>
+      <description compact="List of worker functions that will be internally sub-dispatched"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="work" start="47" end="70" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="A wrapper for the normal GearmanWorker::work() method, with some additional settings"/>
+      <param description="the name of the task this worker implements" type="string" variable="$name"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="string" default="'gearman'"/>
+    <inline>
+      <comment value="If we processed a job, don't bother to wait" line="64"/>
+    </inline>
+  </method>
+  <method name="getWorker" start="77" end="84" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the GearmanWorker object"/>
+      <return type="object">
+        <type full="GearmanWorker" namespace="" name="GearmanWorker"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setWorker" start="92" end="94" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Change the worker object, assumes it has been configured in advance"/>
+      <param type="object" variable="$worker">
+        <type full="GearmanWorker" namespace="" name="GearmanWorker"/>
+      </param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="worker" byreference="false" type="object">
+      <type full="\\GearmanWorker" namespace="\" name="GearmanWorker"/>
+    </parameter>
+  </method>
+  <method name="addFunction" start="104" end="117" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Registers an object method to be called as a worker function for a specific task name"/>
+      <param description="the name of the task to susbscribe for" type="string" variable="$name"/>
+      <param description="the object that contains the worker method" type="object" variable="$object">
+        <type full="object|callable" namespace="" name="object|callable"/>
+      </param>
+      <param description="the name of the method that will be called with the job" type="string" variable="$method"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="object" byreference="false" type="{unknown}"/>
+    <parameter name="method" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="getEventManager" start="126" end="131" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the Event Manager">If none exist it creates a new instance</description>
+      <return type="object">
+        <type full="CakeEventManager" namespace="" name="CakeEventManager"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="_triggerEvent" start="140" end="144" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Trigger a Gearman event"/>
+      <param description="The event name" type="string" variable="$name"/>
+      <param description="The event data" type="mixed" variable="$data"/>
+      <return description="If the event was stopped or not" type="boolean"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="_setupEvents" start="151" end="153" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Setup some internal event listeners"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="_checkForNoActiveConnectionsEvent" start="160" end="167" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check if the worker have no active connections to a Gearman server"/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+  <method name="_work" start="175" end="178" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="The function that is used for all jobs, it will sub-dispatch to the real function Useful for registering closures"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="job" byreference="false" type="object">
+      <type full="\\GearmanJob" namespace="\" name="GearmanJob"/>
+    </parameter>
+  </method>
+  <parent full="AppShell" namepsace="" name="AppShell">
+    <extends full="Shell" namespace="" name="Shell"/>
+  </parent>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="5871110b9e3f4429275aae567760988b2f24d8e8"><author email="paul@i2s.nl" name="Paul Edenburg" time="2014-04-09T10:51:12+00:00" unixtime="1397040672"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2014-04-09T10:51:12+00:00" unixtime="1397040672"/><message>het skelet neergezet voor het buildproces met ant</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit></enrichment></enrichments></class>

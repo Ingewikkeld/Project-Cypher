@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="CalendarComponentTest" namespace="" name="CalendarComponentTest" abstract="false" final="false" start="6" end="24">
+  <file path="app/Plugin/Tools/Test/Case/Controller/Component" file="CalendarComponentTest.php" realpath="/home/vagrant/socsoc/app/Plugin/Tools/Test/Case/Controller/Component/CalendarComponentTest.php" size="450" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="29c0ce7a501088369c1a03f3de1da4a17af3e870"/>
+  <extends full="MyCakeTestCase" namespace="" name="MyCakeTestCase"/>
+  <method name="setUp" start="8" end="10" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="tearDown" start="12" end="14" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testObject" start="16" end="18" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testX" start="20" end="22" abstract="false" final="false" static="false" visibility="public"/>
+  <parent full="MyCakeTestCase" namepsace="" name="MyCakeTestCase">
+    <extends full="CakeTestCase" namespace="" name="CakeTestCase"/>
+    <member name="startTime" type="{unknown}" default="null" visibility="protected" line="34"/>
+    <method name="assertNotWithinMargin" start="10" end="14" abstract="false" final="false" static="true" visibility="protected">
+      <docblock>
+        <description compact="enhanced"/>
+      </docblock>
+      <parameter name="result" byreference="false" type="{unknown}"/>
+      <parameter name="expected" byreference="false" type="{unknown}"/>
+      <parameter name="margin" byreference="false" type="{unknown}"/>
+      <parameter name="message" byreference="false" type="string" default="''"/>
+    </method>
+    <method name="assertIsNull" start="17" end="22" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="is" byreference="false" type="{unknown}"/>
+      <parameter name="title" byreference="false" type="{unknown}" default="null"/>
+      <parameter name="value" byreference="false" type="{unknown}" default="null"/>
+      <parameter name="message" byreference="false" type="string" default="''"/>
+      <parameter name="options" byreference="false" type="array"/>
+    </method>
+    <method name="assertIsNotNull" start="25" end="30" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="is" byreference="false" type="{unknown}"/>
+      <parameter name="title" byreference="false" type="{unknown}" default="null"/>
+      <parameter name="value" byreference="false" type="{unknown}" default="null"/>
+      <parameter name="message" byreference="false" type="string" default="''"/>
+      <parameter name="options" byreference="false" type="array"/>
+    </method>
+    <method name="_microtime" start="36" end="38" abstract="false" final="false" static="false" visibility="protected">
+      <parameter name="precision" byreference="false" type="integer" default="8"/>
+    </method>
+    <method name="_startClock" start="40" end="42" abstract="false" final="false" static="false" visibility="protected">
+      <parameter name="precision" byreference="false" type="integer" default="8"/>
+    </method>
+    <method name="_elapsedTime" start="44" end="50" abstract="false" final="false" static="false" visibility="protected">
+      <parameter name="precision" byreference="false" type="integer" default="8"/>
+      <parameter name="restart" byreference="false" type="{unknown}" default="false"/>
+    </method>
+    <method name="out" start="80" end="91" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="outputs debug information during a web tester (browser) test case since PHPUnit&gt;=3.6 swallowes all output by default this is a convenience output handler since debug() or pr() have no effect"/>
+        <param type="mixed" variable="$data"/>
+        <param description="should a pre tag be enclosed around the output" type="object" variable="$pre">
+          <type full="bool" namespace="" name="bool"/>
+        </param>
+        <return type="object">2011-12-04 ms<type full="void" namespace="" name="void"/></return>
+      </docblock>
+      <parameter name="data" byreference="false" type="{unknown}"/>
+      <parameter name="pre" byreference="false" type="{unknown}" default="true"/>
+      <inline>
+        <comment value="cli mode / shell access: use the --debug modifier if you are using the CLI interface" line="87"/>
+      </inline>
+    </method>
+    <method name="_basePath" start="93" end="106" abstract="false" final="false" static="false" visibility="protected">
+      <parameter name="full" byreference="false" type="{unknown}" default="false"/>
+    </method>
+    <method name="_header" start="108" end="114" abstract="false" final="false" static="false" visibility="protected">
+      <parameter name="title" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="_baseurl" start="121" end="123" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="without trailing slash!? //TODO: test 2011-04-03 ms"/>
+      </docblock>
+    </method>
+    <method name="_printElapsedTime" start="131" end="146" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact=""/>
+        <param type="float" variable="$time"/>
+        <param type="int" variable="precision"/>
+        <param description="usually in milliseconds (for long times set it to 'true')" type="object" variable="$secs:">2009-07-20 ms<type full="bool" namespace="" name="bool"/></param>
+      </docblock>
+      <parameter name="time" byreference="false" type="{unknown}" default="null"/>
+      <parameter name="precision" byreference="false" type="integer" default="8"/>
+      <parameter name="secs" byreference="false" type="{unknown}" default="false"/>
+    </method>
+    <method name="_title" start="148" end="154" abstract="false" final="false" static="false" visibility="protected">
+      <parameter name="expectation" byreference="false" type="{unknown}"/>
+      <parameter name="title" byreference="false" type="{unknown}" default="null"/>
+    </method>
+    <method name="_printTitle" start="156" end="161" abstract="false" final="false" static="false" visibility="protected">
+      <parameter name="expectation" byreference="false" type="{unknown}"/>
+      <parameter name="title" byreference="false" type="{unknown}" default="null"/>
+    </method>
+    <method name="_printResults" start="163" end="178" abstract="false" final="false" static="false" visibility="protected">
+      <parameter name="expected" byreference="false" type="{unknown}"/>
+      <parameter name="is" byreference="false" type="{unknown}"/>
+      <parameter name="pre" byreference="false" type="{unknown}" default="null"/>
+      <parameter name="status" byreference="false" type="{unknown}" default="false"/>
+    </method>
+    <method name="_printResult" start="180" end="191" abstract="false" final="false" static="false" visibility="protected">
+      <parameter name="is" byreference="false" type="{unknown}"/>
+      <parameter name="pre" byreference="false" type="{unknown}" default="null"/>
+      <parameter name="status" byreference="false" type="{unknown}" default="false"/>
+    </method>
+    <method name="_osFix" start="199" end="201" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="osFix method"/>
+        <param type="string" variable="$string"/>
+        <return type="string"/>
+      </docblock>
+      <parameter name="string" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ab510a8ba8b3726396604720ff22cc62d62cda63"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><message>hele hoop opgelost, ik had het eerder moeten committen :$</message></commit></enrichment></enrichments></class>

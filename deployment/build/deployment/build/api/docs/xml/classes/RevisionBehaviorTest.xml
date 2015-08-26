@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="RevisionBehaviorTest" namespace="" name="RevisionBehaviorTest" abstract="false" final="false" start="4" end="1352">
+  <file path="app/Plugin/Tools/Test/Case/Model/Behavior" file="RevisionBehaviorTest.php" realpath="/home/vagrant/socsoc/app/Plugin/Tools/Test/Case/Model/Behavior/RevisionBehaviorTest.php" size="45491" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="0f60cc06b5edb05fc913b7abc9f91378ddc8fc96"/>
+  <extends full="CakeTestCase" namespace="" name="CakeTestCase"/>
+  <member name="RevisionBehavior" type="{unknown}" visibility="public" line="6"/>
+  <member name="autoFixtures" type="{unknown}" default="false" visibility="public" line="8"/>
+  <member name="fixtures" type="array" visibility="public" line="10"/>
+  <method name="setUp" start="25" end="28" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testObject" start="30" end="33" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="tearDown" start="35" end="38" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="method" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="testSavePost" start="40" end="59" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSaveWithoutChange" start="61" end="80" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testEditPost" start="82" end="106" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testShadow" start="108" end="153" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCurrentPost" start="155" end="180" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRevisionsPost" start="182" end="250" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDiff" start="252" end="284" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDiffMultipleFields" start="286" end="317" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testPrevious" start="319" end="342" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testUndoEdit" start="344" end="369" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testUndoCreate" start="371" end="392" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRevertTo" start="394" end="416" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testLimit" start="418" end="474" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTree" start="476" end="529" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testIgnore" start="531" end="556" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testWithoutShadowTable" start="558" end="567" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRevertToDate" start="570" end="591" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCascade" start="593" end="630" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCreateRevision" start="632" end="672" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testUndelete" start="674" end="702" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testUndeleteCallbacks" start="704" end="732" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testUndeleteTree1" start="734" end="758" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testUndeleteTree2" start="760" end="805" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="Test that children are also &quot;returned&quot; to their undeleted father" line="786"/>
+    </inline>
+  </method>
+  <method name="testInitializeRevisionsWithLimit" start="807" end="824" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testInitializeRevisions" start="826" end="836" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRevertAll" start="838" end="861" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRevertAllConditions" start="863" end="889" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testOnWithModel" start="891" end="904" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testHABTMRelatedUndoed" start="906" end="918" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testOnWithModelUndoed" start="920" end="943" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testHabtmRevSave" start="945" end="979" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <todo value="assert" line="969"/>
+    </inline>
+  </method>
+  <method name="testHabtmRevCreate" start="981" end="1001" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testHabtmRevIgnore" start="1003" end="1021" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testHabtmRevUndo" start="1024" end="1043" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="'contain' =&gt; array('Tag' =&gt; array('id','title'))));" line="1036"/>
+      <todo value="assert" line="1038"/>
+    </inline>
+  </method>
+  <method name="testHabtmRevUndoJustHabtmChanges" start="1045" end="1063" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="'contain' =&gt; array('Tag' =&gt; array('id','title'))));" line="1057"/>
+    </inline>
+  </method>
+  <method name="testHabtmRevRevert" start="1065" end="1084" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="'contain' =&gt; array('Tag' =&gt; array('id','title'))));" line="1078"/>
+    </inline>
+  </method>
+  <method name="testRevertToHabtm2" start="1086" end="1136" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <todo value="assert" line="1127"/>
+    </inline>
+  </method>
+  <method name="testHabtmRevRevertToDate" start="1138" end="1158" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <todo value="assert" line="1153"/>
+    </inline>
+  </method>
+  <method name="testRevertToTheTagsCommentHadBefore" start="1160" end="1199" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <todo value="assert" line="1182"/>
+      <comment value="revert Tags on comment logic" line="1187"/>
+      <todo value="assert" line="1195"/>
+    </inline>
+  </method>
+  <method name="testSaveWithOutTags" start="1201" end="1216" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRevertToDeletedTag" start="1218" end="1234" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <todo value="assert/fixme" line="1230"/>
+    </inline>
+  </method>
+  <method name="testBadKittyForgotId" start="1239" end="1262" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <expects value="PHPUNIT_FRAMEWORK_ERROR_WARNING"/>
+    </docblock>
+  </method>
+  <method name="testBadKittyMakesUpStuff" start="1264" end="1274" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testMethodsOnNonRevisedModel" start="1279" end="1309" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <expects value="PHPUNIT_FRAMEWORK_ERROR_WARNING"/>
+    </docblock>
+  </method>
+  <method name="testRevisions" start="1311" end="1350" abstract="false" final="false" static="false" visibility="public"/>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ab510a8ba8b3726396604720ff22cc62d62cda63"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><message>hele hoop opgelost, ik had het eerder moeten committen :$</message></commit></enrichment></enrichments></class>

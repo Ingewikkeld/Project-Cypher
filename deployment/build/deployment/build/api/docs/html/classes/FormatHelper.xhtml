@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pdxf="http://xml.phpdox.net/functions" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head xmlns:git="http://xml.phpdox.net/gitlog#">
+    <title>phpDox - FormatHelper</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav xmlns:git="http://xml.phpdox.net/gitlog#" class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../reports/index.xhtml">Reports</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">FormatHelper</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#tasks">Tasks</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>FormatHelper</h1>
+        <h4>Format helper with basic html snippets</h4>
+        <p>TODO: make snippets more "css and background image" (instead of inline img links)<br/>TODO: test cases<br/><br/>2009-12-31 ms</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class FormatHelper
+                extends <a title="TextHelper" href="../classes/TextHelper.xhtml">TextHelper</a>
+            {<br/><ul class="none"><li>// constants</li><li>const GENDER_FEMALE = 2;</li><li>const GENDER_MALE = 1;</li></ul><ul class="none"><li>// members</li><li>public
+                         <a href="#members">$helpers</a>;
+                    </li><li>public
+                         <a href="#members">$icons</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/thumbs.xhtml">thumbs</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/neighbors.xhtml">neighbors</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/addIcon.xhtml">addIcon</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/genderIcon.xhtml">genderIcon</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/customIcon.xhtml">customIcon</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/countryIcon.xhtml">countryIcon</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/importantIcon.xhtml">importantIcon</a>()
+                    </li><li>public string <a title="FormatHelper" href="../classes/FormatHelper/priorityIcon.xhtml">priorityIcon</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/icon.xhtml">icon</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/cIcon.xhtml">cIcon</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/showStars.xhtml">showStars</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/languageFlags.xhtml">languageFlags</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/encodeEmail.xhtml">encodeEmail</a>()
+                    </li><li>public save <a title="FormatHelper" href="../classes/FormatHelper/encodeEmailUrl.xhtml">encodeEmailUrl</a>()
+                    </li><li>public string <a title="FormatHelper" href="../classes/FormatHelper/encodeText.xhtml">encodeText</a>()
+                    </li><li>public image:Yes/No <a title="FormatHelper" href="../classes/FormatHelper/yesNo.xhtml">yesNo</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/siteIconUrl.xhtml">siteIconUrl</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/siteIcon.xhtml">siteIcon</a>()
+                    </li><li>public string <a title="FormatHelper" href="../classes/FormatHelper/textAsImage.xhtml">textAsImage</a>()
+                    </li><li>public string <a title="FormatHelper" href="../classes/FormatHelper/_textAsImage.xhtml">_textAsImage</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/disabledLink.xhtml">disabledLink</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/action.xhtml">action</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/absolutePaginateCount.xhtml">absolutePaginateCount</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/progressBar.xhtml">progressBar</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/tip.xhtml">tip</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/tipHelp.xhtml">tipHelp</a>()
+                    </li><li>public string <a title="FormatHelper" href="../classes/FormatHelper/pad.xhtml">pad</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/image.xhtml">image</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/imageUrl.xhtml">imageUrl</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/imageUrlArray.xhtml">imageUrlArray</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/albumImage.xhtml">albumImage</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/albumImageLink.xhtml">albumImageLink</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/albumImageTexts.xhtml">albumImageTexts</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/profileLink.xhtml">profileLink</a>()
+                    </li><li>public string <a title="FormatHelper" href="../classes/FormatHelper/profileUrl.xhtml">profileUrl</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/profilePic.xhtml">profilePic</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/languageFlag.xhtml">languageFlag</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/countryAndProvince.xhtml">countryAndProvince</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/avatar.xhtml">avatar</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/statusLight.xhtml">statusLight</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/onlineIcon.xhtml">onlineIcon</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/warning.xhtml">warning</a>()
+                    </li><li>public string <a title="FormatHelper" href="../classes/FormatHelper/ok.xhtml">ok</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/hideEmail.xhtml">hideEmail</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/truncate.xhtml">truncate</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/shortenText.xhtml">shortenText</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/tab2space.xhtml">tab2space</a>()
+                    </li><li>public string <a title="FormatHelper" href="../classes/FormatHelper/wordCensor.xhtml">wordCensor</a>()
+                    </li><li>public void <a title="FormatHelper" href="../classes/FormatHelper/array2table.xhtml">array2table</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/TextHelper.xhtml">TextHelper</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="tasks">Tasks</h2>
+        <h2 xmlns:git="http://xml.phpdox.net/gitlog#" id="tasks">Tasks</h2>
+        <table xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <thead>
+            <tr>
+              <th style="width:3em;">Line</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tr>
+            <td class="nummeric">632+</td>
+            <td>$on=1, $text=false, $ontitle=false,... =&gt; in array(OPTIONS) packen</td>
+          </tr>
+        </table>
+        <h2 id="constants">Constants</h2>
+        <table xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="GENDER_FEMALE">GENDER_FEMALE</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="GENDER_MALE">GENDER_MALE</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled members">
+          <h4>public</h4>
+          <ul class="members">
+            <li id="helpers"><strong>$helpers</strong>
+                —
+                array<br/><span class="indent">Other helpers used by FormHelper</span></li>
+            <li id="icons">
+              <strong>$icons</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="_textAsImage">
+              <a title="FormatHelper" href="../classes/FormatHelper/_textAsImage.xhtml">_textAsImage()</a>
+            </li>
+            <li id="absolutePaginateCount"><a title="FormatHelper" href="../classes/FormatHelper/absolutePaginateCount.xhtml">absolutePaginateCount()</a>
+                — generate a pagination count: #1 etc for each pagiation record respects order (ASC/DESC)</li>
+            <li id="action"><a title="FormatHelper" href="../classes/FormatHelper/action.xhtml">action()</a>
+                — display communication action depending on the current rule/right 2009-10-14 ms</li>
+            <li id="addIcon"><a title="FormatHelper" href="../classes/FormatHelper/addIcon.xhtml">addIcon()</a>
+                — allows icons to be added on the fly NOTE: overriding not allowed by default 2009-01-04 ms</li>
+            <li id="albumImage"><a title="FormatHelper" href="../classes/FormatHelper/albumImage.xhtml">albumImage()</a>
+                — album image 2009-09-10 ms</li>
+            <li id="albumImageLink">
+              <a title="FormatHelper" href="../classes/FormatHelper/albumImageLink.xhtml">albumImageLink()</a>
+            </li>
+            <li id="albumImageTexts">
+              <a title="FormatHelper" href="../classes/FormatHelper/albumImageTexts.xhtml">albumImageTexts()</a>
+            </li>
+            <li id="array2table"><a title="FormatHelper" href="../classes/FormatHelper/array2table.xhtml">array2table()</a>
+                — Translate a result array into a HTML table</li>
+            <li id="avatar">
+              <a title="FormatHelper" href="../classes/FormatHelper/avatar.xhtml">avatar()</a>
+            </li>
+            <li id="cIcon"><a title="FormatHelper" href="../classes/FormatHelper/cIcon.xhtml">cIcon()</a>
+                — custom Icons</li>
+            <li id="countryAndProvince">
+              <a title="FormatHelper" href="../classes/FormatHelper/countryAndProvince.xhtml">countryAndProvince()</a>
+            </li>
+            <li id="countryIcon"><a title="FormatHelper" href="../classes/FormatHelper/countryIcon.xhtml">countryIcon()</a>
+                — //TODO: move to Format?</li>
+            <li id="customIcon"><a title="FormatHelper" href="../classes/FormatHelper/customIcon.xhtml">customIcon()</a>
+                — //TODO: move to Format? returns img from customImgFolder</li>
+            <li id="disabledLink"><a title="FormatHelper" href="../classes/FormatHelper/disabledLink.xhtml">disabledLink()</a>
+                — 2009-12-24 ms</li>
+            <li id="encodeEmail"><a title="FormatHelper" href="../classes/FormatHelper/encodeEmail.xhtml">encodeEmail()</a>
+                — //TODO: move to TextExt? Helper Function to Obfuscate Email by inserting a span tag (not more! not very secure on its own...) each part of this mail now does not make sense anymore on its own (striptags will not work either)</li>
+            <li id="encodeEmailUrl"><a title="FormatHelper" href="../classes/FormatHelper/encodeEmailUrl.xhtml">encodeEmailUrl()</a>
+                — //TODO: move to TextExt? Obfuscates Email (works without JS!) to avoid spam bots to get it</li>
+            <li id="encodeText"><a title="FormatHelper" href="../classes/FormatHelper/encodeText.xhtml">encodeText()</a>
+                — //TODO: move to TextExt? Encodes Piece of Text (without usage of JS!) to avoid spam bots to get it</li>
+            <li id="genderIcon"><a title="FormatHelper" href="../classes/FormatHelper/genderIcon.xhtml">genderIcon()</a>
+                — //TODO: move to Format displays gender icon 2009-01-04 ms</li>
+            <li id="hideEmail"><a title="FormatHelper" href="../classes/FormatHelper/hideEmail.xhtml">hideEmail()</a>
+                — test@test.de becomes t..t@t..t.de</li>
+            <li id="icon"><a title="FormatHelper" href="../classes/FormatHelper/icon.xhtml">icon()</a>
+                — Quick way of printing default icons (have to be 16px X 16px !!!)</li>
+            <li id="image"><a title="FormatHelper" href="../classes/FormatHelper/image.xhtml">image()</a>
+                — deprecated album image 2009-09-10 ms</li>
+            <li id="imageUrl">
+              <a title="FormatHelper" href="../classes/FormatHelper/imageUrl.xhtml">imageUrl()</a>
+            </li>
+            <li id="imageUrlArray">
+              <a title="FormatHelper" href="../classes/FormatHelper/imageUrlArray.xhtml">imageUrlArray()</a>
+            </li>
+            <li id="importantIcon"><a title="FormatHelper" href="../classes/FormatHelper/importantIcon.xhtml">importantIcon()</a>
+                — 2011-10-10 ms</li>
+            <li id="languageFlag">
+              <a title="FormatHelper" href="../classes/FormatHelper/languageFlag.xhtml">languageFlag()</a>
+            </li>
+            <li id="languageFlags"><a title="FormatHelper" href="../classes/FormatHelper/languageFlags.xhtml">languageFlags()</a>
+                — //TODO: move to Format? addItemAttribute function</li>
+            <li id="neighbors">
+              <a title="FormatHelper" href="../classes/FormatHelper/neighbors.xhtml">neighbors()</a>
+            </li>
+            <li id="ok"><a title="FormatHelper" href="../classes/FormatHelper/ok.xhtml">ok()</a>
+                — returns green on ok, red otherwise</li>
+            <li id="onlineIcon">
+              <a title="FormatHelper" href="../classes/FormatHelper/onlineIcon.xhtml">onlineIcon()</a>
+            </li>
+            <li id="pad"><a title="FormatHelper" href="../classes/FormatHelper/pad.xhtml">pad()</a>
+                — fixes utf8 problems of native php str_pad function</li>
+            <li id="priorityIcon">
+              <a title="FormatHelper" href="../classes/FormatHelper/priorityIcon.xhtml">priorityIcon()</a>
+            </li>
+            <li id="profileLink"><a title="FormatHelper" href="../classes/FormatHelper/profileLink.xhtml">profileLink()</a>
+                — takes username + userId and forms a profile link out of it if username is empty, return "deleted" text without link maybe move to custom/community helper etc? 2009-08-27 ms</li>
+            <li id="profilePic"><a title="FormatHelper" href="../classes/FormatHelper/profilePic.xhtml">profilePic()</a>
+                — better an element?</li>
+            <li id="profileUrl">
+              <a title="FormatHelper" href="../classes/FormatHelper/profileUrl.xhtml">profileUrl()</a>
+            </li>
+            <li id="progressBar">
+              <a title="FormatHelper" href="../classes/FormatHelper/progressBar.xhtml">progressBar()</a>
+            </li>
+            <li id="shortenText"><a title="FormatHelper" href="../classes/FormatHelper/shortenText.xhtml">shortenText()</a>
+                — (intelligent) Shortening of a text string</li>
+            <li id="showStars">
+              <a title="FormatHelper" href="../classes/FormatHelper/showStars.xhtml">showStars()</a>
+            </li>
+            <li id="siteIcon"><a title="FormatHelper" href="../classes/FormatHelper/siteIcon.xhtml">siteIcon()</a>
+                — display a png img of a website (16x16 pixel) if not available, will return a fallback image (a globe)</li>
+            <li id="siteIconUrl"><a title="FormatHelper" href="../classes/FormatHelper/siteIconUrl.xhtml">siteIconUrl()</a>
+                — get url of a png img of a website (16x16 pixel) 2011-02-15 ms</li>
+            <li id="statusLight"><a title="FormatHelper" href="../classes/FormatHelper/statusLight.xhtml">statusLight()</a>
+                — display traffic light for status etc 2008-12-28 ms</li>
+            <li id="tab2space"><a title="FormatHelper" href="../classes/FormatHelper/tab2space.xhtml">tab2space()</a>
+                — Inspired by the tab2space function found at:</li>
+            <li id="textAsImage">
+              <a title="FormatHelper" href="../classes/FormatHelper/textAsImage.xhtml">textAsImage()</a>
+            </li>
+            <li id="thumbs"><a title="FormatHelper" href="../classes/FormatHelper/thumbs.xhtml">thumbs()</a>
+                — jqueryAccess: {id}Pro, {id}Contra 2009-07-24 ms</li>
+            <li id="tip">
+              <a title="FormatHelper" href="../classes/FormatHelper/tip.xhtml">tip()</a>
+            </li>
+            <li id="tipHelp">
+              <a title="FormatHelper" href="../classes/FormatHelper/tipHelp.xhtml">tipHelp()</a>
+            </li>
+            <li id="truncate"><a title="FormatHelper" href="../classes/FormatHelper/truncate.xhtml">truncate()</a>
+                — shorten text (either exact or intelligent)</li>
+            <li id="warning"><a title="FormatHelper" href="../classes/FormatHelper/warning.xhtml">warning()</a>
+                — returns red colored if not ok</li>
+            <li id="wordCensor"><a title="FormatHelper" href="../classes/FormatHelper/wordCensor.xhtml">wordCensor()</a>
+                — Word Censoring Function</li>
+            <li id="yesNo"><a title="FormatHelper" href="../classes/FormatHelper/yesNo.xhtml">yesNo()</a>
+                — //TODO: move to Format?</li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul xmlns:git="http://xml.phpdox.net/gitlog#" class="styled history">
+          <li>
+            <h3>2013-10-06T19:40:29+00:00 (commit #<span title="f16525be325aa16218dfea4fe983ccf2a60b79b9">f16525b</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (pauledenburg@gmail.com) /
+                        Commiter: Paul Edenburg (pauledenburg@gmail.com)
+                    </p>
+              <pre class="wrapped">wijzigingen na het aanmaken van een nieuw phpstrom project</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-07-29T20:18:45+00:00 (commit #<span title="287b8750eddef6446e689ccd35cee74b32cde2ed">287b875</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@lamp2.(none)) /
+                        Commiter: Paul Edenburg (paul@lamp2.(none))
+                    </p>
+              <pre class="wrapped">rechten zijn gewijzigd</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-26T15:55:26+00:00 (commit #<span title="58d361958cff9f7a6a85bed1ef717e1029d99d24">58d3619</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">phpstorm connect?</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-14T14:30:14+00:00 (commit #<span title="ab510a8ba8b3726396604720ff22cc62d62cda63">ab510a8</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">hele hoop opgelost, ik had het eerder moeten committen :$</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <footer xmlns:git="http://xml.phpdox.net/gitlog#">
+      <span>Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

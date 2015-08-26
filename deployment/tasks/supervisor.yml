@@ -1,0 +1,8 @@
+---
+  - name: supervisor | Ensure supervisor is installed
+    apt: pkg=supervisor state=present cache_valid_time=3600
+    
+  - name: supervisor | Ensure supervisor configuration is in place
+    action: template src=files/conf/supervisord.conf.j2 dest=/etc/supervisor/supervisord.conf
+    notify: restart supervisor
+

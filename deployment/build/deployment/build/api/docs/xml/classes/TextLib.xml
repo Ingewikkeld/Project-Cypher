@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="TextLib" namespace="" name="TextLib" abstract="false" final="false" start="8" end="593">
+  <file path="app/Plugin/Tools/Lib/Utility" file="TextLib.php" realpath="/home/vagrant/socsoc/app/Plugin/Tools/Lib/Utility/TextLib.php" size="15126" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="ff8d9203cf45216a1ff84fa6bbfb655342d4727f"/>
+  <docblock>
+    <description compact="TODO: extend the core String class some day?">2010-08-31 ms</description>
+  </docblock>
+  <member name="text" type="{unknown}" visibility="protected" line="10"/>
+  <constructor name="__construct" start="14" end="16" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="text" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="isScreamFont" start="24" end="46" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param type="string" variable="$stringToCheck"/>
+      <param description="(in %: 0 ... 1)" type="object">
+        <type full="tolerance" namespace="" name="tolerance"/>
+      </param>
+      <return description="$success" type="boolean">2011-10-13 ms</return>
+    </docblock>
+    <parameter name="str" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="tolerance" byreference="false" type="float" default="0.4"/>
+    <inline>
+      <comment value="echo returns($uppercase);" line="34"/>
+      <comment value="echo returns($lowercase);" line="38"/>
+      <todo value="tolerance" line="43"/>
+    </inline>
+  </method>
+  <method name="isWord" start="53" end="55" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param type="string"/>
+      <param type="string" variable="$additionalChars">- e.g. `-()0123456789`</param>
+    </docblock>
+    <parameter name="str" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="additionalChars" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="isAscii" start="69" end="74" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Tests whether a string contains only 7-bit ASCII bytes. This is used to determine when to use native functions or UTF-8 functions.">$ascii = UTF8::is_ascii($str);</description>
+      <param description="string to check" type="string"/>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="str" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="stripAsciiCtrl" start="84" end="89" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Strips out device control codes in the ASCII range.">$str = UTF8::strip_ascii_ctrl($str);</description>
+      <param description="string to clean" type="string"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="str" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="stripNonAscii" start="99" end="104" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Strips out all non-7bit ASCII bytes.">$str = UTF8::strip_non_ascii($str);</description>
+      <param description="string to clean" type="string"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="str" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="convertToOrd" start="107" end="123" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="str" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="separator" byreference="false" type="string" default="'-'"/>
+    <inline>
+      <comment value="if (!class_exists('UnicodeLib')) {" line="108"/>
+      <comment xmlns="http://xml.phpdox.net/src#" value="App::uses('UnicodeLib', 'Tools.Lib');" line="109"/>
+      <comment xmlns="http://xml.phpdox.net/src#" value="}" line="110"/>
+      <comment value="$res[] = UnicodeLib::ord($char);" line="119"/>
+    </inline>
+  </method>
+  <method name="convertToOrdTable" start="125" end="147" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="str" byreference="false" type="{unknown}"/>
+    <parameter name="maxCols" byreference="false" type="integer" default="20"/>
+    <inline>
+      <comment value="$res[] = UnicodeLib::ord($char);" line="140"/>
+    </inline>
+  </method>
+  <method name="explodeTags" start="155" end="174" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Explode a string of given tags into an array."/>
+    </docblock>
+    <parameter name="tags" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="This regexp allows the following types of user input:" line="156"/>
+      <comment value="this, &quot;somecompany, llc&quot;, &quot;and &quot;&quot;this&quot;&quot; w,o.rks&quot;, foo bar" line="157"/>
+      <comment value="If a user has escaped a term (to demonstrate that it is a group," line="164"/>
+      <comment value="or includes a comma or quote character), we remove the escape" line="165"/>
+      <comment value="formatting so to save the term into the database as the user intends." line="166"/>
+    </inline>
+  </method>
+  <method name="implodeTags" start="180" end="191" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Implode an array of tags into a string."/>
+    </docblock>
+    <parameter name="tags" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Commas and quotes in tag names are special cases, so encode them." line="183"/>
+    </inline>
+  </method>
+  <method name="widont" start="204" end="216" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Prevents [widow words](http://www.shauninman.com/archive/2006/08/22/widont_wordpress_plugin) by inserting a non-breaking space between the last two words.">echo Text::widont($text);</description>
+      <param description="text to remove widows from" type="string"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="str" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="occurrences" start="225" end="263" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <return description="for empty char or int amount for specific char" type="object">2010-08-31 ms<type full="array(char=&gt;amount)" namespace="" name="array(char=&gt;amount)"/></return>
+    </docblock>
+    <parameter name="char" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="caseSensitive" byreference="false" type="{unknown}" default="false"/>
+  </method>
+  <method name="maxOccurrences" start="270" end="286" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <return description="for empty char or int amount for specific char" type="object">2010-08-31 ms<type full="array(char=&gt;amount)" namespace="" name="array(char=&gt;amount)"/></return>
+    </docblock>
+    <parameter name="caseSensitive" byreference="false" type="{unknown}" default="false"/>
+  </method>
+  <method name="getLength" start="289" end="294" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getCharacter" start="296" end="300" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getLetter" start="302" end="310" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getSpace" start="312" end="316" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getSymbol" start="318" end="320" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getWord" start="323" end="330" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="parse" byreference="false" type="{unknown}" default="false"/>
+  </method>
+  <method name="words" start="337" end="364" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param type="object">- min_char, max_char, case_sensititive, ...
+2010-10-09 ms<type full="options" namespace="" name="options"/></param>
+    </docblock>
+    <parameter name="options" byreference="false" type="array"/>
+    <inline>
+      <comment value="strip chars like . or ," line="344"/>
+    </inline>
+  </method>
+  <method name="wordCount" start="371" end="419" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param type="object">- min_char, max_char, case_sensititive, sort ('asc', 'desc', 'length', 'alpha', false), limit...
+2010-10-09 ms<type full="options" namespace="" name="options"/></param>
+    </docblock>
+    <parameter name="options" byreference="false" type="array"/>
+    <inline>
+      <todo value="use array_count_values()?" line="381"/>
+    </inline>
+  </method>
+  <method name="getSentence" start="422" end="430" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="parse" byreference="false" type="{unknown}" default="false"/>
+  </method>
+  <method name="getParagraph" start="432" end="440" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="parse" byreference="false" type="{unknown}" default="false"/>
+  </method>
+  <method name="beautify" start="442" end="449" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="wordwrap" byreference="false" type="{unknown}" default="false"/>
+  </method>
+  <method name="ascii_to_entities" start="461" end="498" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="High ASCII to Entities">Converts High ascii text and MS Word special characters to character entities</description>
+      <access value="public"/>
+      <param type="string"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="str" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="If the $temp array has a value but we have moved on, then it seems only" line="470"/>
+      <comment xmlns="http://xml.phpdox.net/src#" value="fair that we output that entity and restart $temp before continuing. -Paul" line="471"/>
+    </inline>
+  </method>
+  <method name="entities_to_ascii" start="512" end="541" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Entities to ASCII">Converts character entities back to ASCII</description>
+      <access value="public"/>
+      <param type="string"/>
+      <param type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="str" byreference="false" type="{unknown}"/>
+    <parameter name="all" byreference="false" type="{unknown}" default="true"/>
+  </method>
+  <method name="reduce_double_slashes" start="560" end="562" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Reduce Double Slashes">Converts double slashes in a string to a single slash,
+except those found in http://
+
+http://www.some-site.com//index.php
+
+becomes:
+
+http://www.some-site.com/index.php</description>
+      <access value="public"/>
+      <param type="string"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="str" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="reduce_multiples" start="583" end="591" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Reduce Multiples">Reduces multiple instances of a particular character. Example:
+
+Fred, Bill,, Joe, Jimmy
+
+becomes:
+
+Fred, Bill, Joe, Jimmy</description>
+      <access value="public"/>
+      <param type="string"/>
+      <param description="the character you wish to reduce" type="string"/>
+      <param description="TRUE/FALSE - whether to trim the character from the beginning/end" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="str" byreference="false" type="{unknown}"/>
+    <parameter name="character" byreference="false" type="string" default="','"/>
+    <parameter name="trim" byreference="false" type="{unknown}" default="false"/>
+  </method>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ab510a8ba8b3726396604720ff22cc62d62cda63"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><message>hele hoop opgelost, ik had het eerder moeten committen :$</message></commit></enrichment></enrichments></class>

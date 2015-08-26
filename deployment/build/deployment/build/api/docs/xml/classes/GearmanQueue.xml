@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="GearmanQueue" namespace="" name="GearmanQueue" abstract="false" final="false" start="19" end="118">
+  <file path="app/Plugin/Gearman/Console/Command" file="Gearman.php" realpath="/home/vagrant/socsoc/app/Plugin/Gearman/Console/Command/Gearman.php" size="3738" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="19268e8fbe3d6ba25bbe0df16793a14198a38ae5"/>
+  <docblock>
+    <description compact="Manages the connection to one or multiple Gearman queueing servers and exposes methods to execute jobs in the background."/>
+  </docblock>
+  <member name="_client" type="{unknown}" default="null" visibility="protected" line="26">
+    <docblock>
+      <description compact="Holds and instance for a server client"/>
+      <var type="object">
+        <type full="GearmanClient" namespace="" name="GearmanClient"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="client" start="37" end="53" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns the client instance to the background jobs server If first param is an instance of GearmanClient it will configure the queue to use it IF first param is false it will unset configured client to defaults"/>
+      <param description="null to return current instance, GearmanClient instance to configure it" type="object" variable="$client">to passed value, false to reset to defaults<type full="GearmanClient|boolean" namespace="" name="GearmanClient|boolean"/></param>
+      <return type="object">
+        <type full="GearmanClient" namespace="" name="GearmanClient"/>
+      </return>
+    </docblock>
+    <parameter name="client" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="_setServers" start="61" end="64" abstract="false" final="false" static="true" visibility="protected">
+    <docblock>
+      <description compact="Configures internal client reference to use the list of specified servers.">This list is specified using the configure class.</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="execute" start="74" end="116" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Starts a new background task by passing some data to it with a priority"/>
+      <param description="name of the task to be executed" type="string" variable="$taskName"/>
+      <param description="info to be passed to background task" type="mixed" variable="$data"/>
+      <param description="null for normal or either &quot;low&quot; or &quot;high&quot;" type="object" variable="$priority">
+        <type full="sting" namespace="" name="sting"/>
+      </param>
+      <return description="success" type="boolean"/>
+    </docblock>
+    <parameter name="taskName" byreference="false" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="priority" byreference="false" type="{unknown}" default="null"/>
+  </method>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit></enrichment></enrichments></class>

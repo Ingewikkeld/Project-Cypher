@@ -1,0 +1,20 @@
+---
+
+  - name: mailcatcher | Ensure dependencies are installed
+    apt: pkg={{item}} state=installed
+    with_items:
+      - g++
+      - libsqlite3-dev
+      - gem
+
+  - name: mailcatcher | Ensure mailcatcher is installed
+    command: /opt/vagrant_ruby/bin/gem install mailcatcher
+    ignore_errors: true
+
+  - name: mailcatcher | Ensure the deamon is running
+    command: /opt/vagrant_ruby/bin/mailcatcher --http-ip 192.168.33.10
+    #command: mailcatcher --http-ip {{ ansible_default_ipv4.address }}
+
+  - name: mailcatcher | Ensure PHP uses the mailcatcher SMTP
+    lineinfile: dest=/etc/php5/apache2/php.ini state=present regexp="^.sendmail_path\s=" line="sendmail_path = /usr/bin/env /opt/vagrant_ruby/bin/catchmail"
+    notify: restart apache

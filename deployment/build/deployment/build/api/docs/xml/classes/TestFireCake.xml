@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="TestFireCake" namespace="" name="TestFireCake" abstract="false" final="false" start="28" end="53">
+  <file path="app/Plugin/DebugKit/Test/Case" file="TestFireCake.php" realpath="/home/vagrant/socsoc/app/Plugin/DebugKit/Test/Case/TestFireCake.php" size="1326" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="11d489f88956b44867f77168480acee862b6db1d"/>
+  <extends full="FireCake" namespace="" name="FireCake"/>
+  <member name="sentHeaders" type="array" visibility="public" line="29"/>
+  <method name="_sendHeader" start="31" end="34" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="detectClientExtension" start="40" end="42" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="skip client detection as headers are not being sent."/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="reset" start="48" end="52" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Reset the fireCake"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <parent full="FireCake" namepsace="" name="FireCake">
+    <member name="options" type="array" visibility="public" line="40">
+      <docblock>
+        <description compact="Options for FireCake."/>
+        <see value="_defaultOptions and setOptions();"/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="_defaultOptions" type="array" visibility="protected" line="47">
+      <docblock>
+        <description compact="Default Options used in CakeFirePhp"/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="_levels" type="array" visibility="protected" line="59">
+      <docblock>
+        <description compact="Message Levels for messages sent via FirePHP"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="_version" type="string" default="'0.2.1'" visibility="protected" line="72"/>
+    <member name="_messageIndex" type="integer" default="1" visibility="protected" line="79">
+      <docblock>
+        <description compact="internal messageIndex counter"/>
+        <var type="int"/>
+      </docblock>
+    </member>
+    <member name="_encodedObjects" type="array" visibility="protected" line="86">
+      <docblock>
+        <description compact="stack of objects encoded by stringEncode()"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="_methodIndex" type="array" visibility="protected" line="93">
+      <docblock>
+        <description compact="methodIndex to include in tracebacks when using includeLineNumbers"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="_enabled" type="{unknown}" default="true" visibility="protected" line="100">
+      <docblock>
+        <description compact="FireCake output status"/>
+        <var type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </var>
+      </docblock>
+    </member>
+    <method name="getInstance" start="108" end="121" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="get Instance of the singleton"/>
+        <param description="Class instance to store in the singleton. Used with subclasses and Tests." type="string" variable="$class"/>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+      <parameter name="class" byreference="false" type="{unknown}" default="null"/>
+    </method>
+    <method name="setOptions" start="129" end="136" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="setOptions"/>
+        <param description="Array of options to set." type="array" variable="$options"/>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+      <parameter name="options" byreference="false" type="array"/>
+    </method>
+    <method name="detectClientExtension" start="143" end="152" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="Return boolean based on presence of FirePHP extension"/>
+        <return type="boolean"/>
+      </docblock>
+    </method>
+    <method name="getUserAgent" start="159" end="161" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="Get the Current UserAgent"/>
+        <return description="UserAgent string of active client connection" type="string"/>
+      </docblock>
+    </method>
+    <method name="disable" start="169" end="172" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="Disable FireCake output All subsequent output calls will not be run."/>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="enable" start="179" end="182" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="Enable FireCake output"/>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="log" start="191" end="193" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="Convenience wrapper for LOG messages"/>
+        <param description="Message to log" type="string" variable="$message"/>
+        <param description="Label for message (optional)" type="string" variable="$label"/>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+      <parameter name="message" byreference="false" type="{unknown}"/>
+      <parameter name="label" byreference="false" type="{unknown}" default="null"/>
+    </method>
+    <method name="warn" start="202" end="204" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="Convenience wrapper for WARN messages"/>
+        <param description="Message to log" type="string" variable="$message"/>
+        <param description="Label for message (optional)" type="string" variable="$label"/>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+      <parameter name="message" byreference="false" type="{unknown}"/>
+      <parameter name="label" byreference="false" type="{unknown}" default="null"/>
+    </method>
+    <method name="info" start="213" end="215" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="Convenience wrapper for INFO messages"/>
+        <param description="Message to log" type="string" variable="$message"/>
+        <param description="Label for message (optional)" type="string" variable="$label"/>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+      <parameter name="message" byreference="false" type="{unknown}"/>
+      <parameter name="label" byreference="false" type="{unknown}" default="null"/>
+    </method>
+    <method name="error" start="224" end="226" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="Convenience wrapper for ERROR messages"/>
+        <param description="Message to log" type="string" variable="$message"/>
+        <param description="Label for message (optional)" type="string" variable="$label"/>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+      <parameter name="message" byreference="false" type="{unknown}"/>
+      <parameter name="label" byreference="false" type="{unknown}" default="null"/>
+    </method>
+    <method name="table" start="235" end="237" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="Convenience wrapper for TABLE messages"/>
+        <param description="Message to log" type="string" variable="$message"/>
+        <param description="Label for message (optional)" type="string" variable="$label"/>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+      <parameter name="label" byreference="false" type="{unknown}"/>
+      <parameter name="message" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="dump" start="246" end="248" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="Convenience wrapper for DUMP messages"/>
+        <param description="Message to log" type="string" variable="$message"/>
+        <param description="Unique label for message" type="string" variable="$label"/>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+      <parameter name="label" byreference="false" type="{unknown}"/>
+      <parameter name="message" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="trace" start="256" end="258" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="Convenience wrapper for TRACE messages"/>
+        <param description="Label for message (optional)" type="string" variable="$label"/>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+      <parameter name="label" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="group" start="267" end="269" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="Convenience wrapper for GROUP messages Messages following the group call will be nested in a group block"/>
+        <param description="Label for group (optional)" type="string" variable="$label"/>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+      <parameter name="label" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="groupEnd" start="278" end="280" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="Convenience wrapper for GROUPEND messages Closes a group block"/>
+        <param description="Label for group (optional)" type="string" variable="$label"/>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="fb" start="293" end="402" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="fb - Send messages with FireCake to FirePHP">Much like FirePHP's fb() this method can be called with various parameter counts
+fb($message) - Just send a message defaults to LOG type
+fb($message, $type) - Send a message with a specific type
+fb($message, $label, $type) - Send a message with a custom label and type.</description>
+        <param description="Message to output. For other parameters see usage above." type="mixed" variable="$message"/>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+      <parameter name="message" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="_parseTrace" start="410" end="430" abstract="false" final="false" static="true" visibility="protected">
+      <docblock>
+        <description compact="Parse a debug backtrace"/>
+        <param description="Debug backtrace output" type="array" variable="$trace"/>
+        <return type="array"/>
+      </docblock>
+      <parameter name="trace" byreference="false" type="{unknown}"/>
+      <parameter name="messageName" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="_escapeTrace" start="438" end="448" abstract="false" final="false" static="true" visibility="protected">
+      <docblock>
+        <description compact="Fix a trace for use in output"/>
+        <param description="Trace to fix" type="mixed" variable="$trace"/>
+        <return type="string"/>
+      </docblock>
+      <parameter name="trace" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="stringEncode" start="459" end="495" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="Encode non string objects to string.">Filter out recursion, so no errors are raised by json_encode or $javascript-&gt;object()</description>
+        <param description="Object or variable to encode to string." type="mixed" variable="$object"/>
+        <param description="Current Depth in object chains." type="int" variable="$objectDepth"/>
+        <param description="Current Depth in array chains." type="int" variable="$arrayDepth"/>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+      <parameter name="object" byreference="false" type="{unknown}"/>
+      <parameter name="objectDepth" byreference="false" type="integer" default="1"/>
+      <parameter name="arrayDepth" byreference="false" type="integer" default="1"/>
+    </method>
+    <method name="jsonEncode" start="505" end="511" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="Encode an object into JSON"/>
+        <param description="Object or array to json encode" type="mixed" variable="$object"/>
+        <param type="boolean" variable="$doIt"/>
+        <static value=""/>
+        <return type="string"/>
+      </docblock>
+      <parameter name="object" byreference="false" type="{unknown}"/>
+      <parameter name="skipEncode" byreference="false" type="{unknown}" default="false"/>
+    </method>
+    <method name="_sendHeader" start="518" end="520" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Send Headers - write headers."/>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+      <parameter name="value" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ab510a8ba8b3726396604720ff22cc62d62cda63"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><message>hele hoop opgelost, ik had het eerder moeten committen :$</message></commit></enrichment></enrichments></class>

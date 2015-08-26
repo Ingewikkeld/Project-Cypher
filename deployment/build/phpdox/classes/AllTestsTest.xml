@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="AllTestsTest" namespace="" name="AllTestsTest" abstract="false" final="false" start="6" end="16">
+  <file path="app/Test/Case" file="AllTest.php" realpath="/home/vagrant/socsoc/app/Test/Case/AllTest.php" size="339" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="04386aee028df72c078d895ea62f6973df329461"/>
+  <extends full="PHPUnit_Framework_TestSuite" namespace="" name="PHPUnit_Framework_TestSuite"/>
+  <method name="suite" start="8" end="15" abstract="false" final="false" static="true" visibility="public"/>
+</class>

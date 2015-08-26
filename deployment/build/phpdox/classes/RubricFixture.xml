@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="RubricFixture" namespace="" name="RubricFixture" abstract="false" final="false" start="6" end="90">
+  <file path="app/Test/Fixture" file="RubricFixture.php" realpath="/home/vagrant/socsoc/app/Test/Fixture/RubricFixture.php" size="3480" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="4ff2dfa8c0ac100c79a0d98929cabf1c4c79e890"/>
+  <docblock>
+    <description compact="RubricFixture"/>
+  </docblock>
+  <extends full="CakeTestFixture" namespace="" name="CakeTestFixture"/>
+  <member name="fields" type="array" visibility="public" line="13">
+    <docblock>
+      <description compact="Fields"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="init" start="32" end="88" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="place the creation of records in this function to be able to call date() for some fields" line="34"/>
+    </inline>
+  </method>
+</class>

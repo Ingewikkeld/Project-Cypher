@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="Worker" namespace="" name="Worker" abstract="false" final="false" start="2" end="93">
+  <file path="app/Plugin/Queue/Config" file="newsletter_worker.php" realpath="/home/vagrant/socsoc/app/Plugin/Queue/Config/newsletter_worker.php" size="2811" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="52ec94989034badfcafb64caaad5b419ab527bfc"/>
+  <member name="path" type="{unknown}" visibility="private" line="4"/>
+  <member name="logdir" type="{unknown}" visibility="private" line="5"/>
+  <member name="logfile" type="{unknown}" visibility="private" line="6"/>
+  <constructor name="__construct" start="8" end="28" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="set the logdir" line="11"/>
+      <comment value="set the logfile" line="22"/>
+    </inline>
+  </constructor>
+  <method name="log" start="31" end="40" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="txt" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="prepend the date" line="33"/>
+    </inline>
+  </method>
+  <destructor name="__destruct" start="42" end="44" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="setBasePath" start="46" end="48" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="run" start="50" end="92" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="must set $url first" line="59"/>
+      <comment value="do your curl thing here" line="62"/>
+      <comment value="everything is OK, so delete the job from the tube" line="68"/>
+      <comment value="something went wrong; we didn't get a 200 OK response" line="85"/>
+      <comment value="bury the job" line="86"/>
+    </inline>
+  </method>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="28acc0dc022b2ceaa47547071e9cecc0a53fc08b"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-07-29T18:23:53+00:00" unixtime="1375122233"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-07-29T18:23:53+00:00" unixtime="1375122233"/><message>files zijn blijkbaar gewijzigd na een schone checkout (= opzetten nieuw project in phpstorm)</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="df71f3c56f8fc3c1665e70feceea5a1489338b74"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T19:16:26+00:00" unixtime="1372274186"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T19:16:26+00:00" unixtime="1372274186"/><message>crlf linefeeds?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ab510a8ba8b3726396604720ff22cc62d62cda63"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><message>hele hoop opgelost, ik had het eerder moeten committen :$</message></commit></enrichment></enrichments></class>

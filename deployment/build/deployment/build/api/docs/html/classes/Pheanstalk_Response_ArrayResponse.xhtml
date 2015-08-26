@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pdxf="http://xml.phpdox.net/functions" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head xmlns:git="http://xml.phpdox.net/gitlog#">
+    <title>phpDox - Pheanstalk_Response_ArrayResponse</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav xmlns:git="http://xml.phpdox.net/gitlog#" class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../reports/index.xhtml">Reports</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">Pheanstalk_Response_ArrayResponse</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>Pheanstalk_Response_ArrayResponse</h1>
+        <h4>A response with an ArrayObject interface to key=&gt;value data</h4>
+        <p/>
+        <ul>
+          <li>Author: Paul Annesley</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Pheanstalk_Response_ArrayResponse
+                extends <a title="ArrayObject" href="../classes/ArrayObject.xhtml">ArrayObject</a>
+                implements
+                <a title="Pheanstalk_Response" href="../interfaces/Pheanstalk_Response.xhtml">Pheanstalk_Response</a>
+            {<br/><ul class="none"><li>// Inherited constants from <a title="ArrayObject" href="../classes/ArrayObject.xhtml">ArrayObject</a></li><li>const <a href="#"/> = 1;</li><li>const <a href="#"/> = 2;</li></ul><ul class="none"><li>// members</li><li>private
+                         <a href="#members">$_name</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Pheanstalk_Response_ArrayResponse" href="../classes/Pheanstalk_Response_ArrayResponse/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="Pheanstalk_Response_ArrayResponse" href="../classes/Pheanstalk_Response_ArrayResponse/getResponseName.xhtml">getResponseName</a>()
+                    </li><li>public void <a title="Pheanstalk_Response_ArrayResponse" href="../classes/Pheanstalk_Response_ArrayResponse/__get.xhtml">__get</a>()
+                    </li><li>public void <a title="Pheanstalk_Response_ArrayResponse" href="../classes/Pheanstalk_Response_ArrayResponse/__isset.xhtml">__isset</a>()
+                    </li><li>private string <a title="Pheanstalk_Response_ArrayResponse" href="../classes/Pheanstalk_Response_ArrayResponse/_transformPropertyName.xhtml">_transformPropertyName</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="ArrayObject">ArrayObject</span></li><li>public void <a title="ArrayObject" href="../classes/ArrayObject/__construct.xhtml">__construct</a>()
+                        </li><li>public void <a title="ArrayObject" href="../classes/ArrayObject/append.xhtml">append</a>()
+                        </li><li>public void <a title="ArrayObject" href="../classes/ArrayObject/asort.xhtml">asort</a>()
+                        </li><li>public int <a title="ArrayObject" href="../classes/ArrayObject/count.xhtml">count</a>()
+                        </li><li>public array <a title="ArrayObject" href="../classes/ArrayObject/exchangeArray.xhtml">exchangeArray</a>()
+                        </li><li>public array <a title="ArrayObject" href="../classes/ArrayObject/getArrayCopy.xhtml">getArrayCopy</a>()
+                        </li><li>public int <a title="ArrayObject" href="../classes/ArrayObject/getFlags.xhtml">getFlags</a>()
+                        </li><li>public ArrayIterator <a title="ArrayObject" href="../classes/ArrayObject/getIterator.xhtml">getIterator</a>()
+                        </li><li>public string <a title="ArrayObject" href="../classes/ArrayObject/getIteratorClass.xhtml">getIteratorClass</a>()
+                        </li><li>public void <a title="ArrayObject" href="../classes/ArrayObject/ksort.xhtml">ksort</a>()
+                        </li><li>public void <a title="ArrayObject" href="../classes/ArrayObject/natcasesort.xhtml">natcasesort</a>()
+                        </li><li>public void <a title="ArrayObject" href="../classes/ArrayObject/natsort.xhtml">natsort</a>()
+                        </li><li>public bool <a title="ArrayObject" href="../classes/ArrayObject/offsetExists.xhtml">offsetExists</a>()
+                        </li><li>public mixed <a title="ArrayObject" href="../classes/ArrayObject/offsetGet.xhtml">offsetGet</a>()
+                        </li><li>public void <a title="ArrayObject" href="../classes/ArrayObject/offsetSet.xhtml">offsetSet</a>()
+                        </li><li>public void <a title="ArrayObject" href="../classes/ArrayObject/offsetUnset.xhtml">offsetUnset</a>()
+                        </li><li>public void <a title="ArrayObject" href="../classes/ArrayObject/serialize.xhtml">serialize</a>()
+                        </li><li>public void <a title="ArrayObject" href="../classes/ArrayObject/setFlags.xhtml">setFlags</a>()
+                        </li><li>public void <a title="ArrayObject" href="../classes/ArrayObject/setIteratorClass.xhtml">setIteratorClass</a>()
+                        </li><li>public void <a title="ArrayObject" href="../classes/ArrayObject/uasort.xhtml">uasort</a>()
+                        </li><li>public void <a title="ArrayObject" href="../classes/ArrayObject/uksort.xhtml">uksort</a>()
+                        </li><li>public void <a title="ArrayObject" href="../classes/ArrayObject/unserialize.xhtml">unserialize</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/ArrayObject.xhtml">ArrayObject</a>
+            </li>
+          </ul>
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/Pheanstalk_Response.xhtml">Pheanstalk_Response</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="constants">Constants</h2>
+        <table xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id=""/>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id=""/>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_OUT_OF_MEMORY">RESPONSE_OUT_OF_MEMORY</td>
+              <td>'OUT_OF_MEMORY'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_INTERNAL_ERROR">RESPONSE_INTERNAL_ERROR</td>
+              <td>'INTERNAL_ERROR'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_DRAINING">RESPONSE_DRAINING</td>
+              <td>'DRAINING'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_BAD_FORMAT">RESPONSE_BAD_FORMAT</td>
+              <td>'BAD_FORMAT'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_UNKNOWN_COMMAND">RESPONSE_UNKNOWN_COMMAND</td>
+              <td>'UNKNOWN_COMMAND'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_INSERTED">RESPONSE_INSERTED</td>
+              <td>'INSERTED'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_BURIED">RESPONSE_BURIED</td>
+              <td>'BURIED'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_EXPECTED_CRLF">RESPONSE_EXPECTED_CRLF</td>
+              <td>'EXPECTED_CRLF'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_JOB_TOO_BIG">RESPONSE_JOB_TOO_BIG</td>
+              <td>'JOB_TOO_BIG'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_USING">RESPONSE_USING</td>
+              <td>'USING'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_DEADLINE_SOON">RESPONSE_DEADLINE_SOON</td>
+              <td>'DEADLINE_SOON'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_RESERVED">RESPONSE_RESERVED</td>
+              <td>'RESERVED'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_DELETED">RESPONSE_DELETED</td>
+              <td>'DELETED'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_NOT_FOUND">RESPONSE_NOT_FOUND</td>
+              <td>'NOT_FOUND'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_RELEASED">RESPONSE_RELEASED</td>
+              <td>'RELEASED'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_WATCHING">RESPONSE_WATCHING</td>
+              <td>'WATCHING'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_NOT_IGNORED">RESPONSE_NOT_IGNORED</td>
+              <td>'NOT_IGNORED'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_FOUND">RESPONSE_FOUND</td>
+              <td>'FOUND'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_KICKED">RESPONSE_KICKED</td>
+              <td>'KICKED'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_OK">RESPONSE_OK</td>
+              <td>'OK'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_TIMED_OUT">RESPONSE_TIMED_OUT</td>
+              <td>'TIMED_OUT'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_TOUCHED">RESPONSE_TOUCHED</td>
+              <td>'TOUCHED'</td>
+            </tr>
+            <tr>
+              <td id="RESPONSE_PAUSED">RESPONSE_PAUSED</td>
+              <td>'PAUSED'</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="_name">
+              <strong>$_name</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="_transformPropertyName"><a title="Pheanstalk_Response_ArrayResponse" href="../classes/Pheanstalk_Response_ArrayResponse/_transformPropertyName.xhtml">_transformPropertyName()</a>
+                — Tranform underscored property name to hyphenated array key.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="Pheanstalk_Response_ArrayResponse" href="../classes/Pheanstalk_Response_ArrayResponse/__construct.xhtml">__construct()</a>
+            </li>
+            <li id="__get"><a title="Pheanstalk_Response_ArrayResponse" href="../classes/Pheanstalk_Response_ArrayResponse/__get.xhtml">__get()</a>
+                — Object property access to ArrayObject data.</li>
+            <li id="__isset"><a title="Pheanstalk_Response_ArrayResponse" href="../classes/Pheanstalk_Response_ArrayResponse/__isset.xhtml">__isset()</a>
+                — Object property access to ArrayObject data.</li>
+            <li id="getResponseName">
+              <a title="Pheanstalk_Response_ArrayResponse" href="../classes/Pheanstalk_Response_ArrayResponse/getResponseName.xhtml">getResponseName()</a>
+            </li>
+          </ul>
+          <h3>Inherited from <a title="ArrayObject" href="../classes/ArrayObject.xhtml">ArrayObject</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="append"><a title="ArrayObject" href="../classes/ArrayObject/append.xhtml">append()</a>
+                — Appends the value</li>
+            <li id="asort"><a title="ArrayObject" href="../classes/ArrayObject/asort.xhtml">asort()</a>
+                — Sort the entries by value</li>
+            <li id="count"><a title="ArrayObject" href="../classes/ArrayObject/count.xhtml">count()</a>
+                — Get the number of public properties in the ArrayObject</li>
+            <li id="exchangeArray"><a title="ArrayObject" href="../classes/ArrayObject/exchangeArray.xhtml">exchangeArray()</a>
+                — Exchange the array for another one.</li>
+            <li id="getArrayCopy"><a title="ArrayObject" href="../classes/ArrayObject/getArrayCopy.xhtml">getArrayCopy()</a>
+                — Creates a copy of the ArrayObject.</li>
+            <li id="getFlags"><a title="ArrayObject" href="../classes/ArrayObject/getFlags.xhtml">getFlags()</a>
+                — Gets the behavior flags.</li>
+            <li id="getIterator"><a title="ArrayObject" href="../classes/ArrayObject/getIterator.xhtml">getIterator()</a>
+                — Create a new iterator from an ArrayObject instance</li>
+            <li id="getIteratorClass"><a title="ArrayObject" href="../classes/ArrayObject/getIteratorClass.xhtml">getIteratorClass()</a>
+                — Gets the iterator classname for the ArrayObject.</li>
+            <li id="ksort"><a title="ArrayObject" href="../classes/ArrayObject/ksort.xhtml">ksort()</a>
+                — Sort the entries by key</li>
+            <li id="natcasesort"><a title="ArrayObject" href="../classes/ArrayObject/natcasesort.xhtml">natcasesort()</a>
+                — Sort an array using a case insensitive "natural order" algorithm</li>
+            <li id="natsort"><a title="ArrayObject" href="../classes/ArrayObject/natsort.xhtml">natsort()</a>
+                — Sort entries using a "natural order" algorithm</li>
+            <li id="offsetExists"><a title="ArrayObject" href="../classes/ArrayObject/offsetExists.xhtml">offsetExists()</a>
+                — Returns whether the requested index exists</li>
+            <li id="offsetGet"><a title="ArrayObject" href="../classes/ArrayObject/offsetGet.xhtml">offsetGet()</a>
+                — Returns the value at the specified index</li>
+            <li id="offsetSet"><a title="ArrayObject" href="../classes/ArrayObject/offsetSet.xhtml">offsetSet()</a>
+                — Sets the value at the specified index to newval</li>
+            <li id="offsetUnset"><a title="ArrayObject" href="../classes/ArrayObject/offsetUnset.xhtml">offsetUnset()</a>
+                — Unsets the value at the specified index</li>
+            <li id="serialize"><a title="ArrayObject" href="../classes/ArrayObject/serialize.xhtml">serialize()</a>
+                — Serialize an ArrayObject</li>
+            <li id="setFlags"><a title="ArrayObject" href="../classes/ArrayObject/setFlags.xhtml">setFlags()</a>
+                — Sets the behavior flags.</li>
+            <li id="setIteratorClass"><a title="ArrayObject" href="../classes/ArrayObject/setIteratorClass.xhtml">setIteratorClass()</a>
+                — Sets the iterator classname for the ArrayObject.</li>
+            <li id="uasort"><a title="ArrayObject" href="../classes/ArrayObject/uasort.xhtml">uasort()</a>
+                — Sort the entries with a user-defined comparison function and maintain key association</li>
+            <li id="uksort"><a title="ArrayObject" href="../classes/ArrayObject/uksort.xhtml">uksort()</a>
+                — Sort the entries by keys using a user-defined comparison function</li>
+            <li id="unserialize"><a title="ArrayObject" href="../classes/ArrayObject/unserialize.xhtml">unserialize()</a>
+                — Unserialize an ArrayObject</li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul xmlns:git="http://xml.phpdox.net/gitlog#" class="styled history">
+          <li>
+            <h3>2013-10-06T19:40:29+00:00 (commit #<span title="f16525be325aa16218dfea4fe983ccf2a60b79b9">f16525b</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (pauledenburg@gmail.com) /
+                        Commiter: Paul Edenburg (pauledenburg@gmail.com)
+                    </p>
+              <pre class="wrapped">wijzigingen na het aanmaken van een nieuw phpstrom project</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-07-29T20:18:45+00:00 (commit #<span title="287b8750eddef6446e689ccd35cee74b32cde2ed">287b875</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@lamp2.(none)) /
+                        Commiter: Paul Edenburg (paul@lamp2.(none))
+                    </p>
+              <pre class="wrapped">rechten zijn gewijzigd</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-07-10T14:33:53+00:00 (commit #<span title="e77a82de1468025cd32f6eb867ad40d71cc50ab8">e77a82d</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">beanstalkd en pheanstalk toegevoegd (again)</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-07-09T18:06:49+00:00 (commit #<span title="512eddb40e59de7b26dc75edad1ed769d234b3e3">512eddb</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">pheanstalk en beanstalkd toegevoegd</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-26T15:55:26+00:00 (commit #<span title="58d361958cff9f7a6a85bed1ef717e1029d99d24">58d3619</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">phpstorm connect?</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <footer xmlns:git="http://xml.phpdox.net/gitlog#">
+      <span>Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

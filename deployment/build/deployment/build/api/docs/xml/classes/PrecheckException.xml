@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="PrecheckException" namespace="" name="PrecheckException" abstract="false" final="false" start="19" end="87">
+  <file path="app/Plugin/migrations/Lib/Migration" file="PrecheckException.php" realpath="/home/vagrant/socsoc/app/Plugin/migrations/Lib/Migration/PrecheckException.php" size="2252" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="5b3c8865ecc07bf164121800ce831a000dbc4371"/>
+  <extends full="PrecheckBase" namespace="" name="PrecheckBase"/>
+  <method name="checkDropTable" start="28" end="35" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check that table exists."/>
+      <param type="string" variable="$table"/>
+      <throws type="object">
+        <type full="MigrationException" namespace="" name="MigrationException"/>
+      </throws>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="table" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="checkCreateTable" start="44" end="51" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check that table exists."/>
+      <param type="string" variable="$table"/>
+      <throws type="object">
+        <type full="MigrationException" namespace="" name="MigrationException"/>
+      </throws>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="table" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="checkDropField" start="61" end="68" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Perform check before field drop."/>
+      <param type="string" variable="$table"/>
+      <param type="string" variable="$field"/>
+      <throws type="object">
+        <type full="MigrationException" namespace="" name="MigrationException"/>
+      </throws>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="table" byreference="false" type="{unknown}"/>
+    <parameter name="field" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="checkAddField" start="78" end="85" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Perform check before field create."/>
+      <param type="string" variable="$table"/>
+      <param type="string" variable="$field"/>
+      <throws type="object">
+        <type full="MigrationException" namespace="" name="MigrationException"/>
+      </throws>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="table" byreference="false" type="{unknown}"/>
+    <parameter name="field" byreference="false" type="{unknown}"/>
+  </method>
+  <parent full="PrecheckBase" namepsace="" name="PrecheckBase">
+    <member name="_migration" type="{unknown}" visibility="protected" line="22">
+      <docblock>
+        <description compact=""/>
+        <var type="object">
+          <type full="CakeMigration" namespace="" name="CakeMigration"/>
+        </var>
+      </docblock>
+    </member>
+    <method name="checkAddField" start="31" end="31" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Perform check before field create."/>
+        <param type="string" variable="$table"/>
+        <param type="string" variable="$field"/>
+        <return type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+      </docblock>
+      <parameter name="table" byreference="false" type="{unknown}"/>
+      <parameter name="field" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="checkCreateTable" start="39" end="39" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Perform check before table create."/>
+        <param type="string" variable="$table"/>
+        <return type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+      </docblock>
+      <parameter name="table" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="checkDropTable" start="47" end="47" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Perform check before table drop."/>
+        <param type="string" variable="$table"/>
+        <return type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+      </docblock>
+      <parameter name="table" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="checkDropField" start="56" end="56" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Perform check before field drop."/>
+        <param type="string" variable="$table"/>
+        <param type="string" variable="$field"/>
+        <return type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+      </docblock>
+      <parameter name="table" byreference="false" type="{unknown}"/>
+      <parameter name="field" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="tableExists" start="64" end="68" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Check that table exists."/>
+        <param type="string" variable="$table"/>
+        <return type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+      </docblock>
+      <parameter name="table" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="fieldExists" start="77" end="83" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Check that field exists."/>
+        <param type="string" variable="$table"/>
+        <param type="string" variable="$field"/>
+        <return type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+      </docblock>
+      <parameter name="table" byreference="false" type="{unknown}"/>
+      <parameter name="field" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="beforeAction" start="94" end="119" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Before action precheck callback."/>
+        <param variable="$migration"/>
+        <param type="string" variable="$type"/>
+        <param type="array" variable="$data"/>
+        <throws type="object">
+          <type full="MigrationException" namespace="" name="MigrationException"/>
+        </throws>
+        <return type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+      </docblock>
+      <parameter name="migration" byreference="false" type="{unknown}"/>
+      <parameter name="type" byreference="false" type="{unknown}"/>
+      <parameter name="data" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ee4572070e63c2c8754f7a4dbdd57761480b4d6b"><author email="vagrant@precise32.(none)" name="vagrant" time="2013-11-19T14:52:19+00:00" unixtime="1384872739"/><commiter email="vagrant@precise32.(none)" name="vagrant" time="2013-11-19T14:52:19+00:00" unixtime="1384872739"/><message>migrations plugin geinstalleerd en eerste initiele schema(.php) gemaakt</message></commit></enrichment></enrichments></class>

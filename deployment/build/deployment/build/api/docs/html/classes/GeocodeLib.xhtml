@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pdxf="http://xml.phpdox.net/functions" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head xmlns:git="http://xml.phpdox.net/gitlog#">
+    <title>phpDox - GeocodeLib</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav xmlns:git="http://xml.phpdox.net/gitlog#" class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../reports/index.xhtml">Reports</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">GeocodeLib</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#tasks">Tasks</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>GeocodeLib</h1>
+        <h4>Geocode via google (UPDATE: api3)</h4>
+        <p/>
+        <ul>
+          <li>Author: Mark Scherer</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class GeocodeLib
+            {<br/><ul class="none"><li>// constants</li><li>const BASE_URL = 'http://{host}/maps/api/geocode/{output}?';</li><li>const DEFAULT_HOST = 'de';</li><li>const ACC_COUNTRY = 0;</li><li>const ACC_AAL1 = 1;</li><li>const ACC_AAL2 = 2;</li><li>const ACC_AAL3 = 3;</li><li>const ACC_POSTAL = 4;</li><li>const ACC_LOC = 5;</li><li>const ACC_SUBLOC = 6;</li><li>const ACC_ROUTE = 7;</li><li>const ACC_INTERSEC = 8;</li><li>const ACC_STREET = 9;</li><li>const UNIT_KM = 'K';</li><li>const UNIT_NAUTICAL = 'N';</li><li>const UNIT_FEET = 'F';</li><li>const UNIT_INCHES = 'I';</li><li>const UNIT_MILES = 'M';</li><li>const TYPE_ROOFTOP = 'ROOFTOP';</li><li>const TYPE_RANGE_INTERPOLATED = 'RANGE_INTERPOLATED';</li><li>const TYPE_GEOMETRIC_CENTER = 'GEOMETRIC_CENTER';</li><li>const TYPE_APPROXIMATE = 'APPROXIMATE';</li><li>const CODE_SUCCESS = 'OK';</li><li>const CODE_TOO_MANY_QUERIES = 'OVER_QUERY_LIMIT';</li><li>const CODE_BAD_REQUEST = 'REQUEST_DENIED';</li><li>const CODE_MISSING_QUERY = 'INVALID_REQUEST';</li><li>const CODE_UNKNOWN_ADDRESS = 'ZERO_RESULTS';</li></ul><ul class="none"><li>// members</li><li>public
+                         <a href="#members">$use</a>;
+                    </li><li>public
+                         <a href="#members">$units</a>;
+                    </li><li>public
+                         <a href="#members">$options</a>;
+                    </li><li>protected
+                         <a href="#members">$params</a>;
+                    </li><li>protected
+                         <a href="#members">$error</a>;
+                    </li><li>protected
+                         <a href="#members">$result</a>;
+                    </li><li>protected
+                         <a href="#members">$hosts</a>;
+                    </li><li>protected
+                         <a href="#members">$statusCodes</a>;
+                    </li><li>protected
+                         <a href="#members">$accuracyTypes</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="GeocodeLib" href="../classes/GeocodeLib/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="GeocodeLib" href="../classes/GeocodeLib/setParams.xhtml">setParams</a>()
+                    </li><li>public void <a title="GeocodeLib" href="../classes/GeocodeLib/setOptions.xhtml">setOptions</a>()
+                    </li><li>public void <a title="GeocodeLib" href="../classes/GeocodeLib/setError.xhtml">setError</a>()
+                    </li><li>public void <a title="GeocodeLib" href="../classes/GeocodeLib/error.xhtml">error</a>()
+                    </li><li>public void <a title="GeocodeLib" href="../classes/GeocodeLib/reset.xhtml">reset</a>()
+                    </li><li>public string <a title="GeocodeLib" href="../classes/GeocodeLib/url.xhtml">url</a>()
+                    </li><li>public bool <a title="GeocodeLib" href="../classes/GeocodeLib/isInconclusive.xhtml">isInconclusive</a>()
+                    </li><li>public array <a title="GeocodeLib" href="../classes/GeocodeLib/getResult.xhtml">getResult</a>()
+                    </li><li>public boolean <a title="GeocodeLib" href="../classes/GeocodeLib/reverseGeocode.xhtml">reverseGeocode</a>()
+                    </li><li>public void <a title="GeocodeLib" href="../classes/GeocodeLib/pause.xhtml">pause</a>()
+                    </li><li>public boolean <a title="GeocodeLib" href="../classes/GeocodeLib/geocode.xhtml">geocode</a>()
+                    </li><li>protected bool <a title="GeocodeLib" href="../classes/GeocodeLib/_isNotAccurateEnough.xhtml">_isNotAccurateEnough</a>()
+                    </li><li>protected void <a title="GeocodeLib" href="../classes/GeocodeLib/_transformJson.xhtml">_transformJson</a>()
+                    </li><li>protected void <a title="GeocodeLib" href="../classes/GeocodeLib/_parse.xhtml">_parse</a>()
+                    </li><li>protected void <a title="GeocodeLib" href="../classes/GeocodeLib/_transformXml.xhtml">_transformXml</a>()
+                    </li><li>protected void <a title="GeocodeLib" href="../classes/GeocodeLib/_fetch.xhtml">_fetch</a>()
+                    </li><li>public void <a title="GeocodeLib" href="../classes/GeocodeLib/debug.xhtml">debug</a>()
+                    </li><li>public int <a title="GeocodeLib" href="../classes/GeocodeLib/distance.xhtml">distance</a>()
+                    </li><li>public float <a title="GeocodeLib" href="../classes/GeocodeLib/convert.xhtml">convert</a>()
+                    </li><li>public static float <a title="GeocodeLib" href="../classes/GeocodeLib/blur.xhtml">blur</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="tasks">Tasks</h2>
+        <h2 xmlns:git="http://xml.phpdox.net/gitlog#" id="tasks">Tasks</h2>
+        <table xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <thead>
+            <tr>
+              <th style="width:3em;">Line</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tr>
+            <td class="nummeric">440</td>
+            <td>maybe check more than just first?</td>
+          </tr>
+          <tr>
+            <td class="nummeric">522</td>
+            <td/>
+          </tr>
+          <tr>
+            <td class="nummeric">623</td>
+            <td>add more</td>
+          </tr>
+          <tr>
+            <td class="nummeric">753</td>
+            <td/>
+          </tr>
+          <tr>
+            <td class="nummeric">775</td>
+            <td>+ - by chance!!!</td>
+          </tr>
+        </table>
+        <h2 id="constants">Constants</h2>
+        <table xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="BASE_URL">BASE_URL</td>
+              <td>'http://{host}/maps/api/geocode/{output}?'</td>
+            </tr>
+            <tr>
+              <td id="DEFAULT_HOST">DEFAULT_HOST</td>
+              <td>'de'</td>
+            </tr>
+            <tr>
+              <td id="ACC_COUNTRY">ACC_COUNTRY</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td id="ACC_AAL1">ACC_AAL1</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="ACC_AAL2">ACC_AAL2</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="ACC_AAL3">ACC_AAL3</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td id="ACC_POSTAL">ACC_POSTAL</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td id="ACC_LOC">ACC_LOC</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td id="ACC_SUBLOC">ACC_SUBLOC</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td id="ACC_ROUTE">ACC_ROUTE</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td id="ACC_INTERSEC">ACC_INTERSEC</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td id="ACC_STREET">ACC_STREET</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <td id="UNIT_KM">UNIT_KM</td>
+              <td>'K'</td>
+            </tr>
+            <tr>
+              <td id="UNIT_NAUTICAL">UNIT_NAUTICAL</td>
+              <td>'N'</td>
+            </tr>
+            <tr>
+              <td id="UNIT_FEET">UNIT_FEET</td>
+              <td>'F'</td>
+            </tr>
+            <tr>
+              <td id="UNIT_INCHES">UNIT_INCHES</td>
+              <td>'I'</td>
+            </tr>
+            <tr>
+              <td id="UNIT_MILES">UNIT_MILES</td>
+              <td>'M'</td>
+            </tr>
+            <tr>
+              <td id="TYPE_ROOFTOP">TYPE_ROOFTOP</td>
+              <td>'ROOFTOP'</td>
+            </tr>
+            <tr>
+              <td id="TYPE_RANGE_INTERPOLATED">TYPE_RANGE_INTERPOLATED</td>
+              <td>'RANGE_INTERPOLATED'</td>
+            </tr>
+            <tr>
+              <td id="TYPE_GEOMETRIC_CENTER">TYPE_GEOMETRIC_CENTER</td>
+              <td>'GEOMETRIC_CENTER'</td>
+            </tr>
+            <tr>
+              <td id="TYPE_APPROXIMATE">TYPE_APPROXIMATE</td>
+              <td>'APPROXIMATE'</td>
+            </tr>
+            <tr>
+              <td id="CODE_SUCCESS">CODE_SUCCESS</td>
+              <td>'OK'</td>
+            </tr>
+            <tr>
+              <td id="CODE_TOO_MANY_QUERIES">CODE_TOO_MANY_QUERIES</td>
+              <td>'OVER_QUERY_LIMIT'</td>
+            </tr>
+            <tr>
+              <td id="CODE_BAD_REQUEST">CODE_BAD_REQUEST</td>
+              <td>'REQUEST_DENIED'</td>
+            </tr>
+            <tr>
+              <td id="CODE_MISSING_QUERY">CODE_MISSING_QUERY</td>
+              <td>'INVALID_REQUEST'</td>
+            </tr>
+            <tr>
+              <td id="CODE_UNKNOWN_ADDRESS">CODE_UNKNOWN_ADDRESS</td>
+              <td>'ZERO_RESULTS'</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="accuracyTypes">
+              <strong>$accuracyTypes</strong>
+            </li>
+            <li id="error">
+              <strong>$error</strong>
+            </li>
+            <li id="hosts">
+              <strong>$hosts</strong>
+              <br/>
+              <span class="indent">The Maps geocoder is programmed to bias its results depending on from which domain it receives requests. For example, entering "syracuse" in the search box on maps.google.com will geocode the city of "Syracuse, NY", while entering the same query on maps.google.it (Italy's domain) will find the city of "Siracusa" in Sicily. You would get the same results by sending that query through HTTP geocoding to maps.google.it instead of maps.google.com, which you can do by modifying the MAPS_HOST constant in the sample code below. Note: You cannot send a request to a non-existent maps.google.* server, so ensure that a country domain exists before redirecting your geocoding queries to it.</span>
+            </li>
+            <li id="params">
+              <strong>$params</strong>
+              <br/>
+              <span class="indent">url params 2010-06-25 ms</span>
+            </li>
+            <li id="result">
+              <strong>$result</strong>
+            </li>
+            <li id="statusCodes">
+              <strong>$statusCodes</strong>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="options">
+              <strong>$options</strong>
+              <br/>
+              <span class="indent">validation and retrieval options - use: - log: false logs only real errors, true all activities - pause: timeout to prevent blocking - ...</span>
+            </li>
+            <li id="units">
+              <strong>$units</strong>
+            </li>
+            <li id="use">
+              <strong>$use</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="_fetch"><a title="GeocodeLib" href="../classes/GeocodeLib/_fetch.xhtml">_fetch()</a>
+                — fetches url with curl if available fallbacks: cake and php note: expects url with json encoded content</li>
+            <li id="_isNotAccurateEnough">
+              <a title="GeocodeLib" href="../classes/GeocodeLib/_isNotAccurateEnough.xhtml">_isNotAccurateEnough()</a>
+            </li>
+            <li id="_parse"><a title="GeocodeLib" href="../classes/GeocodeLib/_parse.xhtml">_parse()</a>
+                — try to find the correct path - type (string) - Type (array[string, ...]) 2010-06-29 ms</li>
+            <li id="_transformJson">
+              <a title="GeocodeLib" href="../classes/GeocodeLib/_transformJson.xhtml">_transformJson()</a>
+            </li>
+            <li id="_transformXml"><a title="GeocodeLib" href="../classes/GeocodeLib/_transformXml.xhtml">_transformXml()</a>
+                — flattens result array and returns clean record keys: - formatted_address, type, country, country_code, country_province, country_province_code, locality, sublocality, postal_code, route, lat, lng, location_type, viewport, bounds 2010-06-25 ms</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="GeocodeLib" href="../classes/GeocodeLib/__construct.xhtml">__construct()</a>
+            </li>
+            <li id="blur"><a title="GeocodeLib" href="../classes/GeocodeLib/blur.xhtml">blur()</a>
+                — Fuzziness filter for coordinates (lat or lng).</li>
+            <li id="convert"><a title="GeocodeLib" href="../classes/GeocodeLib/convert.xhtml">convert()</a>
+                — Convert between units</li>
+            <li id="debug"><a title="GeocodeLib" href="../classes/GeocodeLib/debug.xhtml">debug()</a>
+                — debugging 2009-11-27 ms</li>
+            <li id="distance"><a title="GeocodeLib" href="../classes/GeocodeLib/distance.xhtml">distance()</a>
+                — Calculates Distance between two points - each: array('lat'=&gt;x,'lng'=&gt;y) DB: 371.04 * ACOS( COS( PI()/2 - RADIANS(90 - Retailer.lat)) * ' .</li>
+            <li id="error">
+              <a title="GeocodeLib" href="../classes/GeocodeLib/error.xhtml">error()</a>
+            </li>
+            <li id="geocode">
+              <a title="GeocodeLib" href="../classes/GeocodeLib/geocode.xhtml">geocode()</a>
+            </li>
+            <li id="getResult">
+              <a title="GeocodeLib" href="../classes/GeocodeLib/getResult.xhtml">getResult()</a>
+            </li>
+            <li id="isInconclusive">
+              <a title="GeocodeLib" href="../classes/GeocodeLib/isInconclusive.xhtml">isInconclusive()</a>
+            </li>
+            <li id="pause"><a title="GeocodeLib" href="../classes/GeocodeLib/pause.xhtml">pause()</a>
+                — trying to avoid "TOO_MANY_QUERIES" error</li>
+            <li id="reset">
+              <a title="GeocodeLib" href="../classes/GeocodeLib/reset.xhtml">reset()</a>
+            </li>
+            <li id="reverseGeocode"><a title="GeocodeLib" href="../classes/GeocodeLib/reverseGeocode.xhtml">reverseGeocode()</a>
+                — results usually from most accurate to least accurate result (street_address, ..., country)</li>
+            <li id="setError">
+              <a title="GeocodeLib" href="../classes/GeocodeLib/setError.xhtml">setError()</a>
+            </li>
+            <li id="setOptions">
+              <a title="GeocodeLib" href="../classes/GeocodeLib/setOptions.xhtml">setOptions()</a>
+            </li>
+            <li id="setParams">
+              <a title="GeocodeLib" href="../classes/GeocodeLib/setParams.xhtml">setParams()</a>
+            </li>
+            <li id="url"><a title="GeocodeLib" href="../classes/GeocodeLib/url.xhtml">url()</a>
+                — Build url</li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul xmlns:git="http://xml.phpdox.net/gitlog#" class="styled history">
+          <li>
+            <h3>2013-10-06T19:40:29+00:00 (commit #<span title="f16525be325aa16218dfea4fe983ccf2a60b79b9">f16525b</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (pauledenburg@gmail.com) /
+                        Commiter: Paul Edenburg (pauledenburg@gmail.com)
+                    </p>
+              <pre class="wrapped">wijzigingen na het aanmaken van een nieuw phpstrom project</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-07-29T20:18:45+00:00 (commit #<span title="287b8750eddef6446e689ccd35cee74b32cde2ed">287b875</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@lamp2.(none)) /
+                        Commiter: Paul Edenburg (paul@lamp2.(none))
+                    </p>
+              <pre class="wrapped">rechten zijn gewijzigd</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-26T15:55:26+00:00 (commit #<span title="58d361958cff9f7a6a85bed1ef717e1029d99d24">58d3619</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">phpstorm connect?</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-14T14:30:14+00:00 (commit #<span title="ab510a8ba8b3726396604720ff22cc62d62cda63">ab510a8</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">hele hoop opgelost, ik had het eerder moeten committen :$</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <footer xmlns:git="http://xml.phpdox.net/gitlog#">
+      <span>Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

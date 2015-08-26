@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="PropvalueFixture" namespace="" name="PropvalueFixture" abstract="false" final="false" start="6" end="44">
+  <file path="app/Test/Fixture" file="PropvalueFixture.php" realpath="/home/vagrant/socsoc/app/Test/Fixture/PropvalueFixture.php" size="1509" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="f2d3a360c9b72be8358937aad02aeca8ad4512a0"/>
+  <docblock>
+    <description compact="PropvalueFixture"/>
+  </docblock>
+  <extends full="CakeTestFixture" namespace="" name="CakeTestFixture"/>
+  <member name="fields" type="array" visibility="public" line="13">
+    <docblock>
+      <description compact="Fields"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="init" start="27" end="42" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="place the creation of records in this function to be able to call date() for some fields" line="29"/>
+    </inline>
+  </method>
+</class>

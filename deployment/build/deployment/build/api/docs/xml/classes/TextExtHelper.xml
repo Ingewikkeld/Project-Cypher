@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="TextExtHelper" namespace="" name="TextExtHelper" abstract="false" final="false" start="23" end="378">
+  <file path="app/Plugin/Tools/View/Helper" file="TextExtHelper.php" realpath="/home/vagrant/socsoc/app/Plugin/Tools/View/Helper/TextExtHelper.php" size="11434" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="545107b8ea96d3936864cc4223e0cb486190eb0c"/>
+  <docblock>
+    <description compact="the core text helper is unsecure and outdated in functionality this aims to compensate the deficiencies">autoLinkEmails
+- obfuscate (defaults to FALSE right now)
+(- maxLength?)
+- escape (defaults to TRUE for security reasons regarding plain text)
+
+autoLinkUrls
+- stripProtocol (defaults To FALSE right now)
+- maxLength (to shorten links in order to not mess up the layout in some cases - appends ...)
+- escape (defaults to TRUE for security reasons regarding plain text)
+
+2011-03-30 ms</description>
+  </docblock>
+  <extends full="TextHelper" namespace="" name="TextHelper"/>
+  <method name="autoLink" start="34" end="40" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Convert all links and email adresses to HTML links."/>
+      <param description="Text" type="string" variable="$text"/>
+      <param description="Array of HTML options." type="array" variable="$options"/>
+      <return description="The text with links" type="string"/>
+      <access value="public"/>
+      <link value="http://book.cakephp.org/view/1469/Text#autoLink-1620"/>
+    </docblock>
+    <parameter name="text" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array"/>
+    <parameter name="htmlOptions" byreference="false" type="array"/>
+  </method>
+  <method name="autoLinkEmails" start="54" end="76" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="fix to allow obfuscation of email (js, img?)"/>
+      <param type="string" variable="$text"/>
+      <param description="(additionally - not yet supported by core):" type="object">- obfuscate: true/false (defaults to false)<type full="htmlOptions" namespace="" name="htmlOptions"/></param>
+      <param type="array" variable="$options">- escape (defaults to true)</param>
+      <return description="$html" type="string"/>
+      <override value="">2010-11-20 ms</override>
+    </docblock>
+    <parameter name="text" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array"/>
+    <parameter name="htmlOptions" byreference="false" type="array"/>
+  </method>
+  <method name="prepareEmail" start="86" end="108" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param type="string" variable="$email"/>
+      <param type="object">- obfuscate: true/false (defaults to false)<type full="options:" namespace="" name="options:"/></param>
+      <return description="$html" type="string"/>
+      <static value="">2010-11-20 ms</static>
+    </docblock>
+    <parameter name="email" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array"/>
+    <parameter name="customOptions" byreference="false" type="array"/>
+    <inline>
+      <comment value="$Html-&gt;tags = $Html-&gt;loadConfig();" line="98"/>
+      <comment value="debug($Html-&gt;tags);" line="99"/>
+    </inline>
+  </method>
+  <method name="encodeEmail" start="119" end="123" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Helper Function to Obfuscate Email by inserting a span tag (not more! not very secure on its own...) each part of this mail now does not make sense anymore on its own (striptags will not work either)"/>
+      <param description="email: necessary (and valid - containing one @)" type="string"/>
+      <return description="$html" type="string">2009-03-11 ms</return>
+    </docblock>
+    <parameter name="mail" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="encodeEmailUrl" start="134" end="185" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Obfuscates Email (works without JS!) to avoid lowlevel spam bots to get it"/>
+      <param description="mail: email to encode" type="string"/>
+      <param description="text: optional (if none is given, email will be text as well)" type="string"/>
+      <param description="attributes: html tag attributes" type="array"/>
+      <param description="params: ?subject=y&amp;body=y to be attached to &quot;mailto:xyz&quot;" type="array"/>
+      <return description="$html with js generated link around email (and non js fallback)" type="string">2009-04-20 ms</return>
+    </docblock>
+    <parameter name="mail" byreference="false" type="{unknown}"/>
+    <parameter name="text" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="params" byreference="false" type="array"/>
+    <parameter name="attr" byreference="false" type="array"/>
+    <inline>
+      <comment value="$encMail = $this-&gt;encodeText($encMail); # not possible" line="148"/>
+      <comment value="additionally there could be a span tag in between: email&lt;span syle=&quot;display:none&quot;&gt;&lt;/span&gt;@web.de" line="149"/>
+    </inline>
+  </method>
+  <method name="encodeText" start="194" end="211" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Encodes Piece of Text (without usage of JS!) to avoid lowlevel spam bots to get it"/>
+      <param description="text to encode" type="object">
+        <type full="STRING" namespace="" name="STRING"/>
+      </param>
+      <return description="$html (randomly encoded)" type="string">2009-03-11 ms</return>
+    </docblock>
+    <parameter name="text" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="autoLinkUrls" start="226" end="247" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="fix to allow shortened urls that do not break layout etc"/>
+      <param type="string" variable="$text"/>
+      <param description="(additionally - not yet supported by core):" type="object">- stripProtocol: bool (defaults to true)
+- maxLength: int (defaults no none)<type full="options" namespace="" name="options"/></param>
+      <param type="object">- escape etc<type full="htmlOptions" namespace="" name="htmlOptions"/></param>
+      <return description="$html" type="string"/>
+      <override value="">2010-11-07 ms</override>
+    </docblock>
+    <parameter name="text" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array"/>
+    <parameter name="htmlOptions" byreference="false" type="array"/>
+    <inline>
+      <comment value="$htmlOptions['escape'] = false;" line="237"/>
+    </inline>
+  </method>
+  <method name="prepareLinkName" start="258" end="277" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param type="string" variable="$link"/>
+      <param type="object">- stripProtocol: bool (defaults to true)
+- maxLength: int (defaults to 50)
+- escape (defaults to false, true needed for hellip to work)<type full="options:" namespace="" name="options:"/></param>
+      <return description="$html/$plain" type="string">2010-11-07 ms</return>
+    </docblock>
+    <parameter name="link" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array"/>
+    <inline>
+      <comment value="strip protocol if desired (default)" line="259"/>
+      <comment value="shorten display name if desired (default)" line="266"/>
+      <comment value="problematic with autoLink()" line="269"/>
+    </inline>
+  </method>
+  <method name="stripProtocol" start="285" end="291" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="remove http:// or other protocols from the link"/>
+      <param type="string" variable="$url"/>
+      <return description="$strippedUrl" type="string">2010-11-07 ms</return>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="minimizeUrl" start="302" end="329" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="minimizes the given url to a maximum length"/>
+      <param description="the url" type="string" variable="$url"/>
+      <param description="the maximum length" type="int" variable="$max"/>
+      <param type="array" variable="$options">- placeholder</param>
+      <return description="the manipulated url (+ eventuell ...)" type="string"/>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="max" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="options" byreference="false" type="array"/>
+    <inline>
+      <comment value="check if there is nothing to do" line="303"/>
+      <comment value="http:// has not to be displayed, so" line="307"/>
+      <comment value="cut the parameters" line="311"/>
+      <comment value="return if the url is short enough" line="315"/>
+      <comment value="otherwise cut a part in the middle (but only if long enough!!!)" line="319"/>
+      <todo value="more dynamically" line="320"/>
+    </inline>
+  </method>
+  <method name="ordinalNumber" start="337" end="355" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Transforming int values into ordinal numbers (1st, 3rd, etc.)"/>
+      <param description="- the number to be suffixed." variable="$num" type="object">
+        <type full="(INT)" namespace="" name="(INT)"/>
+      </param>
+      <param description="- whether to wrap the suffix in a superscript (&lt;sup&gt;) tag on output." variable="$sup" type="object">
+        <type full="(BOOL)" namespace="" name="(BOOL)"/>
+      </param>
+      <return description="$ordinal" type="string"/>
+    </docblock>
+    <parameter name="num" byreference="false" type="integer" default="0"/>
+    <parameter name="sup" byreference="false" type="{unknown}" default="false"/>
+  </method>
+  <method name="highlightFile" start="364" end="366" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="syntax highlighting using php internal highlighting"/>
+      <param type="string" variable="$filename"/>
+      <param description="(else echo directly)" type="object" variable="$return">2009-07-26 ms<type full="bool" namespace="" name="bool"/></param>
+    </docblock>
+    <parameter name="file" byreference="false" type="{unknown}"/>
+    <parameter name="return" byreference="false" type="{unknown}" default="true"/>
+  </method>
+  <method name="highlightString" start="374" end="376" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="syntax highlighting using php internal highlighting"/>
+      <param type="string" variable="$contentstring"/>
+      <param description="(else echo directly)" type="object" variable="$return">2009-07-26 ms<type full="bool" namespace="" name="bool"/></param>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+    <parameter name="return" byreference="false" type="{unknown}" default="true"/>
+  </method>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ab510a8ba8b3726396604720ff22cc62d62cda63"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><message>hele hoop opgelost, ik had het eerder moeten committen :$</message></commit></enrichment></enrichments></class>

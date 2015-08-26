@@ -1,0 +1,12 @@
+---
+  # install PHING
+  - name: phing | install PHING
+    command: pear install pear.phing.info/phing creates=/usr/bin/phing
+    sudo: yes
+
+  # Copy database dump file to remote host and restore it to database 'my_db'
+  - name: phing | Copy the changelog SQL commands to the VM
+    copy: src=files/changelog.sql dest=/tmp
+    
+  - name: phing | Create changelog table, when needed
+    mysql_db: name={{mysql_dbname}} state=import target=/tmp/changelog.sql

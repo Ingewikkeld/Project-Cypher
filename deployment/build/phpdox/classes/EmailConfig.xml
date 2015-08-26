@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="EmailConfig" namespace="" name="EmailConfig" abstract="false" final="false" start="47" end="56">
+  <file path="app/Config" file="email.php" realpath="/home/vagrant/socsoc/app/Config/email.php" size="1643" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="2ab31fda8a439aec391fc1ee0bd8fd7e2ed705df"/>
+  <docblock>
+    <description compact="Email configuration class.">You can specify multiple configurations for production, development and testing.
+
+transport =&gt; The name of a supported transport; valid options are as follows:
+	Mail 		- Send using PHP mail function
+	Smtp		- Send using SMTP
+	Debug		- Do not send the email, just return the result
+
+You can add custom transports (or override existing transports) by adding the
+appropriate file to app/Network/Email.  Transports should be named 'YourTransport.php',
+where 'Your' is the name of the transport.
+
+from =&gt;
+The origin email. See CakeEmail::from() about the valid values</description>
+  </docblock>
+  <member name="default" type="array" visibility="public" line="49"/>
+</class>

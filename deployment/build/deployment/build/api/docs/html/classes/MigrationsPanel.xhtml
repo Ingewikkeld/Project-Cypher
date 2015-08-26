@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pdxf="http://xml.phpdox.net/functions" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head xmlns:git="http://xml.phpdox.net/gitlog#">
+    <title>phpDox - MigrationsPanel</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav xmlns:git="http://xml.phpdox.net/gitlog#" class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../reports/index.xhtml">Reports</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">MigrationsPanel</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>MigrationsPanel</h1>
+        <h4>Migrations Panel for DebugKit</h4>
+        <p>To include this in your DebugKit panel list, add it to the options for DebugKit:</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class MigrationsPanel
+                extends <a title="DebugPanel" href="../classes/DebugPanel.xhtml">DebugPanel</a>
+            {<br/><ul class="none"><li>// members</li><li>public
+                         <a href="#members">$title</a>;
+                    </li><li>public
+                         <a href="#members">$elementName</a>;
+                    </li><li>public
+                         <a href="#members">$plugin</a>;
+                    </li><li>public
+                         <a href="#members">$output</a>;
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="DebugPanel">DebugPanel</span></li><li>public
+                             <a href="#members">$plugin</a>;
+                        </li><li>public
+                             <a href="#members">$title</a>;
+                        </li><li>public
+                             <a href="#members">$elementName</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public array <a title="MigrationsPanel" href="../classes/MigrationsPanel/beforeRender.xhtml">beforeRender</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="DebugPanel">DebugPanel</span></li><li>public void <a title="DebugPanel" href="../classes/DebugPanel/__construct.xhtml">__construct</a>()
+                        </li><li>public void <a title="DebugPanel" href="../classes/DebugPanel/startup.xhtml">startup</a>()
+                        </li><li>public void <a title="DebugPanel" href="../classes/DebugPanel/beforeRender.xhtml">beforeRender</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/DebugPanel.xhtml">DebugPanel</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled members">
+          <h4>public</h4>
+          <ul class="members">
+            <li id="elementName"><strong>$elementName</strong>
+                —
+                string<br/><span class="indent">Element name</span></li>
+            <li id="elementName"><strong>$elementName</strong>
+                —
+                string<br/><span class="indent">Provide a custom element name for this panel.  If null, the underscored version of the class name will be used.</span></li>
+            <li id="output"><strong>$output</strong>
+                —
+                string<br/><span class="indent">Output buffer</span></li>
+            <li id="plugin"><strong>$plugin</strong>
+                —
+                string<br/><span class="indent">Plugin name</span></li>
+            <li id="plugin"><strong>$plugin</strong>
+                —
+                string<br/><span class="indent">Defines which plugin this panel is from so the element can be located.</span></li>
+            <li id="title"><strong>$title</strong>
+                —
+                string<br/><span class="indent">Title</span></li>
+            <li id="title"><strong>$title</strong>
+                —
+                string<br/><span class="indent">Defines the title for displaying on the toolbar. If null, the class name will be used.</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="beforeRender"><a title="MigrationsPanel" href="../classes/MigrationsPanel/beforeRender.xhtml">beforeRender()</a>
+                — beforeRender Callback</li>
+          </ul>
+          <h3>Inherited from <a title="DebugPanel" href="../classes/DebugPanel.xhtml">DebugPanel</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="beforeRender"><a title="DebugPanel" href="../classes/DebugPanel/beforeRender.xhtml">beforeRender()</a>
+                — Prepare output vars before Controller Rendering.</li>
+            <li id="startup"><a title="DebugPanel" href="../classes/DebugPanel/startup.xhtml">startup()</a>
+                — startup the panel</li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul xmlns:git="http://xml.phpdox.net/gitlog#" class="styled history">
+          <li>
+            <h3>2013-11-19T14:52:19+00:00 (commit #<span title="ee4572070e63c2c8754f7a4dbdd57761480b4d6b">ee45720</span>)</h3>
+            <div>
+              <p>
+                        Author: vagrant (vagrant@precise32.(none)) /
+                        Commiter: vagrant (vagrant@precise32.(none))
+                    </p>
+              <pre class="wrapped">migrations plugin geinstalleerd en eerste initiele schema(.php) gemaakt</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <footer xmlns:git="http://xml.phpdox.net/gitlog#">
+      <span>Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

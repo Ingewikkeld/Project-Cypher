@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="AuthExtComponent" namespace="" name="AuthExtComponent" abstract="false" final="false" start="33" end="368">
+  <file path="app/Plugin/Tools/Controller/Component" file="AuthExtComponent.php" realpath="/home/vagrant/socsoc/app/Plugin/Tools/Controller/Component/AuthExtComponent.php" size="11336" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="3680a012874ae5d7dc521d0a09325a677b13880d"/>
+  <docblock>
+    <description compact="Important: index the ACO on alias, index the Aro on model+id">Extends AuthComponent with the following addons:
+- allows multiple roles per user
+- auto-raises login counter and sets last_login date
+- preps the session data according to completeAuth() method (adds parent data etc)
+- dynamic login scope validation</description>
+    <author value="Mark Scherer"/>
+    <cakephp value="2.x"/>
+    <license name="MIT">2011-12-18 ms</license>
+  </docblock>
+  <extends full="AuthComponent" namespace="" name="AuthComponent"/>
+  <member name="intermediateModel" type="string" default="'RoleUser'" visibility="public" line="35"/>
+  <member name="roleModel" type="string" default="'Role'" visibility="public" line="37"/>
+  <member name="fieldKey" type="string" default="'role_id'" visibility="public" line="39"/>
+  <member name="loginAction" type="array" visibility="public" line="41"/>
+  <member name="loginRedirect" type="array" visibility="public" line="43"/>
+  <member name="autoRedirect" type="{unknown}" default="false" visibility="public" line="45"/>
+  <member name="loginError" type="{unknown}" default="null" visibility="public" line="47"/>
+  <member name="settings" type="array" visibility="public" line="49"/>
+  <member name="floodProtection" type="{unknown}" default="null" visibility="public" line="56"/>
+  <constructor name="__construct" start="59" end="63" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="Collection" byreference="false" type="object">
+      <type full="\\ComponentCollection" namespace="\" name="ComponentCollection"/>
+    </parameter>
+    <parameter name="settings" byreference="false" type="array"/>
+  </constructor>
+  <method name="initialize" start="65" end="69" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="Controller" byreference="false" type="object">
+      <type full="\\Controller" namespace="\" name="Controller"/>
+    </parameter>
+  </method>
+  <method name="allow" start="75" end="86" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="2.1 fix for allowing * as wildcard (tmp solution) 2012-01-10 ms"/>
+    </docblock>
+    <parameter name="action" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="login" start="88" end="162" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="user" byreference="false" type="{unknown}" default="null"/>
+    <inline>
+      <comment value="custom checks" line="102"/>
+      <comment value="update login counter" line="149"/>
+    </inline>
+  </method>
+  <method name="completeAuth" start="168" end="255" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <return description="$user or bool false on failure" type="array">2011-11-03 ms</return>
+    </docblock>
+    <parameter name="user" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="roles" line="190"/>
+      <comment value="only for multi" line="196"/>
+      <comment value="default: no roles!" line="199"/>
+      <comment value="$primaryRole = $this-&gt;user($this-&gt;fieldKey);" line="202"/>
+      <comment value="retrieve associated role that are not the primary one" line="203"/>
+      <comment value="MAYBE USEFUL FOR GUEST!!!" line="205"/>
+      <comment value="$roles = set::extract('/'.$with.'['.$this-&gt;fieldKey.'!='.$primaryRole.']/'.$this-&gt;fieldKey, $roles);" line="206"/>
+      <comment value="add the suplemental roles id under the Auth session key" line="208"/>
+      <comment value="deprecated!" line="217"/>
+      <comment value="default: no rights!" line="226"/>
+      <comment value="deprecated!" line="233"/>
+      <comment value="default: no rights!" line="242"/>
+      <comment value="add the suplemental roles id under the Auth session key" line="244"/>
+    </inline>
+  </method>
+  <method name="startup" start="264" end="341" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Main execution method. Handles redirecting of invalid users, and processing of login form data."/>
+      <param description="A reference to the instantiating controller object" type="object" variable="$controller">
+        <type full="Controller" namespace="" name="Controller"/>
+      </param>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="controller" byreference="false" type="object">
+      <type full="\\Controller" namespace="\" name="Controller"/>
+    </parameter>
+    <inline>
+      <comment value="parent::startup($controller);" line="265"/>
+      <comment value="fix: reverse camelCase first" line="271"/>
+    </inline>
+  </method>
+  <method name="verifyUser" start="347" end="357" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <deprecated value=""/>
+      <return description="$success" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+    <parameter name="pwd" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getModel" start="363" end="366" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="returns the current User model"/>
+      <return description="$User" type="object"/>
+    </docblock>
+  </method>
+  <parent full="AuthComponent" namepsace="" name="AuthComponent">
+    <method name="identify" start="271" end="277" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="request" byreference="false" type="{unknown}"/>
+      <parameter name="response" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ab510a8ba8b3726396604720ff22cc62d62cda63"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><message>hele hoop opgelost, ik had het eerder moeten committen :$</message></commit></enrichment></enrichments></class>

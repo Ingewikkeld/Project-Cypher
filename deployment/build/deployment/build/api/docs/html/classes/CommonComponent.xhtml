@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pdxf="http://xml.phpdox.net/functions" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head xmlns:git="http://xml.phpdox.net/gitlog#">
+    <title>phpDox - CommonComponent</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav xmlns:git="http://xml.phpdox.net/gitlog#" class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../reports/index.xhtml">Reports</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">CommonComponent</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#tasks">Tasks</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>CommonComponent</h1>
+        <h4>A component included in every app to take care of common stuff</h4>
+        <p/>
+        <ul>
+          <li>Author: Mark Scherer</li>
+          <li>Copyright: 2012 Mark Scherer</li>
+          <li>License: MIT</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class CommonComponent
+                extends <a title="Component" href="../classes/Component.xhtml">Component</a>
+            {<br/><ul class="none"><li>// members</li><li>public
+                         <a href="#members">$components</a>;
+                    </li><li>public
+                         <a href="#members">$allowedChars</a>;
+                    </li><li>public
+                         <a href="#members">$removeChars</a>;
+                    </li><li>public
+                         <a href="#members">$paginationMaxLimit</a>;
+                    </li><li>public
+                         <a href="#members">$counterStartTime</a>;
+                    </li><li>public
+                         <a href="#members">$debugContent</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/initialize.xhtml">initialize</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/startup.xhtml">startup</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/beforeRender.xhtml">beforeRender</a>()
+                    </li><li>public bool <a title="CommonComponent" href="../classes/CommonComponent/isPosted.xhtml">isPosted</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/isPost.xhtml">isPost</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/flashMessage.xhtml">flashMessage</a>()
+                    </li><li>public static void <a title="CommonComponent" href="../classes/CommonComponent/transientFlashMessage.xhtml">transientFlashMessage</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/postAndRedirect.xhtml">postAndRedirect</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/addHelper.xhtml">addHelper</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/addComponent.xhtml">addComponent</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/loadHelper.xhtml">loadHelper</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/loadLib.xhtml">loadLib</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/loadComponent.xhtml">loadComponent</a>()
+                    </li><li>public mixed <a title="CommonComponent" href="../classes/CommonComponent/getPassedParam.xhtml">getPassedParam</a>()
+                    </li><li>public mixed <a title="CommonComponent" href="../classes/CommonComponent/getNamedParam.xhtml">getNamedParam</a>()
+                    </li><li>public mixed <a title="CommonComponent" href="../classes/CommonComponent/getQueryParam.xhtml">getQueryParam</a>()
+                    </li><li>public static void <a title="CommonComponent" href="../classes/CommonComponent/defaultUrlParams.xhtml">defaultUrlParams</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/currentUrl.xhtml">currentUrl</a>()
+                    </li><li>public boolean <a title="CommonComponent" href="../classes/CommonComponent/manualLogin.xhtml">manualLogin</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/autoRedirect.xhtml">autoRedirect</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/postRedirect.xhtml">postRedirect</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/autoPostRedirect.xhtml">autoPostRedirect</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/prgRedirect.xhtml">prgRedirect</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/setMeta.xhtml">setMeta</a>()
+                    </li><li>protected void <a title="CommonComponent" href="../classes/CommonComponent/_paginationLimit.xhtml">_paginationLimit</a>()
+                    </li><li>protected void <a title="CommonComponent" href="../classes/CommonComponent/_habtmValidation.xhtml">_habtmValidation</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/forceCache.xhtml">forceCache</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/isForeignReferer.xhtml">isForeignReferer</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/denyAccess.xhtml">denyAccess</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/monitorCookieProblems.xhtml">monitorCookieProblems</a>()
+                    </li><li>public static boolean <a title="CommonComponent" href="../classes/CommonComponent/cookiesDisabled.xhtml">cookiesDisabled</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/sql.xhtml">sql</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/ensureCacheIsOk.xhtml">ensureCacheIsOk</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/localize.xhtml">localize</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/ensureDefaultLanguage.xhtml">ensureDefaultLanguage</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/ensureControllerConsistency.xhtml">ensureControllerConsistency</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/ensureConsistency.xhtml">ensureConsistency</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/autoPrefixUrl.xhtml">autoPrefixUrl</a>()
+                    </li><li>public static void <a title="CommonComponent" href="../classes/CommonComponent/cleanUrl.xhtml">cleanUrl</a>()
+                    </li><li>public static void <a title="CommonComponent" href="../classes/CommonComponent/getHeaderFromUrl.xhtml">getHeaderFromUrl</a>()
+                    </li><li>public static string <a title="CommonComponent" href="../classes/CommonComponent/getClientIp.xhtml">getClientIp</a>()
+                    </li><li>public static string <a title="CommonComponent" href="../classes/CommonComponent/getReferer.xhtml">getReferer</a>()
+                    </li><li>public static bool <a title="CommonComponent" href="../classes/CommonComponent/logicalAnd.xhtml">logicalAnd</a>()
+                    </li><li>public static bool <a title="CommonComponent" href="../classes/CommonComponent/logicalOr.xhtml">logicalOr</a>()
+                    </li><li>public static safe <a title="CommonComponent" href="../classes/CommonComponent/typeCast.xhtml">typeCast</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/getGroup.xhtml">getGroup</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/daysInMonth.xhtml">daysInMonth</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/trimDeep.xhtml">trimDeep</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/specialcharsDeep.xhtml">specialcharsDeep</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/deep.xhtml">deep</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/sanitizeDeep.xhtml">sanitizeDeep</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/paranoidDeep.xhtml">paranoidDeep</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/htmlDeep.xhtml">htmlDeep</a>()
+                    </li><li>public static int <a title="CommonComponent" href="../classes/CommonComponent/average.xhtml">average</a>()
+                    </li><li>public static int <a title="CommonComponent" href="../classes/CommonComponent/numberOfWords.xhtml">numberOfWords</a>()
+                    </li><li>public int <a title="CommonComponent" href="../classes/CommonComponent/numberOfChars.xhtml">numberOfChars</a>()
+                    </li><li>public array <a title="CommonComponent" href="../classes/CommonComponent/parseList.xhtml">parseList</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/separators.xhtml">separators</a>()
+                    </li><li>public array <a title="CommonComponent" href="../classes/CommonComponent/alphaFilterSymbols.xhtml">alphaFilterSymbols</a>()
+                    </li><li>public static void <a title="CommonComponent" href="../classes/CommonComponent/gmtOffset.xhtml">gmtOffset</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/timeStuff.xhtml">timeStuff</a>()
+                    </li><li>public static void <a title="CommonComponent" href="../classes/CommonComponent/userOffset.xhtml">userOffset</a>()
+                    </li><li>public array: <a title="CommonComponent" href="../classes/CommonComponent/assignToChar.xhtml">assignToChar</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/extractEmail.xhtml">extractEmail</a>()
+                    </li><li>public array <a title="CommonComponent" href="../classes/CommonComponent/splitEmail.xhtml">splitEmail</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/combineEmail.xhtml">combineEmail</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/extractEmailInfo.xhtml">extractEmailInfo</a>()
+                    </li><li>public ARRAY <a title="CommonComponent" href="../classes/CommonComponent/getSearchItem.xhtml">getSearchItem</a>()
+                    </li><li>public static pwd <a title="CommonComponent" href="../classes/CommonComponent/pwd.xhtml">pwd</a>()
+                    </li><li>public true <a title="CommonComponent" href="../classes/CommonComponent/containsAtSign.xhtml">containsAtSign</a>()
+                    </li><li>public string <a title="CommonComponent" href="../classes/CommonComponent/slugIp.xhtml">slugIp</a>()
+                    </li><li>public string <a title="CommonComponent" href="../classes/CommonComponent/unslugIp.xhtml">unslugIp</a>()
+                    </li><li>public string <a title="CommonComponent" href="../classes/CommonComponent/ipFormat.xhtml">ipFormat</a>()
+                    </li><li>public array <a title="CommonComponent" href="../classes/CommonComponent/responseCodes.xhtml">responseCodes</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/smtpResponseCodes.xhtml">smtpResponseCodes</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/sortArray.xhtml">sortArray</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/sortUp.xhtml">sortUp</a>()
+                    </li><li>public void <a title="CommonComponent" href="../classes/CommonComponent/sortDown.xhtml">sortDown</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/Component.xhtml">Component</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="tasks">Tasks</h2>
+        <h2 xmlns:git="http://xml.phpdox.net/gitlog#" id="tasks">Tasks</h2>
+        <table xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <thead>
+            <tr>
+              <th style="width:3em;">Line</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tr>
+            <td class="nummeric">728</td>
+            <td>add plugin/admin stuff which right now is supposed to work automatically</td>
+          </tr>
+          <tr>
+            <td class="nummeric">1320</td>
+            <td>; include 3rd-Level-Label</td>
+          </tr>
+          <tr>
+            <td class="nummeric">1449</td>
+            <td>use core ones Controller::httpCodes</td>
+          </tr>
+        </table>
+        <h2 id="members">Members</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled members">
+          <h4>public</h4>
+          <ul class="members">
+            <li id="allowedChars">
+              <strong>$allowedChars</strong>
+            </li>
+            <li id="components">
+              <strong>$components</strong>
+            </li>
+            <li id="counterStartTime">
+              <strong>$counterStartTime</strong>
+            </li>
+            <li id="debugContent">
+              <strong>$debugContent</strong>
+            </li>
+            <li id="paginationMaxLimit">
+              <strong>$paginationMaxLimit</strong>
+            </li>
+            <li id="removeChars">
+              <strong>$removeChars</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div xmlns:git="http://xml.phpdox.net/gitlog#" class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="_habtmValidation"><a title="CommonComponent" href="../classes/CommonComponent/_habtmValidation.xhtml">_habtmValidation()</a>
+                — Generates validation error messages for HABTM fields</li>
+            <li id="_paginationLimit"><a title="CommonComponent" href="../classes/CommonComponent/_paginationLimit.xhtml">_paginationLimit()</a>
+                — Checks to see if there is a limit set for pagination results to prevent overloading the database</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="addComponent">
+              <a title="CommonComponent" href="../classes/CommonComponent/addComponent.xhtml">addComponent()</a>
+            </li>
+            <li id="addHelper">
+              <a title="CommonComponent" href="../classes/CommonComponent/addHelper.xhtml">addHelper()</a>
+            </li>
+            <li id="alphaFilterSymbols"><a title="CommonComponent" href="../classes/CommonComponent/alphaFilterSymbols.xhtml">alphaFilterSymbols()</a>
+                — //TODO: move somewhere else Returns an array with chars up = uppercase, low = lowercase</li>
+            <li id="assignToChar"><a title="CommonComponent" href="../classes/CommonComponent/assignToChar.xhtml">assignToChar()</a>
+                — //TODO: move somewhere else Assign Array to Char Array</li>
+            <li id="autoPostRedirect"><a title="CommonComponent" href="../classes/CommonComponent/autoPostRedirect.xhtml">autoPostRedirect()</a>
+                — combine auto with post also allows whitelisting certain actions for autoRedirect (use Controller::$autoRedirectActions)</li>
+            <li id="autoPrefixUrl"><a title="CommonComponent" href="../classes/CommonComponent/autoPrefixUrl.xhtml">autoPrefixUrl()</a>
+                — add protocol prefix if necessary (and possible) static? 2010-06-02 ms</li>
+            <li id="autoRedirect"><a title="CommonComponent" href="../classes/CommonComponent/autoRedirect.xhtml">autoRedirect()</a>
+                — Smart Referer Redirect - will try to use an existing referer first otherwise it will use the default url</li>
+            <li id="average"><a title="CommonComponent" href="../classes/CommonComponent/average.xhtml">average()</a>
+                — get the rounded average</li>
+            <li id="beforeRender"><a title="CommonComponent" href="../classes/CommonComponent/beforeRender.xhtml">beforeRender()</a>
+                — Called after the Controller::beforeRender(), after the view class is loaded, and before the Controller::render()</li>
+            <li id="cleanUrl"><a title="CommonComponent" href="../classes/CommonComponent/cleanUrl.xhtml">cleanUrl()</a>
+                — remove unnessary stuff + add http:// for external urls TODO: protocol to lower!</li>
+            <li id="combineEmail"><a title="CommonComponent" href="../classes/CommonComponent/combineEmail.xhtml">combineEmail()</a>
+                — TODO: move to Lib</li>
+            <li id="containsAtSign"><a title="CommonComponent" href="../classes/CommonComponent/containsAtSign.xhtml">containsAtSign()</a>
+                — TODO: move to Lib Checks if string contains @ sign</li>
+            <li id="cookiesDisabled"><a title="CommonComponent" href="../classes/CommonComponent/cookiesDisabled.xhtml">cookiesDisabled()</a>
+                — //todo: move to Utility?</li>
+            <li id="currentUrl"><a title="CommonComponent" href="../classes/CommonComponent/currentUrl.xhtml">currentUrl()</a>
+                — return current url (with all missing params automatically added) necessary for Router::url() and comparison of urls to work</li>
+            <li id="daysInMonth"><a title="CommonComponent" href="../classes/CommonComponent/daysInMonth.xhtml">daysInMonth()</a>
+                — for month and year it returns the amount of days of this month year is necessary due to leap years!</li>
+            <li id="deep">
+              <a title="CommonComponent" href="../classes/CommonComponent/deep.xhtml">deep()</a>
+            </li>
+            <li id="defaultUrlParams"><a title="CommonComponent" href="../classes/CommonComponent/defaultUrlParams.xhtml">defaultUrlParams()</a>
+                — 2011-11-02 ms</li>
+            <li id="denyAccess">
+              <a title="CommonComponent" href="../classes/CommonComponent/denyAccess.xhtml">denyAccess()</a>
+            </li>
+            <li id="ensureCacheIsOk"><a title="CommonComponent" href="../classes/CommonComponent/ensureCacheIsOk.xhtml">ensureCacheIsOk()</a>
+                — temporary check how often current cache fails! 2010-05-07 ms</li>
+            <li id="ensureConsistency"><a title="CommonComponent" href="../classes/CommonComponent/ensureConsistency.xhtml">ensureConsistency()</a>
+                — main controller function for seo-slugs passed titleSlug != current title =&gt; redirect to the expected one 2009-07-31 ms</li>
+            <li id="ensureControllerConsistency"><a title="CommonComponent" href="../classes/CommonComponent/ensureControllerConsistency.xhtml">ensureControllerConsistency()</a>
+                — main controller function for consistency in controller naming 2009-12-19 ms</li>
+            <li id="ensureDefaultLanguage"><a title="CommonComponent" href="../classes/CommonComponent/ensureDefaultLanguage.xhtml">ensureDefaultLanguage()</a>
+                — bug fix for i18n 2010-01-01 ms</li>
+            <li id="extractEmail">
+              <a title="CommonComponent" href="../classes/CommonComponent/extractEmail.xhtml">extractEmail()</a>
+            </li>
+            <li id="extractEmailInfo"><a title="CommonComponent" href="../classes/CommonComponent/extractEmailInfo.xhtml">extractEmailInfo()</a>
+                — TODO: move to Lib returns type - username: everything till @ (xyz@abc.de =&gt; xyz) - hostname: whole domain (xyz@abc.de =&gt; abc.de) - tld: top level domain only (xyz@abc.de =&gt; de) - domain: if available (xyz@e.abc.de =&gt; abc) - subdomain: if available (xyz@e.abc.de =&gt; e)</li>
+            <li id="flashMessage"><a title="CommonComponent" href="../classes/CommonComponent/flashMessage.xhtml">flashMessage()</a>
+                — Updates FlashMessage SessionContent (to enable unlimited messages of one case)</li>
+            <li id="forceCache"><a title="CommonComponent" href="../classes/CommonComponent/forceCache.xhtml">forceCache()</a>
+                — set headers to cache this request</li>
+            <li id="getClientIp"><a title="CommonComponent" href="../classes/CommonComponent/getClientIp.xhtml">getClientIp()</a>
+                — get the current ip address</li>
+            <li id="getGroup"><a title="CommonComponent" href="../classes/CommonComponent/getGroup.xhtml">getGroup()</a>
+                — try to get group for a multidim array for select boxes</li>
+            <li id="getHeaderFromUrl">
+              <a title="CommonComponent" href="../classes/CommonComponent/getHeaderFromUrl.xhtml">getHeaderFromUrl()</a>
+            </li>
+            <li id="getNamedParam"><a title="CommonComponent" href="../classes/CommonComponent/getNamedParam.xhtml">getNamedParam()</a>
+                — Used to get the value of a named param</li>
+            <li id="getPassedParam"><a title="CommonComponent" href="../classes/CommonComponent/getPassedParam.xhtml">getPassedParam()</a>
+                — Used to get the value of a named param</li>
+            <li id="getQueryParam"><a title="CommonComponent" href="../classes/CommonComponent/getQueryParam.xhtml">getQueryParam()</a>
+                — Used to get the value of a get query</li>
+            <li id="getReferer"><a title="CommonComponent" href="../classes/CommonComponent/getReferer.xhtml">getReferer()</a>
+                — get the current referer</li>
+            <li id="getSearchItem"><a title="CommonComponent" href="../classes/CommonComponent/getSearchItem.xhtml">getSearchItem()</a>
+                — TODO: move to SearchLib etc Returns searchArray (options['wildcard'] TRUE/FALSE)</li>
+            <li id="gmtOffset"><a title="CommonComponent" href="../classes/CommonComponent/gmtOffset.xhtml">gmtOffset()</a>
+                — returns the current server GMT offset (+/- 1..12) TODO: move to DateLib etc</li>
+            <li id="htmlDeep"><a title="CommonComponent" href="../classes/CommonComponent/htmlDeep.xhtml">htmlDeep()</a>
+                — transfers/removes all &lt; &gt; from text (remove TRUE/FALSE) move to boostrap? 2009-07-07 ms</li>
+            <li id="initialize"><a title="CommonComponent" href="../classes/CommonComponent/initialize.xhtml">initialize()</a>
+                — for automatic startup for this helper the controller has to be passed as reference 2009-12-19 ms</li>
+            <li id="ipFormat">
+              <a title="CommonComponent" href="../classes/CommonComponent/ipFormat.xhtml">ipFormat()</a>
+            </li>
+            <li id="isForeignReferer"><a title="CommonComponent" href="../classes/CommonComponent/isForeignReferer.xhtml">isForeignReferer()</a>
+                — referer checking (where does the user come from) 2009-12-19 ms</li>
+            <li id="isPost">
+              <a title="CommonComponent" href="../classes/CommonComponent/isPost.xhtml">isPost()</a>
+            </li>
+            <li id="isPosted"><a title="CommonComponent" href="../classes/CommonComponent/isPosted.xhtml">isPosted()</a>
+                — convinience method to check on POSTED data doesnt matter if its post or put</li>
+            <li id="loadComponent"><a title="CommonComponent" href="../classes/CommonComponent/loadComponent.xhtml">loadComponent()</a>
+                — add component just in time (inside actions - only when needed) aware of plugins and config array (if passed)</li>
+            <li id="loadHelper"><a title="CommonComponent" href="../classes/CommonComponent/loadHelper.xhtml">loadHelper()</a>
+                — add helper just in time (inside actions - only when needed) aware of plugins</li>
+            <li id="loadLib"><a title="CommonComponent" href="../classes/CommonComponent/loadLib.xhtml">loadLib()</a>
+                — add lib just in time (inside actions - only when needed) aware of plugins and config array (if passed) ONLY works if constructor consists only of one param (settings)!</li>
+            <li id="localize"><a title="CommonComponent" href="../classes/CommonComponent/localize.xhtml">localize()</a>
+                — localize 2010-04-29 ms</li>
+            <li id="logicalAnd"><a title="CommonComponent" href="../classes/CommonComponent/logicalAnd.xhtml">logicalAnd()</a>
+                — returns true only if all values are true</li>
+            <li id="logicalOr"><a title="CommonComponent" href="../classes/CommonComponent/logicalOr.xhtml">logicalOr()</a>
+                — returns true if at least one value is true</li>
+            <li id="manualLogin"><a title="CommonComponent" href="../classes/CommonComponent/manualLogin.xhtml">manualLogin()</a>
+                — Force login for a specific user id</li>
+            <li id="monitorCookieProblems">
+              <a title="CommonComponent" href="../classes/CommonComponent/monitorCookieProblems.xhtml">monitorCookieProblems()</a>
+            </li>
+            <li id="numberOfChars">
+              <a title="CommonComponent" href="../classes/CommonComponent/numberOfChars.xhtml">numberOfChars()</a>
+            </li>
+            <li id="numberOfWords">
+              <a title="CommonComponent" href="../classes/CommonComponent/numberOfWords.xhtml">numberOfWords()</a>
+            </li>
+            <li id="paranoidDeep"><a title="CommonComponent" href="../classes/CommonComponent/paranoidDeep.xhtml">paranoidDeep()</a>
+                — removes all except A-Z,a-z,0-9 and allowedChars (allowedChars array) move to boostrap? 2009-07-07 ms</li>
+            <li id="parseList"><a title="CommonComponent" href="../classes/CommonComponent/parseList.xhtml">parseList()</a>
+                — takes list of items and transforms it into an array + cleaning (trim, no empty parts, etc)</li>
+            <li id="postAndRedirect"><a title="CommonComponent" href="../classes/CommonComponent/postAndRedirect.xhtml">postAndRedirect()</a>
+                — not fully tested yet!</li>
+            <li id="postRedirect"><a title="CommonComponent" href="../classes/CommonComponent/postRedirect.xhtml">postRedirect()</a>
+                — should be a 303, but: Note: Many pre-HTTP/1.1 user agents do not understand the 303 status. When interoperability with such clients is a concern, the 302 status code may be used instead, since most user agents react to a 302 response as described here for 303.</li>
+            <li id="prgRedirect"><a title="CommonComponent" href="../classes/CommonComponent/prgRedirect.xhtml">prgRedirect()</a>
+                — only redirect to itself if cookies are on prevents problems with lost data Note: Many pre-HTTP/1.1 user agents do not understand the 303 status. When interoperability with such clients is a concern, the 302 status code may be used instead, since most user agents react to a 302 response as described here for 303.</li>
+            <li id="pwd"><a title="CommonComponent" href="../classes/CommonComponent/pwd.xhtml">pwd()</a>
+                — returns auto-generated password</li>
+            <li id="responseCodes"><a title="CommonComponent" href="../classes/CommonComponent/responseCodes.xhtml">responseCodes()</a>
+                — Get the Corresponding Message to an HTTP Error Code</li>
+            <li id="sanitizeDeep"><a title="CommonComponent" href="../classes/CommonComponent/sanitizeDeep.xhtml">sanitizeDeep()</a>
+                — MAIN Sanitize Array-FUNCTION</li>
+            <li id="separators"><a title="CommonComponent" href="../classes/CommonComponent/separators.xhtml">separators()</a>
+                — //todo move to lib!!! static 2009-12-21 ms</li>
+            <li id="setMeta"><a title="CommonComponent" href="../classes/CommonComponent/setMeta.xhtml">setMeta()</a>
+                — Handler for passing some meta data to the view uses CommonHelper to include them in the layout</li>
+            <li id="slugIp">
+              <a title="CommonComponent" href="../classes/CommonComponent/slugIp.xhtml">slugIp()</a>
+            </li>
+            <li id="smtpResponseCodes"><a title="CommonComponent" href="../classes/CommonComponent/smtpResponseCodes.xhtml">smtpResponseCodes()</a>
+                — Get the Corresponding Message to an HTTP Error Code</li>
+            <li id="sortArray"><a title="CommonComponent" href="../classes/CommonComponent/sortArray.xhtml">sortArray()</a>
+                — isnt this covered by core Set stuff anyway?)</li>
+            <li id="sortDown">
+              <a title="CommonComponent" href="../classes/CommonComponent/sortDown.xhtml">sortDown()</a>
+            </li>
+            <li id="sortUp">
+              <a title="CommonComponent" href="../classes/CommonComponent/sortUp.xhtml">sortUp()</a>
+            </li>
+            <li id="specialcharsDeep">
+              <a title="CommonComponent" href="../classes/CommonComponent/specialcharsDeep.xhtml">specialcharsDeep()</a>
+            </li>
+            <li id="splitEmail"><a title="CommonComponent" href="../classes/CommonComponent/splitEmail.xhtml">splitEmail()</a>
+                — expects email to be valid! TODO: move to Lib</li>
+            <li id="sql"><a title="CommonComponent" href="../classes/CommonComponent/sql.xhtml">sql()</a>
+                — quick sql debug from controller dynamically or statically from just about any other place in the script</li>
+            <li id="startup"><a title="CommonComponent" href="../classes/CommonComponent/startup.xhtml">startup()</a>
+                — for this helper the controller has to be passed as reference for manual startup with $disableStartup = true (requires this to be called prior to any other method) 2009-12-19 ms</li>
+            <li id="timeStuff"><a title="CommonComponent" href="../classes/CommonComponent/timeStuff.xhtml">timeStuff()</a>
+                — TODO: move to DateLib etc</li>
+            <li id="transientFlashMessage"><a title="CommonComponent" href="../classes/CommonComponent/transientFlashMessage.xhtml">transientFlashMessage()</a>
+                — flashMessages that are not saved (only for current view) will be merged into the session flash ones prior to output</li>
+            <li id="trimDeep">
+              <a title="CommonComponent" href="../classes/CommonComponent/trimDeep.xhtml">trimDeep()</a>
+            </li>
+            <li id="typeCast"><a title="CommonComponent" href="../classes/CommonComponent/typeCast.xhtml">typeCast()</a>
+                — convinience function for automatic casting in form methods etc</li>
+            <li id="unslugIp">
+              <a title="CommonComponent" href="../classes/CommonComponent/unslugIp.xhtml">unslugIp()</a>
+            </li>
+            <li id="userOffset"><a title="CommonComponent" href="../classes/CommonComponent/userOffset.xhtml">userOffset()</a>
+                — TODO: move to DateLib etc</li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul xmlns:git="http://xml.phpdox.net/gitlog#" class="styled history">
+          <li>
+            <h3>2013-10-06T19:40:29+00:00 (commit #<span title="f16525be325aa16218dfea4fe983ccf2a60b79b9">f16525b</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (pauledenburg@gmail.com) /
+                        Commiter: Paul Edenburg (pauledenburg@gmail.com)
+                    </p>
+              <pre class="wrapped">wijzigingen na het aanmaken van een nieuw phpstrom project</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-07-29T20:18:45+00:00 (commit #<span title="287b8750eddef6446e689ccd35cee74b32cde2ed">287b875</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@lamp2.(none)) /
+                        Commiter: Paul Edenburg (paul@lamp2.(none))
+                    </p>
+              <pre class="wrapped">rechten zijn gewijzigd</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-26T15:55:26+00:00 (commit #<span title="58d361958cff9f7a6a85bed1ef717e1029d99d24">58d3619</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">phpstorm connect?</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-14T14:30:14+00:00 (commit #<span title="ab510a8ba8b3726396604720ff22cc62d62cda63">ab510a8</span>)</h3>
+            <div>
+              <p>
+                        Author: Paul Edenburg (paul@i2s.nl) /
+                        Commiter: Paul Edenburg (paul@i2s.nl)
+                    </p>
+              <pre class="wrapped">hele hoop opgelost, ik had het eerder moeten committen :$</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <footer xmlns:git="http://xml.phpdox.net/gitlog#">
+      <span>Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

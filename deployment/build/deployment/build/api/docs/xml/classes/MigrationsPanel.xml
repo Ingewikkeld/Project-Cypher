@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="MigrationsPanel" namespace="" name="MigrationsPanel" abstract="false" final="false" start="29" end="83">
+  <file path="app/Plugin/migrations/Lib/Panel" file="MigrationsPanel.php" realpath="/home/vagrant/socsoc/app/Plugin/migrations/Lib/Panel/MigrationsPanel.php" size="1717" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="1a2f93399042e95d1e53bd70d6c09e5bfa3298b9"/>
+  <docblock>
+    <description compact="Migrations Panel for DebugKit">To include this in your DebugKit panel list, add it to the options for DebugKit:</description>
+    <invalid annotation="(undefined)" value="">public $components = array('DebugKit.Toolbar' =&gt; array(
+   'panels' =&gt; array('Migrations.migrations')
+));</invalid>
+    <invalid annotation="(undefined)" value=""/>
+    <package value="migrations"/>
+    <subpackage value="migrations.vendors"/>
+  </docblock>
+  <extends full="DebugPanel" namespace="" name="DebugPanel"/>
+  <member name="title" type="string" default="'Migrations'" visibility="public" line="36">
+    <docblock>
+      <description compact="Title"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="elementName" type="string" default="'migrations_panel'" visibility="public" line="43">
+    <docblock>
+      <description compact="Element name"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="plugin" type="string" default="'migrations'" visibility="public" line="50">
+    <docblock>
+      <description compact="Plugin name"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="output" type="string" default="''" visibility="public" line="57">
+    <docblock>
+      <description compact="Output buffer"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <method name="beforeRender" start="65" end="81" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="beforeRender Callback"/>
+      <param type="object" variable="$controller">
+        <type full="Controller" namespace="" name="Controller"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="controller" byreference="false" type="object">
+      <type full="\\Controller" namespace="\" name="Controller"/>
+    </parameter>
+  </method>
+  <parent full="DebugPanel" namepsace="" name="DebugPanel">
+    <member name="plugin" type="string" default="'DebugKit'" visibility="public" line="25">
+      <docblock>
+        <description compact="Defines which plugin this panel is from so the element can be located."/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="title" type="{unknown}" default="null" visibility="public" line="33">
+      <docblock>
+        <description compact="Defines the title for displaying on the toolbar. If null, the class name will be used.">Overriding this allows you to define a custom name in the toolbar.</description>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="elementName" type="{unknown}" default="null" visibility="public" line="41">
+      <docblock>
+        <description compact="Provide a custom element name for this panel.  If null, the underscored version of the class name will be used."/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <constructor name="__construct" start="43" end="44" abstract="false" final="false" static="false" visibility="public"/>
+    <method name="startup" start="54" end="55" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="startup the panel">Pull information from the controller / request</description>
+        <param description="Controller reference." type="object" variable="$controller"/>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+      <parameter name="controller" byreference="false" type="object">
+        <type full="\\Controller" namespace="\" name="Controller"/>
+      </parameter>
+    </method>
+    <method name="beforeRender" start="63" end="64" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Prepare output vars before Controller Rendering."/>
+        <param description="Controller reference." type="object" variable="$controller"/>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+      <parameter name="controller" byreference="false" type="object">
+        <type full="\\Controller" namespace="\" name="Controller"/>
+      </parameter>
+    </method>
+  </parent>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ee4572070e63c2c8754f7a4dbdd57761480b4d6b"><author email="vagrant@precise32.(none)" name="vagrant" time="2013-11-19T14:52:19+00:00" unixtime="1384872739"/><commiter email="vagrant@precise32.(none)" name="vagrant" time="2013-11-19T14:52:19+00:00" unixtime="1384872739"/><message>migrations plugin geinstalleerd en eerste initiele schema(.php) gemaakt</message></commit></enrichment></enrichments></class>

@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="GeocodeLib" namespace="" name="GeocodeLib" abstract="false" final="false" start="22" end="798">
+  <file path="app/Plugin/Tools/Lib" file="GeocodeLib.php" realpath="/home/vagrant/socsoc/app/Plugin/Tools/Lib/GeocodeLib.php" size="27350" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="4dc4b1a3fc487762cef5d56cbd9bc3b5843060f2"/>
+  <docblock>
+    <description compact="Geocode via google (UPDATE: api3)"/>
+    <see value="DEPRECATED api2: http://code.google.com/intl/de-DE/apis/maps/articles/phpsqlgeocode.html"/>
+    <see value="http://code.google.com/intl/de/apis/maps/documentation/geocoding/#Types">Used by Tools.GeocoderBehavior
+
+TODOS (since 1.2):
+- Work with exceptions in 2.x
+- Rewrite in a cleaner 2.x way</see>
+    <author value="Mark Scherer"/>
+    <cakephp value="2.x"/>
+    <licence value="MIT">2010-06-25 ms</licence>
+  </docblock>
+  <constant name="BASE_URL" value="'http://{host}/maps/api/geocode/{output}?'"/>
+  <constant name="DEFAULT_HOST" value="'de'"/>
+  <constant name="ACC_COUNTRY" value="0"/>
+  <constant name="ACC_AAL1" value="1"/>
+  <constant name="ACC_AAL2" value="2"/>
+  <constant name="ACC_AAL3" value="3"/>
+  <constant name="ACC_POSTAL" value="4"/>
+  <constant name="ACC_LOC" value="5"/>
+  <constant name="ACC_SUBLOC" value="6"/>
+  <constant name="ACC_ROUTE" value="7"/>
+  <constant name="ACC_INTERSEC" value="8"/>
+  <constant name="ACC_STREET" value="9"/>
+  <constant name="UNIT_KM" value="'K'"/>
+  <constant name="UNIT_NAUTICAL" value="'N'"/>
+  <constant name="UNIT_FEET" value="'F'"/>
+  <constant name="UNIT_INCHES" value="'I'"/>
+  <constant name="UNIT_MILES" value="'M'"/>
+  <member name="use" type="array" visibility="public" line="45"/>
+  <member name="units" type="array" visibility="public" line="51"/>
+  <member name="options" type="array" visibility="public" line="68">
+    <docblock>
+      <description compact="validation and retrieval options - use: - log: false logs only real errors, true all activities - pause: timeout to prevent blocking - ...">2010-06-25 ms</description>
+    </docblock>
+  </member>
+  <member name="params" type="array" visibility="protected" line="83">
+    <docblock>
+      <description compact="url params 2010-06-25 ms"/>
+    </docblock>
+  </member>
+  <member name="error" type="array" visibility="protected" line="93"/>
+  <member name="result" type="{unknown}" default="null" visibility="protected" line="94"/>
+  <member name="hosts" type="array" visibility="protected" line="99">
+    <docblock>
+      <description compact="The Maps geocoder is programmed to bias its results depending on from which domain it receives requests. For example, entering &quot;syracuse&quot; in the search box on maps.google.com will geocode the city of &quot;Syracuse, NY&quot;, while entering the same query on maps.google.it (Italy's domain) will find the city of &quot;Siracusa&quot; in Sicily. You would get the same results by sending that query through HTTP geocoding to maps.google.it instead of maps.google.com, which you can do by modifying the MAPS_HOST constant in the sample code below. Note: You cannot send a request to a non-existent maps.google.* server, so ensure that a country domain exists before redirecting your geocoding queries to it."/>
+    </docblock>
+  </member>
+  <member name="statusCodes" type="array" visibility="protected" line="109"/>
+  <member name="accuracyTypes" type="array" visibility="protected" line="117"/>
+  <constructor name="__construct" start="131" end="139" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="options" byreference="false" type="array"/>
+  </constructor>
+  <method name="setParams" start="145" end="152" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param type="array" variable="$params"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setOptions" start="158" end="168" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param type="array" variable="$options"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="options" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setError" start="170" end="175" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="error" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="error" start="177" end="182" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="asString" byreference="false" type="{unknown}" default="true"/>
+    <parameter name="separator" byreference="false" type="string" default="', '"/>
+  </method>
+  <method name="reset" start="188" end="195" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param type="object" variable="$full">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="full" byreference="false" type="{unknown}" default="true"/>
+  </method>
+  <method name="url" start="203" end="216" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Build url"/>
+      <return description="$url (full)" type="string">2010-06-29 ms</return>
+    </docblock>
+  </method>
+  <method name="isInconclusive" start="221" end="229" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <return description="$isInconclusive (or null if no query has been run yet)" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getResult" start="235" end="252" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <return description="$result" type="array">2010-06-25 ms</return>
+    </docblock>
+  </method>
+  <method name="reverseGeocode" start="264" end="353" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="results usually from most accurate to least accurate result (street_address, ..., country)"/>
+      <param type="float" variable="$lat"/>
+      <param type="float" variable="$lng"/>
+      <param type="array" variable="$options">- allow_inconclusive
+- min_accuracy</param>
+      <return description="$success" type="boolean">2010-06-29 ms</return>
+    </docblock>
+    <parameter name="lat" byreference="false" type="{unknown}"/>
+    <parameter name="lng" byreference="false" type="{unknown}"/>
+    <parameter name="settings" byreference="false" type="array"/>
+    <inline>
+      <comment value="validate" line="297"/>
+      <comment value="$xmlArray['result'] = $xmlArray['result'][0];" line="305"/>
+      <comment value="save Result" line="320"/>
+    </inline>
+  </method>
+  <method name="pause" start="360" end="365" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="trying to avoid &quot;TOO_MANY_QUERIES&quot; error"/>
+      <param description="If the pause length should be raised" type="object" variable="$raise">2010-06-29 ms<type full="bool" namespace="" name="bool"/></param>
+    </docblock>
+    <parameter name="raise" byreference="false" type="{unknown}" default="false"/>
+  </method>
+  <method name="geocode" start="375" end="490" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param type="string" variable="$address"/>
+      <param type="array" variable="$settings">- allow_inconclusive
+- min_accuracy</param>
+      <return description="$success" type="boolean">2010-06-25 ms</return>
+    </docblock>
+    <parameter name="address" byreference="false" type="{unknown}"/>
+    <parameter name="settings" byreference="false" type="array"/>
+    <inline>
+      <comment value="validate" line="417"/>
+      <comment value="$xmlArray['result'] = $xmlArray['result'][0];" line="424"/>
+      <comment value="echo returns($accuracy);" line="429"/>
+      <todo value="maybe check more than just first?" line="440"/>
+      <comment value="save Result" line="457"/>
+    </inline>
+  </method>
+  <method name="_isNotAccurateEnough" start="495" end="518" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact=""/>
+      <return description="$success" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="accuracy" byreference="false" type="{unknown}" default="null"/>
+    <inline>
+      <comment value="echo returns($accuracy);" line="515"/>
+      <comment value="echo returns('XXX'.$this-&gt;options['min_accuracy']);" line="516"/>
+    </inline>
+  </method>
+  <method name="_transformJson" start="520" end="524" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="record" byreference="false" type="{unknown}"/>
+    <inline>
+      <todo value="" line="522"/>
+    </inline>
+  </method>
+  <method name="_parse" start="532" end="540" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="try to find the correct path - type (string) - Type (array[string, ...]) 2010-06-29 ms"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="array" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_transformXml" start="548" end="645" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="flattens result array and returns clean record keys: - formatted_address, type, country, country_code, country_province, country_province_code, locality, sublocality, postal_code, route, lat, lng, location_type, viewport, bounds 2010-06-25 ms"/>
+    </docblock>
+    <parameter name="record" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="!is_array($c['Type'])" line="557"/>
+      <todo value="add more" line="623"/>
+      <comment value="manuell corrections" line="637"/>
+    </inline>
+  </method>
+  <method name="_fetch" start="653" end="660" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="fetches url with curl if available fallbacks: cake and php note: expects url with json encoded content"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="debug" start="666" end="668" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="debugging 2009-11-27 ms"/>
+    </docblock>
+  </method>
+  <method name="distance" start="685" end="707" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Calculates Distance between two points - each: array('lat'=&gt;x,'lng'=&gt;y) DB: 371.04 * ACOS( COS( PI()/2 - RADIANS(90 - Retailer.lat)) * ' .">OS( PI()/2 - RADIANS(90 - '. $data['Location']['lat'] .')) * ' .
+OS( RADIANS(Retailer.lng) - RADIANS('. $data['Location']['lng'] .')) + ' .
+IN( PI()/2 - RADIANS(90 - Retailer.lat)) * ' .
+IN( PI()/2 - RADIANS(90 - '. $data['Location']['lat'] . '))) ' .
+S distance'</description>
+      <param type="array" variable="pointX"/>
+      <param type="array" variable="pointY"/>
+      <param description="(M=miles, K=kilometers, N=nautical miles, I=inches, F=feet)" type="float" variable="$unit"/>
+      <return description="distance: in km" type="int">2009-03-06 ms</return>
+    </docblock>
+    <parameter name="pointX" byreference="false" type="{unknown}"/>
+    <parameter name="pointY" byreference="false" type="{unknown}"/>
+    <parameter name="unit" byreference="false" type="{unknown}" default="null"/>
+    <inline>
+      <comment value="$res = &#9;6371.04 * ACOS( COS( PI()/2 - rad2deg(90 - $pointX['lat'])) *" line="691"/>
+      <comment xmlns="http://xml.phpdox.net/src#" value="COS( PI()/2 - rad2deg(90 - $pointY['lat'])) *" line="692"/>
+      <comment xmlns="http://xml.phpdox.net/src#" value="COS( rad2deg($pointX['lng']) - rad2deg($pointY['lng'])) +" line="693"/>
+      <comment xmlns="http://xml.phpdox.net/src#" value="SIN( PI()/2 - rad2deg(90 - $pointX['lat'])) *" line="694"/>
+      <comment xmlns="http://xml.phpdox.net/src#" value="SIN( PI()/2 - rad2deg(90 - $pointY['lat'])));" line="695"/>
+      <comment xmlns="http://xml.phpdox.net/src#" value="$res = 6371.04 * acos(sin($pointY['lat'])*sin($pointX['lat'])+cos($pointY['lat'])*cos($pointX['lat'])*cos($pointY['lng'] - $pointX['lng']));" line="696"/>
+      <comment value="seems to be the only working one (although slightly incorrect...)" line="701"/>
+    </inline>
+  </method>
+  <method name="convert" start="718" end="731" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Convert between units"/>
+      <param type="float" variable="$value"/>
+      <param description="(using class constants)" type="object" variable="$fromUnit">
+        <type full="char" namespace="" name="char"/>
+      </param>
+      <param description="(using class constants)" type="object" variable="$toUnit">
+        <type full="char" namespace="" name="char"/>
+      </param>
+      <return description="$convertedValue" type="float"/>
+      <throws type="object">
+        <type full="CakeException" namespace="" name="CakeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="fromUnit" byreference="false" type="{unknown}"/>
+    <parameter name="toUnit" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="blur" start="749" end="777" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Fuzziness filter for coordinates (lat or lng).">Useful if you store other users' locations and want to grant some
+privacy protection. This way the coordinates will be slightly modified.</description>
+      <param type="float" variable="coord"/>
+      <param description="level (0 = nothing to 5 = extrem)" type="int">- 1:
+- 2:
+- 3:
+- 4:
+- 5:</param>
+      <throws type="object">
+        <type full="CakeException" namespace="" name="CakeException"/>
+      </throws>
+      <return description="$coord" type="float">2011-03-16 ms</return>
+    </docblock>
+    <parameter name="coord" byreference="false" type="{unknown}"/>
+    <parameter name="level" byreference="false" type="integer" default="0"/>
+    <inline>
+      <todo value="" line="753"/>
+      <comment value="$scrambleVal *= (mt_rand(0,1) === 0 ? 1 : 2);" line="772"/>
+      <comment value="$scrambleVal *= (float)(2^$level);" line="773"/>
+      <todo value="+ - by chance!!!" line="775"/>
+    </inline>
+  </method>
+  <constant name="TYPE_ROOFTOP" value="'ROOFTOP'"/>
+  <constant name="TYPE_RANGE_INTERPOLATED" value="'RANGE_INTERPOLATED'"/>
+  <constant name="TYPE_GEOMETRIC_CENTER" value="'GEOMETRIC_CENTER'"/>
+  <constant name="TYPE_APPROXIMATE" value="'APPROXIMATE'"/>
+  <constant name="CODE_SUCCESS" value="'OK'"/>
+  <constant name="CODE_TOO_MANY_QUERIES" value="'OVER_QUERY_LIMIT'"/>
+  <constant name="CODE_BAD_REQUEST" value="'REQUEST_DENIED'"/>
+  <constant name="CODE_MISSING_QUERY" value="'INVALID_REQUEST'"/>
+  <constant name="CODE_UNKNOWN_ADDRESS" value="'ZERO_RESULTS'"/>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ab510a8ba8b3726396604720ff22cc62d62cda63"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><message>hele hoop opgelost, ik had het eerder moeten committen :$</message></commit></enrichment></enrichments></class>

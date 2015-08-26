@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<index xmlns="http://xml.phpdox.net/src#">
+  <namespace name="">
+    <class name="Geo" src="app/Model/Geo.php" description="Geo Model" xml="classes/Geo.xml"/>
+    <class name="Text" src="app/Model/Text.php" description="Text Model" xml="classes/Text.xml"/>
+    <class name="Newsletter" src="app/Model/Newsletter.php" description="Newsletter Model" xml="classes/Newsletter.xml"/>
+    <class name="Rubric" src="app/Model/Rubric.php" description="Rubric Model" xml="classes/Rubric.xml"/>
+    <class name="Propvalue" src="app/Model/Propvalue.php" description="Propvalue Model" xml="classes/Propvalue.xml"/>
+    <class name="Bidding" src="app/Model/Bidding.php" description="Bidding Model" xml="classes/Bidding.xml"/>
+    <class name="Message" src="app/Model/Message.php" description="Message Model" xml="classes/Message.xml"/>
+    <class name="Property" src="app/Model/Property.php" description="Property Model" xml="classes/Property.xml"/>
+    <class name="AppModel" src="app/Model/AppModel.php" description="Application model for Cake." xml="classes/AppModel.xml"/>
+    <class name="Weblink" src="app/Model/Weblink.php" description="Weblink Model" xml="classes/Weblink.xml"/>
+    <class name="User" src="app/Model/User.php" description="User Model" xml="classes/User.xml"/>
+    <class name="EnumerableBehavior" src="app/Model/Behavior/EnumerableBehavior.php" xml="classes/EnumerableBehavior.xml"/>
+    <class name="Reaction" src="app/Model/Reaction.php" description="Reaction Model" xml="classes/Reaction.xml"/>
+    <class name="Post" src="app/Model/Post.php" description="Post Model" xml="classes/Post.xml"/>
+    <class name="Image" src="app/Model/Image.php" description="Image Model" xml="classes/Image.xml"/>
+    <class name="Advertisement" src="app/Model/Advertisement.php" description="Advertisement Model" xml="classes/Advertisement.xml"/>
+    <class name="NewslettersController" src="app/Controller/NewslettersController.php" description="Newsletters Controller" xml="classes/NewslettersController.xml"/>
+    <class name="AdvertisementsController" src="app/Controller/AdvertisementsController.php" description="Advertisements Controller" xml="classes/AdvertisementsController.xml"/>
+    <class name="ReactionsController" src="app/Controller/ReactionsController.php" description="Reactions Controller" xml="classes/ReactionsController.xml"/>
+    <class name="BiddingsController" src="app/Controller/BiddingsController.php" description="Biddings Controller" xml="classes/BiddingsController.xml"/>
+    <class name="MessagesController" src="app/Controller/MessagesController.php" description="Messages Controller" xml="classes/MessagesController.xml"/>
+    <class name="GoogleComponent" src="app/Controller/Component/GoogleComponent.php" description="Class GoogleComponent" xml="classes/GoogleComponent.xml"/>
+    <class name="WeblinksController" src="app/Controller/WeblinksController.php" description="Weblinks Controller" xml="classes/WeblinksController.xml"/>
+    <class name="ImagesController" src="app/Controller/ImagesController.php" description="Images Controller" xml="classes/ImagesController.xml"/>
+    <class name="PagesController" src="app/Controller/PagesController.php" description="Static content controller" xml="classes/PagesController.xml"/>
+    <class name="AppController" src="app/Controller/AppController.php" description="Application Controller" xml="classes/AppController.xml"/>
+    <class name="PropvaluesController" src="app/Controller/PropvaluesController.php" description="Propvalues Controller" xml="classes/PropvaluesController.xml"/>
+    <class name="UsersController" src="app/Controller/UsersController.php" description="Users Controller" xml="classes/UsersController.xml"/>
+    <class name="RubricsController" src="app/Controller/RubricsController.php" description="Rubrics Controller" xml="classes/RubricsController.xml"/>
+    <class name="PostsController" src="app/Controller/PostsController.php" description="Posts Controller" xml="classes/PostsController.xml"/>
+    <class name="PropertiesController" src="app/Controller/PropertiesController.php" description="Properties Controller" xml="classes/PropertiesController.xml"/>
+    <class name="TextsController" src="app/Controller/TextsController.php" description="Texts Controller" xml="classes/TextsController.xml"/>
+    <class name="EmailConfig" src="app/Config/email.php" description="Email configuration class." xml="classes/EmailConfig.xml"/>
+    <class name="AppSchema" src="app/Config/Schema/schema.php" xml="classes/AppSchema.xml"/>
+    <class name="DbAclSchema" src="app/Config/Schema/db_acl.php" xml="classes/DbAclSchema.xml"/>
+    <class name="SessionsSchema" src="app/Config/Schema/sessions.php" xml="classes/SessionsSchema.xml"/>
+    <class name="i18nSchema" src="app/Config/Schema/i18n.php" xml="classes/i18nSchema.xml"/>
+    <class name="WeblinksToegevoegd" src="app/Config/Migration/1384873212_weblinkstoegevoegd.php" xml="classes/WeblinksToegevoegd.xml"/>
+    <class name="AppHelper" src="app/View/Helper/AppHelper.php" description="Application helper" xml="classes/AppHelper.xml"/>
+    <class name="NewsletterHelper" src="app/View/Helper/NewsletterHelper.php" description="Class NewsletterHelper" xml="classes/NewsletterHelper.xml"/>
+    <class name="UserHelper" src="app/View/Helper/UserHelper.php" description="Class ColumnHelper" xml="classes/UserHelper.xml"/>
+    <class name="ColumnHelper" src="app/View/Helper/ColumnHelper.php" description="Class ColumnHelper" xml="classes/ColumnHelper.xml"/>
+    <class name="DebugKitAppModel" src="app/Plugin/DebugKit/Model/DebugKitAppModel.php" xml="classes/DebugKitAppModel.xml"/>
+    <class name="TimedBehavior" src="app/Plugin/DebugKit/Model/Behavior/TimedBehavior.php" xml="classes/TimedBehavior.xml"/>
+    <class name="ToolbarAccess" src="app/Plugin/DebugKit/Model/ToolbarAccess.php" xml="classes/ToolbarAccess.xml"/>
+    <class name="ToolbarComponent" src="app/Plugin/DebugKit/Controller/Component/ToolbarComponent.php" description="DebugKit DebugToolbar Component" xml="classes/ToolbarComponent.xml"/>
+    <class name="DebugKitAppController" src="app/Plugin/DebugKit/Controller/DebugKitAppController.php" xml="classes/DebugKitAppController.xml"/>
+    <class name="ToolbarAccessController" src="app/Plugin/DebugKit/Controller/ToolbarAccessController.php" xml="classes/ToolbarAccessController.xml"/>
+    <class name="HtmlToolbarHelper" src="app/Plugin/DebugKit/View/Helper/HtmlToolbarHelper.php" xml="classes/HtmlToolbarHelper.xml"/>
+    <class name="DebugTimerHelper" src="app/Plugin/DebugKit/View/Helper/DebugTimerHelper.php" description="Debug TimerHelper" xml="classes/DebugTimerHelper.xml"/>
+    <class name="TidyHelper" src="app/Plugin/DebugKit/View/Helper/TidyHelper.php" description="TidyHelper class" xml="classes/TidyHelper.xml"/>
+    <class name="ToolbarHelper" src="app/Plugin/DebugKit/View/Helper/ToolbarHelper.php" xml="classes/ToolbarHelper.xml"/>
+    <class name="SimpleGraphHelper" src="app/Plugin/DebugKit/View/Helper/SimpleGraphHelper.php" xml="classes/SimpleGraphHelper.xml"/>
+    <class name="FirePhpToolbarHelper" src="app/Plugin/DebugKit/View/Helper/FirePhpToolbarHelper.php" xml="classes/FirePhpToolbarHelper.xml"/>
+    <class name="BenchmarkShell" src="app/Plugin/DebugKit/Console/Command/BenchmarkShell.php" xml="classes/BenchmarkShell.xml"/>
+    <class name="WhitespaceShell" src="app/Plugin/DebugKit/Console/Command/WhitespaceShell.php" xml="classes/WhitespaceShell.xml"/>
+    <class name="ToolbarAccessTestCase" src="app/Plugin/DebugKit/Test/Case/Model/ToolbarAccessTest.php" description="Test case for ToolbarAccess model" xml="classes/ToolbarAccessTestCase.xml"/>
+    <class name="TimedBehaviorTestCase" src="app/Plugin/DebugKit/Test/Case/Model/Behavior/TimedBehaviorTest.php" xml="classes/TimedBehaviorTestCase.xml"/>
+    <class name="TestToolbarComponent" src="app/Plugin/DebugKit/Test/Case/Controller/Component/ToolbarComponentTest.php" xml="classes/TestToolbarComponent.xml"/>
+    <class name="DebugKitToolbarComponentTestCase" src="app/Plugin/DebugKit/Test/Case/Controller/Component/ToolbarComponentTest.php" description="DebugKitToolbarComponentTestCase Test case" xml="classes/DebugKitToolbarComponentTestCase.xml"/>
+    <class name="AllTestsTest" src="app/Plugin/DebugKit/Test/Case/AllTestsTest.php" description="AllTestsTest class" xml="classes/AllTestsTest.xml"/>
+    <class name="AllDebugKitViewTest" src="app/Plugin/DebugKit/Test/Case/AllDebugKitViewTest.php" description="DebugKitViewTestSuite class" xml="classes/AllDebugKitViewTest.xml"/>
+    <class name="DebugkitGroupTestCase" src="app/Plugin/DebugKit/Test/Case/DebugkitGroupTestCase.php" xml="classes/DebugkitGroupTestCase.xml"/>
+    <class name="TestFireCake" src="app/Plugin/DebugKit/Test/Case/TestFireCake.php" xml="classes/TestFireCake.xml"/>
+    <class name="MockBackendHelper" src="app/Plugin/DebugKit/Test/Case/View/Helper/ToolbarHelperTest.php" xml="classes/MockBackendHelper.xml"/>
+    <class name="ToolbarHelperTestCase" src="app/Plugin/DebugKit/Test/Case/View/Helper/ToolbarHelperTest.php" xml="classes/ToolbarHelperTestCase.xml"/>
+    <class name="FirePhpToolbarHelperTestCase" src="app/Plugin/DebugKit/Test/Case/View/Helper/FirePhpToolbarHelperTest.php" xml="classes/FirePhpToolbarHelperTestCase.xml"/>
+    <class name="HtmlToolbarHelperTestCase" src="app/Plugin/DebugKit/Test/Case/View/Helper/HtmlToolbarHelperTest.php" xml="classes/HtmlToolbarHelperTestCase.xml"/>
+    <class name="AllDebugKitTest" src="app/Plugin/DebugKit/Test/Case/AllDebugKitTest.php" description="DebugKitViewTestSuite class" xml="classes/AllDebugKitTest.xml"/>
+    <class name="AllDebugKitWithoutViewTest" src="app/Plugin/DebugKit/Test/Case/AllDebugKitWithoutViewTest.php" description="DebugKitViewTestSuite class" xml="classes/AllDebugKitWithoutViewTest.xml"/>
+    <class name="DebugTimerTest" src="app/Plugin/DebugKit/Test/Case/Lib/DebugTimerTest.php" xml="classes/DebugTimerTest.xml"/>
+    <class name="DebugKitDebuggerTest" src="app/Plugin/DebugKit/Test/Case/Lib/DebugKitDebuggerTest.php" description="Test case for the DebugKitDebugger" xml="classes/DebugKitDebuggerTest.xml"/>
+    <class name="LogPanelTest" src="app/Plugin/DebugKit/Test/Case/Lib/Panel/LogPanelTest.php" xml="classes/LogPanelTest.xml"/>
+    <class name="SqlLogPanelTest" src="app/Plugin/DebugKit/Test/Case/Lib/Panel/SqlLogPanelTest.php" description="SqlLogPanelTest" xml="classes/SqlLogPanelTest.xml"/>
+    <class name="FireCakeTestCase" src="app/Plugin/DebugKit/Test/Case/Lib/FireCakeTest.php" description="Test Case For FireCake" xml="classes/FireCakeTestCase.xml"/>
+    <class name="DebugMemoryTest" src="app/Plugin/DebugKit/Test/Case/Lib/DebugMemoryTest.php" xml="classes/DebugMemoryTest.xml"/>
+    <class name="DebugKitTestController" src="app/Plugin/DebugKit/Test/test_app/Controller/DebugKitTestController.php" description="DebugKitTestController" xml="classes/DebugKitTestController.xml"/>
+    <class name="PluginTestPanel" src="app/Plugin/DebugKit/Test/test_app/Plugin/DebugkitTestPlugin/Lib/Panel/PluginTestPanel.php" xml="classes/PluginTestPanel.xml"/>
+    <class name="TestPanel" src="app/Plugin/DebugKit/Test/test_app/Lib/Panel/TestPanel.php" description="Test Panel" xml="classes/TestPanel.xml"/>
+    <class name="DebugKitLogListener" src="app/Plugin/DebugKit/Lib/Log/Engine/DebugKitLogListener.php" description="A CakeLog listener which saves having to munge files or other configured loggers." xml="classes/DebugKitLogListener.xml"/>
+    <class name="DebugMemory" src="app/Plugin/DebugKit/Lib/DebugMemory.php" xml="classes/DebugMemory.xml"/>
+    <class name="FireCake" src="app/Plugin/DebugKit/Lib/FireCake.php" xml="classes/FireCake.xml"/>
+    <class name="DebugKitDebugger" src="app/Plugin/DebugKit/Lib/DebugKitDebugger.php" description="Debug Kit Temporary Debugger Class" xml="classes/DebugKitDebugger.xml"/>
+    <class name="DebugTimer" src="app/Plugin/DebugKit/Lib/DebugTimer.php" xml="classes/DebugTimer.xml"/>
+    <class name="IncludePanel" src="app/Plugin/DebugKit/Lib/Panel/IncludePanel.php" description="Include Panel" xml="classes/IncludePanel.xml"/>
+    <class name="SessionPanel" src="app/Plugin/DebugKit/Lib/Panel/SessionPanel.php" description="Session Panel" xml="classes/SessionPanel.xml"/>
+    <class name="HistoryPanel" src="app/Plugin/DebugKit/Lib/Panel/HistoryPanel.php" description="History Panel" xml="classes/HistoryPanel.xml"/>
+    <class name="TimerPanel" src="app/Plugin/DebugKit/Lib/Panel/TimerPanel.php" description="Timer Panel" xml="classes/TimerPanel.xml"/>
+    <class name="LogPanel" src="app/Plugin/DebugKit/Lib/Panel/LogPanel.php" description="Log Panel - Reads log entries made this request." xml="classes/LogPanel.xml"/>
+    <class name="EnvironmentPanel" src="app/Plugin/DebugKit/Lib/Panel/EnvironmentPanel.php" description="Environment Panel" xml="classes/EnvironmentPanel.xml"/>
+    <class name="RequestPanel" src="app/Plugin/DebugKit/Lib/Panel/RequestPanel.php" description="Request Panel" xml="classes/RequestPanel.xml"/>
+    <class name="VariablesPanel" src="app/Plugin/DebugKit/Lib/Panel/VariablesPanel.php" description="Variables Panel" xml="classes/VariablesPanel.xml"/>
+    <class name="SqlLogPanel" src="app/Plugin/DebugKit/Lib/Panel/SqlLogPanel.php" description="SqlLog Panel" xml="classes/SqlLogPanel.xml"/>
+    <class name="DebugPanel" src="app/Plugin/DebugKit/Lib/DebugPanel.php" description="Debug Panel" xml="classes/DebugPanel.xml"/>
+    <class name="Update" src="app/Plugin/Update/Model/Update.php" xml="classes/Update.xml"/>
+    <class name="UpdatesController" src="app/Plugin/Update/Controller/UpdatesController.php" xml="classes/UpdatesController.xml"/>
+    <class name="CookieAuthenticate" src="app/Plugin/Authenticate/Controller/Component/Auth/CookieAuthenticate.php" description="An authentication adapter for AuthComponent.  Provides the ability to authenticate using COOKIE" xml="classes/CookieAuthenticate.xml"/>
+    <class name="TokenAuthenticate" src="app/Plugin/Authenticate/Controller/Component/Auth/TokenAuthenticate.php" description="An authentication adapter for AuthComponent.  Provides the ability to authenticate using Token" xml="classes/TokenAuthenticate.xml"/>
+    <class name="MultiColumnAuthenticate" src="app/Plugin/Authenticate/Controller/Component/Auth/MultiColumnAuthenticate.php" description="An authentication adapter for AuthComponent.  Provides the ability to authenticate using POST data. The username form input can be checked against multiple table columns, for instance username and email" xml="classes/MultiColumnAuthenticate.xml"/>
+    <class name="MultiColumnAuthenticateTest" src="app/Plugin/Authenticate/Test/Case/Controller/Component/Auth/MultiColumnAuthenticateTest.php" description="Test case for FormAuthentication" xml="classes/MultiColumnAuthenticateTest.xml"/>
+    <class name="CookieAuthenticateTest" src="app/Plugin/Authenticate/Test/Case/Controller/Component/Auth/CookieAuthenticateTest.php" description="Test case for FormAuthentication" xml="classes/CookieAuthenticateTest.xml"/>
+    <class name="MultiUserFixture" src="app/Plugin/Authenticate/Test/Fixture/MultiUserFixture.php" xml="classes/MultiUserFixture.xml"/>
+    <class name="QueueAppModel" src="app/Plugin/Gearman/Model/QueueAppModel.php" xml="classes/QueueAppModel.xml"/>
+    <class name="QueueAppController" src="app/Plugin/Gearman/Controller/QueueAppController.php" xml="classes/QueueAppController.xml"/>
+    <class name="GearmanQueue" src="app/Plugin/Gearman/Console/Command/Gearman.php" description="Manages the connection to one or multiple Gearman queueing servers and exposes methods to execute jobs in the background." xml="classes/GearmanQueue.xml"/>
+    <class name="GearmanWorkerTask" src="app/Plugin/Gearman/Console/Command/Task/GearmanWorkerTask.php" description="Utility functions to setup a worker server for Gearman" xml="classes/GearmanWorkerTask.xml"/>
+    <class name="GearmanShell" src="app/Plugin/Gearman/Console/Command/GearmanShell.php" xml="classes/GearmanShell.xml"/>
+    <class name="AjaxMultiUploadAppModel" src="app/Plugin/AjaxMultiUpload/Model/AjaxMultiUploadAppModel.php" description="Dual-licensed under the GNU GPL v3 and the MIT License Redistributions of files must retain the above copyright notice." xml="classes/AjaxMultiUploadAppModel.xml"/>
+    <class name="UploadComponent" src="app/Plugin/AjaxMultiUpload/Controller/Component/UploadComponent.php" description="Dual-licensed under the GNU GPL v3 and the MIT License Redistributions of files must retain the above copyright notice." xml="classes/UploadComponent.xml"/>
+    <class name="UploadsController" src="app/Plugin/AjaxMultiUpload/Controller/UploadsController.php" description="Dual-licensed under the GNU GPL v3 and the MIT License Redistributions of files must retain the above copyright notice." xml="classes/UploadsController.xml"/>
+    <class name="AjaxMultiUploadAppController" src="app/Plugin/AjaxMultiUpload/Controller/AjaxMultiUploadAppController.php" xml="classes/AjaxMultiUploadAppController.xml"/>
+    <class name="UploadHelper" src="app/Plugin/AjaxMultiUpload/View/Helper/UploadHelper.php" description="Dual-licensed under the GNU GPL v3 and the MIT License Redistributions of files must retain the above copyright notice." xml="classes/UploadHelper.xml"/>
+    <class name="qqUploadedFileXhr" src="app/Plugin/AjaxMultiUpload/Vendor/valums/upload.php" description="Handle file uploads via XMLHttpRequest" xml="classes/qqUploadedFileXhr.xml"/>
+    <class name="qqUploadedFileForm" src="app/Plugin/AjaxMultiUpload/Vendor/valums/upload.php" description="Handle file uploads via regular form post (uses the $_FILES array)" xml="classes/qqUploadedFileForm.xml"/>
+    <class name="qqFileUploader" src="app/Plugin/AjaxMultiUpload/Vendor/valums/upload.php" xml="classes/qqFileUploader.xml"/>
+    <class name="SchemaMigration" src="app/Plugin/migrations/Model/SchemaMigration.php" description="Default model for manipulating schema migrations" xml="classes/SchemaMigration.xml"/>
+    <class name="InitMigrations" src="app/Plugin/migrations/Config/Migration/001_init_migrations.php" xml="classes/InitMigrations.xml"/>
+    <class name="ConvertVersionToClassNames" src="app/Plugin/migrations/Config/Migration/002_convert_version_to_class_names.php" xml="classes/ConvertVersionToClassNames.xml"/>
+    <class name="IncreaseClassNameLength" src="app/Plugin/migrations/Config/Migration/003_increase_class_name_length.php" xml="classes/IncreaseClassNameLength.xml"/>
+    <class name="MigrationShell" src="app/Plugin/migrations/Console/Command/MigrationShell.php" description="Migration shell." xml="classes/MigrationShell.xml"/>
+    <class name="TestMigrationShell" src="app/Plugin/migrations/Test/Case/Console/Command/MigrationShellTest.php" description="TestMigrationShell" xml="classes/TestMigrationShell.xml"/>
+    <class name="MigrationShellTest" src="app/Plugin/migrations/Test/Case/Console/Command/MigrationShellTest.php" description="MigrationShellTest" xml="classes/MigrationShellTest.xml"/>
+    <class name="AllMigrationsPluginTest" src="app/Plugin/migrations/Test/Case/AllMigrationsPluginTest.php" xml="classes/AllMigrationsPluginTest.xml"/>
+    <class name="TestCakeMigration" src="app/Plugin/migrations/Test/Case/Lib/Model/CakeMigrationTest.php" description="TestCakeMigration" xml="classes/TestCakeMigration.xml"/>
+    <class name="TestCallbackCakeMigration" src="app/Plugin/migrations/Test/Case/Lib/Model/CakeMigrationTest.php" description="TestCallbackCakeMigration" xml="classes/TestCallbackCakeMigration.xml"/>
+    <class name="CakeMigrationTest" src="app/Plugin/migrations/Test/Case/Lib/Model/CakeMigrationTest.php" description="CakeMigrationTest" xml="classes/CakeMigrationTest.xml"/>
+    <class name="TestPrecheckCakeMigration" src="app/Plugin/migrations/Test/Case/Lib/Migration/PrecheckConditionTest.php" description="TestPrecheckCakeMigration" xml="classes/TestPrecheckCakeMigration.xml"/>
+    <class name="PrecheckConditionTest" src="app/Plugin/migrations/Test/Case/Lib/Migration/PrecheckConditionTest.php" xml="classes/PrecheckConditionTest.xml"/>
+    <class name="MigrationVersionTest" src="app/Plugin/migrations/Test/Case/Lib/MigrationVersionTest.php" xml="classes/MigrationVersionTest.xml"/>
+    <class name="TestMigrationPluginSchema" src="app/Plugin/migrations/Test/test_app/Plugin/TestMigrationPlugin/Config/Schema/Schema.php" xml="classes/TestMigrationPluginSchema.xml"/>
+    <class name="AnotherMigrationPluginTestMigration" src="app/Plugin/migrations/Test/test_app/Plugin/TestMigrationPlugin/Config/Migration/002_another_migration_plugin_test_migration.php" xml="classes/AnotherMigrationPluginTestMigration.xml"/>
+    <class name="M4af6d40056b04408808500cb58157726" src="app/Plugin/migrations/Test/test_app/Plugin/TestMigrationPlugin/Config/Migration/001_schema_dump.php" xml="classes/M4af6d40056b04408808500cb58157726.xml"/>
+    <class name="SchemaMigrationsFixture" src="app/Plugin/migrations/Test/Fixture/SchemaMigrationsFixture.php" xml="classes/SchemaMigrationsFixture.xml"/>
+    <class name="MigrationVersion" src="app/Plugin/migrations/Lib/MigrationVersion.php" description="Migration version management." xml="classes/MigrationVersion.xml"/>
+    <class name="MigrationVersionException" src="app/Plugin/migrations/Lib/MigrationVersion.php" description="Usually used when migrations file/class or map files are not found" xml="classes/MigrationVersionException.xml"/>
+    <class name="CakeMigration" src="app/Plugin/migrations/Lib/CakeMigration.php" description="Base Class for Migration management" xml="classes/CakeMigration.xml"/>
+    <class name="MigrationException" src="app/Plugin/migrations/Lib/CakeMigration.php" description="Exception used when something goes wrong on migrations" xml="classes/MigrationException.xml"/>
+    <class name="PrecheckBase" src="app/Plugin/migrations/Lib/Migration/PrecheckBase.php" description="CakePHP Migrations" xml="classes/PrecheckBase.xml"/>
+    <class name="PrecheckException" src="app/Plugin/migrations/Lib/Migration/PrecheckException.php" xml="classes/PrecheckException.xml"/>
+    <class name="PrecheckCondition" src="app/Plugin/migrations/Lib/Migration/PrecheckCondition.php" xml="classes/PrecheckCondition.xml"/>
+    <class name="MigrationsPanel" src="app/Plugin/migrations/Lib/Panel/MigrationsPanel.php" description="Migrations Panel for DebugKit" xml="classes/MigrationsPanel.xml"/>
+    <class name="Qlogin" src="app/Plugin/Tools/Model/Qlogin.php" description="Manage Quick Logins" xml="classes/Qlogin.xml"/>
+    <class name="ToolsAppModel" src="app/Plugin/Tools/Model/ToolsAppModel.php" xml="classes/ToolsAppModel.xml"/>
+    <class name="CodeKey" src="app/Plugin/Tools/Model/CodeKey.php" xml="classes/CodeKey.xml"/>
+    <class name="ContactForm" src="app/Plugin/Tools/Model/ContactForm.php" description="&quot;Fake&quot; model to validate all contact forms" xml="classes/ContactForm.xml"/>
+    <class name="Token" src="app/Plugin/Tools/Model/Token.php" description="A generic model to hold tokens" xml="classes/Token.xml"/>
+    <class name="KeyValue" src="app/Plugin/Tools/Model/KeyValue.php" description="KeyValue Model" xml="classes/KeyValue.xml"/>
+    <class name="Qurl" src="app/Plugin/Tools/Model/Qurl.php" description="Manage Quick Urls" xml="classes/Qurl.xml"/>
+    <class name="RevisionBehavior" src="app/Plugin/Tools/Model/Behavior/RevisionBehavior.php" description="Revision Behavior" xml="classes/RevisionBehavior.xml"/>
+    <class name="PasswordableBehavior" src="app/Plugin/Tools/Model/Behavior/PasswordableBehavior.php" description="A cakephp2 behavior to work with passwords the easy way - complete validation - hashing of password - requires fields (no tempering even without security component) - usable for edit forms (allowEmpty=&gt;true for optional password update)" xml="classes/PasswordableBehavior.xml"/>
+    <class name="WhoDidItBehavior" src="app/Plugin/Tools/Model/Behavior/WhoDidItBehavior.php" description="WhoDidIt Model Behavior for CakePHP" xml="classes/WhoDidItBehavior.xml"/>
+    <class name="LinkableBehavior" src="app/Plugin/Tools/Model/Behavior/LinkableBehavior.php" description="LinkableBehavior Light-weight approach for data mining on deep relations between models." xml="classes/LinkableBehavior.xml"/>
+    <class name="BitmaskedBehavior" src="app/Plugin/Tools/Model/Behavior/BitmaskedBehavior.php" description="BitmaskedBehavior" xml="classes/BitmaskedBehavior.xml"/>
+    <class name="CaptchaBehavior" src="app/Plugin/Tools/Model/Behavior/CaptchaBehavior.php" description="CaptchaBehavior NOTES: needs captcha helper" xml="classes/CaptchaBehavior.xml"/>
+    <class name="CustomFindsBehavior" src="app/Plugin/Tools/Model/Behavior/CustomFindsBehavior.php" xml="classes/CustomFindsBehavior.xml"/>
+    <class name="TypographicBehavior" src="app/Plugin/Tools/Model/Behavior/TypographicBehavior.php" description="Replace regionalized chars with standard ones on input." xml="classes/TypographicBehavior.xml"/>
+    <class name="LogableBehavior" src="app/Plugin/Tools/Model/Behavior/LogableBehavior.php" description="Logs saves and deletes of any model" xml="classes/LogableBehavior.xml"/>
+    <class name="SluggedBehavior" src="app/Plugin/Tools/Model/Behavior/SluggedBehavior.php" description="SluggedBehavior class" xml="classes/SluggedBehavior.xml"/>
+    <class name="KeyValueBehavior" src="app/Plugin/Tools/Model/Behavior/KeyValueBehavior.php" description="KeyValue Behavior" xml="classes/KeyValueBehavior.xml"/>
+    <class name="ConfirmableBehavior" src="app/Plugin/Tools/Model/Behavior/ConfirmableBehavior.php" description="ConfirmableBehavior allows forms to easily require a checkbox toggled (confirmed)." xml="classes/ConfirmableBehavior.xml"/>
+    <class name="DecimalInputBehavior" src="app/Plugin/Tools/Model/Behavior/DecimalInputBehavior.php" description="//ALREADY exists as number_format in a slightly different way!" xml="classes/DecimalInputBehavior.xml"/>
+    <class name="JsonableBehavior" src="app/Plugin/Tools/Model/Behavior/JsonableBehavior.php" description="A behavior that will json_encode (and json_decode) fields if they contain an array or specific pattern." xml="classes/JsonableBehavior.xml"/>
+    <class name="GeocoderBehavior" src="app/Plugin/Tools/Model/Behavior/GeocoderBehavior.php" description="A geocoding behavior for CakePHP to easily geocode addresses." xml="classes/GeocoderBehavior.xml"/>
+    <class name="SoftDeleteBehavior" src="app/Plugin/Tools/Model/Behavior/SoftDeleteBehavior.php" description="Utils Plugin" xml="classes/SoftDeleteBehavior.xml"/>
+    <class name="MasterPasswordBehavior" src="app/Plugin/Tools/Model/Behavior/MasterPasswordBehavior.php" description="2011-12-22 ms" xml="classes/MasterPasswordBehavior.xml"/>
+    <class name="Log" src="app/Plugin/Tools/Model/Log.php" description="`logs` table populated by LogableBehavior" xml="classes/Log.xml"/>
+    <class name="MyModel" src="app/Plugin/Tools/Model/MyModel.php" description="Model enhancements for Cake2" xml="classes/MyModel.xml"/>
+    <class name="CalendarComponent" src="app/Plugin/Tools/Controller/Component/CalendarComponent.php" description="Calendar Component" xml="classes/CalendarComponent.xml"/>
+    <class name="CommonComponent" src="app/Plugin/Tools/Controller/Component/CommonComponent.php" description="A component included in every app to take care of common stuff" xml="classes/CommonComponent.xml"/>
+    <class name="MobileComponent" src="app/Plugin/Tools/Controller/Component/MobileComponent.php" description="Uses Session: User.mobile and User.nomobile - mobile is the auto-detection (true/false) - nomobile can be set by the user and overrides the default behavior/detection   (1=true/0=false or -1=null which will remove the override)" xml="classes/MobileComponent.xml"/>
+    <class name="AuthExtComponent" src="app/Plugin/Tools/Controller/Component/AuthExtComponent.php" description="Important: index the ACO on alias, index the Aro on model+id" xml="classes/AuthExtComponent.xml"/>
+    <class name="AutoLoginComponent" src="app/Plugin/Tools/Controller/Component/AutoLoginComponent.php" description="AutoLoginComponent" xml="classes/AutoLoginComponent.xml"/>
+    <class name="TinyAuthorize" src="app/Plugin/Tools/Controller/Component/Auth/TinyAuthorize.php" description="Probably the most simple and fastest Acl out there." xml="classes/TinyAuthorize.xml"/>
+    <class name="DirectAuthenticate" src="app/Plugin/Tools/Controller/Component/Auth/DirectAuthenticate.php" description="An authentication adapter for AuthComponent to directly log in a user by username, id or any other distinct identification." xml="classes/DirectAuthenticate.xml"/>
+    <class name="TinyUrlsController" src="app/Plugin/Tools/Controller/TinyUrlsController.php" xml="classes/TinyUrlsController.xml"/>
+    <class name="ToolsAppController" src="app/Plugin/Tools/Controller/ToolsAppController.php" xml="classes/ToolsAppController.xml"/>
+    <class name="QloginController" src="app/Plugin/Tools/Controller/QloginController.php" xml="classes/QloginController.xml"/>
+    <class name="MyCakeTestCase" src="app/Plugin/Tools/TestSuite/MyCakeTestCase.php" xml="classes/MyCakeTestCase.xml"/>
+    <class name="KeyValueSchema" src="app/Plugin/Tools/Config/Schema/key_value.php" xml="classes/KeyValueSchema.xml"/>
+    <class name="MyHelper" src="app/Plugin/Tools/View/Helper/MyHelper.php" description="Helper enhancements for Cake2" xml="classes/MyHelper.xml"/>
+    <class name="NumericHelper" src="app/Plugin/Tools/View/Helper/NumericHelper.php" description="Todo: rename to MyNumberHelper some day? Aliasing it then as Number again in the project" xml="classes/NumericHelper.xml"/>
+    <class name="DatetimeHelper" src="app/Plugin/Tools/View/Helper/DatetimeHelper.php" description="TODO: make extend TimeLib some day? 2012-04-09 ms" xml="classes/DatetimeHelper.xml"/>
+    <class name="FormExtHelper" src="app/Plugin/Tools/View/Helper/FormExtHelper.php" description="Enhance Forms with JS widget stuff TODO: namespace change: make it HtmlHelper" xml="classes/FormExtHelper.xml"/>
+    <class name="QrCodeHelper" src="app/Plugin/Tools/View/Helper/QrCodeHelper.php" description="QR Code Helper based on google chart api" xml="classes/QrCodeHelper.xml"/>
+    <class name="TextExtHelper" src="app/Plugin/Tools/View/Helper/TextExtHelper.php" description="the core text helper is unsecure and outdated in functionality this aims to compensate the deficiencies" xml="classes/TextExtHelper.xml"/>
+    <class name="CommonHelper" src="app/Plugin/Tools/View/Helper/CommonHelper.php" description="All site-wide necessary stuff for the view layer" xml="classes/CommonHelper.xml"/>
+    <class name="IcalHelper" src="app/Plugin/Tools/View/Helper/IcalHelper.php" description="uses ical lib tipps see http://labs.iamkoa.net/2007/09/07/create-downloadable-ical-events-via-cake/" xml="classes/IcalHelper.xml"/>
+    <class name="PhpThumbHelper" src="app/Plugin/Tools/View/Helper/PhpThumbHelper.php" xml="classes/PhpThumbHelper.xml"/>
+    <class name="GoogleMapV3Helper" src="app/Plugin/Tools/View/Helper/GoogleMapV3Helper.php" description="PHP5 / CakePHP 2.x" xml="classes/GoogleMapV3Helper.xml"/>
+    <class name="BootstrapHelper" src="app/Plugin/Tools/View/Helper/BootstrapHelper.php" description="Generic html snippets to display some specific widgets like accordion" xml="classes/BootstrapHelper.xml"/>
+    <class name="FormatHelper" src="app/Plugin/Tools/View/Helper/FormatHelper.php" description="Format helper with basic html snippets" xml="classes/FormatHelper.xml"/>
+    <class name="GravatarHelper" src="app/Plugin/Tools/View/Helper/GravatarHelper.php" description="CakePHP Gravatar Helper" xml="classes/GravatarHelper.xml"/>
+    <class name="CaptchaHelper" src="app/Plugin/Tools/View/Helper/CaptchaHelper.php" description="works togehter with captcha behaviour/component 2011-06-11 ms" xml="classes/CaptchaHelper.xml"/>
+    <class name="TreeHelper" src="app/Plugin/Tools/View/Helper/TreeHelper.php" description="Tree helper" xml="classes/TreeHelper.xml"/>
+    <class name="TypographyHelper" src="app/Plugin/Tools/View/Helper/TypographyHelper.php" description="Typography Class converted to Cake Helper" xml="classes/TypographyHelper.xml"/>
+    <class name="LoremHelper" src="app/Plugin/Tools/View/Helper/LoremHelper.php" xml="classes/LoremHelper.xml"/>
+    <class name="HcardHelper" src="app/Plugin/Tools/View/Helper/HcardHelper.php" description="helper for hcard, vcard and other microformats!" xml="classes/HcardHelper.xml"/>
+    <class name="IndentShell" src="app/Plugin/Tools/Console/Command/IndentShell.php" description="Indend Shell" xml="classes/IndentShell.xml"/>
+    <class name="UserShell" src="app/Plugin/Tools/Console/Command/UserShell.php" description="create a new user from CLI" xml="classes/UserShell.xml"/>
+    <class name="IndexShell" src="app/Plugin/Tools/Console/Command/IndexShell.php" description="Add missing indexes to your schema in a snip based on ad7six' UuidifyShell" xml="classes/IndexShell.xml"/>
+    <class name="ResetShell" src="app/Plugin/Tools/Console/Command/ResetShell.php" description="reset user data" xml="classes/ResetShell.xml"/>
+    <class name="CodeShell" src="app/Plugin/Tools/Console/Command/CodeShell.php" description="Misc Code Fix Tools" xml="classes/CodeShell.xml"/>
+    <class name="PhpTagShell" src="app/Plugin/Tools/Console/Command/PhpTagShell.php" description="removes closing php tag (?&gt;) from php files it also makes sure there is no whitespace at the beginning of the file" xml="classes/PhpTagShell.xml"/>
+    <class name="PwdShell" src="app/Plugin/Tools/Console/Command/PwdShell.php" description="password hashing and output" xml="classes/PwdShell.xml"/>
+    <class name="FolderSyncShell" src="app/Plugin/Tools/Console/Command/FolderSyncShell.php" description="Folder Sync Shell to update all files from location a with new files from location b You can also remove files in a if they are not longer existent in b" xml="classes/FolderSyncShell.xml"/>
+    <class name="CcShell" src="app/Plugin/Tools/Console/Command/CcShell.php" description="Code Completion Shell Workes perfectly with PHPDesigner - but should also work with most other IDEs out of the box" xml="classes/CcShell.xml"/>
+    <class name="ConvertShell" src="app/Plugin/Tools/Console/Command/ConvertShell.php" description="uses dos2unix &gt;= 5.0 console call: dos2unix [-fhkLlqV] [-c convmode] [-o file ...] [-n inputfile outputfile ...]" xml="classes/ConvertShell.xml"/>
+    <class name="HashShell" src="app/Plugin/Tools/Console/Command/HashShell.php" xml="classes/HashShell.xml"/>
+    <class name="ContactFormTest" src="app/Plugin/Tools/Test/Case/Model/ContactFormTest.php" xml="classes/ContactFormTest.xml"/>
+    <class name="QloginTest" src="app/Plugin/Tools/Test/Case/Model/QloginTest.php" xml="classes/QloginTest.xml"/>
+    <class name="CodeKeyTest" src="app/Plugin/Tools/Test/Case/Model/CodeKeyTest.php" xml="classes/CodeKeyTest.xml"/>
+    <class name="MyModelTest" src="app/Plugin/Tools/Test/Case/Model/MyModelTest.php" xml="classes/MyModelTest.xml"/>
+    <class name="AppTestModel" src="app/Plugin/Tools/Test/Case/Model/MyModelTest.php" xml="classes/AppTestModel.xml"/>
+    <class name="SluggedBehaviorTest" src="app/Plugin/Tools/Test/Case/Model/Behavior/SluggedBehaviorTest.php" description="SluggedBehaviorTest class" xml="classes/SluggedBehaviorTest.xml"/>
+    <class name="MessageSlugged" src="app/Plugin/Tools/Test/Case/Model/Behavior/SluggedBehaviorTest.php" description="MessageSlugged class" xml="classes/MessageSlugged.xml"/>
+    <class name="RevisionBehaviorTest" src="app/Plugin/Tools/Test/Case/Model/Behavior/RevisionBehaviorTest.php" xml="classes/RevisionBehaviorTest.xml"/>
+    <class name="RevisionTestModel" src="app/Plugin/Tools/Test/Case/Model/Behavior/RevisionBehaviorTest.php" xml="classes/RevisionTestModel.xml"/>
+    <class name="RevisionPost" src="app/Plugin/Tools/Test/Case/Model/Behavior/RevisionBehaviorTest.php" xml="classes/RevisionPost.xml"/>
+    <class name="RevisionArticle" src="app/Plugin/Tools/Test/Case/Model/Behavior/RevisionBehaviorTest.php" xml="classes/RevisionArticle.xml"/>
+    <class name="RevisionUser" src="app/Plugin/Tools/Test/Case/Model/Behavior/RevisionBehaviorTest.php" xml="classes/RevisionUser.xml"/>
+    <class name="RevisionComment" src="app/Plugin/Tools/Test/Case/Model/Behavior/RevisionBehaviorTest.php" xml="classes/RevisionComment.xml"/>
+    <class name="RevisionVote" src="app/Plugin/Tools/Test/Case/Model/Behavior/RevisionBehaviorTest.php" xml="classes/RevisionVote.xml"/>
+    <class name="RevisionTag" src="app/Plugin/Tools/Test/Case/Model/Behavior/RevisionBehaviorTest.php" xml="classes/RevisionTag.xml"/>
+    <class name="CommentsTag" src="app/Plugin/Tools/Test/Case/Model/Behavior/RevisionBehaviorTest.php" xml="classes/CommentsTag.xml"/>
+    <class name="PasswordableBehaviorTest" src="app/Plugin/Tools/Test/Case/Model/Behavior/PasswordableBehaviorTest.php" xml="classes/PasswordableBehaviorTest.xml"/>
+    <class name="AuthTestComponent" src="app/Plugin/Tools/Test/Case/Model/Behavior/PasswordableBehaviorTest.php" description="FAKER! 2011-11-03 ms" xml="classes/AuthTestComponent.xml"/>
+    <class name="KeyValueBehaviorTest" src="app/Plugin/Tools/Test/Case/Model/Behavior/KeyValueBehaviorTest.php" xml="classes/KeyValueBehaviorTest.xml"/>
+    <class name="BitmaskedBehaviorTest" src="app/Plugin/Tools/Test/Case/Model/Behavior/BitmaskedBehaviorTest.php" xml="classes/BitmaskedBehaviorTest.xml"/>
+    <class name="BitmaskedComment" src="app/Plugin/Tools/Test/Case/Model/Behavior/BitmaskedBehaviorTest.php" xml="classes/BitmaskedComment.xml"/>
+    <class name="ConfirmableBehaviorTest" src="app/Plugin/Tools/Test/Case/Model/Behavior/ConfirmableBehaviorTest.php" xml="classes/ConfirmableBehaviorTest.xml"/>
+    <class name="CaptchaBehaviorTest" src="app/Plugin/Tools/Test/Case/Model/Behavior/CaptchaBehaviorTest.php" xml="classes/CaptchaBehaviorTest.xml"/>
+    <class name="GeocoderBehaviorTest" src="app/Plugin/Tools/Test/Case/Model/Behavior/GeocoderBehaviorTest.php" xml="classes/GeocoderBehaviorTest.xml"/>
+    <class name="TestController" src="app/Plugin/Tools/Test/Case/Model/Behavior/GeocoderBehaviorTest.php" xml="classes/TestController.xml"/>
+    <class name="JsonableBehaviorTest" src="app/Plugin/Tools/Test/Case/Model/Behavior/JsonableBehaviorTest.php" xml="classes/JsonableBehaviorTest.xml"/>
+    <class name="JsonableBehaviorTestModel" src="app/Plugin/Tools/Test/Case/Model/Behavior/JsonableBehaviorTest.php" xml="classes/JsonableBehaviorTestModel.xml"/>
+    <class name="LinkableBehaviorTest" src="app/Plugin/Tools/Test/Case/Model/Behavior/LinkableBehaviorTest.php" xml="classes/LinkableBehaviorTest.xml"/>
+    <class name="LinkableTestModel" src="app/Plugin/Tools/Test/Case/Model/Behavior/LinkableBehaviorTest.php" xml="classes/LinkableTestModel.xml"/>
+    <class name="Profile" src="app/Plugin/Tools/Test/Case/Model/Behavior/LinkableBehaviorTest.php" xml="classes/Profile.xml"/>
+    <class name="BlogPost" src="app/Plugin/Tools/Test/Case/Model/Behavior/LinkableBehaviorTest.php" xml="classes/BlogPost.xml"/>
+    <class name="BlogPostTag" src="app/Plugin/Tools/Test/Case/Model/Behavior/LinkableBehaviorTest.php" xml="classes/BlogPostTag.xml"/>
+    <class name="Tag" src="app/Plugin/Tools/Test/Case/Model/Behavior/LinkableBehaviorTest.php" xml="classes/Tag.xml"/>
+    <class name="LegacyProduct" src="app/Plugin/Tools/Test/Case/Model/Behavior/LinkableBehaviorTest.php" xml="classes/LegacyProduct.xml"/>
+    <class name="LegacyCompany" src="app/Plugin/Tools/Test/Case/Model/Behavior/LinkableBehaviorTest.php" xml="classes/LegacyCompany.xml"/>
+    <class name="Shipment" src="app/Plugin/Tools/Test/Case/Model/Behavior/LinkableBehaviorTest.php" xml="classes/Shipment.xml"/>
+    <class name="OrderItem" src="app/Plugin/Tools/Test/Case/Model/Behavior/LinkableBehaviorTest.php" xml="classes/OrderItem.xml"/>
+    <class name="Test" src="app/Plugin/Tools/Test/Case/Model/Behavior/CustomFindsBehaviorTest.php" xml="classes/Test.xml"/>
+    <class name="CustomFindsBehaviorTest" src="app/Plugin/Tools/Test/Case/Model/Behavior/CustomFindsBehaviorTest.php" xml="classes/CustomFindsBehaviorTest.xml"/>
+    <class name="TypographicBehaviorTest" src="app/Plugin/Tools/Test/Case/Model/Behavior/TypographicBehaviorTest.php" xml="classes/TypographicBehaviorTest.xml"/>
+    <class name="MasterPasswordBehaviorTest" src="app/Plugin/Tools/Test/Case/Model/Behavior/MasterPasswordBehaviorTest.php" xml="classes/MasterPasswordBehaviorTest.xml"/>
+    <class name="MasterPasswordTestModel" src="app/Plugin/Tools/Test/Case/Model/Behavior/MasterPasswordBehaviorTest.php" xml="classes/MasterPasswordTestModel.xml"/>
+    <class name="DecimalInputBehaviorTest" src="app/Plugin/Tools/Test/Case/Model/Behavior/DecimalInputBehaviorTest.php" xml="classes/DecimalInputBehaviorTest.xml"/>
+    <class name="DecimalInputTestModel" src="app/Plugin/Tools/Test/Case/Model/Behavior/DecimalInputBehaviorTest.php" description="other files" xml="classes/DecimalInputTestModel.xml"/>
+    <class name="ChangePasswordBehaviorTest" src="app/Plugin/Tools/Test/Case/Model/Behavior/ChangePasswordBehaviorTest.php" xml="classes/ChangePasswordBehaviorTest.xml"/>
+    <class name="AuthComponent" src="app/Plugin/Tools/Test/Case/Model/Behavior/ChangePasswordBehaviorTest.php" description="FAKER! 2011-11-03 ms" xml="classes/AuthComponent.xml"/>
+    <class name="KeyValueTest" src="app/Plugin/Tools/Test/Case/Model/KeyValueTest.php" description="KeyValue Test Case" xml="classes/KeyValueTest.xml"/>
+    <class name="TokenTest" src="app/Plugin/Tools/Test/Case/Model/TokenTest.php" xml="classes/TokenTest.xml"/>
+    <class name="AutoLoginComponentTest" src="app/Plugin/Tools/Test/Case/Controller/Component/AutoLoginComponentTest.php" description="Short description for class." xml="classes/AutoLoginComponentTest.xml"/>
+    <class name="AutoLoginTestController" src="app/Plugin/Tools/Test/Case/Controller/Component/AutoLoginComponentTest.php" description="Short description for class." xml="classes/AutoLoginTestController.xml"/>
+    <class name="CommonComponentTest" src="app/Plugin/Tools/Test/Case/Controller/Component/CommonComponentTest.php" description="2010-11-10 ms" xml="classes/CommonComponentTest.xml"/>
+    <class name="CommonComponentTestController" src="app/Plugin/Tools/Test/Case/Controller/Component/CommonComponentTest.php" description="Short description for class." xml="classes/CommonComponentTestController.xml"/>
+    <class name="TestComponent" src="app/Plugin/Tools/Test/Case/Controller/Component/CommonComponentTest.php" xml="classes/TestComponent.xml"/>
+    <class name="TestHelper" src="app/Plugin/Tools/Test/Case/Controller/Component/CommonComponentTest.php" xml="classes/TestHelper.xml"/>
+    <class name="TestLib" src="app/Plugin/Tools/Test/Case/Controller/Component/CommonComponentTest.php" xml="classes/TestLib.xml"/>
+    <class name="CalendarComponentTest" src="app/Plugin/Tools/Test/Case/Controller/Component/CalendarComponentTest.php" xml="classes/CalendarComponentTest.xml"/>
+    <class name="DirectAuthenticateTest" src="app/Plugin/Tools/Test/Case/Controller/Component/Auth/DirectAuthenticateTest.php" description="Test case for DirectAuthentication" xml="classes/DirectAuthenticateTest.xml"/>
+    <class name="AllComponentTestsTest" src="app/Plugin/Tools/Test/Case/AllComponentTestsTest.php" description="group test - Tools" xml="classes/AllComponentTestsTest.xml"/>
+    <class name="AllHelperTestsTest" src="app/Plugin/Tools/Test/Case/AllHelperTestsTest.php" description="group test - Tools" xml="classes/AllHelperTestsTest.xml"/>
+    <class name="AllAuthTestsTest" src="app/Plugin/Tools/Test/Case/AllAuthTestsTest.php" description="group test - Tools" xml="classes/AllAuthTestsTest.xml"/>
+    <class name="QrCodeHelperTest" src="app/Plugin/Tools/Test/Case/View/Helper/QrCodeHelperTest.php" description="QrCode Test Case" xml="classes/QrCodeHelperTest.xml"/>
+    <class name="FormatHelperTest" src="app/Plugin/Tools/Test/Case/View/Helper/FormatHelperTest.php" description="Datetime Test Case" xml="classes/FormatHelperTest.xml"/>
+    <class name="GoogleMapV3HelperTest" src="app/Plugin/Tools/Test/Case/View/Helper/GoogleMapV3HelperTest.php" xml="classes/GoogleMapV3HelperTest.xml"/>
+    <class name="DatetimeHelperTest" src="app/Plugin/Tools/Test/Case/View/Helper/DatetimeHelperTest.php" description="Datetime Test Case" xml="classes/DatetimeHelperTest.xml"/>
+    <class name="MyHelperTest" src="app/Plugin/Tools/Test/Case/View/Helper/MyHelperTest.php" xml="classes/MyHelperTest.xml"/>
+    <class name="IcalHelperTest" src="app/Plugin/Tools/Test/Case/View/Helper/IcalHelperTest.php" description="A wrapper for the Ical/Ics calendar lib" xml="classes/IcalHelperTest.xml"/>
+    <class name="FlattrHelperTest" src="app/Plugin/Tools/Test/Case/View/Helper/FlattrHelperTest.php" xml="classes/FlattrHelperTest.xml"/>
+    <class name="NumericHelperTest" src="app/Plugin/Tools/Test/Case/View/Helper/NumericHelperTest.php" description="Numeric Test Case" xml="classes/NumericHelperTest.xml"/>
+    <class name="FormExtHelperTest" src="app/Plugin/Tools/Test/Case/View/Helper/FormExtHelperTest.php" xml="classes/FormExtHelperTest.xml"/>
+    <class name="TextExtHelperTest" src="app/Plugin/Tools/Test/Case/View/Helper/TextExtHelperTest.php" xml="classes/TextExtHelperTest.xml"/>
+    <class name="CaptchaHelperTest" src="app/Plugin/Tools/Test/Case/View/Helper/CaptchaHelperTest.php" description="2010-06-24 ms" xml="classes/CaptchaHelperTest.xml"/>
+    <class name="CommonHelperTest" src="app/Plugin/Tools/Test/Case/View/Helper/CommonHelperTest.php" description="2012-11-23 ms" xml="classes/CommonHelperTest.xml"/>
+    <class name="TypographyHelperTest" src="app/Plugin/Tools/Test/Case/View/Helper/TypographyHelperTest.php" description="TypographyHelper Test Case" xml="classes/TypographyHelperTest.xml"/>
+    <class name="AllBehaviorTestsTest" src="app/Plugin/Tools/Test/Case/AllBehaviorTestsTest.php" description="group test - Tools" xml="classes/AllBehaviorTestsTest.xml"/>
+    <class name="AllLibTestsTest" src="app/Plugin/Tools/Test/Case/AllLibTestsTest.php" description="group test - Tools" xml="classes/AllLibTestsTest.xml"/>
+    <class name="AllModelTestsTest" src="app/Plugin/Tools/Test/Case/AllModelTestsTest.php" description="group test - Tools" xml="classes/AllModelTestsTest.xml"/>
+    <class name="AllShellTestsTest" src="app/Plugin/Tools/Test/Case/AllShellTestsTest.php" description="group test - Tools" xml="classes/AllShellTestsTest.xml"/>
+    <class name="ImapLibTest" src="app/Plugin/Tools/Test/Case/Lib/ImapLibTest.php" xml="classes/ImapLibTest.xml"/>
+    <class name="RandomLibTest" src="app/Plugin/Tools/Test/Case/Lib/RandomLibTest.php" xml="classes/RandomLibTest.xml"/>
+    <class name="GooglLibTest" src="app/Plugin/Tools/Test/Case/Lib/GooglLibTest.php" description="2010-09-10 ms" xml="classes/GooglLibTest.xml"/>
+    <class name="GeocodeLibTest" src="app/Plugin/Tools/Test/Case/Lib/GeocodeLibTest.php" xml="classes/GeocodeLibTest.xml"/>
+    <class name="SpellLibTest" src="app/Plugin/Tools/Test/Case/Lib/SpellLibTest.php" xml="classes/SpellLibTest.xml"/>
+    <class name="AuthTest" src="app/Plugin/Tools/Test/Case/Lib/AuthTest.php" description="2010-06-29 ms" xml="classes/AuthTest.xml"/>
+    <class name="IcalLibTest" src="app/Plugin/Tools/Test/Case/Lib/IcalLibTest.php" xml="classes/IcalLibTest.xml"/>
+    <class name="EmailLibTest" src="app/Plugin/Tools/Test/Case/Lib/EmailLibTest.php" xml="classes/EmailLibTest.xml"/>
+    <class name="TestEmailLib" src="app/Plugin/Tools/Test/Case/Lib/EmailLibTest.php" description="Help to test EmailLib" xml="classes/TestEmailLib.xml"/>
+    <class name="CaptchaLibTest" src="app/Plugin/Tools/Test/Case/Lib/CaptchaLibTest.php" description="2010-09-10 ms" xml="classes/CaptchaLibTest.xml"/>
+    <class name="ChmodLibTest" src="app/Plugin/Tools/Test/Case/Lib/Utility/ChmodLibTest.php" description="testing 2009-07-15 ms" xml="classes/ChmodLibTest.xml"/>
+    <class name="NumberLibTest" src="app/Plugin/Tools/Test/Case/Lib/Utility/NumberLibTest.php" xml="classes/NumberLibTest.xml"/>
+    <class name="TimeLibTest" src="app/Plugin/Tools/Test/Case/Lib/Utility/TimeLibTest.php" xml="classes/TimeLibTest.xml"/>
+    <class name="TextLibTest" src="app/Plugin/Tools/Test/Case/Lib/Utility/TextLibTest.php" description="2010-07-14 ms" xml="classes/TextLibTest.xml"/>
+    <class name="HazardLibTest" src="app/Plugin/Tools/Test/Case/Lib/HazardLibTest.php" xml="classes/HazardLibTest.xml"/>
+    <class name="QueuedTaskFixture" src="app/Plugin/Tools/Test/Fixture/QueuedTaskFixture.php" description="QueuedTaskFixture" xml="classes/QueuedTaskFixture.xml"/>
+    <class name="ShipmentFixture" src="app/Plugin/Tools/Test/Fixture/ShipmentFixture.php" xml="classes/ShipmentFixture.xml"/>
+    <class name="LogFixture" src="app/Plugin/Tools/Test/Fixture/LogFixture.php" description="LogFixture" xml="classes/LogFixture.xml"/>
+    <class name="RevisionArticleFixture" src="app/Plugin/Tools/Test/Fixture/RevisionArticleFixture.php" xml="classes/RevisionArticleFixture.xml"/>
+    <class name="RevisionTagsRevFixture" src="app/Plugin/Tools/Test/Fixture/RevisionTagsRevFixture.php" xml="classes/RevisionTagsRevFixture.xml"/>
+    <class name="RevisionCommentsRevisionTagFixture" src="app/Plugin/Tools/Test/Fixture/RevisionCommentsRevisionTagFixture.php" xml="classes/RevisionCommentsRevisionTagFixture.xml"/>
+    <class name="CustomDatumFixture" src="app/Plugin/Tools/Test/Fixture/CustomDatumFixture.php" description="CustomDatumFixture" xml="classes/CustomDatumFixture.xml"/>
+    <class name="PostFixture" src="app/Plugin/Tools/Test/Fixture/PostFixture.php" description="PostFixture" xml="classes/PostFixture.xml"/>
+    <class name="MessageFixture" src="app/Plugin/Tools/Test/Fixture/MessageFixture.php" description="MessageFixture class" xml="classes/MessageFixture.xml"/>
+    <class name="CurrencyFixture" src="app/Plugin/Tools/Test/Fixture/CurrencyFixture.php" description="CurrencyFixture" xml="classes/CurrencyFixture.xml"/>
+    <class name="PostalCodeFixture" src="app/Plugin/Tools/Test/Fixture/PostalCodeFixture.php" description="PostalCodeFixture" xml="classes/PostalCodeFixture.xml"/>
+    <class name="RoleFixture" src="app/Plugin/Tools/Test/Fixture/RoleFixture.php" description="RoleFixture" xml="classes/RoleFixture.xml"/>
+    <class name="OrderItemFixture" src="app/Plugin/Tools/Test/Fixture/OrderItemFixture.php" xml="classes/OrderItemFixture.xml"/>
+    <class name="LegacyProductFixture" src="app/Plugin/Tools/Test/Fixture/LegacyProductFixture.php" xml="classes/LegacyProductFixture.xml"/>
+    <class name="QurlFixture" src="app/Plugin/Tools/Test/Fixture/QurlFixture.php" description="QurlFixture" xml="classes/QurlFixture.xml"/>
+    <class name="CountryProvinceFixture" src="app/Plugin/Tools/Test/Fixture/CountryProvinceFixture.php" description="CountryProvinceFixture" xml="classes/CountryProvinceFixture.xml"/>
+    <class name="UserFixture" src="app/Plugin/Tools/Test/Fixture/UserFixture.php" xml="classes/UserFixture.xml"/>
+    <class name="BitmaskedCommentFixture" src="app/Plugin/Tools/Test/Fixture/BitmaskedCommentFixture.php" description="For BitmaskedBehaviorTest" xml="classes/BitmaskedCommentFixture.xml"/>
+    <class name="TagFixture" src="app/Plugin/Tools/Test/Fixture/TagFixture.php" xml="classes/TagFixture.xml"/>
+    <class name="RevisionPostFixture" src="app/Plugin/Tools/Test/Fixture/RevisionPostFixture.php" xml="classes/RevisionPostFixture.xml"/>
+    <class name="ContinentFixture" src="app/Plugin/Tools/Test/Fixture/ContinentFixture.php" xml="classes/ContinentFixture.xml"/>
+    <class name="CountyFixture" src="app/Plugin/Tools/Test/Fixture/CountyFixture.php" description="CountyFixture" xml="classes/CountyFixture.xml"/>
+    <class name="ExifFixture" src="app/Plugin/Tools/Test/Fixture/ExifFixture.php" xml="classes/ExifFixture.xml"/>
+    <class name="DiscountFixture" src="app/Plugin/Tools/Test/Fixture/DiscountFixture.php" description="DiscountFixture" xml="classes/DiscountFixture.xml"/>
+    <class name="TimeFixture" src="app/Plugin/Tools/Test/Fixture/TimeFixture.php" description="TimeFixture" xml="classes/TimeFixture.xml"/>
+    <class name="StateFixture" src="app/Plugin/Tools/Test/Fixture/StateFixture.php" description="StateFixture" xml="classes/StateFixture.xml"/>
+    <class name="DiscountCodeFixture" src="app/Plugin/Tools/Test/Fixture/DiscountCodeFixture.php" description="DiscountCodeFixture" xml="classes/DiscountCodeFixture.xml"/>
+    <class name="TinyUrlFixture" src="app/Plugin/Tools/Test/Fixture/TinyUrlFixture.php" description="TinyUrlFixture" xml="classes/TinyUrlFixture.xml"/>
+    <class name="BlogPostsTagFixture" src="app/Plugin/Tools/Test/Fixture/BlogPostsTagFixture.php" xml="classes/BlogPostsTagFixture.xml"/>
+    <class name="PingbackFixture" src="app/Plugin/Tools/Test/Fixture/PingbackFixture.php" xml="classes/PingbackFixture.xml"/>
+    <class name="RevisionTagFixture" src="app/Plugin/Tools/Test/Fixture/RevisionTagFixture.php" xml="classes/RevisionTagFixture.xml"/>
+    <class name="GenericFixture" src="app/Plugin/Tools/Test/Fixture/GenericFixture.php" xml="classes/GenericFixture.xml"/>
+    <class name="RevisionUserFixture" src="app/Plugin/Tools/Test/Fixture/RevisionUserFixture.php" xml="classes/RevisionUserFixture.xml"/>
+    <class name="RevisionCommentFixture" src="app/Plugin/Tools/Test/Fixture/RevisionCommentFixture.php" xml="classes/RevisionCommentFixture.xml"/>
+    <class name="CommentFixture" src="app/Plugin/Tools/Test/Fixture/CommentFixture.php" xml="classes/CommentFixture.xml"/>
+    <class name="CityFixture" src="app/Plugin/Tools/Test/Fixture/CityFixture.php" description="CityFixture" xml="classes/CityFixture.xml"/>
+    <class name="TransactionFixture" src="app/Plugin/Tools/Test/Fixture/TransactionFixture.php" description="TransactionFixture" xml="classes/TransactionFixture.xml"/>
+    <class name="LanguageFixture" src="app/Plugin/Tools/Test/Fixture/LanguageFixture.php" description="LanguageFixture" xml="classes/LanguageFixture.xml"/>
+    <class name="RevisionPostsRevFixture" src="app/Plugin/Tools/Test/Fixture/RevisionPostsRevFixture.php" xml="classes/RevisionPostsRevFixture.xml"/>
+    <class name="CodeKeyFixture" src="app/Plugin/Tools/Test/Fixture/CodeKeyFixture.php" description="CodeKeyFixture" xml="classes/CodeKeyFixture.xml"/>
+    <class name="TokenFixture" src="app/Plugin/Tools/Test/Fixture/TokenFixture.php" description="TokenFixture" xml="classes/TokenFixture.xml"/>
+    <class name="SmsNotificationFixture" src="app/Plugin/Tools/Test/Fixture/SmsNotificationFixture.php" description="SmsNotificationFixture" xml="classes/SmsNotificationFixture.xml"/>
+    <class name="SoftDeletePostFixture" src="app/Plugin/Tools/Test/Fixture/SoftDeletePostFixture.php" description="Short description for class." xml="classes/SoftDeletePostFixture.xml"/>
+    <class name="ImageFixture" src="app/Plugin/Tools/Test/Fixture/ImageFixture.php" description="ImageFixture" xml="classes/ImageFixture.xml"/>
+    <class name="RevisionCommentsRevisionTagsRevFixture" src="app/Plugin/Tools/Test/Fixture/RevisionCommentsRevisionTagsRevFixture.php" xml="classes/RevisionCommentsRevisionTagsRevFixture.xml"/>
+    <class name="LocationFixture" src="app/Plugin/Tools/Test/Fixture/LocationFixture.php" description="LocationFixture" xml="classes/LocationFixture.xml"/>
+    <class name="LegacyCompanyFixture" src="app/Plugin/Tools/Test/Fixture/LegacyCompanyFixture.php" xml="classes/LegacyCompanyFixture.xml"/>
+    <class name="LogIpFixture" src="app/Plugin/Tools/Test/Fixture/LogIpFixture.php" description="LogIpFixture" xml="classes/LogIpFixture.xml"/>
+    <class name="RevisionCommentsRevFixture" src="app/Plugin/Tools/Test/Fixture/RevisionCommentsRevFixture.php" xml="classes/RevisionCommentsRevFixture.xml"/>
+    <class name="UserSettingFixture" src="app/Plugin/Tools/Test/Fixture/UserSettingFixture.php" xml="classes/UserSettingFixture.xml"/>
+    <class name="SmileyFixture" src="app/Plugin/Tools/Test/Fixture/SmileyFixture.php" xml="classes/SmileyFixture.xml"/>
+    <class name="AddressFixture" src="app/Plugin/Tools/Test/Fixture/AddressFixture.php" description="AddressFixture" xml="classes/AddressFixture.xml"/>
+    <class name="RevisionVotesRevFixture" src="app/Plugin/Tools/Test/Fixture/RevisionVotesRevFixture.php" xml="classes/RevisionVotesRevFixture.xml"/>
+    <class name="ProfileFixture" src="app/Plugin/Tools/Test/Fixture/ProfileFixture.php" xml="classes/ProfileFixture.xml"/>
+    <class name="PaymentMethodFixture" src="app/Plugin/Tools/Test/Fixture/PaymentMethodFixture.php" description="PaymentMethodFixture" xml="classes/PaymentMethodFixture.xml"/>
+    <class name="RevisionVoteFixture" src="app/Plugin/Tools/Test/Fixture/RevisionVoteFixture.php" xml="classes/RevisionVoteFixture.xml"/>
+    <class name="BlogPostFixture" src="app/Plugin/Tools/Test/Fixture/BlogPostFixture.php" xml="classes/BlogPostFixture.xml"/>
+    <class name="KeyValueFixture" src="app/Plugin/Tools/Test/Fixture/KeyValueFixture.php" description="KeyValueFixture" xml="classes/KeyValueFixture.xml"/>
+    <class name="CountryFixture" src="app/Plugin/Tools/Test/Fixture/CountryFixture.php" description="CountryFixture" xml="classes/CountryFixture.xml"/>
+    <class name="RevisionArticlesRevFixture" src="app/Plugin/Tools/Test/Fixture/RevisionArticlesRevFixture.php" xml="classes/RevisionArticlesRevFixture.xml"/>
+    <class name="ICalObject" src="app/Plugin/Tools/Vendor/ical/i_cal_object.php" xml="classes/ICalObject.xml"/>
+    <class name="ical" src="app/Plugin/Tools/Vendor/ical/ical.php" xml="classes/ical.xml"/>
+    <class name="MyErrorHandler" src="app/Plugin/Tools/Lib/Error/MyErrorHandler.php" xml="classes/MyErrorHandler.xml"/>
+    <class name="MyExceptionRenderer" src="app/Plugin/Tools/Lib/Error/MyExceptionRenderer.php" xml="classes/MyExceptionRenderer.xml"/>
+    <class name="GeocodeLib" src="app/Plugin/Tools/Lib/GeocodeLib.php" description="Geocode via google (UPDATE: api3)" xml="classes/GeocodeLib.xml"/>
+    <class name="IcalLib" src="app/Plugin/Tools/Lib/IcalLib.php" description="A wrapper for the Ical/Ics calendar lib" xml="classes/IcalLib.xml"/>
+    <class name="CurlLib" src="app/Plugin/Tools/Lib/CurlLib.php" description="Curl wrapper with goodies - can switch the UA to test certain browser sensitive features - can simulate/establish tor connection" xml="classes/CurlLib.xml"/>
+    <class name="SpellLib" src="app/Plugin/Tools/Lib/SpellLib.php" description="Wrapper for the PHP Extension Enchant which provides basic spellchecking" xml="classes/SpellLib.xml"/>
+    <class name="HazardLib" src="app/Plugin/Tools/Lib/HazardLib.php" description="get dangerous strings for various security checks" xml="classes/HazardLib.xml"/>
+    <class name="HttpSocketLib" src="app/Plugin/Tools/Lib/HttpSocketLib.php" description="Wrapper for curl, php or file_get_contents" xml="classes/HttpSocketLib.xml"/>
+    <class name="EmailLib" src="app/Plugin/Tools/Lib/EmailLib.php" description="Convenience class for internal mailer." xml="classes/EmailLib.xml"/>
+    <class name="UserAgentLib" src="app/Plugin/Tools/Lib/UserAgentLib.php" description="A wrapper to access not only cakes request data about known mobile agents." xml="classes/UserAgentLib.xml"/>
+    <class name="ImapLib" src="app/Plugin/Tools/Lib/ImapLib.php" description="basic idea from http://www.phpclasses.org/package/6256-PHP-Retrieve-messages-from-an-IMAP-server.html added enhancements" xml="classes/ImapLib.xml"/>
+    <class name="ImapMessageInfoLib" src="app/Plugin/Tools/Lib/ImapLib.php" description="IMAP Postf�cher mit CakePHP abfragen" xml="classes/ImapMessageInfoLib.xml"/>
+    <class name="ImapMessageLib" src="app/Plugin/Tools/Lib/ImapLib.php" xml="classes/ImapMessageLib.xml"/>
+    <class name="ImapMessagesListLib" src="app/Plugin/Tools/Lib/ImapLib.php" xml="classes/ImapMessagesListLib.xml"/>
+    <class name="ImapFolderLib" src="app/Plugin/Tools/Lib/ImapLib.php" xml="classes/ImapFolderLib.xml"/>
+    <class name="ImapException" src="app/Plugin/Tools/Lib/ImapLib.php" xml="classes/ImapException.xml"/>
+    <class name="Auth" src="app/Plugin/Tools/Lib/Auth.php" description="Convinience wrapper to access Auth data and check on rights/roles." xml="classes/Auth.xml"/>
+    <class name="NumberLib" src="app/Plugin/Tools/Lib/Utility/NumberLib.php" description="2011-03-07 ms" xml="classes/NumberLib.xml"/>
+    <class name="TextLib" src="app/Plugin/Tools/Lib/Utility/TextLib.php" description="TODO: extend the core String class some day?" xml="classes/TextLib.xml"/>
+    <class name="TimeLib" src="app/Plugin/Tools/Lib/Utility/TimeLib.php" description="2012-04-06 ms" xml="classes/TimeLib.xml"/>
+    <class name="ChmodLib" src="app/Plugin/Tools/Lib/Utility/ChmodLib.php" description="PHP5 u=user, g=group, o=other 2010-06-21 ms" xml="classes/ChmodLib.xml"/>
+    <class name="Utility" src="app/Plugin/Tools/Lib/Utility/Utility.php" description="Main class for all app-wide utility methods" xml="classes/Utility.xml"/>
+    <class name="GooglLib" src="app/Plugin/Tools/Lib/GooglLib.php" description="Googl Url Shortener" xml="classes/GooglLib.xml"/>
+    <class name="RandomLib" src="app/Plugin/Tools/Lib/RandomLib.php" description="Random Lib" xml="classes/RandomLib.xml"/>
+    <class name="UrlCacheManager" src="app/Plugin/Tools/Lib/Routing/UrlCacheManager.php" description="This class will statically hold in memory url's indexed by a custom hash" xml="classes/UrlCacheManager.xml"/>
+    <class name="CaptchaLib" src="app/Plugin/Tools/Lib/CaptchaLib.php" description="used by captcha helper and behavior" xml="classes/CaptchaLib.xml"/>
+    <class name="PheanstalkSource" src="app/Plugin/Queue/Model/Datasource/PheanstalkSource.php" description="Beanstalkd Source Class" xml="classes/PheanstalkSource.xml"/>
+    <class name="BeanstalkdSource" src="app/Plugin/Queue/Model/Datasource/BeanstalkdSource.php" description="Beanstalkd Source Class" xml="classes/BeanstalkdSource.xml"/>
+    <class name="Job" src="app/Plugin/Queue/Model/Job.php" description="Job Model Class" xml="classes/Job.xml"/>
+    <class name="Worker" src="app/Plugin/Queue/Config/newsletter_worker.php" xml="classes/Worker.xml"/>
+    <interface name="Pheanstalk_Socket" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Socket.php" description="A mockable wrapper around PHP &quot;socket&quot; or &quot;file pointer&quot; access." xml="interfaces/Pheanstalk_Socket.xml"/>
+    <class name="Pheanstalk_Socket_StreamFunctions" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Socket/StreamFunctions.php" description="Wrapper around PHP stream functions." xml="classes/Pheanstalk_Socket_StreamFunctions.xml"/>
+    <class name="Pheanstalk_Socket_NativeSocket" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Socket/NativeSocket.php" description="A Pheanstalk_Socket implementation around a fsockopen() stream." xml="classes/Pheanstalk_Socket_NativeSocket.xml"/>
+    <class name="Pheanstalk_Socket_WriteHistory" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Socket/WriteHistory.php" description="A limited history of recent socket write length/success." xml="classes/Pheanstalk_Socket_WriteHistory.xml"/>
+    <class name="Pheanstalk_YamlResponseParser" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/YamlResponseParser.php" description="A response parser for commands that return a subset of YAML." xml="classes/Pheanstalk_YamlResponseParser.xml"/>
+    <class name="Pheanstalk_Exception_SocketException" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Exception/SocketException.php" description="An exception relating to the connection socket." xml="classes/Pheanstalk_Exception_SocketException.xml"/>
+    <class name="Pheanstalk_Exception_ServerUnknownCommandException" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Exception/ServerUnknownCommandException.php" description="An exception originating as a beanstalkd server error" xml="classes/Pheanstalk_Exception_ServerUnknownCommandException.xml"/>
+    <class name="Pheanstalk_Exception_ServerInternalErrorException" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Exception/ServerInternalErrorException.php" description="An exception originating as a beanstalkd server error" xml="classes/Pheanstalk_Exception_ServerInternalErrorException.xml"/>
+    <class name="Pheanstalk_Exception_ServerDrainingException" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Exception/ServerDrainingException.php" description="An exception originating as a beanstalkd server error" xml="classes/Pheanstalk_Exception_ServerDrainingException.xml"/>
+    <class name="Pheanstalk_Exception_ClientException" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Exception/ClientException.php" description="An exception originating from the beanstalkd client" xml="classes/Pheanstalk_Exception_ClientException.xml"/>
+    <class name="Pheanstalk_Exception_CommandException" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Exception/CommandException.php" description="An exception relating to a Pheanstalk_Command" xml="classes/Pheanstalk_Exception_CommandException.xml"/>
+    <class name="Pheanstalk_Exception_ServerException" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Exception/ServerException.php" description="An exception originating as a beanstalkd server error" xml="classes/Pheanstalk_Exception_ServerException.xml"/>
+    <class name="Pheanstalk_Exception_ServerBadFormatException" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Exception/ServerBadFormatException.php" description="An exception originating as a beanstalkd server error" xml="classes/Pheanstalk_Exception_ServerBadFormatException.xml"/>
+    <class name="Pheanstalk_Exception_ConnectionException" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Exception/ConnectionException.php" description="An exception relating to the client connection to the beanstalkd server" xml="classes/Pheanstalk_Exception_ConnectionException.xml"/>
+    <class name="Pheanstalk_Exception_ServerOutOfMemoryException" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Exception/ServerOutOfMemoryException.php" description="An exception originating as a beanstalkd server error" xml="classes/Pheanstalk_Exception_ServerOutOfMemoryException.xml"/>
+    <class name="Pheanstalk_Exception" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Exception.php" description="An exception originating from the Pheanstalk package" xml="classes/Pheanstalk_Exception.xml"/>
+    <class name="Pheanstalk_ClassLoader" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/ClassLoader.php" description="SPL class loader for Pheanstalk classes." xml="classes/Pheanstalk_ClassLoader.xml"/>
+    <interface name="Pheanstalk_Command" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Command.php" description="A command to be sent to the beanstalkd server, and response processing logic" xml="interfaces/Pheanstalk_Command.xml"/>
+    <interface name="Pheanstalk_Response" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Response.php" description="A response from the beanstalkd server" xml="interfaces/Pheanstalk_Response.xml"/>
+    <class name="Pheanstalk_Job" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Job.php" description="A job in a beanstalkd server" xml="classes/Pheanstalk_Job.xml"/>
+    <interface name="Pheanstalk_ResponseParser" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/ResponseParser.php" description="A parser for response data sent from the beanstalkd server" xml="interfaces/Pheanstalk_ResponseParser.xml"/>
+    <class name="Pheanstalk_Command_TouchCommand" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Command/TouchCommand.php" description="The 'touch' command." xml="classes/Pheanstalk_Command_TouchCommand.xml"/>
+    <class name="Pheanstalk_Command_PutCommand" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Command/PutCommand.php" description="The 'put' command." xml="classes/Pheanstalk_Command_PutCommand.xml"/>
+    <class name="Pheanstalk_Command_ReleaseCommand" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Command/ReleaseCommand.php" description="The 'release' command." xml="classes/Pheanstalk_Command_ReleaseCommand.xml"/>
+    <class name="Pheanstalk_Command_UseCommand" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Command/UseCommand.php" description="The 'use' command." xml="classes/Pheanstalk_Command_UseCommand.xml"/>
+    <class name="Pheanstalk_Command_ListTubesWatchedCommand" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Command/ListTubesWatchedCommand.php" description="The 'list-tubes-watched' command." xml="classes/Pheanstalk_Command_ListTubesWatchedCommand.xml"/>
+    <class name="Pheanstalk_Command_ListTubesCommand" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Command/ListTubesCommand.php" description="The 'list-tubes' command." xml="classes/Pheanstalk_Command_ListTubesCommand.xml"/>
+    <class name="Pheanstalk_Command_StatsTubeCommand" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Command/StatsTubeCommand.php" description="The 'stats-tube' command." xml="classes/Pheanstalk_Command_StatsTubeCommand.xml"/>
+    <class name="Pheanstalk_Command_IgnoreCommand" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Command/IgnoreCommand.php" description="The 'ignore' command." xml="classes/Pheanstalk_Command_IgnoreCommand.xml"/>
+    <class name="Pheanstalk_Command_StatsCommand" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Command/StatsCommand.php" description="The 'stats' command." xml="classes/Pheanstalk_Command_StatsCommand.xml"/>
+    <class name="Pheanstalk_Command_PauseTubeCommand" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Command/PauseTubeCommand.php" description="The 'pause-tube' command." xml="classes/Pheanstalk_Command_PauseTubeCommand.xml"/>
+    <class name="Pheanstalk_Command_DeleteCommand" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Command/DeleteCommand.php" description="The 'delete' command." xml="classes/Pheanstalk_Command_DeleteCommand.xml"/>
+    <class name="Pheanstalk_Command_WatchCommand" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Command/WatchCommand.php" description="The 'watch' command." xml="classes/Pheanstalk_Command_WatchCommand.xml"/>
+    <class name="Pheanstalk_Command_StatsJobCommand" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Command/StatsJobCommand.php" description="The 'stats-job' command." xml="classes/Pheanstalk_Command_StatsJobCommand.xml"/>
+    <class name="Pheanstalk_Command_ReserveCommand" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Command/ReserveCommand.php" description="The 'reserve' command." xml="classes/Pheanstalk_Command_ReserveCommand.xml"/>
+    <class name="Pheanstalk_Command_KickCommand" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Command/KickCommand.php" description="The 'kick' command." xml="classes/Pheanstalk_Command_KickCommand.xml"/>
+    <class name="Pheanstalk_Command_BuryCommand" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Command/BuryCommand.php" description="The 'bury' command." xml="classes/Pheanstalk_Command_BuryCommand.xml"/>
+    <class name="Pheanstalk_Command_ListTubeUsedCommand" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Command/ListTubeUsedCommand.php" description="The 'list-tube-used' command." xml="classes/Pheanstalk_Command_ListTubeUsedCommand.xml"/>
+    <class name="Pheanstalk_Command_PeekCommand" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Command/PeekCommand.php" description="The 'peek', 'peek-ready', 'peek-delayed' and 'peek-buried' commands." xml="classes/Pheanstalk_Command_PeekCommand.xml"/>
+    <class name="Pheanstalk_Command_AbstractCommand" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Command/AbstractCommand.php" description="Common functionality for Pheanstalk_Command implementations." xml="classes/Pheanstalk_Command_AbstractCommand.xml"/>
+    <class name="Pheanstalk_Connection" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Connection.php" description="A connection to a beanstalkd server" xml="classes/Pheanstalk_Connection.xml"/>
+    <class name="Pheanstalk_Pheanstalk" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Pheanstalk.php" description="Pheanstalk is a pure PHP 5.2+ client for the beanstalkd workqueue." xml="classes/Pheanstalk_Pheanstalk.xml"/>
+    <class name="Pheanstalk_Response_ArrayResponse" src="app/Plugin/Queue/Lib/pheanstalk/classes/Pheanstalk/Response/ArrayResponse.php" description="A response with an ArrayObject interface to key=&gt;value data" xml="classes/Pheanstalk_Response_ArrayResponse.xml"/>
+    <class name="Pheanstalk_ServerErrorExceptionTest" src="app/Plugin/Queue/Lib/pheanstalk/tests/Pheanstalk/ServerErrorExceptionTest.php" description="Tests exceptions thrown to represent non-command-specific error responses." xml="classes/Pheanstalk_ServerErrorExceptionTest.xml"/>
+    <class name="Pheanstalk_ConnectionTest" src="app/Plugin/Queue/Lib/pheanstalk/tests/Pheanstalk/ConnectionTest.php" description="Tests for the Pheanstalk_Connection." xml="classes/Pheanstalk_ConnectionTest.xml"/>
+    <class name="Pheanstalk_BugfixTest" src="app/Plugin/Queue/Lib/pheanstalk/tests/Pheanstalk/BugfixTest.php" description="Tests for reported/discovered issues &amp; bugs which don't fall into an existing category of tests." xml="classes/Pheanstalk_BugfixTest.xml"/>
+    <class name="Pheanstalk_ResponseParserExceptionTest" src="app/Plugin/Queue/Lib/pheanstalk/tests/Pheanstalk/ResponseParserExceptionTest.php" description="Tests exceptions thrown by Pheanstalk_ResponseParser implementations." xml="classes/Pheanstalk_ResponseParserExceptionTest.xml"/>
+    <class name="Pheanstalk_SocketWriteHistoryTest" src="app/Plugin/Queue/Lib/pheanstalk/tests/Pheanstalk/SocketWriteHistoryTest.php" xml="classes/Pheanstalk_SocketWriteHistoryTest.xml"/>
+    <class name="Pheanstalk_FacadeConnectionTest" src="app/Plugin/Queue/Lib/pheanstalk/tests/Pheanstalk/FacadeConnectionTest.php" description="Tests the Pheanstalk facade (the base class)." xml="classes/Pheanstalk_FacadeConnectionTest.xml"/>
+    <class name="Pheanstalk_BugfixConnectionTest" src="app/Plugin/Queue/Lib/pheanstalk/tests/Pheanstalk/BugfixConnectionTest.php" description="Tests for reported/discovered issues &amp; bugs which don't fall into an existing category of tests." xml="classes/Pheanstalk_BugfixConnectionTest.xml"/>
+    <class name="Pheanstalk_CommandTest" src="app/Plugin/Queue/Lib/pheanstalk/tests/Pheanstalk/CommandTest.php" description="Tests for Pheanstalk_Command implementations." xml="classes/Pheanstalk_CommandTest.xml"/>
+    <class name="Pheanstalk_NativeSocketTest" src="app/Plugin/Queue/Lib/pheanstalk/tests/Pheanstalk/NativeSocketTest.php" description="Tests the Pheanstalk NativeSocket class" xml="classes/Pheanstalk_NativeSocketTest.xml"/>
+    <class name="Pheanstalk_ExceptionsTest" src="app/Plugin/Queue/Lib/pheanstalk/tests/Pheanstalk/ExceptionsTest.php" description="Tests the Pheanstalk exceptions, mainly for parse errors etc." xml="classes/Pheanstalk_ExceptionsTest.xml"/>
+    <class name="AppShell" src="app/Console/Command/AppShell.php" description="Application Shell" xml="classes/AppShell.xml"/>
+    <class name="TextTest" src="app/Test/Case/Model/TextTest.php" description="Text Test Case" xml="classes/TextTest.xml"/>
+    <class name="UserTest" src="app/Test/Case/Model/UserTest.php" description="User Test Case" xml="classes/UserTest.xml"/>
+    <class name="BiddingTest" src="app/Test/Case/Model/BiddingTest.php" description="Bidding Test Case" xml="classes/BiddingTest.xml"/>
+    <class name="PostTest" src="app/Test/Case/Model/PostTest.php" description="Post Test Case" xml="classes/PostTest.xml"/>
+    <class name="WeblinkTest" src="app/Test/Case/Model/WeblinkTest.php" description="Weblink Test Case" xml="classes/WeblinkTest.xml"/>
+    <class name="NewsletterTest" src="app/Test/Case/Model/NewsletterTest.php" description="Newsletter Test Case" xml="classes/NewsletterTest.xml"/>
+    <class name="RubricTest" src="app/Test/Case/Model/CategoryTest.php" description="Rubric Test Case" xml="classes/RubricTest.xml"/>
+    <class name="NewslettersUserTest" src="app/Test/Case/Model/NewslettersUserTest.php" description="NewslettersUser Test Case" xml="classes/NewslettersUserTest.xml"/>
+    <class name="ReactionTest" src="app/Test/Case/Model/ReactionTest.php" description="Reaction Test Case" xml="classes/ReactionTest.xml"/>
+    <class name="PropertyTest" src="app/Test/Case/Model/PropertyTest.php" description="Property Test Case" xml="classes/PropertyTest.xml"/>
+    <class name="MessageTest" src="app/Test/Case/Model/MessageTest.php" description="Message Test Case" xml="classes/MessageTest.xml"/>
+    <class name="ImageTest" src="app/Test/Case/Model/ImageTest.php" description="Image Test Case" xml="classes/ImageTest.xml"/>
+    <class name="AdvertisementTest" src="app/Test/Case/Model/AdvertisementTest.php" description="Advertisement Test Case" xml="classes/AdvertisementTest.xml"/>
+    <class name="NewslettersControllerTest" src="app/Test/Case/Controller/NewslettersControllerTest.php" description="NewslettersController Test Case" xml="classes/NewslettersControllerTest.xml"/>
+    <class name="PostsControllerTest" src="app/Test/Case/Controller/PostsControllerTest.php" description="PostsController Test Case" xml="classes/PostsControllerTest.xml"/>
+    <class name="BiddingsControllerTest" src="app/Test/Case/Controller/BiddingsControllerTest.php" description="BiddingsController Test Case" xml="classes/BiddingsControllerTest.xml"/>
+    <class name="MessagesControllerTest" src="app/Test/Case/Controller/MessagesControllerTest.php" description="MessagesController Test Case" xml="classes/MessagesControllerTest.xml"/>
+    <class name="TextsControllerTest" src="app/Test/Case/Controller/TextsControllerTest.php" description="TextsController Test Case" xml="classes/TextsControllerTest.xml"/>
+    <class name="NewslettersUsersControllerTest" src="app/Test/Case/Controller/NewslettersUsersControllerTest.php" description="NewslettersUsersController Test Case" xml="classes/NewslettersUsersControllerTest.xml"/>
+    <class name="AdvertisementsControllerTest" src="app/Test/Case/Controller/AdvertisementsControllerTest.php" description="AdvertisementsController Test Case" xml="classes/AdvertisementsControllerTest.xml"/>
+    <class name="RubricsControllerTest" src="app/Test/Case/Controller/CategoriesControllerTest.php" description="RubricsController Test Case" xml="classes/RubricsControllerTest.xml"/>
+    <class name="WeblinksControllerTest" src="app/Test/Case/Controller/WeblinksControllerTest.php" description="WeblinksController Test Case" xml="classes/WeblinksControllerTest.xml"/>
+    <class name="PropertiesControllerTest" src="app/Test/Case/Controller/PropertiesControllerTest.php" description="PropertiesController Test Case" xml="classes/PropertiesControllerTest.xml"/>
+    <class name="UsersControllerTest" src="app/Test/Case/Controller/UsersControllerTest.php" description="UsersController Test Case" xml="classes/UsersControllerTest.xml"/>
+    <class name="ImagesControllerTest" src="app/Test/Case/Controller/ImagesControllerTest.php" description="ImagesController Test Case" xml="classes/ImagesControllerTest.xml"/>
+    <class name="ReactionsControllerTest" src="app/Test/Case/Controller/ReactionsControllerTest.php" description="ReactionsController Test Case" xml="classes/ReactionsControllerTest.xml"/>
+    <class name="ReactionFixture" src="app/Test/Fixture/ReactionFixture.php" description="ReactionFixture" xml="classes/ReactionFixture.xml"/>
+    <class name="WeblinkFixture" src="app/Test/Fixture/WeblinkFixture.php" description="WeblinkFixture" xml="classes/WeblinkFixture.xml"/>
+    <class name="PropertyFixture" src="app/Test/Fixture/PropertyFixture.php" description="PropertyFixture" xml="classes/PropertyFixture.xml"/>
+    <class name="RubricFixture" src="app/Test/Fixture/RubricFixture.php" description="RubricFixture" xml="classes/RubricFixture.xml"/>
+    <class name="AdvertisementFixture" src="app/Test/Fixture/AdvertisementFixture.php" description="AdvertisementFixture" xml="classes/AdvertisementFixture.xml"/>
+    <class name="PropvalueFixture" src="app/Test/Fixture/PropvalueFixture.php" description="PropvalueFixture" xml="classes/PropvalueFixture.xml"/>
+    <class name="TextFixture" src="app/Test/Fixture/TextFixture.php" description="TextFixture" xml="classes/TextFixture.xml"/>
+    <class name="NewslettersUserFixture" src="app/Test/Fixture/NewslettersUserFixture.php" description="NewslettersUserFixture" xml="classes/NewslettersUserFixture.xml"/>
+    <class name="NewsletterFixture" src="app/Test/Fixture/NewsletterFixture.php" description="NewsletterFixture" xml="classes/NewsletterFixture.xml"/>
+    <class name="BiddingFixture" src="app/Test/Fixture/BiddingFixture.php" description="BiddingFixture" xml="classes/BiddingFixture.xml"/>
+    <class name="Exception" xml="classes/Exception.xml"/>
+    <class name="ArrayObject" xml="classes/ArrayObject.xml"/>
+    <interface name="IteratorAggregate" xml="interfaces/IteratorAggregate.xml"/>
+  </namespace>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><tags xmlns="http://xml.phpdox.net/gitlog#"><tag name="v1.1"/></tags><branches xmlns="http://xml.phpdox.net/gitlog#"><branch name="dev"/><branch name="feature/ci"/><branch name="master"/></branches><current xmlns="http://xml.phpdox.net/gitlog#" describe="v1.1-316-gdc44c76" branch="feature/ci" commit="dc44c76ec3bdce6b849c3bb1138961a5e75aee26"/></enrichment></enrichments></index>

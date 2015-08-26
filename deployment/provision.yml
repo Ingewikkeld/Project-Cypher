@@ -1,0 +1,71 @@
+---
+- hosts: all
+  vars_files:
+    - vars.yml
+  gather_facts: true
+  sudo: true
+
+  tasks:
+
+  # update apt cache when necesary
+  - name: provision | Update apt cache
+    apt: update_cache=yes cache_valid_time=3600
+
+  # Miscellaneous
+  - name: provision | Ensure variaty of tools is installed
+    apt: pkg={{ item }} state=installed
+    with_items:
+      - bzip2
+      - git
+      - libevent-dev
+      - sendmail
+      - vim
+
+  # Apache2
+  - include: tasks/apache2.yml
+
+  # MySQL
+  - include: tasks/mysql.yml
+
+  # PHP
+  - include: tasks/php.yml
+
+  # enhance bash with bash_it
+#  - include: tasks/bash_it.yml
+
+  ######################################
+  # I N I T I A L I Z A T I O N
+  ######################################
+
+  # Database
+  # Check whether the database already exists
+  - name: provision | Check whether the database exists
+    command: mysql -u {{ mysql_root_user }} -p{{ mysql_root_pass }} -e "SHOW DATABASES LIKE '{{ mysql_dbname }}';"
+    register: db_exists
+
+  # create the empty database when it did not exist
+  - name: provision | Ensure database exists
+    command: mysql -u {{ mysql_root_user }} -p{{ mysql_root_pass }} -e "CREATE DATABASE IF NOT EXISTS {{ mysql_dbname }}"
+    when: db_exists.stdout.find('{{ mysql_dbname }}') == -1
+
+  # Ensure the correct mysql user exists and has access to this database
+  - name: provision | Ensure database user exists
+    mysql_user: name={{ mysql_user }} host=localhost password={{ mysql_pass }} login_password={{ mysql_root_pass }} login_user={{ mysql_root_user }}
+  
+  # Apache VirtualHost
+  - name: provision | Ensure apache virtualhost
+    action: template src=files/conf/virtualhost.conf.j2 dest=/etc/apache2/sites-available/{{ website_fqdn }}.conf
+    notify: restart apache
+
+  - name: provision | Ensure virtual host activated
+    file: dest=/etc/apache2/sites-enabled/{{ website_fqdn }}.conf src=/etc/apache2/sites-available/{{ website_fqdn }}.conf state=link
+    notify: restart apache
+
+  ######################################
+  # D E P L O Y
+  ######################################
+  # deploy the code
+  #- include: deploy.yml
+
+  handlers:
+    - include: handlers.yml

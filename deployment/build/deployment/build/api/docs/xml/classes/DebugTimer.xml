@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="DebugTimer" namespace="" name="DebugTimer" abstract="false" final="false" start="23" end="201">
+  <file path="app/Plugin/DebugKit/Lib" file="DebugTimer.php" realpath="/home/vagrant/socsoc/app/Plugin/DebugKit/Lib/DebugTimer.php" size="4932" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="e15d2c8f694b07a81ea0d189379f4627b12b7d37"/>
+  <member name="__timers" type="array" visibility="private" line="29">
+    <docblock>
+      <description compact="Internal timers array"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="start" start="38" end="70" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Start an benchmarking timer."/>
+      <param description="The name of the timer to start." type="string" variable="$name"/>
+      <param description="A message for your timer" type="string" variable="$message"/>
+      <return description="true" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="message" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="stop" start="80" end="108" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Stop a benchmarking timer.">$name should be the same as the $name used in startTimer().</description>
+      <param description="The name of the timer to end." type="string" variable="$name"/>
+      <return description="true if timer was ended, false if timer was not started." type="boolean"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="getAll" start="117" end="149" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Get all timers that have been started and stopped.">Calculates elapsed time for each timer. If clear is true, will delete existing timers</description>
+      <param description="false" type="object" variable="$clear">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="clear" byreference="false" type="{unknown}" default="false"/>
+  </method>
+  <method name="clear" start="156" end="159" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Clear all existing timers"/>
+      <return description="true" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="elapsedTime" start="168" end="173" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Get the difference in time between the timer start and timer end."/>
+      <param description="the name of the timer you want elapsed time for." variable="$name" type="string"/>
+      <param description="the number of decimal places to return, defaults to 5." variable="$precision" type="int"/>
+      <return description="number of seconds elapsed for timer name, 0 on missing key" type="float"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="string" default="'default'"/>
+    <parameter name="precision" byreference="false" type="integer" default="5"/>
+  </method>
+  <method name="requestTime" start="180" end="184" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Get the total execution time until this point"/>
+      <return description="elapsed time in seconds since script start." type="float"/>
+    </docblock>
+  </method>
+  <method name="requestStartTime" start="191" end="200" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="get the time the current request started."/>
+      <return description="time of request start" type="float"/>
+    </docblock>
+  </method>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ab510a8ba8b3726396604720ff22cc62d62cda63"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><message>hele hoop opgelost, ik had het eerder moeten committen :$</message></commit></enrichment></enrichments></class>

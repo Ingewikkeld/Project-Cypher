@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="AppController" namespace="" name="AppController" abstract="false" final="false" start="34" end="486">
+  <file path="app/Controller" file="AppController.php" realpath="/home/vagrant/socsoc/app/Controller/AppController.php" size="13085" time="2014-04-09T08:38:48+00:00" unixtime="1397032728" sha1="66b5671ec290625c9ca2e8b29a9e1fefb82e5371"/>
+  <docblock>
+    <description compact="Application Controller">Add your application-wide methods in the class below, your controllers
+will inherit them.</description>
+    <package value="app.Controller"/>
+    <link value="http://book.cakephp.org/2.0/en/controllers.html#the-app-controller"/>
+  </docblock>
+  <extends full="Controller" namespace="" name="Controller"/>
+  <member name="components" type="array" visibility="public" line="36"/>
+  <member name="uses" type="array" visibility="public" line="56">
+    <docblock>
+      <description compact=""/>
+    </docblock>
+  </member>
+  <method name="getSearchFormInfo" start="58" end="85" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="get the information to build the searchform" line="59"/>
+    </inline>
+  </method>
+  <method name="beforeRender" start="91" end="124" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="This function is called before every view is displayed"/>
+    </docblock>
+    <inline>
+      <comment value="cookies need to be accepted" line="100"/>
+      <comment value="get the information needed to setup the search form on every page" line="107"/>
+      <comment value="let the views know whether the user is logged in or not" line="110"/>
+      <comment value="check the supported browser versions if we did not do so" line="113"/>
+      <comment value="get the number of online users" line="116"/>
+      <comment value="get all the rubrics so we can create hidden selectelements which can be used" line="121"/>
+      <comment value="for searching and adding" line="122"/>
+    </inline>
+  </method>
+  <method name="_handleBrowserVersions" start="129" end="163" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact=""/>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <inline>
+      <comment value="get the browser type and version, if we didn't already do so" line="132"/>
+      <comment value="set the browser variable for all views" line="138"/>
+      <comment value="show a warning for out-of-date browsers" line="142"/>
+      <comment value="set variables for the view" line="153"/>
+      <comment value="set the message to 'shown' in the session, so it won't be displayed a second time (just once per session)" line="157"/>
+    </inline>
+  </method>
+  <method name="isBrowserOutOfDate" start="169" end="177" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param type="array" variable="$browser"/>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="browser" byreference="false" type="array"/>
+    <inline>
+      <comment value="we didn't recognize the browser" line="174"/>
+    </inline>
+  </method>
+  <method name="beforeFilter" start="183" end="193" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="This function is called before every action is run"/>
+    </docblock>
+    <inline>
+      <comment value="update the last online value for the currently logged in user (if any)" line="186"/>
+      <comment value="set the max upload limit" line="189"/>
+    </inline>
+  </method>
+  <method name="_updateLastOnlineValue" start="201" end="222" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Update the timestamp last_online for an user and place the current location in the db as well"/>
+      <return description="True" type="boolean"/>
+    </docblock>
+    <inline>
+      <comment value="get the last_online value of the currently logged in user" line="202"/>
+      <comment value="exit when no user is logged on" line="205"/>
+      <comment value="convert the datetime into unix timestamp for easy comparing" line="210"/>
+      <comment value="update the 'last_online' status every minute" line="213"/>
+      <comment value="update the auth component information" line="217"/>
+    </inline>
+  </method>
+  <method name="isAuthorized" start="235" end="259" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set global authorization for the application">Per-action authorization is set in the overwritten function 'isAuthorized($user)'
+in the controller of a requested action.
+This global function sets authorization on all actions of all controllers for users
+with the role 'beheerder'</description>
+      <param description="Array holding $user['id']" type="array" variable="$user"/>
+      <return description="True when the user has the role 'beheerder', otherwise false" type="boolean"/>
+    </docblock>
+    <parameter name="user" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="admin users are allowed to do everything" line="236"/>
+      <comment value="admin functions are for admins only" line="241"/>
+      <comment value="setup the allowed actions for loggedin users" line="247"/>
+      <comment value="actions allowed for loggedin users only" line="252"/>
+      <comment value="default deny access" line="257"/>
+    </inline>
+  </method>
+  <method name="updateAuthUserInfo" start="266" end="288" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update the information hold in the Auth component. Useful when the users' information changes (when editing user information, for example)."/>
+    </docblock>
+    <inline>
+      <comment value="Read in the current user information out of the database" line="267"/>
+      <comment value="remove the password field" line="272"/>
+      <comment value="merge the auth component data with our freshly fetched info" line="277"/>
+      <comment value="write the user information to the Auth component" line="283"/>
+    </inline>
+  </method>
+  <method name="ago" start="296" end="365" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param description="The time we want to break down into human readable time" type="object" variable="$time">
+        <type full="unknown" namespace="" name="unknown"/>
+      </param>
+      <param type="object" variable="$rcs">
+        <type full="int|number" namespace="" name="int|number"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="time" byreference="false" type="{unknown}"/>
+    <parameter name="rcs" byreference="false" type="integer" default="0"/>
+    <inline>
+      <comment value="periods of time we have (singular)" line="300"/>
+      <comment value="periods of time we have (plural)" line="312"/>
+      <comment value="the length of each period of time in seconds" line="324"/>
+      <comment value="loop through the supplied time" line="337"/>
+      <comment value="ugly hack to prevent $countLength from getting -1" line="344"/>
+      <comment value="write down the singular form of past time" line="349"/>
+      <comment value="when working with plurals, change the name of the period to its plural form" line="352"/>
+    </inline>
+  </method>
+  <method name="daysBetween" start="372" end="376" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <param variable="$fromTime"/>
+      <return type="float"/>
+    </docblock>
+    <parameter name="fromTime" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getBrowser" start="381" end="485" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Browser check"/>
+    </docblock>
+    <inline>
+      <comment value="First get the platform?" line="390"/>
+      <comment value="Next get the name of the useragent yes seperately and for good reason" line="401"/>
+      <comment value="finally get the correct version number" line="446"/>
+      <comment value="see how many we have" line="454"/>
+      <comment value="we will have two since we are not using 'other' argument yet" line="457"/>
+      <comment value="see if version is before or after the name" line="458"/>
+      <comment value="check if we have a number" line="470"/>
+    </inline>
+  </method>
+  <extender full="NewslettersController" namespace="" name="NewslettersController"/>
+  <extender full="AdvertisementsController" namespace="" name="AdvertisementsController"/>
+  <extender full="ReactionsController" namespace="" name="ReactionsController"/>
+  <extender full="BiddingsController" namespace="" name="BiddingsController"/>
+  <extender full="MessagesController" namespace="" name="MessagesController"/>
+  <extender full="WeblinksController" namespace="" name="WeblinksController"/>
+  <extender full="ImagesController" namespace="" name="ImagesController"/>
+  <extender full="PagesController" namespace="" name="PagesController"/>
+  <extender full="PropvaluesController" namespace="" name="PropvaluesController"/>
+  <extender full="UsersController" namespace="" name="UsersController"/>
+  <extender full="RubricsController" namespace="" name="RubricsController"/>
+  <extender full="PostsController" namespace="" name="PostsController"/>
+  <extender full="PropertiesController" namespace="" name="PropertiesController"/>
+  <extender full="TextsController" namespace="" name="TextsController"/>
+  <extender full="DebugKitAppController" namespace="" name="DebugKitAppController"/>
+  <extender full="ToolbarAccessController" namespace="" name="ToolbarAccessController"/>
+  <extender full="UpdatesController" namespace="" name="UpdatesController"/>
+  <extender full="QueueAppController" namespace="" name="QueueAppController"/>
+  <extender full="UploadsController" namespace="" name="UploadsController"/>
+  <extender full="AjaxMultiUploadAppController" namespace="" name="AjaxMultiUploadAppController"/>
+  <extender full="TinyUrlsController" namespace="" name="TinyUrlsController"/>
+  <extender full="ToolsAppController" namespace="" name="ToolsAppController"/>
+  <extender full="QloginController" namespace="" name="QloginController"/>
+  <extender full="TestController" namespace="" name="TestController"/>
+  <extender full="CommonComponentTestController" namespace="" name="CommonComponentTestController"/>
+<enrichments><enrichment type="build"><date unix="1397048043" date="09-04-2014" time="12:54:03" iso="2014-04-09T12:54:03+00:00" rfc="Wed, 09 Apr 2014 12:54:03 +0000"/><phpdox xmlns="http://xml.phpdox.net/src#" version="0.6.5" info="phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" generated="Generated using phpDox 0.6.5 - Copyright (C) 2010 - 2014 by Arne Blankerts" phar="yes"><enricher type="build"/><enricher type="git"/><enricher type="checkstyle"/><enricher type="pmd"/><enricher type="phploc"/></phpdox><php xmlns="http://xml.phpdox.net/src#" version="5.3.10-1ubuntu3.11" os="Linux"><extension name="Core"/><extension name="date"/><extension name="ereg"/><extension name="libxml"/><extension name="openssl"/><extension name="pcre"/><extension name="zlib"/><extension name="bcmath"/><extension name="bz2"/><extension name="calendar"/><extension name="ctype"/><extension name="dba"/><extension name="dom"/><extension name="hash"/><extension name="fileinfo"/><extension name="filter"/><extension name="ftp"/><extension name="gettext"/><extension name="SPL"/><extension name="iconv"/><extension name="json"/><extension name="mbstring"/><extension name="pcntl"/><extension name="session"/><extension name="posix"/><extension name="readline"/><extension name="Reflection"/><extension name="standard"/><extension name="shmop"/><extension name="SimpleXML"/><extension name="soap"/><extension name="sockets"/><extension name="Phar"/><extension name="exif"/><extension name="sysvmsg"/><extension name="sysvsem"/><extension name="sysvshm"/><extension name="tokenizer"/><extension name="wddx"/><extension name="xml"/><extension name="xmlreader"/><extension name="xmlwriter"/><extension name="zip"/><extension name="PDO"/><extension name="xsl"/><extension name="mhash"/></php></enrichment><enrichment type="git"><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="f16525be325aa16218dfea4fe983ccf2a60b79b9"><author email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><commiter email="pauledenburg@gmail.com" name="Paul Edenburg" time="2013-10-06T19:40:29+00:00" unixtime="1381088429"/><message>wijzigingen na het aanmaken van een nieuw phpstrom project</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="eb6967ec2b4b41bdba3f06720eea071690cadcd8"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-09-08T15:37:08+00:00" unixtime="1378654628"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-09-08T15:37:08+00:00" unixtime="1378654628"/><message>Social media integratie toegevoegd:
+- elke oproep kan nu getweet worden
+- elke oproep kan nu geliked en gedeeld worden op facebook
+
+fixes #6
+fixes #7</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="c655de5c6ec34517511e6f908a2f638ad91a9d78"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-08-08T06:57:01+00:00" unixtime="1375945021"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-08-08T06:57:01+00:00" unixtime="1375945021"/><message>permissions goed gezet mbv fabric</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="e07ed27f5fc69e25d5e4976f2d4581adee6c7b04"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-07-30T04:13:13+00:00" unixtime="1375157593"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-07-30T04:13:13+00:00" unixtime="1375157593"/><message>execute bits verwijderd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="287b8750eddef6446e689ccd35cee74b32cde2ed"><author email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><commiter email="paul@lamp2.(none)" name="Paul Edenburg" time="2013-07-29T20:18:45+00:00" unixtime="1375129125"/><message>rechten zijn gewijzigd</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="58d361958cff9f7a6a85bed1ef717e1029d99d24"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:53:28+00:00" unixtime="1372262008"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-26T15:55:26+00:00" unixtime="1372262126"/><message>phpstorm connect?</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="cf9563ad54e0e11bcbef81076ad68746930570ce"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-23T15:50:00+00:00" unixtime="1372002600"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-23T15:50:00+00:00" unixtime="1372002600"/><message>php mess detector: bevindingen verwerkt</message></commit><commit xmlns="http://xml.phpdox.net/gitlog#" sha1="ab510a8ba8b3726396604720ff22cc62d62cda63"><author email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><commiter email="paul@i2s.nl" name="Paul Edenburg" time="2013-06-14T14:30:14+00:00" unixtime="1371220214"/><message>hele hoop opgelost, ik had het eerder moeten committen :$</message></commit></enrichment></enrichments></class>
