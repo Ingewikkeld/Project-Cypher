@@ -12,8 +12,13 @@
 */
 
 Route::get('/', function () {
-    //return view('welcome');
     return view('template/front/pages/homepage');
 });
 
-Route::get('/test', 'PersonController@test');
+Route::get('/add-person', 'AddPersonController@getAction');
+Route::post('/api/add-person', 'AddPersonController@postAction');
+
+Route::get('/api/peoples', 'PeoplesController@apiGetAction');
+
+Route::get('/dashboard', 'DashboardController@getAction');
+Route::get('/api/dashboard', 'DashboardController@apiGetAction');
