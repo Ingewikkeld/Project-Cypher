@@ -2,7 +2,9 @@
 
 namespace App\People;
 
-final class Data
+use JsonSerializable;
+
+final class Data implements JsonSerializable
 {
     /**
      * @var DataType
@@ -53,5 +55,17 @@ final class Data
     public function getValue()
     {
         return $this->value;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function jsonSerialize()
+    {
+        return [
+            'type'  => $this->type->toString(),
+            'label' => $this->label,
+            'value' => (string) $this->value
+        ];
     }
 }

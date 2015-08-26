@@ -31,6 +31,7 @@ class PersonController extends Controller
 //        $person   = $this->personRepository->find($personId);
 //
 //        var_dump($person);
+//        var_dump(json_encode($person));
 
 //        ADD
 //

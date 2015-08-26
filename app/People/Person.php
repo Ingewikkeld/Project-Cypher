@@ -3,8 +3,9 @@
 namespace App\People;
 
 use InvalidArgumentException;
+use JsonSerializable;
 
-final class Person
+final class Person implements JsonSerializable
 {
     /**
      * @var PersonId
@@ -88,5 +89,17 @@ final class Person
                 unset($this->data[$index]);
             }
         }
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function jsonSerialize()
+    {
+        return [
+            'id'   => $this->id->toString(),
+            'name' => $this->name,
+            'data' => $this->data
+        ];
     }
 }
