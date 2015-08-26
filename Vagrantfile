@@ -4,7 +4,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
 
   # synced (shared) folder with the host
-  config.vm.synced_folder "src", "/var/www/vhosts/wecamp.local"
+  config.vm.synced_folder ".", "/var/www/vhosts/wecamp.local"
 
   # in order to use NFS, we need host-only networking with a static ip address
   config.vm.network "private_network", ip: "192.168.33.17"

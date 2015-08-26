@@ -7,6 +7,7 @@
       - php5-mysql
       - php5-xdebug
       - php5-intl
+      - php-token-stream
       - phpmyadmin
 
   - name: php | Ensure xdebug configuration is in place

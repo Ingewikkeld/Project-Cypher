@@ -11,6 +11,10 @@
   - name: provision | Update apt cache
     apt: update_cache=yes cache_valid_time=3600
 
+  # upgrade
+#  - name: provision | apply available updates for installed packages
+#    apt: upgrade=yes
+
   # Miscellaneous
   - name: provision | Ensure variaty of tools is installed
     apt: pkg={{ item }} state=installed
