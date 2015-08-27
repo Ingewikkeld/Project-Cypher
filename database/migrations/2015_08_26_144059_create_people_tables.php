@@ -32,7 +32,7 @@ CREATE TABLE `people_data` (
     `label` VARCHAR(255) NOT NULL,
     `value` TEXT NOT NULL,
     PRIMARY KEY (`person_id`,`type`,`label`),
-    CONSTRAINT `person_id` FOREIGN KEY (`person_id`) REFERENCES `people` (`id`)
+    CONSTRAINT `person_id` FOREIGN KEY (`person_id`) REFERENCES `people` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 EOQ
         );
