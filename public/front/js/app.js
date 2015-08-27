@@ -8,6 +8,7 @@ var app = angular.module('cypher_app',
 
         //framework
         .directive('addPerson', addPerson)
+        .directive('searchPeople', searchPeople)
     ;
 
 function addPerson() {
@@ -62,9 +63,51 @@ function addPerson() {
             }
         }
     };
-
 }
 
+function searchPeople() {
+    "use strict";
+    return {
+        restrict    : 'E',
+        scope       : {},
+        templateUrl : 'searchPeople.html',
+        controllerAs: 'ctrl',
+        controller  : function ($scope, $http) {
+            var self = this,
+                text,
+                searchKeyword = ''
+                ;
+            self.searchFinished = false;
+            self.searchResults = [];
+
+            self.searchPeople = function () {
+                self.searchResults = [];
+                self.searchFinished = false;
+
+                if (!empty(self.searchKeyword)) {
+                    $http.get(
+                        '/api/peoples',
+                        {
+                            params: {
+                                keyword: self.searchKeyword
+                            }
+                        }).
+                        then(function (response) {
+                            self.searchResults = response.data;
+                            self.searchFinished = true;
+                        }, function (response) {
+                            self.searchFinished = true;
+                            console.log(response,'bad');
+                        });
+
+                } else {
+                    alert('Please, provide search keyword.');
+                }
+            };
+        }
+    };
+
+}
 
 
 

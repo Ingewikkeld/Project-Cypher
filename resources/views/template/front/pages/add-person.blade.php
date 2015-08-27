@@ -3,8 +3,8 @@
 @section('body_class') add-person @endsection
 
 @section('content')
-    <div ng-app="cypher_app">
-        @include('template.front.pages.addperson.layout')
+    <div class="container" ng-app="cypher_app">
+        @include('template.front.pages.layout')
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
