@@ -26,35 +26,44 @@ final class PersonRepository
      */
     public function find(PersonId $id)
     {
-        $sql = <<< EOQ
-SELECT *
-FROM people p
-LEFT JOIN people_data d ON (d.person_id = p.id)
-WHERE id = :id
-EOQ;
+        $result = $this->query(
+            'SELECT p.id, p.name FROM people p WHERE id = :id',
+            ['id' => $id->toString()]
+        );
 
-        $stmt = $this->connection->prepare($sql);
-        $stmt->bindValue('id', $id->toString());
-        $stmt->execute();
-
-        $name = null;
-        $data = [];
-
-        while (($row = $stmt->fetch(PDO::FETCH_ASSOC)) !== false) {
-            if ($name === null) {
-                $name = $row['name'];
-            }
-
-            $dataType = DataType::fromString($row['type']);
-
-            $data[] = new Data($dataType, $row['label'], $row['value']);
-        }
-
-        if (!$data) {
+        if (!$result) {
             return null;
         }
 
-        return new Person($id, $name, $data);
+        $data = $result[0];
+
+        $data['data'] = $this->query(
+            'SELECT d.id, d.type, d.label, d.value FROM people_data d WHERE d.person_id = :id',
+            ['id' => $id->toString()]
+        );
+
+        $data['tags'] = $this->query(
+            'SELECT t.tag FROM tags t WHERE person_id = :id',
+            ['id' => $id->toString()]
+        );
+
+        return Person::fromDB($data);
+    }
+
+    /**
+     * @return array
+     */
+    public function findAll()
+    {
+        return array_map(
+            function (array $row) {
+                $row['data'] = [];
+                $row['tags'] = [];
+
+                return Person::fromDB($row);
+            },
+            $this->query('SELECT id, name FROM people', [])
+        );
     }
 
     /**
@@ -62,94 +71,137 @@ EOQ;
      */
     public function add(Person $person)
     {
-        $sql = <<< EOQ
-INSERT INTO people (id, name) VALUES (:id, :name)
-EOQ;
+        $this->updateQuery(
+            'INSERT INTO people (id, name) VALUES (:id, :name)',
+            ['id' => $person->getId()->toString(), 'name' => $person->getName()]
+        );
 
-        $stmt = $this->connection->prepare($sql);
-        $stmt->bindValue('id', $person->getId()->toString());
-        $stmt->bindValue('name', $person->getName());
-
-        if ($stmt->execute() === false) {
-            throw new RuntimeException('Unable to execute insert query');
+        foreach ($person->getData() as $data) {
+            $this->updateQuery(
+                'INSERT INTO people_data (id, person_id, type, label, value) VALUES (:id, :personId, :type, :label, :value)',
+                [
+                    'id'       => $data->getId()->toString(),
+                    'personId' => $person->getId()->toString(),
+                    'type'     => $data->getType()->toString(),
+                    'label'    => $data->getLabel(),
+                    'value'    => $data->getValue()
+                ]
+            );
         }
 
-        $this->addData($person);
+        foreach ($person->getTags() as $tag) {
+            $this->updateQuery(
+                'INSERT INTO tags (person_id, tag) VALUES (:personId, :tag)',
+                ['personId' => $person->getId()->toString(), 'tag' => $tag->toString()]
+            );
+        }
     }
 
     /**
+     * This won't remve any data rows or tag rows.
+     *
      * @param Person $person
      */
     public function update(Person $person)
     {
-        $sql = <<< EOQ
-UPDATE people SET name = :name WHERE id = :id
-EOQ;
+        // person itself
+        $this->updateQuery(
+            'UPDATE people SET name = :name WHERE id = :id',
+            ['name' => $person->getName(), 'id' => $person->getId()->toString()]
+        );
 
-        $stmt = $this->connection->prepare($sql);
-        $stmt->bindValue('name', $person->getName());
-        $stmt->bindValue('id', $person->getId()->toString());
+        // data
+        $existingDataIds = array_map(
+            function (array $row) {
+                return $row['id'];
+            },
+            $this->query(
+                'SELECT id FROM people_data WHERE person_id = :personId',
+                ['personId' => $person->getId()->toString()]
+            )
+        );
 
-        if ($stmt->execute() === false) {
-            throw new RuntimeException('Unable to execute insert query');
-        }
-
-        $sql = <<< EOQ
-DELETE FROM people_data WHERE person_id = :id
-EOQ;
-
-        $stmt = $this->connection->prepare($sql);
-        $stmt->bindValue('id', $person->getId()->toString());
-
-        if ($stmt->execute() === false) {
-            throw new RuntimeException('Unable to execute insert query');
-        }
-
-        $this->addData($person);
-    }
-
-    /**
-     * @param Person $person
-     */
-    private function addData(Person $person)
-    {
         foreach ($person->getData() as $data) {
-            $sql = <<< EOQ
-INSERT INTO people_data (person_id, type, label, value) VALUES (:id, :type, :label, :value)
-EOQ;
-
-            $stmt = $this->connection->prepare($sql);
-            $stmt->bindValue('id', $person->getId()->toString());
-            $stmt->bindValue('type', $data->getType()->toString());
-            $stmt->bindValue('label', $data->getLabel());
-            $stmt->bindValue('value', $data->getValue());
-
-            if ($stmt->execute() === false) {
-                throw new RuntimeException('Unable to execute insert query');
+            if (in_array($data->getId()->toString(), $existingDataIds, true)) {
+                $this->updateQuery(
+                    'UPDATE people_data SET type = :type, label = :label, value = :value WHERE id = :id',
+                    [
+                        'type'  => $data->getType()->toString(),
+                        'label' => $data->getLabel(),
+                        'value' => $data->getValue(),
+                        'id'    => $data->getId()->toString()
+                    ]
+                );
+                continue;
             }
+
+            $this->updateQuery(
+                'INSERT INTO people_data (id, person_id, type, label, value) VALUES (:id, :personId, :type, :label, :value)',
+                [
+                    'id'       => $data->getId()->toString(),
+                    'personId' => $person->getId()->toString(),
+                    'type'     => $data->getType()->toString(),
+                    'label'    => $data->getLabel(),
+                    'value'    => $data->getValue()
+                ]
+            );
+        }
+
+        // tags
+        $existingTags = array_map(
+            function (array $row) {
+                return $row['tag'];
+            },
+            $this->query(
+                'SELECT tag FROM tags WHERE person_id = :personId',
+                ['personId' => $person->getId()->toString()]
+            )
+        );
+
+        foreach ($person->getTags() as $tag) {
+            if (in_array($tag->toString(), $existingTags, true)) {
+                continue;
+            }
+
+            $this->updateQuery(
+                'INSERT INTO tags (person_id, tag) VALUES (:personId, :tag)',
+                ['personId' => $person->getId()->toString(), 'tag' => $tag->toString()]
+            );
         }
     }
 
     /**
-     * @return array a collection of peoples
+     * @param string $sql
+     * @param array  $params
+     * @return array
      */
-    public function findAll()
+    private function query($sql, array $params)
     {
-        $sql = <<< EOQ
-SELECT *
-FROM people p
-EOQ;
-
         $stmt = $this->connection->prepare($sql);
+
+        foreach ($params as $param => $value) {
+            $stmt->bindValue($param, $value);
+        }
+
         $stmt->execute();
 
-        $peoples = [];
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
 
-        while (($row = $stmt->fetch(PDO::FETCH_ASSOC)) !== false) {
-            $person = new Person(PersonId::fromString($row['id']), $row['name']);
-            array_push($peoples, $person);
+    /**
+     * @param string $sql
+     * @param array  $params
+     */
+    private function updateQuery($sql, array $params)
+    {
+        $stmt = $this->connection->prepare($sql);
+
+        foreach ($params as $param => $value) {
+            $stmt->bindValue($param, $value);
         }
 
-        return $peoples;
+        if ($stmt->execute() === false) {
+            throw new RuntimeException('Unable to execute query');
+        }
     }
 }

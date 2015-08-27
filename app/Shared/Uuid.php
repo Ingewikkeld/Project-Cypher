@@ -23,7 +23,7 @@ abstract class Uuid
      */
     public static function generate()
     {
-        return new static(\Rhumsaa\Uuid\Uuid::uuid4());
+        return new static(\Rhumsaa\Uuid\Uuid::uuid4()->toString());
     }
 
     /**
