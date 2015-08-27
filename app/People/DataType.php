@@ -8,11 +8,38 @@ final class DataType
 {
     const CUSTOM   = 'custom';
     const FACEBOOK = 'facebook';
+    const URL = 'url';
+    const DATE = 'date';
+    const EMAIL = 'email';
 
     /**
      * @var string
      */
     private $type;
+
+    /**
+     * @return DataType
+     */
+    public static function EMAIL()
+    {
+        return new self(self::EMAIL);
+    }
+
+    /**
+     * @return DataType
+     */
+    public static function URL()
+    {
+        return new self(self::URL);
+    }
+
+    /**
+     * @return DataType
+     */
+    public static function DATE()
+    {
+        return new self(self::DATE);
+    }
 
     /**
      * @return DataType
@@ -61,7 +88,7 @@ final class DataType
      */
     private function __construct($type)
     {
-        if (!in_array($type, [self::CUSTOM, self::FACEBOOK], true)) {
+        if (!in_array($type, [self::CUSTOM, self::FACEBOOK, self::EMAIL, self::URL, self::DATE], true)) {
             throw new InvalidArgumentException(sprintf('Invalid data type "%s"', $type));
         }
 

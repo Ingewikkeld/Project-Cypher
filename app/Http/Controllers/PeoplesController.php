@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\People\PersonRepository;
+use App\People\PersonId;
 use Illuminate\Http\Request;
 
 class PeoplesController extends Controller
@@ -30,5 +31,13 @@ class PeoplesController extends Controller
         }
 
         return json_encode($peoples);
+    }
+
+
+    public function dashboard($id)
+    {
+        $person = $this->personRepository->find(PersonId::fromString($id));
+
+        return response()->json($person);
     }
 }
