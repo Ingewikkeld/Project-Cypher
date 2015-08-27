@@ -31,7 +31,7 @@ class AddPersonController extends Controller
 
         $this->personRepository->add($person);
 
-        return json_encode($person);
+        return response()->json($person);
     }
 
     public function getAction()

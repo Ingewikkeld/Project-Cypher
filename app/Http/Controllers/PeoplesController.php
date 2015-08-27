@@ -30,7 +30,7 @@ class PeoplesController extends Controller
             $peoples = $this->personRepository->findAll();
         }
 
-        return json_encode($peoples);
+        return response()->json($peoples);
     }
 
 
