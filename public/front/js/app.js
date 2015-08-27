@@ -19,8 +19,7 @@ function addPerson() {
         templateUrl : 'addPerson.html',
         controllerAs: 'ctrl',
         controller  : function ($scope, $http) {
-            var self = this,
-                text;
+            var self = this;
 
             _resetPerson();
 
@@ -42,10 +41,7 @@ function addPerson() {
                         });
 
                 } else {
-                    text = 'Niet alle velden zijn gevuld';
-
                     alert('Error empty name field!!');
-                    //self.openModal('md', 'Er ging iets mis!', text, 'OK');
                 }
             };
 
@@ -74,7 +70,6 @@ function searchPeople() {
         controllerAs: 'ctrl',
         controller  : function ($scope, $http) {
             var self = this,
-                text,
                 searchKeyword = ''
                 ;
             self.searchFinished = false;
