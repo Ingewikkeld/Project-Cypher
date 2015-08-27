@@ -9,6 +9,7 @@ var app = angular.module('cypher_app',
         //framework
         .directive('addPerson', addPerson)
         .directive('searchPeople', searchPeople)
+        .directive('person', person)
     ;
 
 function addPerson() {
@@ -48,18 +49,6 @@ function addPerson() {
             self.cancel = function () {
                 //window.history.back();
                 window.location = "/"
-            };
-
-            self.people = function(id){
-               if(
-                   !empty(self.added_list[id]) &&
-                   !empty(self.added_list[id]).id
-               ){
-                    console.log("/person/"+self.added_list[id].id);
-                    window.location = "/person/"+self.added_list[id].id;
-               } else {
-                   alert('Person does not exist!!');
-               }
             };
 
             function _resetPerson(){
@@ -110,6 +99,29 @@ function searchPeople() {
                 } else {
                     alert('Please, provide search keyword.');
                 }
+            };
+        }
+    };
+
+}
+
+function person() {
+    "use strict";
+    return {
+        restrict    : 'E',
+        scope       : {
+            person: '='
+        },
+        templateUrl : 'person.html',
+        controllerAs: 'ctrl',
+        controller  : function ($scope, $http) {
+            var self = this
+                ;
+
+            self.person = $scope.person;
+
+            self.goToDashboard = function(){
+                window.location = "/person/"+$scope.person.id;
             };
         }
     };

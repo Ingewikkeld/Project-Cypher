@@ -4,17 +4,7 @@
             <legend>Previously added</legend>
 
             <div ng-repeat="(id,added_user) in ctrl.added_list track by added_user.id">
-                <div ng-click="ctrl.people(id)"
-                     class="row alert alert-dismissable alert-success"
-                     style="margin-bottom: 5px; cursor: pointer;">
-                    <div class="col-xs-12">
-                        <i class="mdi-action-account-circle"
-                           style="float: left; font-size: 40px; margin-right: 20px;"></i>
-                        <span style="display: inline-block; font-size: 18px; line-height: 40px;">
-                            {{ added_user.name }}
-                        </span>
-                    </div>
-                </div>
+                <person data-id="id" data-person="added_user"></person>
             </div>
 
             <br/>
@@ -98,7 +88,7 @@
 
             <div ng-show="ctrl.searchResults.length">
                 <div class="" ng-repeat="person in ctrl.searchResults track by person.id">
-                    {{ person.id }} - {{ person.name }}
+                    <person data-person="person"></person>
                 </div>
             </div>
             <div ng-show="!ctrl.searchResults.length">
@@ -107,6 +97,21 @@
 
             <br/>
             <br/>
+        </div>
+    </div>
+</script>
+
+
+<script type="text/ng-template" id="person.html">
+    <div ng-click="ctrl.goToDashboard()"
+         class="row alert alert-dismissable alert-success"
+         style="margin-bottom: 5px; cursor: pointer;">
+        <div class="col-xs-12">
+            <i class="mdi-action-account-circle"
+               style="float: left; font-size: 40px; margin-right: 20px;"></i>
+                        <span style="display: inline-block; font-size: 18px; line-height: 40px;">
+                            {{ ctrl.person.name }}
+                        </span>
         </div>
     </div>
 </script>
