@@ -17,47 +17,52 @@ function addPerson() {
         scope       : {},
         templateUrl : 'addPerson.html',
         controllerAs: 'ctrl',
-        controller  : function ($scope) {
+        controller  : function ($scope, $http) {
             var self = this,
                 text;
 
-            // TODO - empty 'login_user' for release
-            self.login_user = {
-                email   : "r.jansen@code14.nl",
-                password: "123"
-            };
+            _resetPerson();
 
-            self.login = function () {
-                var itemCopy = angular.copy(self.login_user);
-                if (!empty(itemCopy.email) && !empty(itemCopy.password)) {
+            self.addPerson = function () {
+                var itemCopy = angular.copy(self.person);
+                if (!empty(itemCopy.name)) {
+                    // Simple POST request example (passing data) :
+                    $http.post('/api/add-person', {name: itemCopy.name}).
+                        then(function (response) {
+                            //console.log(response);
+                            if(empty(self.added_list)){
+                                self.added_list = [];
+                            }
+                            self.added_list.push(response.data);
+                            //console.log(self.added_list);
+                            _resetPerson();
+                        }, function (response) {
+                            console.log(response,'bad');
+                        });
 
                 } else {
                     text = 'Niet alle velden zijn gevuld';
-                    self.openModal('md', 'Er ging iets mis!', text, 'OK');
+
+                    alert('Error empty name field!!');
+                    //self.openModal('md', 'Er ging iets mis!', text, 'OK');
                 }
             };
 
-            function _handleUser(status) {
-                var text;
-                if (status === 200) {
-                    log('loginInputSubmit >> goto: choose_company');
-                    //$state.go('choose_company', {order: 'asc', filter: ''});
-                }
-                else if (status === 400) {
-                    text = 'Sorry, de combinatie van gebruikersnaam en wachtwoord was onjuist.';
-                    //self.openModal('md', 'Er ging iets mis!', text, 'OK');
-                }
-                else if (status === 403) {
-                    text = 'Sorry, u heeft geen toegang. Neem contact op met de beheerder.';
-                    //self.openModal('md', 'Er ging iets mis!', text, 'OK');
-                }
-                else if (status === 500) {
-                    text = 'Sorry, er is een systeem fout. Neem contact op met de beheerder.';
-                    //self.openModal('md', 'Er ging iets mis!', text, 'OK');
-                }
+            self.cancel = function () {
+                //window.history.back();
+                window.location = "/"
+            };
+
+            function _resetPerson(){
+                self.person = {
+                    name    : "",
+                    favorite: false,
+                    rating  : "Not yet rated"
+                };
             }
         }
     };
+
 }
 
 

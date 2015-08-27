@@ -4,7 +4,7 @@
 
 @section('content')
     <div ng-app="cypher_app">
-        @include('template.front.pages.add-person2.layout')
+        @include('template.front.pages.addperson.layout')
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
