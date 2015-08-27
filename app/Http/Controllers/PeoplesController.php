@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\People\PersonRepository;
+use Illuminate\Http\Request;
 
 class PeoplesController extends Controller
 {
@@ -19,8 +20,15 @@ class PeoplesController extends Controller
         $this->personRepository = $personRepository;
     }
 
-    public function apiGetAction()
+    public function apiGetAction(Request $request)
     {
-        return json_encode($this->personRepository->findAll());
+        if ($request->query->has('keyword')) {
+            $keyword = $request->query->get('keyword');
+            $peoples = $this->personRepository->search($keyword);
+        } else {
+            $peoples = $this->personRepository->findAll();
+        }
+
+        return json_encode($peoples);
     }
 }

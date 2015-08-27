@@ -204,4 +204,32 @@ final class PersonRepository
             throw new RuntimeException('Unable to execute query');
         }
     }
+
+    /**
+     * @return array a collection of peoples
+     */
+    public function search($keyword)
+    {
+        $sql = <<< EOQ
+SELECT p.*
+FROM people p LEFT JOIN people_data pd ON(p.id = pd.person_id)
+WHERE p.name LIKE :keyword1 OR pd.label LIKE :keyword2 OR pd.value LIKE :keyword3
+GROUP BY p.id
+EOQ;
+
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindValue('keyword1', "%$keyword%");
+        $stmt->bindValue('keyword2', "%$keyword%");
+        $stmt->bindValue('keyword3', "%$keyword%");
+        $stmt->execute();
+
+        $peoples = [];
+
+        while (($row = $stmt->fetch(PDO::FETCH_ASSOC)) !== false) {
+            $person = new Person(PersonId::fromString($row['id']), $row['name']);
+            array_push($peoples, $person);
+        }
+
+        return $peoples;
+    }
 }
