@@ -2,7 +2,6 @@
 
 namespace App\People;
 
-use InvalidArgumentException;
 use JsonSerializable;
 
 final class Person implements JsonSerializable
@@ -23,23 +22,47 @@ final class Person implements JsonSerializable
     private $data;
 
     /**
-     * @param PersonId $id
-     * @param string   $name
-     * @param Data[]   $data
+     * @var Tag[]
      */
-    public function __construct(PersonId $id, $name, array $data = [])
+    private $tags;
+
+    /**
+     * @param array $data
+     * @return Person
+     */
+    public static function fromDB(array $data)
     {
-        foreach ($data as $entry) {
-            if (!$entry instanceof Data) {
-                throw new InvalidArgumentException(
-                    sprintf('Invalid data entry, must be an instance of %s', Data::class)
-                );
-            }
+        $person = new Person(
+            PersonId::fromString($data['id']),
+            $data['name']
+        );
+
+        foreach ($data['data'] as $entry) {
+            $person->data[] = new Data(
+                DataId::fromString($entry['id']),
+                DataType::fromString($entry['type']),
+                $entry['label'],
+                $entry['value']
+            );
         }
 
+        foreach ($data['tags'] as $entry) {
+            $person->tags[] = Tag::fromString($entry['tag']);
+        }
+
+        return $person;
+    }
+
+    /**
+     * @param PersonId $id
+     * @param string   $name
+     */
+    public function __construct(PersonId $id, $name)
+    {
         $this->id   = $id;
         $this->name = (string) $name;
-        $this->data = $data;
+        $this->data = [];
+        $this->tags = [];
     }
 
     /**
@@ -72,21 +95,53 @@ final class Person implements JsonSerializable
     }
 
     /**
-     * @param Data $data
+     * @param DataType $type
+     * @param string   $label
+     * @param string   $value
      */
-    public function addData(Data $data)
+    public function addData(DataType $type, $label, $value)
     {
-        $this->data[] = $data;
+        $this->data[] = new Data(DataId::generate(), $type, $label, $value);
     }
 
     /**
-     * @param Data $data
+     * @param DataType $type
+     * @param string   $label
+     * @param string   $value
      */
-    public function removeData(Data $data)
+    public function removeData(DataType $type, $label, $value)
     {
-        foreach ($this->data as $index => $dataEntry) {
-            if ($dataEntry === $data) {
+        foreach ($this->data as $index => $entry) {
+            if ($entry->getType()->equals($type) && $entry->getLabel() === $label && $entry->getValue() === $value) {
                 unset($this->data[$index]);
+            }
+        }
+    }
+
+    /**
+     * @return Tag[]
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * @param string $tag
+     */
+    public function addTag($tag)
+    {
+        $this->tags[] = Tag::fromString($tag);
+    }
+
+    /**
+     * @param string $tag
+     */
+    public function removeTag($tag)
+    {
+        foreach ($this->tags as $index => $entry) {
+            if ($entry->toString() === $tag) {
+                unset($this->tags[$index]);
             }
         }
     }

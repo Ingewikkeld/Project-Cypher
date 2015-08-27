@@ -48,6 +48,15 @@ final class DataType
     }
 
     /**
+     * @param mixed $other
+     * @return bool
+     */
+    public function equals($other)
+    {
+        return ($other instanceof self && $other->type === $this->type);
+    }
+
+    /**
      * @param string $type
      */
     private function __construct($type)
