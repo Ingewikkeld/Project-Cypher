@@ -14,4 +14,7 @@ class DashboardController extends Controller
         return json_encode(['some data' => 'and some value']);
 
     }
+
+
+    public function test(){}
 }

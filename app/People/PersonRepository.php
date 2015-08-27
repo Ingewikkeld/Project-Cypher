@@ -30,7 +30,7 @@ final class PersonRepository
 SELECT *
 FROM people p
 LEFT JOIN people_data d ON (d.person_id = p.id)
-WHERE id = :id
+WHERE p.id = :id
 EOQ;
 
         $stmt = $this->connection->prepare($sql);
