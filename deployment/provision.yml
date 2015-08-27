@@ -79,6 +79,10 @@
   - name: provision | Install all dependencies for our wecamp app with composer
     command: chdir={{ apache.docroot }} composer install creates={{ apache.docroot }}/vendor
 
+  # setup the database
+  - name: wecamp | setup the database
+    command: chdir={{ apache.docroot }} php artisan migrate --force
+
   # deploy the code
   #- include: deploy.yml
 
