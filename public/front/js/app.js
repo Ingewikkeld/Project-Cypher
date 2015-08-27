@@ -9,6 +9,7 @@ var app = angular.module('cypher_app',
         //framework
         .directive('addPerson', addPerson)
         .directive('searchPeople', searchPeople)
+        .directive('person', person)
     ;
 
 function addPerson() {
@@ -98,6 +99,29 @@ function searchPeople() {
                 } else {
                     alert('Please, provide search keyword.');
                 }
+            };
+        }
+    };
+
+}
+
+function person() {
+    "use strict";
+    return {
+        restrict    : 'E',
+        scope       : {
+            person: '='
+        },
+        templateUrl : 'person.html',
+        controllerAs: 'ctrl',
+        controller  : function ($scope, $http) {
+            var self = this
+                ;
+
+            self.person = $scope.person;
+
+            self.goToDashboard = function(){
+                window.location = "/person/"+$scope.person.id;
             };
         }
     };
