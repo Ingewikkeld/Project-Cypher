@@ -170,10 +170,19 @@ final class Person implements JsonSerializable
      */
     public function jsonSerialize()
     {
+        // YES! This is horrible, sorry, just needed a very quick fix!
+
+        $canonical = $this->canonical;
+        $filename  = sprintf('%s/images/%s.jpg', public_path(), $canonical);
+
+        if (!file_exists($filename)) {
+            $canonical = 'blank';
+        }
+
         return [
             'id'        => $this->id->toString(),
             'name'      => $this->name,
-            'canonical' => $this->canonical,
+            'canonical' => $canonical,
             'data'      => $this->data,
             'tags'      => $this->tags
         ];
