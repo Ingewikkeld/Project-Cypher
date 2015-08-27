@@ -6,7 +6,7 @@ use App\People\PersonRepository;
 use App\People\PersonId;
 use Illuminate\Http\Request;
 
-class PeoplesController extends Controller
+class PersonController extends Controller
 {
     /**
      * @var PersonRepository
