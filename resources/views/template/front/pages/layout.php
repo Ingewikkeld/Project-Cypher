@@ -89,14 +89,14 @@
 <script type="text/ng-template" id="homepage.html">
     <div class="well bs-component">
         <div ng-if="ctrl.dataLoaded">
-            <legend>Peoples</legend>
+            <legend>People</legend>
 
-            <div ng-show="ctrl.peoples.length">
-                <div ng-repeat="person in ctrl.peoples track by person.id">
+            <div ng-show="ctrl.people.length">
+                <div ng-repeat="person in ctrl.people track by person.id">
                     <person data-person="person"></person>
                 </div>
             </div>
-            <div ng-show="!ctrl.peoples.length">
+            <div ng-show="!ctrl.people.length">
                 No entries to show. <a href="/add-person">Add one now</a>.
             </div>
         </div>

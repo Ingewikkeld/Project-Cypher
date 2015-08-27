@@ -141,14 +141,14 @@ function homepage() {
                 ;
 
             self.dataLoaded = false;
-            self.peoples = [];
+            self.people = [];
 
-            $http.get('/api/peoples').
+            $http.get('/api/people').
                 then(function (response) {
-                    self.peoples = response.data;
+                    self.people = response.data;
                     self.dataLoaded = true;
                 }, function (response) {
-                    self.peoples = [];
+                    self.people = [];
                     self.dataLoaded = false;
                 });
 
