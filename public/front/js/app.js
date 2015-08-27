@@ -10,6 +10,7 @@ var app = angular.module('cypher_app',
         .directive('addPerson', addPerson)
         .directive('searchPeople', searchPeople)
         .directive('person', person)
+        .directive('homepage', homepage)
     ;
 
 function addPerson() {
@@ -123,6 +124,34 @@ function person() {
             self.goToDashboard = function(){
                 window.location = "/person/"+$scope.person.id;
             };
+        }
+    };
+
+}
+
+function homepage() {
+    "use strict";
+    return {
+        restrict    : 'E',
+        scope       : {},
+        templateUrl : 'homepage.html',
+        controllerAs: 'ctrl',
+        controller  : function ($http) {
+            var self = this
+                ;
+
+            self.dataLoaded = false;
+            self.people = [];
+
+            $http.get('/api/people').
+                then(function (response) {
+                    self.people = response.data;
+                    self.dataLoaded = true;
+                }, function (response) {
+                    self.people = [];
+                    self.dataLoaded = false;
+                });
+
         }
     };
 

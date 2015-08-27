@@ -62,7 +62,7 @@ final class PersonRepository
 
                 return Person::fromDB($row);
             },
-            $this->query('SELECT id, name FROM people', [])
+            $this->query('SELECT id, name FROM people ORDER BY name', [])
         );
     }
 
@@ -215,6 +215,7 @@ SELECT p.*
 FROM people p LEFT JOIN people_data pd ON(p.id = pd.person_id)
 WHERE p.name LIKE :keyword1 OR pd.label LIKE :keyword2 OR pd.value LIKE :keyword3
 GROUP BY p.id
+ORDER BY p.name
 EOQ;
 
         return array_map(

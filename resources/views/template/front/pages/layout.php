@@ -7,7 +7,6 @@
                 <person data-id="id" data-person="added_user"></person>
             </div>
 
-            <br/>
         </div>
 
         <form class="form-horizontal" ng-submit="ctrl.addPerson()">
@@ -20,32 +19,6 @@
                         <input type="text" class="form-control" id="inputName" ng-model="ctrl.person.name" placeholder="Name">
                     </div>
                 </div>
-                <!--                <div class="form-group">-->
-                <!--                    <label for="inputPassword" class="col-lg-2 control-label">Favorite</label>-->
-                <!---->
-                <!--                    <div class="col-lg-10">-->
-                <!--                        <div class="togglebutton">-->
-                <!--                            <label>-->
-                <!--                                <input type="checkbox" ng-model="ctrl.person.favorite">-->
-                <!--                            </label>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                </div>-->
-
-                <!--                <div class="form-group">-->
-                <!--                    <label for="select" class="col-lg-2 control-label">Rating</label>-->
-                <!---->
-                <!--                    <div class="col-lg-10">-->
-                <!--                        <select class="form-control" id="select" ng-model="ctrl.person.rating">-->
-                <!--                            <option selected="selected">Not yet rated</option>-->
-                <!--                            <option>1</option>-->
-                <!--                            <option>2</option>-->
-                <!--                            <option>3</option>-->
-                <!--                            <option>4</option>-->
-                <!--                            <option>5</option>-->
-                <!--                        </select>-->
-                <!--                    </div>-->
-                <!--                </div>-->
                 <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
                         <a ng-click="ctrl.cancel()" class="btn btn-default">Cancel</a>
@@ -94,9 +67,6 @@
             <div ng-show="!ctrl.searchResults.length">
                 No results, sorry.
             </div>
-
-            <br/>
-            <br/>
         </div>
     </div>
 </script>
@@ -115,3 +85,23 @@
         </div>
     </div>
 </script>
+
+<script type="text/ng-template" id="homepage.html">
+    <div class="well bs-component">
+        <div ng-if="ctrl.dataLoaded">
+            <legend>People</legend>
+
+            <div ng-show="ctrl.people.length">
+                <div ng-repeat="person in ctrl.people track by person.id">
+                    <person data-person="person"></person>
+                </div>
+            </div>
+            <div ng-show="!ctrl.people.length">
+                No entries to show. <a href="/add-person">Add one now</a>.
+            </div>
+        </div>
+        <div ng-if="!ctrl.dataLoaded">
+            <p>Data is being fetched... Please wait.</p>
+        </div>
+    </div>
+</script>-
