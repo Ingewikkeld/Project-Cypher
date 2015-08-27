@@ -17,6 +17,11 @@ final class Person implements JsonSerializable
     private $name;
 
     /**
+     * @var string;
+     */
+    private $canonical;
+
+    /**
      * @var Data[]
      */
     private $data;
@@ -34,7 +39,8 @@ final class Person implements JsonSerializable
     {
         $person = new Person(
             PersonId::fromString($data['id']),
-            $data['name']
+            $data['name'],
+            $data['canonical']
         );
 
         foreach ($data['data'] as $entry) {
@@ -60,9 +66,10 @@ final class Person implements JsonSerializable
     public function __construct(PersonId $id, $name)
     {
         $this->id   = $id;
-        $this->name = (string) $name;
         $this->data = [];
         $this->tags = [];
+
+        $this->rename($name);
     }
 
     /**
@@ -81,9 +88,21 @@ final class Person implements JsonSerializable
         return $this->name;
     }
 
+    /**
+     * @param string $name
+     */
     public function rename($name)
     {
-        $this->name = (string) $name;
+        $this->name      = (string) $name;
+        $this->canonical = preg_replace('/[^0-9a-z]/', '', strtolower($name));
+    }
+
+    /**
+     * @return string
+     */
+    public function getCanonical()
+    {
+        return $this->canonical;
     }
 
     /**
@@ -152,9 +171,11 @@ final class Person implements JsonSerializable
     public function jsonSerialize()
     {
         return [
-            'id'   => $this->id->toString(),
-            'name' => $this->name,
-            'data' => $this->data
+            'id'        => $this->id->toString(),
+            'name'      => $this->name,
+            'canonical' => $this->canonical,
+            'data'      => $this->data,
+            'tags'      => $this->tags
         ];
     }
 }

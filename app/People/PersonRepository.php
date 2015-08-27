@@ -27,7 +27,7 @@ final class PersonRepository
     public function find(PersonId $id)
     {
         $result = $this->query(
-            'SELECT p.id, p.name FROM people p WHERE id = :id',
+            'SELECT p.id, p.name, p.canonical FROM people p WHERE id = :id',
             ['id' => $id->toString()]
         );
 
@@ -72,8 +72,8 @@ final class PersonRepository
     public function add(Person $person)
     {
         $this->updateQuery(
-            'INSERT INTO people (id, name) VALUES (:id, :name)',
-            ['id' => $person->getId()->toString(), 'name' => $person->getName()]
+            'INSERT INTO people (id, name, canonical) VALUES (:id, :name, :canonical)',
+            ['id' => $person->getId()->toString(), 'name' => $person->getName(), 'canonical' => $person->getCanonical()]
         );
 
         foreach ($person->getData() as $data) {
@@ -106,8 +106,8 @@ final class PersonRepository
     {
         // person itself
         $this->updateQuery(
-            'UPDATE people SET name = :name WHERE id = :id',
-            ['name' => $person->getName(), 'id' => $person->getId()->toString()]
+            'UPDATE people SET name = :name, canonical = :canonical WHERE id = :id',
+            ['name' => $person->getName(), 'canonical' => $person->getCanonical(), 'id' => $person->getId()->toString()]
         );
 
         // data
@@ -206,6 +206,7 @@ final class PersonRepository
     }
 
     /**
+     * @param string $keyword
      * @return array a collection of people
      */
     public function search($keyword)
@@ -225,7 +226,7 @@ EOQ;
 
                 return Person::fromDB($row);
             },
-            $this->query($sql, ['keyword1' => "%$keyword%",'keyword2' => "%$keyword%",'keyword3' => "%$keyword%"])
+            $this->query($sql, ['keyword1' => "%$keyword%", 'keyword2' => "%$keyword%", 'keyword3' => "%$keyword%"])
         );
     }
 }
