@@ -51,6 +51,7 @@ function handleSmoothScroll(notForMobile, offset) {
 function get_responsive_check_width() {
     return $('#responsive_check').width();
 }
+
 function is_xs() {
     if (get_responsive_check_width() == 0) {
         // Extra small devices (small to normal phones, less than 768px)
@@ -58,6 +59,7 @@ function is_xs() {
     }
     return false;
 }
+
 function is_sm() {
     if (get_responsive_check_width() == 768) {
         // Small devices (big phones, tablets portrait, 768px and up)
@@ -65,6 +67,7 @@ function is_sm() {
     }
     return false;
 }
+
 function is_md() {
     if (get_responsive_check_width() == 992) {
         // Medium devices (desktops, tablets landscape, 992px and up)

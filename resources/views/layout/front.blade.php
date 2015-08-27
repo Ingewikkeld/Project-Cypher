@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="robots" content="index, follow"/>
 
-
     {{-- //favicon and touch-icons --}}
     {{--<link rel="icon" href="/favicon.ico" type="image/x-icon"/>--}}
     {{--<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>--}}
@@ -40,6 +39,12 @@
 
     @yield('custom_scripts_before')
     <script src="/front/js/app.min.php"></script>
+    <script>
+        $(document).ready(function() {
+            // This command is used to initialize some elements and make them work properly
+            $.material.init();
+        });
+    </script>
     @yield('custom_scripts_after')
 
     <!-- Nav for accessibility-->

@@ -9,6 +9,9 @@ $file_root = realpath(dirname(__FILE__));
 $files = array(
     'jquery.min.js',
     'bootstrap.min.js',
+    'angular.min.js',
+    'ripples.min.js',
+    'material.min.js',
     'framework.js',
     'app.js'
 );
@@ -56,6 +59,8 @@ if (!empty($youngest[1])) {
     // COMBINE
     foreach ($files as $file_name) {
         include($file_name);
+        echo "\n";
+        echo "\n";
     }
 }
 ?>
