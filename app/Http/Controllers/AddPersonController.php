@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\People\Person;
 use App\People\PersonId;
 use App\People\PersonRepository;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class AddPersonController extends Controller
 {
@@ -22,6 +24,10 @@ class AddPersonController extends Controller
         $this->personRepository = $personRepository;
     }
 
+    /**
+     * @param Request $request
+     * @return Response
+     */
     public function postAction(Request $request)
     {
         $person = new Person(
@@ -34,6 +40,9 @@ class AddPersonController extends Controller
         return response()->json($person);
     }
 
+    /**
+     * @return View
+     */
     public function getAction()
     {
         return view('template/front/pages/add-person');

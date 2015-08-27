@@ -83,7 +83,7 @@ function searchPeople() {
 
                 if (!empty(self.searchKeyword)) {
                     $http.get(
-                        '/api/peoples',
+                        '/api/people',
                         {
                             params: {
                                 keyword: self.searchKeyword

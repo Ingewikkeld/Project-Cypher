@@ -9,7 +9,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class PeoplesTableSeeder extends Seeder {
+class PeopleTableSeeder extends Seeder {
     var $faker;
     var $people;
     var $people_data;
@@ -19,12 +19,12 @@ class PeoplesTableSeeder extends Seeder {
         // use the factory to create a Faker\Generator instance
         $this->faker = Faker\Factory::create();
 
-        $this->runPeoples();
+        $this->runPeople();
         $this->runPeopleData();
 //        $this->run();
     }
 
-    public function runPeoples()
+    public function runPeople()
     {
         // comment the below to NOT wipe the table clean before populating
         DB::table('people')->delete();

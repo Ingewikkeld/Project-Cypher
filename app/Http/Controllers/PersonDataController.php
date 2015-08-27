@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\People\Data;
 use App\People\DataType;
 use App\People\PersonId;
 use App\People\PersonRepository;
-use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Input;
 
 class PersonDataController extends Controller
@@ -29,12 +28,13 @@ class PersonDataController extends Controller
      * Expects JSON data with below structure
      *
      * [
-     * {"type": "custom", "label": "a label nr 1", "value": "a value1"},
-     * {"type": "custom", "label": "a label nr 2", "value": "a value2"},
-     * {"type": "custom", "label": "a label nr 3", "value": "a value3"}
+     *     {"type": "custom", "label": "a label nr 1", "value": "a value1"},
+     *     {"type": "custom", "label": "a label nr 2", "value": "a value2"},
+     *     {"type": "custom", "label": "a label nr 3", "value": "a value3"}
      * ]
      *
-     * @param $id
+     * @param string $id
+     * @return Response
      */
     public function apiPostAction($id)
     {
@@ -46,10 +46,8 @@ class PersonDataController extends Controller
 
         $newData = Input::get();
 
-        foreach($newData as $dataRow) {
-            $type = DataType::fromString($dataRow['type']);
-            $newDataEntry = new Data($type, $dataRow['label'], $dataRow['value']);
-            $person->addData($newDataEntry);
+        foreach ($newData as $dataRow) {
+            $person->addData(DataType::fromString($dataRow['type']), $dataRow['label'], $dataRow['value']);
         }
 
         $this->personRepository->update($person);
