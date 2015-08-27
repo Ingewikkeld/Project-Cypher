@@ -30,6 +30,5 @@ Route::get('/api/dashboard', 'DashboardController@apiGetAction');
 
 
 Route::get('/search2', function () {
-    //return view('welcome');
     return view('template/front/pages/search2');
 });
