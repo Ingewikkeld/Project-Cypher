@@ -28,11 +28,11 @@ class PersonDataController extends Controller
      * Adds one or many data entries for person with given $id
      * Expects JSON data with below structure
      *
-    [
-    {"type": "custom", "label": "a label nr 1", "value": "a value1"},
-    {"type": "custom", "label": "a label nr 2", "value": "a value2"},
-    {"type": "custom", "label": "a label nr 3", "value": "a value3"}
-    ]
+     * [
+     * {"type": "custom", "label": "a label nr 1", "value": "a value1"},
+     * {"type": "custom", "label": "a label nr 2", "value": "a value2"},
+     * {"type": "custom", "label": "a label nr 3", "value": "a value3"}
+     * ]
      *
      * @param $id
      */
@@ -54,6 +54,6 @@ class PersonDataController extends Controller
 
         $this->personRepository->update($person);
 
-        return json_encode($person);
+        return response()->json($person);
     }
 }

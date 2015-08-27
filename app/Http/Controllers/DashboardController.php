@@ -11,7 +11,7 @@ class DashboardController extends Controller
 
     public function apiGetAction()
     {
-        return json_encode(['some data' => 'and some value']);
+        return response()->json(['some data' => 'and some value']);
 
     }
 }
