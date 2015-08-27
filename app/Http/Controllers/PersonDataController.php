@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\People\Data;
 use App\People\DataType;
 use App\People\PersonId;
 use App\People\PersonRepository;
@@ -46,10 +45,8 @@ class PersonDataController extends Controller
 
         $newData = Input::get();
 
-        foreach($newData as $dataRow) {
-            $type = DataType::fromString($dataRow['type']);
-            $newDataEntry = new Data($type, $dataRow['label'], $dataRow['value']);
-            $person->addData($newDataEntry);
+        foreach ($newData as $dataRow) {
+            $person->addData(DataType::fromString($dataRow['type']), $dataRow['label'], $dataRow['value']);
         }
 
         $this->personRepository->update($person);
