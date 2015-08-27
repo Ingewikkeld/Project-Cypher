@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\People\PersonRepository;
 use App\People\PersonId;
+use App\People\PersonRepository;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class PersonController extends Controller
 {
@@ -21,6 +22,10 @@ class PersonController extends Controller
         $this->personRepository = $personRepository;
     }
 
+    /**
+     * @param Request $request
+     * @return Response
+     */
     public function apiGetAction(Request $request)
     {
         if ($request->query->has('keyword')) {
@@ -33,7 +38,10 @@ class PersonController extends Controller
         return response()->json($peoples);
     }
 
-
+    /**
+     * @param string $id
+     * @return Response
+     */
     public function dashboard($id)
     {
         $person = $this->personRepository->find(PersonId::fromString($id));
