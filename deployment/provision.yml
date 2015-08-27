@@ -24,6 +24,7 @@
       - libevent-dev
       - sendmail
       - vim
+      - openjdk-7-jre-headless
 
   # Apache2
   - include: tasks/apache2.yml
@@ -37,8 +38,11 @@
   # Composer
   - include: tasks/composer.yml
 
-  # Composer
+  # Laravel
   - include: tasks/laravel.yml
+
+  # Elasticsearch
+  - include: tasks/elasticsearch.yml
 
   # enhance bash with bash_it
 #  - include: tasks/bash_it.yml
@@ -61,7 +65,7 @@
   # Ensure the correct mysql user exists and has access to this database
   - name: provision | Ensure database user exists
     mysql_user: name={{ mysql_user }} host=localhost password={{ mysql_pass }} login_password={{ mysql_root_pass }} login_user={{ mysql_root_user }} priv={{ mysql_dbname }}.*:ALL
-  
+
   # Apache VirtualHost
   - name: provision | Ensure apache virtualhost
     action: template src=files/conf/virtualhost.conf.j2 dest=/etc/apache2/sites-available/{{ website_fqdn }}.conf
