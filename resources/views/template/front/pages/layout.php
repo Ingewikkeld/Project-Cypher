@@ -58,3 +58,46 @@
 
     </div>
 </script>
+
+
+
+<script type="text/ng-template" id="searchPeople.html">
+    <div class="well bs-component">
+        <form class="form-horizontal" ng-submit="ctrl.searchPeople()">
+            <fieldset>
+                <legend>Keyword</legend>
+                <div class="form-group">
+                    <label for="inputKeyword" class="col-lg-2 control-label">Keyword</label>
+
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="inputKeyword" ng-model="ctrl.searchKeyword" placeholder="Keyword">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+    </div>
+    <div class="well bs-component" ng-show="ctrl.searchFinished">
+        <div>
+            <legend>Results</legend>
+
+            <div ng-show="ctrl.searchResults.length">
+                <div class="" ng-repeat="person in ctrl.searchResults track by person.id">
+                    {{ person.id }} - {{ person.name }}
+                </div>
+            </div>
+            <div ng-show="!ctrl.searchResults.length">
+                No results, sorry.
+            </div>
+
+            <br/>
+            <br/>
+        </div>
+    </div>
+</script>
