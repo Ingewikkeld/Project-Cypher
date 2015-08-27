@@ -15,7 +15,6 @@ Route::get('/', function () {
     return view('template/front/pages/homepage');
 });
 
-
 Route::get('/add-person', 'AddPersonController@getAction');
 Route::post('/api/add-person', 'AddPersonController@postAction');
 

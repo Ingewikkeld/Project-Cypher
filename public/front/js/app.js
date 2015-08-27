@@ -50,6 +50,18 @@ function addPerson() {
                 window.location = "/"
             };
 
+            self.people = function(id){
+               if(
+                   !empty(self.added_list[id]) &&
+                   !empty(self.added_list[id]).id
+               ){
+                    console.log("/person/"+self.added_list[id].id);
+                    window.location = "/person/"+self.added_list[id].id;
+               } else {
+                   alert('Person does not exist!!');
+               }
+            };
+
             function _resetPerson(){
                 self.person = {
                     name    : "",
