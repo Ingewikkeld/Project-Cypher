@@ -9,7 +9,7 @@
     </div>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
-            <li><a href="/add-person2">Add person</a></li>
+            <li><a href="/add-person">Add person</a></li>
             <li><a href="/search2">Search</a></li>
         </ul>
         {{--<form class="navbar-form navbar-left">--}}
