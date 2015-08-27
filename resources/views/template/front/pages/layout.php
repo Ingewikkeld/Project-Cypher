@@ -115,3 +115,23 @@
         </div>
     </div>
 </script>
+
+<script type="text/ng-template" id="homepage.html">
+    <div class="well bs-component">
+        <div ng-if="ctrl.dataLoaded">
+            <legend>Peoples</legend>
+
+            <div ng-show="ctrl.peoples.length">
+                <div ng-repeat="person in ctrl.peoples track by person.id">
+                    <person data-person="person"></person>
+                </div>
+            </div>
+            <div ng-show="!ctrl.peoples.length">
+                No entries to show. <a href="/add-person">Add one now</a>.
+            </div>
+        </div>
+        <div ng-if="!ctrl.dataLoaded">
+            <p>Data is being fetched... Please wait.</p>
+        </div>
+    </div>
+</script>-
