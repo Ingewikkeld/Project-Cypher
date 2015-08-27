@@ -20,6 +20,7 @@ Route::get('/add-person', 'AddPersonController@getAction');
 Route::post('/api/add-person', 'AddPersonController@postAction');
 
 Route::get('/api/peoples', 'PeoplesController@apiGetAction');
+Route::post('/api/peoples/{id}/data', 'PersonDataController@apiPostAction');
 
 //Route::resource('people', 'PeopleController');
 Route::get('/api/peoples/{id}', 'PeoplesController@dashboard');
