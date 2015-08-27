@@ -30,9 +30,9 @@ class PeopleTableSeeder extends Seeder {
         DB::table('people')->delete();
 
         $this->people = array(
-            ['id' => $this->faker->uuid, 'name' => 'Frank van den Brink'],
-            ['id' => $this->faker->uuid, 'name' => 'Ramon de la Fuente'],
-            ['id' => $this->faker->uuid, 'name' => 'Mike van Riel']
+            ['id' => $this->faker->uuid, 'name' => 'Frank van den Brink', 'canonical' => 'frankvandenbrink'],
+            ['id' => $this->faker->uuid, 'name' => 'Ramon de la Fuente', 'canonical' => 'ramondelafuente'],
+            ['id' => $this->faker->uuid, 'name' => 'Mike van Riel', 'canonical' => 'mikevanriel']
         );
 
         // run the seeder

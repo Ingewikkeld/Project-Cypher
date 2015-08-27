@@ -32,7 +32,6 @@
 </script>
 
 
-
 <script type="text/ng-template" id="searchPeople.html">
     <div class="well bs-component">
         <form class="form-horizontal" ng-submit="ctrl.searchPeople()">
@@ -77,14 +76,12 @@
          class="row alert alert-dismissable alert-success"
          style="margin-bottom: 5px; cursor: pointer;">
         <div class="col-xs-12">
-            <i class="mdi-action-account-circle"
-               style="float: left; font-size: 40px; margin-right: 20px;"></i>
-                        <span style="display: inline-block; font-size: 18px; line-height: 40px;">
-                            {{ ctrl.person.name }}
-                        </span>
+            <img class="picture" ng-src="/images/{{ ctrl.person.canonical }}.jpg" alt="" />
+            <span class="name">{{ ctrl.person.name }}</span>
         </div>
     </div>
 </script>
+
 
 <script type="text/ng-template" id="homepage.html">
     <div class="well bs-component">
@@ -104,4 +101,4 @@
             <p>Data is being fetched... Please wait.</p>
         </div>
     </div>
-</script>-
+</script>
