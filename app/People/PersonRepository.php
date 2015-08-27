@@ -217,19 +217,14 @@ WHERE p.name LIKE :keyword1 OR pd.label LIKE :keyword2 OR pd.value LIKE :keyword
 GROUP BY p.id
 EOQ;
 
-        $stmt = $this->connection->prepare($sql);
-        $stmt->bindValue('keyword1', "%$keyword%");
-        $stmt->bindValue('keyword2', "%$keyword%");
-        $stmt->bindValue('keyword3', "%$keyword%");
-        $stmt->execute();
+        return array_map(
+            function (array $row) {
+                $row['data'] = [];
+                $row['tags'] = [];
 
-        $peoples = [];
-
-        while (($row = $stmt->fetch(PDO::FETCH_ASSOC)) !== false) {
-            $person = new Person(PersonId::fromString($row['id']), $row['name']);
-            array_push($peoples, $person);
-        }
-
-        return $peoples;
+                return Person::fromDB($row);
+            },
+            $this->query($sql, ['keyword1' => "%$keyword%",'keyword2' => "%$keyword%",'keyword3' => "%$keyword%"])
+        );
     }
 }
