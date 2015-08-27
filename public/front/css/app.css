@@ -1,0 +1,14 @@
+person .picture {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.84);
+    border-radius: 20px;
+}
+
+person .name {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 40px;
+}
