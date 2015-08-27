@@ -18,10 +18,10 @@ Route::get('/', function () {
 Route::get('/add-person', 'AddPersonController@getAction');
 Route::post('/api/add-person', 'AddPersonController@postAction');
 
-Route::get('/api/peoples', 'PersonController@apiGetAction');
-Route::get('/api/peoples/{id}', 'PersonController@dashboard');
+Route::get('/api/people', 'PersonController@apiGetAction');
+Route::get('/api/people/{id}', 'PersonController@dashboard');
 
-Route::post('/api/peoples/{id}/data', 'PersonDataController@apiPostAction');
+Route::post('/api/people/{id}/data', 'PersonDataController@apiPostAction');
 
 Route::get('/dashboard', 'DashboardController@getAction');
 Route::get('/api/dashboard', 'DashboardController@apiGetAction');

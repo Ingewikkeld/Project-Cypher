@@ -30,12 +30,12 @@ class PersonController extends Controller
     {
         if ($request->query->has('keyword')) {
             $keyword = $request->query->get('keyword');
-            $peoples = $this->personRepository->search($keyword);
+            $people = $this->personRepository->search($keyword);
         } else {
-            $peoples = $this->personRepository->findAll();
+            $people = $this->personRepository->findAll();
         }
 
-        return response()->json($peoples);
+        return response()->json($people);
     }
 
     /**

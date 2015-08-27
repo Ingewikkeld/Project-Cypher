@@ -206,7 +206,7 @@ final class PersonRepository
     }
 
     /**
-     * @return array a collection of peoples
+     * @return array a collection of people
      */
     public function search($keyword)
     {
