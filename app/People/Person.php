@@ -181,7 +181,7 @@ final class Person implements JsonSerializable
         // YES! This is horrible, sorry, just needed a very quick fix!
 
         $canonical = $this->canonical;
-        $filename  = sprintf('%s/images/%s.jpg', public_path(), $canonical);
+        $filename  = sprintf('%s/front/images/people/%s.jpg', public_path(), $canonical);
 
         if (!file_exists($filename)) {
             $canonical = 'blank';

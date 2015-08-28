@@ -31,7 +31,6 @@
     </div>
 </script>
 
-
 <script type="text/ng-template" id="searchPeople.html">
     <div class="well bs-component">
         <form class="form-horizontal" ng-submit="ctrl.searchPeople()">
@@ -70,18 +69,16 @@
     </div>
 </script>
 
-
 <script type="text/ng-template" id="person.html">
     <div ng-click="ctrl.goToDashboard()"
          class="row alert alert-dismissable alert-success"
          style="margin-bottom: 5px; cursor: pointer;">
         <div class="col-xs-12">
-            <img class="picture" ng-src="/images/{{ ctrl.person.canonical }}.jpg" alt="" />
+            <img ng-if="ctrl.person.canonical" class="picture" ng-src="/front/images/people/{{ ctrl.person.canonical }}.jpg" alt=""/>
             <span class="name">{{ ctrl.person.name }}</span>
         </div>
     </div>
 </script>
-
 
 <script type="text/ng-template" id="homepage.html">
     <div class="well bs-component">
@@ -105,11 +102,12 @@
 
 <script type="text/ng-template" id="personDashboard.html">
 
-    <div class="well bs-component"
+    <div class="well bs-component" ng-if="ctrl.data.canonical"
          style="padding: 0;
          margin-bottom: 0;
-         background: url('/images/frankvandenbrink.jpg') no-repeat center center ; height: 200px; background-size: cover">
-
+         background: url('/front/images/people/{{ ctrl.data.canonical }}.jpg') no-repeat center center;
+         height: 400px;
+         background-size: cover">
     </div>
 
     <div class="well bs-component" style="padding-top: 10px;">
@@ -122,7 +120,6 @@
 
             <fieldset>
 
-
                 <div class="list-group">
 
                     <div class="list-group-item" ng-repeat="row in ctrl.rows">
@@ -132,26 +129,21 @@
                         <div class="row-content">
                             <div class="action-secondary"><i class="mdi-material-info"></i></div>
                             <div>
+                                <span style="width: 50%; margin-right: 9%; display: inline-block;"
+                                      type="text" class="form-control" id="inputName" ng-model="ctrl.person.name"
+                                      placeholder="{{ row.value }}" value="{{ row.value }}">
+                                    {{ row.value }}
+                                </span>
 
-                                    <span style="width: 50%; margin-right: 9%; display: inline-block;"
-                                          type="text" class="form-control" id="inputName" ng-model="ctrl.person.name"
-                                          placeholder="{{ row.value }}" value="{{ row.value }}">
-                                        {{ row.value }}
-                                    </span>
-
-                                    <span style="width: 40%; display: inline-block;"
-                                          type="text" class="form-control" id="inputName" ng-model="ctrl.person.name"
-                                          placeholder="{{ row.label }}">
-                                        {{ row.label }}
-                                     </span>
-
+                                <span style="width: 40%; display: inline-block;"
+                                      type="text" class="form-control" id="inputName" ng-model="ctrl.person.name"
+                                      placeholder="{{ row.label }}">
+                                    {{ row.label }}
+                                </span>
                             </div>
                         </div>
                     </div>
-
-                    <div class="list-group-separator"></div>
                 </div>
-
 
                 <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
