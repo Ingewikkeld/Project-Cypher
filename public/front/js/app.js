@@ -8,19 +8,60 @@ var app = angular.module('cypher_app',
 
         //framework
         .directive('addPerson', addPerson)
+        .directive('personDashboard', personDashboard)
         .directive('searchPeople', searchPeople)
         .directive('person', person)
         .directive('homepage', homepage)
     ;
 
+function personDashboard() {
+    "use strict";
+    return {
+        restrict: 'E',
+        scope: {
+            id: "@"
+        },
+        templateUrl: 'personDashboard.html',
+        controllerAs: 'ctrl',
+
+        controller: function ($scope, $http) {
+            var self = this;
+
+            var id = $scope.id;
+            //self.defaultOptions = {
+            //    url: '',
+            //    date: '',
+            //    phone: '',
+            //    address: ''
+            //};
+
+            console.log('/api/peoples/' + id);
+
+            $http.get('/api/peoples/' + id).
+                then(function (response) {
+                    console.log(response);
+
+                    self.data = response.data;
+                    self.rows = self.data.data;
+
+                    // this callback will be called asynchronously
+                    // when the response is available
+                }, function (response) {
+                    // called asynchronously if an error occurs
+                    // or server returns response with an error status.
+                });
+        }
+    };
+}
+
 function addPerson() {
     "use strict";
     return {
-        restrict    : 'E',
-        scope       : {},
-        templateUrl : 'addPerson.html',
+        restrict: 'E',
+        scope: {},
+        templateUrl: 'addPerson.html',
         controllerAs: 'ctrl',
-        controller  : function ($scope, $http) {
+        controller: function ($scope, $http) {
             var self = this;
 
             _resetPerson();
@@ -32,14 +73,14 @@ function addPerson() {
                     $http.post('/api/add-person', {name: itemCopy.name}).
                         then(function (response) {
                             //console.log(response);
-                            if(empty(self.added_list)){
+                            if (empty(self.added_list)) {
                                 self.added_list = [];
                             }
                             self.added_list.push(response.data);
                             //console.log(self.added_list);
                             _resetPerson();
                         }, function (response) {
-                            console.log(response,'bad');
+                            console.log(response, 'bad');
                         });
 
                 } else {
@@ -52,25 +93,26 @@ function addPerson() {
                 window.location = "/"
             };
 
-            function _resetPerson(){
+            function _resetPerson() {
                 self.person = {
-                    name    : "",
+                    name: "",
                     favorite: false,
-                    rating  : "Not yet rated"
+                    rating: "Not yet rated"
                 };
             }
         }
     };
 }
 
+
 function searchPeople() {
     "use strict";
     return {
-        restrict    : 'E',
-        scope       : {},
-        templateUrl : 'searchPeople.html',
+        restrict: 'E',
+        scope: {},
+        templateUrl: 'searchPeople.html',
         controllerAs: 'ctrl',
-        controller  : function ($scope, $http) {
+        controller: function ($scope, $http) {
             var self = this,
                 searchKeyword = ''
                 ;
@@ -94,7 +136,7 @@ function searchPeople() {
                             self.searchFinished = true;
                         }, function (response) {
                             self.searchFinished = true;
-                            console.log(response,'bad');
+                            console.log(response, 'bad');
                         });
 
                 } else {
@@ -109,20 +151,20 @@ function searchPeople() {
 function person() {
     "use strict";
     return {
-        restrict    : 'E',
-        scope       : {
+        restrict: 'E',
+        scope: {
             person: '='
         },
-        templateUrl : 'person.html',
+        templateUrl: 'person.html',
         controllerAs: 'ctrl',
-        controller  : function ($scope, $http) {
+        controller: function ($scope, $http) {
             var self = this
                 ;
 
             self.person = $scope.person;
 
-            self.goToDashboard = function(){
-                window.location = "/person/"+$scope.person.id;
+            self.goToDashboard = function () {
+                window.location = "/person/" + $scope.person.id;
             };
         }
     };
@@ -132,11 +174,11 @@ function person() {
 function homepage() {
     "use strict";
     return {
-        restrict    : 'E',
-        scope       : {},
-        templateUrl : 'homepage.html',
+        restrict: 'E',
+        scope: {},
+        templateUrl: 'homepage.html',
         controllerAs: 'ctrl',
-        controller  : function ($http) {
+        controller: function ($http) {
             var self = this
                 ;
 
@@ -156,13 +198,4 @@ function homepage() {
     };
 
 }
-
-
-
-
-
-
-
-
-
 

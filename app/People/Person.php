@@ -39,9 +39,17 @@ final class Person implements JsonSerializable
     {
         $person = new Person(
             PersonId::fromString($data['id']),
-            $data['name'],
-            $data['canonical']
+            $data['name']
         );
+
+        // add canonical when it's available
+        if( isset($data['canonical'])) {
+            $person = new Person(
+                PersonId::fromString($data['id']),
+                $data['name'],
+                $data['canonical']
+            );
+        }
 
         foreach ($data['data'] as $entry) {
             $person->data[] = new Data(

@@ -48,4 +48,8 @@ class PersonController extends Controller
 
         return response()->json($person);
     }
+
+    public function feDashboard($id){
+        return view('template/front/pages/dashboard')->with('id', $id);
+    }
 }
