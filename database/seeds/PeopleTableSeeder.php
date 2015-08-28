@@ -21,6 +21,7 @@ class PeopleTableSeeder extends Seeder {
 
         $this->runPeople();
         $this->runPeopleData();
+        $this->runPeopleTags();
 //        $this->run();
     }
 
@@ -81,6 +82,21 @@ class PeopleTableSeeder extends Seeder {
 
         // Uncomment the below to run the seeder
         DB::table('people_data')->insert($this->people_data);
+    }
+
+    public function runPeopleTags()
+    {
+        $this->tags = array(
+            ['person_id' => $this->people[0]['id'], 'tag' => 'wecamp2015'],
+            ['person_id' => $this->people[0]['id'], 'tag' => 'wecamp'],
+            ['person_id' => $this->people[1]['id'], 'tag' => 'wecamp2015'],
+            ['person_id' => $this->people[1]['id'], 'tag' => 'wecamp'],
+            ['person_id' => $this->people[2]['id'], 'tag' => 'wecamp2015'],
+            ['person_id' => $this->people[2]['id'], 'tag' => 'wecamp'],
+        );
+
+        // Uncomment the below to run the seeder
+        DB::table('tags')->insert($this->tags);
     }
 
 }

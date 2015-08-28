@@ -1,8 +1,9 @@
 <?php
 
 namespace App\People;
+use JsonSerializable;
 
-final class Tag
+final class Tag implements JsonSerializable
 {
     /**
      * @var string
@@ -33,4 +34,14 @@ final class Tag
     {
         $this->tag = (string) $tag;
     }
+
+    /**
+     * @inheritdoc
+     */
+    function jsonSerialize()
+    {
+        return $this->tag;
+    }
+
+
 }
