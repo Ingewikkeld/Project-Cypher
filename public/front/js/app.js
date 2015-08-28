@@ -35,9 +35,9 @@ function personDashboard() {
             //    address: ''
             //};
 
-            console.log('/api/peoples/' + id);
+            console.log('/api/people/' + id);
 
-            $http.get('/api/peoples/' + id).
+            $http.get('/api/people/' + id).
                 then(function (response) {
                     console.log(response);
 
