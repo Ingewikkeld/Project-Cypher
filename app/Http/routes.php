@@ -28,7 +28,7 @@ Route::post('/api/people/{id}/data', 'PersonDataController@apiPostAction');
 
 Route::get('/add-person', 'AddPersonController@getAction');
 Route::get('/dashboard', 'DashboardController@getAction');
-Route::get('/peoples/{id}', 'PersonController@feDashboard');
+Route::get('/person/{id}', 'PersonController@feDashboard');
 
 Route::get('/search', function () {
     return view('template/front/pages/search');
