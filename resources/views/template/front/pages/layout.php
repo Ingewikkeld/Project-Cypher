@@ -108,7 +108,7 @@
     <div class="well bs-component"
          style="padding: 0;
          margin-bottom: 0;
-         background: url('/front/images/test/pussies.jpg') no-repeat center center ; height: 200px; background-size: cover">
+         background: url('/images/frankvandenbrink.jpg') no-repeat center center ; height: 200px; background-size: cover">
 
     </div>
 
