@@ -13,21 +13,22 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\SomeEvent' => [
-            'App\Listeners\EventListener',
+        'App\Events\PersonWasAdded' => [
+            'App\Listeners\IndexPersonInElasticsearch'
         ],
+        'App\Events\PersonWasUpdated' => [
+            'App\Listeners\IndexPersonInElasticsearch'
+        ]
     ];
 
     /**
      * Register any other events for your application.
      *
-     * @param  \Illuminate\Contracts\Events\Dispatcher  $events
+     * @param  \Illuminate\Contracts\Events\Dispatcher $events
      * @return void
      */
     public function boot(DispatcherContract $events)
     {
         parent::boot($events);
-
-        //
     }
 }
