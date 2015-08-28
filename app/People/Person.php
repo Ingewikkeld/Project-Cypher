@@ -17,6 +17,11 @@ final class Person implements JsonSerializable
     private $name;
 
     /**
+     * @var string;
+     */
+    private $canonical;
+
+    /**
      * @var Data[]
      */
     private $data;
@@ -36,6 +41,15 @@ final class Person implements JsonSerializable
             PersonId::fromString($data['id']),
             $data['name']
         );
+
+        // add canonical when it's available
+        if( isset($data['canonical'])) {
+            $person = new Person(
+                PersonId::fromString($data['id']),
+                $data['name'],
+                $data['canonical']
+            );
+        }
 
         foreach ($data['data'] as $entry) {
             $person->data[] = new Data(
@@ -60,9 +74,10 @@ final class Person implements JsonSerializable
     public function __construct(PersonId $id, $name)
     {
         $this->id   = $id;
-        $this->name = (string) $name;
         $this->data = [];
         $this->tags = [];
+
+        $this->rename($name);
     }
 
     /**
@@ -81,9 +96,21 @@ final class Person implements JsonSerializable
         return $this->name;
     }
 
+    /**
+     * @param string $name
+     */
     public function rename($name)
     {
-        $this->name = (string) $name;
+        $this->name      = (string) $name;
+        $this->canonical = preg_replace('/[^0-9a-z]/', '', strtolower($name));
+    }
+
+    /**
+     * @return string
+     */
+    public function getCanonical()
+    {
+        return $this->canonical;
     }
 
     /**
@@ -151,10 +178,21 @@ final class Person implements JsonSerializable
      */
     public function jsonSerialize()
     {
+        // YES! This is horrible, sorry, just needed a very quick fix!
+
+        $canonical = $this->canonical;
+        $filename  = sprintf('%s/images/%s.jpg', public_path(), $canonical);
+
+        if (!file_exists($filename)) {
+            $canonical = 'blank';
+        }
+
         return [
-            'id'   => $this->id->toString(),
-            'name' => $this->name,
-            'data' => $this->data
+            'id'        => $this->id->toString(),
+            'name'      => $this->name,
+            'canonical' => $canonical,
+            'data'      => $this->data,
+            'tags'      => $this->tags
         ];
     }
 }

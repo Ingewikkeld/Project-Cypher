@@ -9,6 +9,9 @@ var app = angular.module('cypher_app',
         //framework
         .directive('addPerson', addPerson)
         .directive('personDashboard', personDashboard)
+        .directive('searchPeople', searchPeople)
+        .directive('person', person)
+        .directive('homepage', homepage)
     ;
 
 function personDashboard() {
@@ -25,12 +28,12 @@ function personDashboard() {
             var self = this;
 
             var id = $scope.id;
-            self.defaultOptions = {
-                url: '',
-                date: '',
-                phone: '',
-                address: ''
-            };
+            //self.defaultOptions = {
+            //    url: '',
+            //    date: '',
+            //    phone: '',
+            //    address: ''
+            //};
 
             console.log('/api/peoples/' + id);
 
@@ -47,45 +50,6 @@ function personDashboard() {
                     // called asynchronously if an error occurs
                     // or server returns response with an error status.
                 });
-
-            _resetPerson();
-
-            self.addPerson = function () {
-                var itemCopy = angular.copy(self.person);
-                if (!empty(itemCopy.name)) {
-                    // Simple POST request example (passing data) :
-                    $http.post('/api/add-person', {name: itemCopy.name}).
-                        then(function (response) {
-                            //console.log(response);
-                            if (empty(self.added_list)) {
-                                self.added_list = [];
-                            }
-                            self.added_list.push(response.data);
-                            //console.log(self.added_list);
-                            _resetPerson();
-                        }, function (response) {
-                            console.log(response, 'bad');
-                        });
-
-                } else {
-
-                    alert('Error empty name field!!');
-                    //self.openModal('md', 'Er ging iets mis!', text, 'OK');
-                }
-            };
-
-            self.cancel = function () {
-                //window.history.back();
-                window.location = "/"
-            };
-
-            function _resetPerson() {
-                self.person = {
-                    name: "",
-                    favorite: false,
-                    rating: "Not yet rated"
-                };
-            }
         }
     };
 }
@@ -98,8 +62,7 @@ function addPerson() {
         templateUrl: 'addPerson.html',
         controllerAs: 'ctrl',
         controller: function ($scope, $http) {
-            var self = this,
-                text;
+            var self = this;
 
             _resetPerson();
 
@@ -121,10 +84,7 @@ function addPerson() {
                         });
 
                 } else {
-                    text = 'Niet alle velden zijn gevuld';
-
                     alert('Error empty name field!!');
-                    //self.openModal('md', 'Er ging iets mis!', text, 'OK');
                 }
             };
 
@@ -142,5 +102,100 @@ function addPerson() {
             }
         }
     };
+}
+
+
+function searchPeople() {
+    "use strict";
+    return {
+        restrict: 'E',
+        scope: {},
+        templateUrl: 'searchPeople.html',
+        controllerAs: 'ctrl',
+        controller: function ($scope, $http) {
+            var self = this,
+                searchKeyword = ''
+                ;
+            self.searchFinished = false;
+            self.searchResults = [];
+
+            self.searchPeople = function () {
+                self.searchResults = [];
+                self.searchFinished = false;
+
+                if (!empty(self.searchKeyword)) {
+                    $http.get(
+                        '/api/people',
+                        {
+                            params: {
+                                keyword: self.searchKeyword
+                            }
+                        }).
+                        then(function (response) {
+                            self.searchResults = response.data;
+                            self.searchFinished = true;
+                        }, function (response) {
+                            self.searchFinished = true;
+                            console.log(response, 'bad');
+                        });
+
+                } else {
+                    alert('Please, provide search keyword.');
+                }
+            };
+        }
+    };
 
 }
+
+function person() {
+    "use strict";
+    return {
+        restrict: 'E',
+        scope: {
+            person: '='
+        },
+        templateUrl: 'person.html',
+        controllerAs: 'ctrl',
+        controller: function ($scope, $http) {
+            var self = this
+                ;
+
+            self.person = $scope.person;
+
+            self.goToDashboard = function () {
+                window.location = "/person/" + $scope.person.id;
+            };
+        }
+    };
+
+}
+
+function homepage() {
+    "use strict";
+    return {
+        restrict: 'E',
+        scope: {},
+        templateUrl: 'homepage.html',
+        controllerAs: 'ctrl',
+        controller: function ($http) {
+            var self = this
+                ;
+
+            self.dataLoaded = false;
+            self.people = [];
+
+            $http.get('/api/people').
+                then(function (response) {
+                    self.people = response.data;
+                    self.dataLoaded = true;
+                }, function (response) {
+                    self.people = [];
+                    self.dataLoaded = false;
+                });
+
+        }
+    };
+
+}
+

@@ -10,7 +10,7 @@
     <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
             <li><a href="/add-person">Add person</a></li>
-            <li><a href="/search2">Search</a></li>
+            <li><a href="/search">Search</a></li>
         </ul>
         {{--<form class="navbar-form navbar-left">--}}
             {{--<input type="text" class="form-control col-lg-8" placeholder="Search">--}}

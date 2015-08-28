@@ -3,13 +3,12 @@
 @section('body_class') search @endsection
 
 @section('content')
-    {{--    @include('template.front.pages.homepage.welcome')--}}
-    <div class="container">
+    <div class="container" ng-app="cypher_app">
+        @include('template.front.pages.layout')
         <div class="row">
             <div class="col-xs-12">
                 <h1>Search</h1>
-
-                <add-person></add-person>
+                <search-people></search-people>
             </div>
         </div>
     </div>

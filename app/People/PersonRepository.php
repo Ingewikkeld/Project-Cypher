@@ -27,7 +27,7 @@ final class PersonRepository
     public function find(PersonId $id)
     {
         $result = $this->query(
-            'SELECT p.id, p.name FROM people p WHERE id = :id',
+            'SELECT * FROM people WHERE id = :id',
             ['id' => $id->toString()]
         );
 
@@ -38,12 +38,12 @@ final class PersonRepository
         $data = $result[0];
 
         $data['data'] = $this->query(
-            'SELECT d.id, d.type, d.label, d.value FROM people_data d WHERE d.person_id = :id',
+            'SELECT * FROM people_data WHERE person_id = :id',
             ['id' => $id->toString()]
         );
 
         $data['tags'] = $this->query(
-            'SELECT t.tag FROM tags t WHERE person_id = :id',
+            'SELECT * FROM tags WHERE person_id = :id',
             ['id' => $id->toString()]
         );
 
@@ -62,7 +62,7 @@ final class PersonRepository
 
                 return Person::fromDB($row);
             },
-            $this->query('SELECT id, name FROM people', [])
+            $this->query('SELECT * FROM people ORDER BY name', [])
         );
     }
 
@@ -72,8 +72,8 @@ final class PersonRepository
     public function add(Person $person)
     {
         $this->updateQuery(
-            'INSERT INTO people (id, name) VALUES (:id, :name)',
-            ['id' => $person->getId()->toString(), 'name' => $person->getName()]
+            'INSERT INTO people (id, name, canonical) VALUES (:id, :name, :canonical)',
+            ['id' => $person->getId()->toString(), 'name' => $person->getName(), 'canonical' => $person->getCanonical()]
         );
 
         foreach ($person->getData() as $data) {
@@ -106,8 +106,8 @@ final class PersonRepository
     {
         // person itself
         $this->updateQuery(
-            'UPDATE people SET name = :name WHERE id = :id',
-            ['name' => $person->getName(), 'id' => $person->getId()->toString()]
+            'UPDATE people SET name = :name, canonical = :canonical WHERE id = :id',
+            ['name' => $person->getName(), 'canonical' => $person->getCanonical(), 'id' => $person->getId()->toString()]
         );
 
         // data
@@ -206,15 +206,18 @@ final class PersonRepository
     }
 
     /**
-     * @return array a collection of peoples
+     * @param string $keyword
+     * @return array a collection of people
      */
     public function search($keyword)
     {
         $sql = <<< EOQ
 SELECT p.*
-FROM people p LEFT JOIN people_data pd ON(p.id = pd.person_id)
+FROM people p
+LEFT JOIN people_data pd ON(p.id = pd.person_id)
 WHERE p.name LIKE :keyword1 OR pd.label LIKE :keyword2 OR pd.value LIKE :keyword3
 GROUP BY p.id
+ORDER BY p.name
 EOQ;
 
         return array_map(
@@ -224,7 +227,7 @@ EOQ;
 
                 return Person::fromDB($row);
             },
-            $this->query($sql, ['keyword1' => "%$keyword%",'keyword2' => "%$keyword%",'keyword3' => "%$keyword%"])
+            $this->query($sql, ['keyword1' => "%$keyword%", 'keyword2' => "%$keyword%", 'keyword3' => "%$keyword%"])
         );
     }
 }
