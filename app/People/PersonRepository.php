@@ -67,6 +67,41 @@ final class PersonRepository
     }
 
     /**
+     * @param string $keyword
+     * @return array a collection of people
+     */
+    public function search($keyword)
+    {
+        $sql = <<< EOQ
+SELECT p.*
+FROM people p
+LEFT JOIN people_data pd ON (p.id = pd.person_id)
+LEFT JOIN tags t ON (p.id = t.person_id)
+WHERE p.name LIKE :keyword1 OR pd.label LIKE :keyword2 OR pd.value LIKE :keyword3 OR t.tag LIKE :keyword4
+GROUP BY p.id
+ORDER BY p.name
+EOQ;
+
+        return array_map(
+            function (array $row) {
+                $row['data'] = [];
+                $row['tags'] = [];
+
+                return Person::fromDB($row);
+            },
+            $this->query(
+                $sql,
+                [
+                    'keyword1' => "%$keyword%",
+                    'keyword2' => "%$keyword%",
+                    'keyword3' => "%$keyword%",
+                    'keyword4' => "%$keyword%"
+                ]
+            )
+        );
+    }
+
+    /**
      * @param Person $person
      */
     public function add(Person $person)
@@ -203,31 +238,5 @@ final class PersonRepository
         if ($stmt->execute() === false) {
             throw new RuntimeException('Unable to execute query');
         }
-    }
-
-    /**
-     * @param string $keyword
-     * @return array a collection of people
-     */
-    public function search($keyword)
-    {
-        $sql = <<< EOQ
-SELECT p.*
-FROM people p
-LEFT JOIN people_data pd ON(p.id = pd.person_id)
-WHERE p.name LIKE :keyword1 OR pd.label LIKE :keyword2 OR pd.value LIKE :keyword3
-GROUP BY p.id
-ORDER BY p.name
-EOQ;
-
-        return array_map(
-            function (array $row) {
-                $row['data'] = [];
-                $row['tags'] = [];
-
-                return Person::fromDB($row);
-            },
-            $this->query($sql, ['keyword1' => "%$keyword%", 'keyword2' => "%$keyword%", 'keyword3' => "%$keyword%"])
-        );
     }
 }
