@@ -35,12 +35,8 @@ function personDashboard() {
             //    address: ''
             //};
 
-            console.log('/api/people/' + id);
-
             $http.get('/api/people/' + id).
                 then(function (response) {
-                    console.log(response);
-
                     self.data = response.data;
                     self.rows = self.data.data;
 
@@ -72,15 +68,12 @@ function addPerson() {
                     // Simple POST request example (passing data) :
                     $http.post('/api/add-person', {name: itemCopy.name}).
                         then(function (response) {
-                            //console.log(response);
                             if (empty(self.added_list)) {
                                 self.added_list = [];
                             }
                             self.added_list.push(response.data);
-                            //console.log(self.added_list);
                             _resetPerson();
                         }, function (response) {
-                            console.log(response, 'bad');
                         });
 
                 } else {
@@ -136,7 +129,6 @@ function searchPeople() {
                             self.searchFinished = true;
                         }, function (response) {
                             self.searchFinished = true;
-                            console.log(response, 'bad');
                         });
 
                 } else {
