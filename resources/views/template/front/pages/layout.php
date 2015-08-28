@@ -113,6 +113,10 @@
     <div class="well bs-component" style="padding-top: 10px;">
 
         <h1 style="margin-left: 20px;">{{ ctrl.data.name }}</h1>
+        <div style="margin-left: 20px;" ng-if="ctrl.data.tags.length">
+            Tags:&nbsp;
+            <span ng-repeat="tag in ctrl.data.tags" class="label label-primary" style="margin-right: 5px;">{{ tag }}</span>
+        </div>
         <br/>
         <br/>
 
