@@ -133,10 +133,24 @@
                         <div class="row-content">
                             <div class="action-secondary"><i class="mdi-material-info"></i></div>
                             <div>
+
                                 <span style="width: 50%; margin-right: 9%; display: inline-block;"
                                       type="text" class="form-control" id="inputName" ng-model="ctrl.person.name"
-                                      placeholder="{{ row.value }}" value="{{ row.value }}">
-                                    {{ row.value }}
+                                      placeholder="{{ row.value }}" value="{{ row.value }}"
+                                    ng-switch on="row.type">
+
+                                    <a href="{{ row.value }}" ng-switch-when="url">
+                                        {{ row.value }}
+                                    </a>
+
+                                    <a href="mailto:{{ row.value }}" ng-switch-when="email">
+                                        {{ row.value }}
+                                    </a>
+
+                                    <span ng-switch-default>
+                                        {{ row.value }}
+                                    </span>
+
                                 </span>
 
                                 <span style="width: 40%; display: inline-block;"
