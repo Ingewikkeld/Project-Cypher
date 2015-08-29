@@ -88,12 +88,12 @@ class PeopleTableSeeder extends Seeder {
             ['id' => $this->faker->uuid, 'person_id' => $this->people[5]['id'], 'type' => 'url', 'label' => 'twitter', 'value' => 'https://twitter.com/fvdb'],
             ['id' => $this->faker->uuid, 'person_id' => $this->people[5]['id'], 'type' => 'url', 'label' => 'facebook', 'value' => 'https://www.facebook.com/fvdb1'],
 
-            #'id' => $this->faker->uuid,  Ramon
+            # Ramon
             ['id' => $this->faker->uuid, 'person_id' => $this->people[19]['id'], 'type' => 'url', 'label' => 'work', 'value' => 'http://future500.nl'],
             ['id' => $this->faker->uuid, 'person_id' => $this->people[19]['id'], 'type' => 'url', 'label' => 'twitter', 'value' => 'https://twitter.com/f_u_e_n_t_e'],
             ['id' => $this->faker->uuid, 'person_id' => $this->people[19]['id'], 'type' => 'custom', 'label' => 'phone', 'value' => '085-877387'],
 
-            #'id' => $this->faker->uuid,  Mike
+            # Mike
             ['id' => $this->faker->uuid, 'person_id' => $this->people[12]['id'], 'type' => 'url', 'label' => 'twitter', 'value' => 'https://twitter.com/mvriel'],
             ['id' => $this->faker->uuid, 'person_id' => $this->people[12]['id'], 'type' => 'url', 'label' => 'facebook', 'value' => 'http://facebook.com/mvriel'],
             ['id' => $this->faker->uuid, 'person_id' => $this->people[12]['id'], 'type' => 'url', 'label' => 'github', 'value' => 'https://github.com/mvriel'],
@@ -103,6 +103,7 @@ class PeopleTableSeeder extends Seeder {
             ['id' => $this->faker->uuid, 'person_id' => $this->people[12]['id'], 'type' => 'date', 'label' => 'wedding date', 'value' => '2007-05-31'],
             ['id' => $this->faker->uuid, 'person_id' => $this->people[12]['id'], 'type' => 'url', 'label' => 'work', 'value' => 'http://ingewikkeld.net'],
 
+            # linkedIn
             ['id' => $this->faker->uuid, 'person_id' => $this->people[8]['id'], 'type' => 'url', 'label' => 'linkedin', 'value' => 'https://www.linkedin.com/profile/view?id=19762977&authType=NAME_SEARCH&authToken=d3Pt&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A19762977%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1440740589960%2Ctas%3Ajelrik'],
             ['id' => $this->faker->uuid, 'person_id' => $this->people[15]['id'], 'type' => 'url', 'label' => 'linkedin', 'value' => 'https://www.linkedin.com/profile/view?id=AAEAAAGLybcBUID1yRoU1lzvpYcC3hDagsmfdFs&authType=name&authToken=7IkL&trk=prof-sb-browse_map-name'],
             ['id' => $this->faker->uuid, 'person_id' => $this->people[24]['id'], 'type' => 'url', 'label' => 'linkedin', 'value' => 'https://www.linkedin.com/profile/view?id=AAEAAAL9JvAB1LAAgP4Qs6IE0YtMRQv3YlWIOAk&authType=name&authToken=Iy89&trk=prof-sb-browse_map-name'],
@@ -126,6 +127,22 @@ class PeopleTableSeeder extends Seeder {
                 $this->tags,
                 ['person_id' => $person['id'], 'tag' => 'wecamp']
             );
+
+
+            // add the coaches
+            $idCoaches = [
+                $this->people[4]['id'],
+                $this->people[9]['id'],
+                $this->people[12]['id'],
+                $this->people[17]['id'],
+                $this->people[19]['id'],
+                $this->people[22]['id'],
+                $this->people[23]['id']
+            ];
+
+            if( in_array($person['id'], $idCoaches)){
+                $this->tags[] = ['person_id' => $person['id'], 'tag' => 'coach'];
+            }
         }
 
         DB::table('tags')->insert($this->tags);
