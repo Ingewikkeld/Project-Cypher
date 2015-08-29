@@ -58,7 +58,7 @@ class PeopleTableSeeder extends Seeder {
             24 => ['id' => $this->faker->uuid, 'name' => 'Steven de Vries', 'canonical' => 'stevendevries'],
             25 => ['id' => $this->faker->uuid, 'name' => 'Toby Griffiths', 'canonical' => 'tobygriffiths'],
             26 => ['id' => $this->faker->uuid, 'name' => 'Vitalii Levchenko', 'canonical' => 'vitaliilevchenko'],
-            27 => ['id' => $this->faker->uuid, 'name' => 'Kapitein Frank', 'canonical' => 'kapiteinfrank'],
+            27 => ['id' => $this->faker->uuid, 'name' => 'Captain Frank', 'canonical' => 'captainfrank'],
             28 => ['id' => $this->faker->uuid, 'name' => 'Lukasz Wojciechowski', 'canonical' => 'lukaszwojciechowski']
         ];
 
@@ -105,11 +105,17 @@ class PeopleTableSeeder extends Seeder {
             ['id' => $this->faker->uuid, 'person_id' => $this->people[12]['id'], 'type' => 'date', 'label' => 'wedding date', 'value' => '2007-05-31'],
             ['id' => $this->faker->uuid, 'person_id' => $this->people[12]['id'], 'type' => 'url', 'label' => 'work', 'value' => 'http://ingewikkeld.net'],
 
+            # Captain Frank
+            ['id' => $this->faker->uuid, 'person_id' => $this->people[27]['id'], 'type' => 'url', 'label' => 'linkedin', 'value' => 'https://www.linkedin.com/profile/view?id=captainfrank'],
+
             # linkedIn
-            ['id' => $this->faker->uuid, 'person_id' => $this->people[8]['id'], 'type' => 'url', 'label' => 'linkedin', 'value' => 'https://www.linkedin.com/profile/view?id=19762977&authType=NAME_SEARCH&authToken=d3Pt&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A19762977%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1440740589960%2Ctas%3Ajelrik'],
-            ['id' => $this->faker->uuid, 'person_id' => $this->people[15]['id'], 'type' => 'url', 'label' => 'linkedin', 'value' => 'https://www.linkedin.com/profile/view?id=AAEAAAGLybcBUID1yRoU1lzvpYcC3hDagsmfdFs&authType=name&authToken=7IkL&trk=prof-sb-browse_map-name'],
-            ['id' => $this->faker->uuid, 'person_id' => $this->people[24]['id'], 'type' => 'url', 'label' => 'linkedin', 'value' => 'https://www.linkedin.com/profile/view?id=AAEAAAL9JvAB1LAAgP4Qs6IE0YtMRQv3YlWIOAk&authType=name&authToken=Iy89&trk=prof-sb-browse_map-name'],
+            ['id' => $this->faker->uuid, 'person_id' => $this->people[8]['id'], 'type' => 'url', 'label' => 'linkedin', 'value' => 'https://nl.linkedin.com/in/jelrikvanhal'],
+            ['id' => $this->faker->uuid, 'person_id' => $this->people[15]['id'], 'type' => 'url', 'label' => 'linkedin', 'value' => 'https://nl.linkedin.com/in/pascaldevink'],
+            ['id' => $this->faker->uuid, 'person_id' => $this->people[24]['id'], 'type' => 'url', 'label' => 'linkedin', 'value' => 'https://nl.linkedin.com/in/stedv'],
             ['id' => $this->faker->uuid, 'person_id' => $this->people[22]['id'], 'type' => 'url', 'label' => 'linkedin', 'value' => 'https://nl.linkedin.com/in/rtuin'],
+
+            # Lukasz
+            ['id' => $this->faker->uuid, 'person_id' => $this->people[28]['id'], 'type' => 'custom', 'label' => 'phonetic name', 'value' => 'wukash'],
         );
 
         // Uncomment the below to run the seeder
@@ -135,7 +141,6 @@ class PeopleTableSeeder extends Seeder {
             $idCoaches = [
                 $this->people[4]['id'],
                 $this->people[9]['id'],
-                $this->people[12]['id'],
                 $this->people[17]['id'],
                 $this->people[19]['id'],
                 $this->people[22]['id'],
@@ -146,7 +151,7 @@ class PeopleTableSeeder extends Seeder {
                 $this->tags[] = ['person_id' => $person['id'], 'tag' => 'coach'];
             }
 
-            // kapitein frank
+            // Caption frank
             if( $person['id'] === $this->people[27]['id']){
                 $this->tags[] = ['person_id' => $person['id'], 'tag' => 'pirate'];
             }
@@ -166,6 +171,16 @@ class PeopleTableSeeder extends Seeder {
                 $this->tags[] = ['person_id' => $person['id'], 'tag' => 'scotch'];
                 $this->tags[] = ['person_id' => $person['id'], 'tag' => 'mia'];
                 $this->tags[] = ['person_id' => $person['id'], 'tag' => 'wasp'];
+            }
+
+            // Toby
+            if( $person['id'] === $this->people[25]['id']){
+                $this->tags[] = ['person_id' => $person['id'], 'tag' => 'mia'];
+            }
+
+            // Stefan
+            if( $person['id'] === $this->people[23]['id']){
+                $this->tags[] = ['person_id' => $person['id'], 'tag' => 'skoop'];
             }
 
             // a-team
