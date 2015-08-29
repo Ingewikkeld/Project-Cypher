@@ -44,7 +44,7 @@
                                 All their information in one place
                             </li>
                             <li>
-                                Complete secure envirionment*
+                                Complete secure environment*
                             </li>
                         </ul>
                         <br />
