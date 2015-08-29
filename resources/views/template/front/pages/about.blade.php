@@ -23,36 +23,6 @@
                     <div style="margin-left: 20px">
 
                         <br />
-
-                        <p style="font-size: 20px;">
-                            Bacon ipsum dolor amet andouille flank capicola strip steak meatloaf,
-                            kevin biltong brisket short loin hamburger pancetta pork chop turkey chuck.
-                            Bacon kielbasa capicola chicken ribeye prosciutto short loin. Filet mignon boudin ham hock,
-                            meatball chuck doner venison beef ribs pork corned beef tail bresaola tri-tip.
-                            Corned beef bresaola pork loin cupim turkey biltong swine landjaeger alcatra hamburger pastrami ribeye kielbasa frankfurter.
-                            Sausage shoulder biltong frankfurter bresaola swine t-bone.
-                        </p>
-
-                        <br />
-
-                        <h2>Important qualities:</h2>
-                        <ul style="font-size: 18px;">
-                            <li>
-                                Just in time friends information
-                            </li>
-                            <li>
-                                All their information in one place
-                            </li>
-                            <li>
-                                Complete secure environment*
-                            </li>
-                        </ul>
-                        <br />
-
-                        *Sealed by the NSA
-
-
-                        <br />
                         <br />
                         <br />
                         <br />
@@ -62,32 +32,44 @@
                                 <div class="col-xs-3">
                                     <img src="/front/images/about/show1.jpg" style="width: 100%; max-height: 400px; border-radius: 50%" />
                                 </div>
-                                <div class="col-xs-9" style="font-size: 18px;">
-                                    Jowl rump chicken turkey porchetta. Ball tip pork chop beef ribs tri-tip. Leberkas tri-tip kevin ham chuck short ribs turkey kielbasa landjaeger spare ribs cupim.
+                                <div class="col-xs-9" style="font-size: 20px; margin-top: 53px;">
+                                    Just in time friends information, all in one place.
                                 </div>
                             </div>
+
+                        <br />
+                        <br />
+
                         <div class="row" style="margin-bottom: 2em;">
                                 <div class="col-xs-3">
                                     <img src="/front/images/about/show2.jpg" style="width: 100%; max-height: 400px; border-radius: 50%" />
                                 </div>
-                                <div class="col-xs-9" style="font-size: 18px;">
-                                    Meatball pastrami cupim biltong
+                                <div class="col-xs-9" style="font-size: 20px; margin-top: 89px;">
+                                    All private information is securily guarded, audited and shared.
                                 </div>
                             </div>
+
+                        <br />
+                        <br />
+
                         <div class="row" style="margin-bottom: 2em;">
                                 <div class="col-xs-3">
                                     <img src="/front/images/about/show3.png" style="width: 100%; max-height: 400px; border-radius: 50%" />
                                 </div>
-                                <div class="col-xs-9" style="font-size: 18px;">
-                                    Short loin swine sausage alcatra t-bone flank andouille capicola. Spare ribs chuck ribeye shankle pork loin strip steak. Shankle jowl sirloin shoulder, venison bresaola capicola ribeye corned beef fatback.
+                                <div class="col-xs-9" style="font-size: 20px; margin-top: 89px;">
+                                    Backed by the NSA.
                                 </div>
                             </div>
+
+                        <br />
+                        <br />
+
                         <div class="row" style="margin-bottom: 2em;">
                                 <div class="col-xs-3">
                                     <img src="/front/images/about/show4.png" style="width: 100%; max-height: 400px; border-radius: 50%" />
                                 </div>
-                                <div class="col-xs-9" style="font-size: 18px;">
-                                    Pork loin chuck rump biltong pork leberkas chicken corned beef alcatra. Bacon strip steak venison, capicola salami ham boudin pastrami pork chop shank pancetta prosciutto. Shank pork strip steak short loin.
+                                <div class="col-xs-9" style="font-size: 20px; margin-top: 24px;">
+                                    Partnered with Facebook.
                                 </div>
                             </div>
 
@@ -97,10 +79,10 @@
                         <br />
                         <hr>
                         <br />
-                        <p style="font-size: 22px;">
-                            Short loin swine sausage alcatra t-bone flank andouille capicola. Spare ribs chuck ribeye shankle pork loin strip steak. Shankle jowl sirloin shoulder, venison bresaola capicola ribeye corned beef fatback.
 
-                        </p>
+                        <h1 style="margin-left: 20px; font-size: 40px; text-align: center;">Jois us now!</h1>
+
+                        <br />
                         <br />
                         <div class="" style="text-align: center;">
                             <a style="font-size: 40px;" href="javascript:void(0)" class="btn btn-primary btn-lg">Start free trial</a>
@@ -108,7 +90,7 @@
 
                         <br />
 
-                        <p style="text-align: center; font-size: 10px; font-style: italic;">We won't use all your filled information to spam you, only a bit... or not?!</p>
+                        <p style="text-align: center; font-size: 12px; font-style: italic;">We won't use all your filled information to spam you, only a bit... or not?!</p>
 
                     </div>
 
