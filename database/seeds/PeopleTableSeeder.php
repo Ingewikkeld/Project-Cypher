@@ -151,10 +151,21 @@ class PeopleTableSeeder extends Seeder {
                 $this->tags[] = ['person_id' => $person['id'], 'tag' => 'pirate'];
             }
 
+            // Ramon
+            if( $person['id'] === $this->people[19]['id']){
+                $this->tags[] = ['person_id' => $person['id'], 'tag' => 'mia'];
+            }
+
+            // Pim
+            if( $person['id'] === $this->people[18]['id']){
+                $this->tags[] = ['person_id' => $person['id'], 'tag' => 'wasp'];
+            }
+
             // Frank
             if( $person['id'] === $this->people[5]['id']){
                 $this->tags[] = ['person_id' => $person['id'], 'tag' => 'scotch'];
-                $this->tags[] = ['person_id' => $person['id'], 'tag' => 'sleepy'];
+                $this->tags[] = ['person_id' => $person['id'], 'tag' => 'mia'];
+                $this->tags[] = ['person_id' => $person['id'], 'tag' => 'wasp'];
             }
 
             // a-team
