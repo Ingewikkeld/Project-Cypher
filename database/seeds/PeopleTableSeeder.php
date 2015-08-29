@@ -48,16 +48,18 @@ class PeopleTableSeeder extends Seeder {
             14 => ['id' => $this->faker->uuid, 'name' => 'Monique Engelage', 'canonical' => 'moniqueengel'],
             15 => ['id' => $this->faker->uuid, 'name' => 'Pascal de Vink', 'canonical' => 'pascaldevink'],
             16 => ['id' => $this->faker->uuid, 'name' => 'Paul Edenburg', 'canonical' => 'pauledenburg'],
-            17 => ['id' => $this->faker->uuid, 'name' => 'Petra Dreiskämper', 'canonical' => 'petradreiskamper'],
+            17 => ['id' => $this->faker->uuid, 'name' => 'Petra Dreiskamper', 'canonical' => 'petradreiskamper'],
             18 => ['id' => $this->faker->uuid, 'name' => 'Pim Widdershoven', 'canonical' => 'pimwiddershoven'],
             19 => ['id' => $this->faker->uuid, 'name' => 'Ramon de la Fuente', 'canonical' => 'ramondelafuente'],
             20 => ['id' => $this->faker->uuid, 'name' => 'Randy Geraads', 'canonical' => 'randygeraads'],
-            21 => ['id' => $this->faker->uuid, 'name' => 'Remco Janssen', 'canonical' => 'remcojanssen'],
+            21 => ['id' => $this->faker->uuid, 'name' => 'Remco Jansen', 'canonical' => 'remcojansen'],
             22 => ['id' => $this->faker->uuid, 'name' => 'Richard Tuin', 'canonical' => 'richardtuin'],
             23 => ['id' => $this->faker->uuid, 'name' => 'Stefan Koopmanschap', 'canonical' => 'stefankoopmanschap'],
             24 => ['id' => $this->faker->uuid, 'name' => 'Steven de Vries', 'canonical' => 'stevendevries'],
             25 => ['id' => $this->faker->uuid, 'name' => 'Toby Griffiths', 'canonical' => 'tobygriffiths'],
-            26 => ['id' => $this->faker->uuid, 'name' => 'Vitalii Levchenko', 'canonical' => 'vitaliilevchenko']
+            26 => ['id' => $this->faker->uuid, 'name' => 'Vitalii Levchenko', 'canonical' => 'vitaliilevchenko'],
+            27 => ['id' => $this->faker->uuid, 'name' => 'Kapitein Frank', 'canonical' => 'kapiteinfrank'],
+            28 => ['id' => $this->faker->uuid, 'name' => 'Lukasz Wojciechowski', 'canonical' => 'lukaszwojciechowski']
         ];
 
         // run the seeder
@@ -142,6 +144,40 @@ class PeopleTableSeeder extends Seeder {
 
             if( in_array($person['id'], $idCoaches)){
                 $this->tags[] = ['person_id' => $person['id'], 'tag' => 'coach'];
+            }
+
+            // kapitein frank
+            if( $person['id'] === $this->people[27]['id']){
+                $this->tags[] = ['person_id' => $person['id'], 'tag' => 'pirate'];
+            }
+
+            // Ramon
+            if( $person['id'] === $this->people[19]['id']){
+                $this->tags[] = ['person_id' => $person['id'], 'tag' => 'mia'];
+            }
+
+            // Pim
+            if( $person['id'] === $this->people[18]['id']){
+                $this->tags[] = ['person_id' => $person['id'], 'tag' => 'wasp'];
+            }
+
+            // Frank
+            if( $person['id'] === $this->people[5]['id']){
+                $this->tags[] = ['person_id' => $person['id'], 'tag' => 'scotch'];
+                $this->tags[] = ['person_id' => $person['id'], 'tag' => 'mia'];
+                $this->tags[] = ['person_id' => $person['id'], 'tag' => 'wasp'];
+            }
+
+            // a-team
+            $idTeam = [
+                $this->people[16]['id'],
+                $this->people[21]['id'],
+                $this->people[23]['id'],
+                $this->people[7]['id'],
+                $this->people[28]['id']
+            ];
+            if( in_array($person['id'], $idTeam)){
+                $this->tags[] = ['person_id' => $person['id'], 'tag' => 'a-team'];
             }
         }
 
