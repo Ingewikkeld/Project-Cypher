@@ -135,7 +135,6 @@ class PeopleTableSeeder extends Seeder {
             $idCoaches = [
                 $this->people[4]['id'],
                 $this->people[9]['id'],
-                $this->people[12]['id'],
                 $this->people[17]['id'],
                 $this->people[19]['id'],
                 $this->people[22]['id'],
