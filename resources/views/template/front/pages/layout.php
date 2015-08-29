@@ -126,49 +126,49 @@
 
                 <div class="list-group">
 
-                    <div class="list-group-item" ng-repeat="row in ctrl.rows">
-                        <div class="row-action-primary" style="padding-right: 30px;">
+                    <div class="row list-group-item" style="margin-bottom: 1em;" ng-repeat="row in ctrl.rows">
+
+                        <div class="hidden-xs col-sm-2 row-action-primary" style="max-width: 100px;">
                             <i class="mdi-file-folder"></i>
                         </div>
-                        <div class="row-content">
-                            <div class="action-secondary"><i class="mdi-material-info"></i></div>
-                            <div>
 
-                                <span style="width: 50%; margin-right: 9%; display: inline-block;"
-                                      type="text" class="form-control" id="inputName" ng-model="ctrl.person.name"
-                                      placeholder="{{ row.value }}" value="{{ row.value }}"
-                                    ng-switch on="row.type">
+                        <div class="col-xs-12 col-sm-10 row"
+                             style="padding-bottom: 2em; border-bottom: 1px solid #ddd; margin-top: 0.5em; min-height: 4em; padding-left: 0;">
+                            <span
+                                  type="text" class="col-xs-7 col-sm-5" id="inputName" ng-model="ctrl.person.name"
+                                  placeholder="{{ row.value }}" value="{{ row.value }}"
+                                  ng-switch on="row.type">
 
-                                    <a href="{{ row.value }}" ng-switch-when="url">
-                                        {{ row.value }}
-                                    </a>
+                                <a href="{{ row.value }}" ng-switch-when="url">
+                                    {{ row.value }}
+                                </a>
 
-                                    <a href="mailto:{{ row.value }}" ng-switch-when="email">
-                                        {{ row.value }}
-                                    </a>
+                                <a href="mailto:{{ row.value }}" ng-switch-when="email">
+                                    {{ row.value }}
+                                </a>
 
-                                    <span ng-switch-default>
-                                        {{ row.value }}
-                                    </span>
-
+                                <span ng-switch-default>
+                                    {{ row.value }}
                                 </span>
 
-                                <span style="width: 40%; display: inline-block;"
-                                      type="text" class="form-control" id="inputName" ng-model="ctrl.person.name"
-                                      placeholder="{{ row.label }}">
-                                    {{ row.label }}
-                                </span>
-                            </div>
+                            </span>
+
+                            <span style="padding-left: 40px;"
+                                  type="text" class="col-xs-3" id="inputName" ng-model="ctrl.person.name"
+                                  placeholder="{{ row.label }}">
+                                {{ row.label }}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <button ng-click="ctrl.cancel()" class="btn btn-default">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-lg-10 col-lg-offset-2">
-                        <button ng-click="ctrl.cancel()" class="btn btn-default">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </div>
             </fieldset>
         </form>
 
