@@ -57,7 +57,8 @@ class PeopleTableSeeder extends Seeder {
             23 => ['id' => $this->faker->uuid, 'name' => 'Stefan Koopmanschap', 'canonical' => 'stefankoopmanschap'],
             24 => ['id' => $this->faker->uuid, 'name' => 'Steven de Vries', 'canonical' => 'stevendevries'],
             25 => ['id' => $this->faker->uuid, 'name' => 'Toby Griffiths', 'canonical' => 'tobygriffiths'],
-            26 => ['id' => $this->faker->uuid, 'name' => 'Vitalii Levchenko', 'canonical' => 'vitaliilevchenko']
+            26 => ['id' => $this->faker->uuid, 'name' => 'Vitalii Levchenko', 'canonical' => 'vitaliilevchenko'],
+            27 => ['id' => $this->faker->uuid, 'name' => 'Kapitein Frank', 'canonical' => 'kapiteinfrank']
         ];
 
         // run the seeder
@@ -142,6 +143,11 @@ class PeopleTableSeeder extends Seeder {
 
             if( in_array($person['id'], $idCoaches)){
                 $this->tags[] = ['person_id' => $person['id'], 'tag' => 'coach'];
+            }
+
+            // kapitein frank
+            if( $person['id'] === $this->people[27]['id']){
+                $this->tags[] = ['person_id' => $person['id'], 'tag' => 'pirate'];
             }
         }
 
