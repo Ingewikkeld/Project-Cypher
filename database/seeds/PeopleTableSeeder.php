@@ -109,10 +109,13 @@ class PeopleTableSeeder extends Seeder {
             ['id' => $this->faker->uuid, 'person_id' => $this->people[27]['id'], 'type' => 'url', 'label' => 'linkedin', 'value' => 'https://www.linkedin.com/profile/view?id=captainfrank'],
 
             # linkedIn
-            ['id' => $this->faker->uuid, 'person_id' => $this->people[8]['id'], 'type' => 'url', 'label' => 'linkedin', 'value' => 'https://www.linkedin.com/profile/view?id=19762977&authType=NAME_SEARCH&authToken=d3Pt&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A19762977%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1440740589960%2Ctas%3Ajelrik'],
-            ['id' => $this->faker->uuid, 'person_id' => $this->people[15]['id'], 'type' => 'url', 'label' => 'linkedin', 'value' => 'https://www.linkedin.com/profile/view?id=AAEAAAGLybcBUID1yRoU1lzvpYcC3hDagsmfdFs&authType=name&authToken=7IkL&trk=prof-sb-browse_map-name'],
-            ['id' => $this->faker->uuid, 'person_id' => $this->people[24]['id'], 'type' => 'url', 'label' => 'linkedin', 'value' => 'https://www.linkedin.com/profile/view?id=AAEAAAL9JvAB1LAAgP4Qs6IE0YtMRQv3YlWIOAk&authType=name&authToken=Iy89&trk=prof-sb-browse_map-name'],
+            ['id' => $this->faker->uuid, 'person_id' => $this->people[8]['id'], 'type' => 'url', 'label' => 'linkedin', 'value' => 'https://nl.linkedin.com/in/jelrikvanhal'],
+            ['id' => $this->faker->uuid, 'person_id' => $this->people[15]['id'], 'type' => 'url', 'label' => 'linkedin', 'value' => 'https://nl.linkedin.com/in/pascaldevink'],
+            ['id' => $this->faker->uuid, 'person_id' => $this->people[24]['id'], 'type' => 'url', 'label' => 'linkedin', 'value' => 'https://nl.linkedin.com/in/stedv'],
             ['id' => $this->faker->uuid, 'person_id' => $this->people[22]['id'], 'type' => 'url', 'label' => 'linkedin', 'value' => 'https://nl.linkedin.com/in/rtuin'],
+
+            # Lukasz
+            ['id' => $this->faker->uuid, 'person_id' => $this->people[28]['id'], 'type' => 'custom', 'label' => 'phonetic name', 'value' => 'wukash'],
         );
 
         // Uncomment the below to run the seeder
@@ -173,6 +176,11 @@ class PeopleTableSeeder extends Seeder {
             // Toby
             if( $person['id'] === $this->people[25]['id']){
                 $this->tags[] = ['person_id' => $person['id'], 'tag' => 'mia'];
+            }
+
+            // Stefan
+            if( $person['id'] === $this->people[23]['id']){
+                $this->tags[] = ['person_id' => $person['id'], 'tag' => 'skoop'];
             }
 
             // a-team
