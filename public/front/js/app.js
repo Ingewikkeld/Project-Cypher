@@ -112,6 +112,10 @@ function searchPeople() {
             self.searchFinished = false;
             self.searchResults = [];
 
+            // UX: set focus on inputfield so the user can start typing right away
+            var elInputKeyword = document.getElementById('inputKeyword');
+            elInputKeyword.focus();
+
             self.searchPeople = function () {
                 self.searchResults = [];
                 self.searchFinished = false;
