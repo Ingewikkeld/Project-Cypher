@@ -28,6 +28,10 @@ Route::get('/api/dashboard', 'DashboardController@apiGetAction');
 
 Route::post('/api/people/{id}/data', 'PersonDataController@apiPostAction');
 
+Route::get('/about', function () {
+    return view('template/front/pages/about');
+});
+
 
 Route::get('/search', function () {
     return view('template/front/pages/search');

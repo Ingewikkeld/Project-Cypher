@@ -15,8 +15,8 @@
         {{--<form class="navbar-form navbar-left">--}}
             {{--<input type="text" class="form-control col-lg-8" placeholder="Search">--}}
         {{--</form>--}}
-        {{--<ul class="nav navbar-nav navbar-right">--}}
-            {{--<li><a href="javascript:void(0)">Link</a></li>--}}
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/about">About</a></li>
             {{--<li class="dropdown">--}}
                 {{--<a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>--}}
                 {{--<ul class="dropdown-menu">--}}
@@ -27,6 +27,6 @@
                     {{--<li><a href="javascript:void(0)">Separated link</a></li>--}}
                 {{--</ul>--}}
             {{--</li>--}}
-        {{--</ul>--}}
+        </ul>
     </div>
 </div>
