@@ -67,17 +67,31 @@ final class PersonRepository
     }
 
     /**
-     * @param string $keyword
+     * @param string $keywords
      * @return array a collection of people
      */
-    public function search($keyword)
+    public function search($keywords)
     {
-        $sql = <<< EOQ
+        $where  = [];
+        $params = [];
+
+        foreach (preg_split('/\s+/', $keywords) as $o => $keyword) {
+            $where[] = 'p.name LIKE ? OR pd.label LIKE ? OR pd.value LIKE ? OR t.tag LIKE ?';
+
+            for ($i = 1; $i <= 4; $i++) {
+                $index          = ($o * 4) + $i;
+                $params[$index] = "%$keyword%";
+            }
+        }
+
+        $where = implode(' AND ', $where);
+
+        $sql = <<<EOQ
 SELECT p.*
 FROM people p
 LEFT JOIN people_data pd ON (p.id = pd.person_id)
 LEFT JOIN tags t ON (p.id = t.person_id)
-WHERE p.name LIKE :keyword1 OR pd.label LIKE :keyword2 OR pd.value LIKE :keyword3 OR t.tag LIKE :keyword4
+WHERE {$where}
 GROUP BY p.id
 ORDER BY p.name
 EOQ;
@@ -89,15 +103,7 @@ EOQ;
 
                 return Person::fromDB($row);
             },
-            $this->query(
-                $sql,
-                [
-                    'keyword1' => "%$keyword%",
-                    'keyword2' => "%$keyword%",
-                    'keyword3' => "%$keyword%",
-                    'keyword4' => "%$keyword%"
-                ]
-            )
+            $this->query($sql, $params)
         );
     }
 
